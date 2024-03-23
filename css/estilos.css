@@ -1,0 +1,294 @@
+@charset "UTF-8";
+/*  Fonte Montserrant  */
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/*===========================================================================*/
+/*DEFINIR NO PROCESSO DE DESENVOLVIMENTO*/
+/* Cor de fundo escura com transparência */
+@font-face {
+  font-family: "cosi azure";
+  src: url(../fonts/CosiAzure-Black.ttf);
+}
+/* Responsivo para dispositivos large: */
+/* Responsivo para dispositivos Laptops: */
+/* Responsivo para dispositivos Tablets: */
+/* Responsivo para dispositivos Móveis: */
+/* animação do circulo aumentando quando passado o mouse*/
+@keyframes circle-inside {
+  0% {
+    clip-path: circle(5%);
+  }
+  40% {
+    clip-path: circle(40%);
+  }
+  100% {
+    clip-path: circle(125%);
+  }
+}
+/* animação do circulo diminuindo quando passado o mouse*/
+@keyframes circle-outside {
+  0% {
+    clip-path: circle(125%);
+  }
+  40% {
+    clip-path: circle(40%);
+  }
+  100% {
+    clip-path: circle(5%);
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  position: relative;
+}
+body header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  transition: 0.5s all ease;
+  z-index: 1;
+}
+body header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  height: 100px;
+  font-family: "cosi azure";
+  transition: 0.5s all ease;
+  border-bottom: 1px solid #ffffff;
+}
+@media screen and (max-width: 992px) {
+  body header .navbar {
+    padding-right: 30px;
+  }
+}
+body header .navbar li {
+  list-style: none;
+}
+body header .navbar li .fa-wolf-pack-battalion {
+  font-size: 50px;
+  margin-right: 7px;
+}
+body header .navbar li .fa-bars, body header .navbar li .fa-circle-xmark {
+  display: none;
+  font-size: 30px;
+  color: #ffffff;
+  cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+  body header .navbar li .fa-bars, body header .navbar li .fa-circle-xmark {
+    display: block;
+  }
+}
+body header .navbar .active-bar {
+  width: 250px;
+  height: 60px;
+  margin: 10px;
+  cursor: pointer;
+}
+body header .navbar .active-bar a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+}
+body header .navbar .links-ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body header .navbar .links-ul .li-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 50px;
+  margin: 10px;
+  cursor: pointer;
+}
+body header .navbar .links-ul .li-link .link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s all ease-in-out;
+}
+body header .navbar .links-ul .li-link .link:hover {
+  transform: scale(1.1);
+  transition: 0.3s all ease-in-out;
+  color: #eb5726;
+}
+body header .navbar .links-ul .li-link .link i {
+  margin-right: 7px;
+}
+@media screen and (max-width: 992px) {
+  body header .navbar .links-ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 50px;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    transform: translate(100%);
+    transition: 0.5s all ease;
+    background-color: rgba(0, 0, 0, 0.929);
+    /* Cor de fundo escura com transparência */
+    backdrop-filter: blur(10px);
+  }
+}
+body main {
+  position: relative;
+}
+body main .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4823529412), rgba(0, 0, 0, 0.5490196078)), url(../img/banner-one.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 120vh;
+  z-index: -1;
+}
+body main .banner .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 95%;
+  height: 80vh;
+  align-items: end;
+  color: #ffffff;
+  background-color: transparent;
+}
+body main .banner .row .profession {
+  position: relative;
+  width: 40%;
+  height: auto;
+  font-family: "cosi azure";
+}
+body main .banner .row .profession .profission-text {
+  position: relative;
+  width: 150px;
+  top: 40px;
+  font-size: 26px;
+  border-bottom: 1px solid #ffffff;
+}
+body main .banner .row .profession .profession-name {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+}
+body main .banner .row .profession .profession-name span {
+  display: block;
+  font-size: 3.5em;
+  transform: scaleY(4);
+  margin-top: 110px;
+  margin-bottom: 60px;
+  letter-spacing: -2px;
+}
+body main .banner .row .banner-descripiton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 40%;
+  height: auto;
+  margin-right: 20px;
+}
+body main .banner .row .banner-descripiton p {
+  text-align: end;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-family: "cosi azure";
+  color: #ffffff;
+}
+body main .banner .row .banner-descripiton .know {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10px;
+  width: 150px;
+  height: 50px;
+  border: 2px solid #ffffff;
+  transition: 0.5s all ease;
+  border-radius: 30px;
+  cursor: pointer;
+}
+body main .banner .row .banner-descripiton .know:hover {
+  background-color: #152a4b;
+  transition: 0.5s all ease;
+}
+body main .banner .row .banner-descripiton .know span {
+  font-family: "cosi azure";
+  font-size: 15px;
+  color: #ffffff;
+}
+body .button-top {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  background-color: transparent;
+  transition: 0.5s all ease;
+}
+body .button-top .cicle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #161616;
+  border-radius: 50px;
+  transition: 0.5s all ease;
+  cursor: pointer;
+}
+body .button-top .cicle:hover {
+  width: 100px;
+  transition: 0.5s all ease;
+  background-color: #152a4b;
+}
+body .button-top .cicle .fa-arrow-up-from-bracket {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/*============================ Classes auxiliares ======================*/
+.collapse-true {
+  transform: translate(0%) !important;
+}
+
+.burguer-ocult {
+  display: none !important;
+}
+
+.navbar_aux {
+  height: 75px !important;
+}
+
+.header_aux {
+  background-color: rgba(0, 0, 0, 0.5490196078);
+}
+
+/*# sourceMappingURL=estilos.css.map */

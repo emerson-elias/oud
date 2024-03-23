@@ -1,0 +1,17 @@
+@use 'variables';
+@use 'components';
+
+@mixin align_center($flex, $centralization){
+    display: $flex;
+    justify-content: $centralization;
+    align-items: center;
+}
+
+@mixin text_formatting(){
+    text-align: center;
+    font-family: 'Montserrat' ,sans-serif;
+    font-style: italic;
+    font-weight: 900;
+    text-align:center;
+    letter-spacing: 1px;
+}

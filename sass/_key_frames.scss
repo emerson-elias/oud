@@ -1,0 +1,28 @@
+
+/* animação do circulo aumentando quando passado o mouse*/
+
+@keyframes circle-inside {
+    0% {
+      clip-path: circle(5%);
+    }
+    40% {
+      clip-path: circle(40%);
+    }
+    100% {
+      clip-path: circle(125%);
+    }
+}
+
+/* animação do circulo diminuindo quando passado o mouse*/
+
+@keyframes circle-outside {
+    0% {
+      clip-path: circle(125%);
+    }
+    40% {
+      clip-path: circle(40%);
+    }
+    100% {
+      clip-path: circle(5%);
+    }
+}

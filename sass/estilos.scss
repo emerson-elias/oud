@@ -1,0 +1,285 @@
+@use 'variables';
+@use 'components';
+@use 'mixins';
+@use 'responsive';
+@use 'key_frames';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    position: relative;
+
+    header {
+        @include mixins.align_center(flex, center);
+        position: fixed;
+        width: 100%;
+        height: auto;
+        transition: variables.$Transition_ease;
+        z-index: 1;
+
+        .navbar {
+            @include mixins.align_center(flex, space-between);
+            width: 95%;
+            height: 100px;
+            font-family: 'cosi azure';
+            transition: variables.$Transition_ease;
+            border-bottom: 1px solid variables.$Text_Color_White;
+
+            @include responsive.screen_laptop() {
+                padding-right: 30px;
+            }
+
+            li {
+                list-style: none;
+
+                .fa-wolf-pack-battalion {
+                    font-size: 50px;
+                    margin-right: 7px;
+                }
+
+                .fa-bars, .fa-circle-xmark {
+                    display: none;
+                    font-size: 30px;
+                    color: variables.$Text_Color_White;
+                    cursor: pointer;
+
+                    @include responsive.screen_laptop() {
+                        display: block;
+                    }
+                }
+
+            }
+
+            .active-bar {
+                width: 250px;
+                height: 60px;
+                margin: 10px;
+                cursor: pointer;
+
+                a {
+                    @include mixins.align_center(flex, center);
+                    text-decoration: none;
+                    font-size: 20px;
+                    color: variables.$Text_Color_White;
+
+                }
+            }
+
+            .links-ul {
+                @include mixins.align_center(flex, space-between);
+
+                .li-link {
+                    @include mixins.align_center(flex, center);
+                    width: 160px;
+                    height: 50px;
+                    margin: 10px;
+                    cursor: pointer;
+
+                    .link {
+                        color: variables.$Text_Color_White;
+                        text-decoration: none;
+                        font-size: 15px;
+                        transition: 0.3s all ease-in-out;
+
+                        &:hover {
+                            transform: scale(1.1);
+                            transition: 0.3s all ease-in-out;
+                            color: variables.$Secundary_Color;
+                        }
+
+                        i {
+                            margin-right: 7px;
+                        }
+                    }
+
+                }
+
+                @include responsive.screen_laptop {
+                    position: fixed;
+                    top: 0;
+                    right: 0;
+                    padding: 50px;
+                    width: 100%;
+                    height: 100vh;
+                    flex-direction: column;
+                    transform: translate(100%);
+                    transition: variables.$Transition_ease;
+                    background-color: variables.$Smoker;
+                    /* Cor de fundo escura com transparência */
+                    backdrop-filter: blur(10px);
+                }
+
+            }
+
+        }
+    }
+
+    main {
+        position: relative;
+
+        .banner {
+            @include mixins.align_center(flex, center);
+            background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$Smoker_dwo), url(../img/banner-one.jpg);
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 120vh;
+            z-index: -1;
+
+            .row{
+                @include mixins.align_center(flex, space-between);
+                position: relative;
+                width: 95%;
+                height: 80vh;
+                align-items: end;
+                color: variables.$Text_Color_White;
+                background-color: transparent;
+
+                .profession{
+                    position: relative; 
+                    width: 40%;
+                    height: auto;                   
+                    font-family: 'cosi azure';
+    
+                    .profission-text{
+                        position: relative;
+                        width: 150px;
+                        top: 40px;
+                        font-size: 26px;
+                        border-bottom: 1px solid variables.$Text_Color_White;
+                    }
+    
+                    .profession-name{
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        margin-top: 100px;
+                        
+                        
+                        span{
+                            display: block;
+                            font-size: 3.5em;
+                            transform: scaleY(4);
+                            margin-top: 110px;
+                            margin-bottom: 60px;
+                            letter-spacing: -2px;
+                          
+                        }
+                        
+                    }
+                }
+    
+                .banner-descripiton{
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: end;
+                    width: 40%;
+                    height: auto;
+                    margin-right: 20px;
+
+                    p{
+                        text-align: end;
+                        font-size: 25px;
+                        letter-spacing: 2px;
+                        font-family: 'cosi azure';
+                        color: variables.$Text_Color_White;
+                    }
+
+                    .know{
+                        @include mixins.align_center(flex,center);
+                        position: relative;
+                        margin: 10px;
+                        width: 150px;
+                        height: 50px;
+                        border: 2px solid variables.$Text_Color_White;
+                        transition: variables.$Transition_ease;
+                        border-radius: 30px;
+                        cursor: pointer;
+
+                        &:hover{
+                            background-color: variables.$Primary_Color;
+                            transition: variables.$Transition_ease;
+                        }
+                
+
+                        span{
+                            font-family: 'cosi azure';
+                            font-size: 15px;
+                            color: variables.$Text_Color_White;
+
+
+                        }
+                    }
+                }
+            } 
+        }
+
+    }
+
+    .button-top {
+       
+        position: fixed;    
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        margin-right: 50px;
+        margin-bottom: 20px;
+        background-color: transparent;
+        transition: variables.$Transition_ease;
+          
+        .cicle {
+            @include mixins.align_center(flex, center);
+            width: 50px;
+            height: 50px;
+            background-color: variables.$gray_primary;
+            border-radius: 50px;
+            transition: variables.$Transition_ease;
+            cursor: pointer;
+    
+            &:hover {
+                width: 100px;
+                transition: variables.$Transition_ease;
+                background-color: variables.$Primary_Color;
+            }
+    
+            .fa-arrow-up-from-bracket {
+                color: variables.$Text_Color_White;
+                font-size: 20px;
+            }
+        }
+    
+    
+    }
+
+}
+
+
+
+/*============================ Classes auxiliares ======================*/
+
+.collapse-true {
+    transform: translate(0%) !important;
+}
+
+.burguer-ocult {
+    display: none !important;
+}
+
+.navbar_aux {
+    height: 75px !important;
+}
+
+.header_aux {
+    background-color: variables.$Smoker_dwo;
+}
