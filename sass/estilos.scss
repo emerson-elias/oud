@@ -10,258 +10,636 @@
     box-sizing: border-box;
 }
 
+
 ::-webkit-scrollbar {
     width: 0;
 }
 
-body {
-    position: relative;
-
-    header {
-        @include mixins.align_center(flex, center);
-        position: fixed;
-        width: 100%;
-        height: auto;
-        transition: variables.$Transition_ease;
-        z-index: 1;
-
-        .navbar {
-            @include mixins.align_center(flex, space-between);
-            width: 95%;
-            height: 100px;
-            font-family: 'cosi azure';
-            transition: variables.$Transition_ease;
-            border-bottom: 1px solid variables.$Text_Color_White;
-
-            @include responsive.screen_laptop() {
-                padding-right: 30px;
-            }
-
-            li {
-                list-style: none;
-
-                .fa-wolf-pack-battalion {
-                    font-size: 50px;
-                    margin-right: 7px;
-                }
-
-                .fa-bars, .fa-circle-xmark {
-                    display: none;
-                    font-size: 30px;
-                    color: variables.$Text_Color_White;
-                    cursor: pointer;
-
-                    @include responsive.screen_laptop() {
-                        display: block;
-                    }
-                }
-
-            }
-
-            .active-bar {
-                width: 250px;
-                height: 60px;
-                margin: 10px;
-                cursor: pointer;
-
-                a {
-                    @include mixins.align_center(flex, center);
-                    text-decoration: none;
-                    font-size: 20px;
-                    color: variables.$Text_Color_White;
-
-                }
-            }
-
-            .links-ul {
-                @include mixins.align_center(flex, space-between);
-
-                .li-link {
-                    @include mixins.align_center(flex, center);
-                    width: 160px;
-                    height: 50px;
-                    margin: 10px;
-                    cursor: pointer;
-
-                    .link {
-                        color: variables.$Text_Color_White;
-                        text-decoration: none;
-                        font-size: 15px;
-                        transition: 0.3s all ease-in-out;
-
-                        &:hover {
-                            transform: scale(1.1);
-                            transition: 0.3s all ease-in-out;
-                            color: variables.$Secundary_Color;
-                        }
-
-                        i {
-                            margin-right: 7px;
-                        }
-                    }
-
-                }
-
-                @include responsive.screen_laptop {
-                    position: fixed;
-                    top: 0;
-                    right: 0;
-                    padding: 50px;
-                    width: 100%;
-                    height: 100vh;
-                    flex-direction: column;
-                    transform: translate(100%);
-                    transition: variables.$Transition_ease;
-                    background-color: variables.$Smoker;
-                    /* Cor de fundo escura com transparência */
-                    backdrop-filter: blur(10px);
-                }
-
-            }
-
-        }
+html{
+ 
+    @include responsive.screen_height_not_suport(){
+        background-color: variables.$gray_primary;
+    }
+    
+    @include responsive.screen_width_not_suport(){
+        background-color: variables.$gray_primary;
+        
     }
 
-    main {
-        position: relative;
+    body {
 
-        .banner {
-            @include mixins.align_center(flex, center);
-            background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$Smoker_dwo), url(../img/banner-one.jpg);
-            background-attachment: fixed;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        @include responsive.screen_width_not_suport(){
+            display: none;
+        }
+        @include responsive.screen_height_not_suport(){
+            display: none;
+        }
+        
+        header {
+            @include mixins.align(fixed, flex, center, center);
+            position: fixed;
             width: 100%;
-            height: 120vh;
-            z-index: -1;
-
-            .row{
-                @include mixins.align_center(flex, space-between);
-                position: relative;
-                width: 95%;
-                height: 80vh;
-                align-items: end;
-                color: variables.$Text_Color_White;
-                background-color: transparent;
-
-                .profession{
-                    position: relative; 
-                    width: 40%;
-                    height: auto;                   
-                    font-family: 'cosi azure';
+            height: auto;
+            transition: variables.$Transition_ease;
+            z-index: 9999;
+            overflow: hidden;
     
-                    .profission-text{
-                        position: relative;
-                        width: 150px;
-                        top: 40px;
-                        font-size: 26px;
-                        border-bottom: 1px solid variables.$Text_Color_White;
+            .navbar {
+                @include mixins.align(relative, flex, space-between, center);
+                width: 95%;
+                height: 100px;
+                font-family: 'cosi azure';
+                transition: variables.$Transition_ease;
+                border-bottom: 1px solid variables.$Text_Color_White;
+    
+                @include responsive.screen_laptop() {
+                    padding-right: 30px;
+                }
+    
+                li {
+                    list-style: none;
+    
+                    .fa-wolf-pack-battalion {
+                        font-size: 50px;
+                        margin-right: 7px;
                     }
     
-                    .profession-name{
-                        position: relative;
-                        width: 100%;
-                        height: auto;
-                        margin-top: 100px;
-                        
-                        
-                        span{
+                    .fa-bars, .fa-circle-xmark {
+                        display: none;
+                        font-size: 30px;
+                        color: variables.$Text_Color_White;
+                        cursor: pointer;
+    
+                        @include responsive.screen_laptop() {
                             display: block;
-                            font-size: 3.5em;
-                            transform: scaleY(4);
-                            margin-top: 110px;
-                            margin-bottom: 60px;
-                            letter-spacing: -2px;
-                          
                         }
-                        
+                    }
+    
+                }
+    
+                .active-bar {
+                    @include mixins.align(relative, flex, baseline, center);
+                    width: 230px;
+                    height: 60px;
+                    margin-left: 20px;
+                    cursor: pointer;
+    
+                    a {
+                        @include mixins.align(relative, flex, center, center);
+                        text-decoration: none;
+                        font-size: 20px;
+                        color: variables.$Text_Color_White;
+                        transition: variables.$Transition_ease;
+
+                        @include responsive.screen_small(){
+                            font-size: 17px;
+                        }
+
                     }
                 }
     
-                .banner-descripiton{
-                    position: relative;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: end;
-                    width: 40%;
-                    height: auto;
-                    margin-right: 20px;
-
-                    p{
-                        text-align: end;
-                        font-size: 25px;
-                        letter-spacing: 2px;
-                        font-family: 'cosi azure';
-                        color: variables.$Text_Color_White;
-                    }
-
-                    .know{
-                        @include mixins.align_center(flex,center);
-                        position: relative;
-                        margin: 10px;
-                        width: 150px;
+                .links-ul {
+                    @include mixins.align(relative, flex, space-between, center);
+    
+                    .li-link {
+                        @include mixins.align(relative, flex, center, center);
+                        width: 160px;
                         height: 50px;
-                        border: 2px solid variables.$Text_Color_White;
-                        transition: variables.$Transition_ease;
-                        border-radius: 30px;
+                        margin: 10px;
                         cursor: pointer;
 
-                        &:hover{
-                            background-color: variables.$Primary_Color;
-                            transition: variables.$Transition_ease;
+                        &::after{
+                            position: absolute;
+                            content: '';
+                            top: 45px;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            background-color: variables.$Secundary_Color;
+                            width: 0%;
+                            height: 3px;
+                            border-radius: 5px;
+                            transition: 0.3s all;
                         }
-                
+
+                        &:hover::after{
+                            width: 100%;
+                            transition: 0.3s all;
+                        }
+    
+                        .link {
+                            color: variables.$Text_Color_White;
+                            text-decoration: none;
+                            font-size: 15px;
+
+                            i {
+                                margin-right: 7px;
+                            }
+                        }
+    
+                    }
+    
+                    @include responsive.screen_laptop {
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        padding: 50px;
+                        width: 100%;
+                        height: 100vh;
+                        flex-direction: column;
+                        transform: translate(100%);
+                        transition: variables.$Transition_ease;
+                        background-color: variables.$Smoker;
+                        backdrop-filter: blur(10px);
+                        z-index: 9999;
+                    }
+    
+                }
+    
+            }
+        }
+    
+        main {
+            position: relative;
+    
+            .banner {
+                @include mixins.align(relative, flex, center, center);
+                background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$gray_primary), url(../img/banner-one.jpg);
+              /*  background-attachment: fixed; */
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: 120vh;
+
+                @include responsive.screen_small{
+                    height: 105vh;
+                }
+        
+                .row{
+                    @include mixins.align(relative, flex, space-between, end);
+                    width: 95%;
+                    height: 80vh;             
+                    color: variables.$Text_Color_White;
+                    transition: variables.$Transition_ease;
+
+                    @include responsive.screen_laptop(){
+                        display: block;
+                        height: auto;
+                    }
+    
+                    @include responsive.screen_small(){ 
+                        width: 90%;
+                    }
+                    
+                    .profession{
+                        position: relative; 
+                        width: 50%;
+                        height: auto;                   
+                        font-family: 'cosi azure';
+    
+                        @include responsive.screen_laptop(){ 
+                            width: initial;                          
+                        }
+
+                        .follow{
+                            @include mixins.align(relative, flex, end, center);
+                            top: 90px;
+                            width: 185%;
+                            height: 100px;
+
+                            @include responsive.screen_laptop(){
+                                width: 90%;
+                            }
+
+                            @include responsive.screen_small(){
+                                width: inherit;                             
+                            }
+
+                            .fa-map-pin{
+                                font-size: 20px;
+                                color: variables.$Text_Color_White;
+                                margin: 5px;
+                            }
+
+                            p{
+                                @include mixins.align(relative, flex, center, center);
+                                @include mixins.text_formatting(center, italic, 300, 1px);
+                                width: 180px;
+                                height: 100px;
+                                color: variables.$Text_Color_White;
+                                font-size: 10px;
+                                
+                                @include responsive.screen_small(){
+                                    width: 120px;
+                                    font-size: 10px;
+                                }
+                            }
+                            
+                        }
+    
+                        .profission-text{
+                            position: relative;
+                            width: 150px;
+                            top: 40px;
+                            font-size: 26px;
+                            border-bottom: 1px solid variables.$Text_Color_White;
+    
+                            @include responsive.screen_laptop(){ 
+                                top: 50px;
+                            }
+    
+                            @include responsive.screen_small(){      
+                                font-size: 18px;
+                            }
+                        }
+        
+                        .profession-name{
+                            position: relative;
+                            width: 100%;
+                            height: auto;
+                            margin-top: 100px;
+     
+                            span{
+                                display: block;
+                                font-size: 3.5em;
+                                transform: scaleY(4);
+                                margin: 110px 0 60px 0;
+                                letter-spacing: -2px;
+    
+                                @include responsive.screen_laptop(){ 
+                                    font-size: 3em;
+                                }
+    
+                                @include responsive.screen_small(){ 
+                                    transform: scaleY(4);
+                                    letter-spacing: 2px;
+                                    font-size: 1.7em;
+                                    margin: 0 0 60px 0;
+                                }
+                              
+                            }
+                            
+                        }
+                    }
+        
+                    .banner-descripiton{
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: end;
+                        width: 50%;
+                        height: auto;
+    
+                        @include responsive.screen_laptop(){ 
+                            width: initial;
+                            margin-top: 70px;
+                        }
+    
+                        p{
+                            text-align: end;
+                            font-size: 25px;
+                            letter-spacing: 2px;
+                            font-family: 'cosi azure';
+                            color: variables.$Text_Color_White;
+    
+                            @include responsive.screen_laptop(){ 
+                                width: 75%;
+                                font-size: 20px
+                            }
+    
+                            @include responsive.screen_small(){ 
+                                width: 100%;
+                                font-size: 14px;
+                            }
+                        }
+    
+                        .know{
+                            @include mixins.align(relative, flex, center, center);
+                            margin: 10px;
+                            width: 160px;
+                            height: 50px;
+                            border: 2px solid variables.$Text_Color_White;
+                            transition: variables.$Transition_ease;
+                            border-radius: 30px;
+                            cursor: pointer;
+    
+                            &:hover{
+                                background-color: variables.$Secundary_Color;
+                                transition: variables.$Transition_ease;
+                            }
+    
+                            span{
+                                font-family: 'cosi azure';
+                                font-size: 15px;
+                                color: variables.$Text_Color_White;
+    
+                                @include responsive.screen_laptop(){ 
+                                    font-size: 13px;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+    
+            .hero-me{
+                @include mixins.align(relative, flex, center, center);
+                flex-direction: column;
+                margin-top: -1px;
+                width: 100%;
+                height: 100vh;
+                background-color: variables.$gray_primary;
+
+                @include responsive.screen_laptop(){
+                    height: auto;
+                    padding: 100px 0 40px 0;
+                }
+
+                .hero-titulo{
+                    @include mixins.align(relative, flex, center, center);
+                    width: inherit;
+                    height: 100px;
+
+                    @include responsive.screen_small(){
+                        margin: 0 0 50px 0;
+                    }
+
+                    h1{
+                        @include mixins.text_formatting(center, normal, 500, 10px);
+                        font-size: 30px;
+                        color: variables.$Text_Color_White;
+                        text-transform: uppercase;
+
+                        @include responsive.screen_small{
+                            font-size: 20px;
+                        }
 
                         span{
-                            font-family: 'cosi azure';
-                            font-size: 15px;
-                            color: variables.$Text_Color_White;
+                            color: variables.$Secundary_Color;
+                        }
+                    }
+                }
 
+                .hero-sobre-text-fundo{
+                    position: absolute;
+                    top: 15%;
+                    left: 30px;
+                    right: 0;   
+                    font-size: 120px;
+                    font-family: 'cosi azure';
+                    color: variables.$Text_Color_White_Smoker;
+
+                    @include responsive.screen_laptop(){
+                        top: 5%;
+                        font-size: 110px;
+                    }
+
+                    @include responsive.screen_small(){
+                        top: 0;
+                        font-size: 65px;
+                    }
+                }
+                 
+                .sobre-mim{
+                    @include mixins.align(relative, flex, space-between, center);
+                    width: 85%;
+                    height: auto;
+                    color: variables.$Text_Color_White;
+
+                    @include responsive.screen_large(){
+                        width: 95%;
+                    }
+
+                    @include responsive.screen_laptop(){
+                        width: 100%;
+                        flex-wrap: wrap;
+                    }
+
+                    .sobre-img{
+                        @include mixins.align(relative, flex, center, center);
+                        width: 30%;
+                        height: auto;
+                       
+                        &::after{
+                            position: absolute;
+                            content: '';
+                            width: 290px;
+                            height: 250px;
+                            z-index: 1;
+                            transform: translate(-15%,-15%);
+                            border: 12px solid variables.$Secundary_Color; 
+                            
+                            @include responsive.screen_large(){
+                                transform: translate(-10%,-15%);
+                            }
+
+                            @include responsive.screen_tablet(){
+                                width: 250px;
+                                transform: translate(-10%,-8%);
+                            }
+
+                            @include responsive.screen_small{
+                                height: 230px;
+                                transform: translate(-10%,-12%);
+                            }
+                        }
+
+                        @include responsive.screen_laptop(){
+                            width: 50%;                     
+                        }
+                        
+                        @include responsive.screen_small(){
+                            width: inherit;
+                        }
+
+                        img{
+                            position: relative;
+                            width: 300px;
+                            height: auto;
+                            z-index: 2; 
+                            filter: grayscale(100%);
+                            transition: variables.$Transition_ease;                            
+                            
+                            @include responsive.screen_laptop(){
+                                width: 300px;
+                            }
+
+                            @include responsive.screen_tablet(){
+                                width: 270px;
+                            }
+
+                            @include responsive.screen_small(){
+                                width: 250px;
+                                height: auto;
+                            }
+
+                            &:hover{
+                                filter: grayscale(0%);
+                                transition: variables.$Transition_ease;
+                            }
+    
+                        }
+                    }
+
+                    .sobre-academy{
+                        @include mixins.align(relative, flex, space-around, center);
+                        @include mixins.text_formatting(normal, normal, 300, 1px);
+                        flex-direction: column;
+                        width: 25%;
+                        height: auto;
+
+                        @include responsive.screen_laptop(){
+                            padding: 0 0 0 100px;
+                            width: 50%;                          
+                        }
+
+                        @include responsive.screen_tablet(){
+                            padding: 0 0 0 30px;
+                        }
+                        
+                        @include responsive.screen_small{
+                            width: inherit;
+                            margin: 50px auto;    
+                        }
+
+                        h1,h2{
+                            position: relative;
+                            width: 100%;
+                            height: auto;
+                            text-transform: uppercase;
+                            font-size: 18px;
+                            padding: 9px 0 9px 0;
+
+                            @include responsive.screen_tablet(){
+                                font-size: 15px;
+                            }                           
+                        }
+
+                        p{
+                            position: relative;
+                            width: 100%;
+                            height: auto;
+                            padding-left: 20px;
+                            font-style: italic;
+                            padding: 9px 0 9px 0;
+
+                            @include responsive.screen_tablet(){
+                                font-size: 12px;
+                            }
+
+                            i{
+                                font-size: 20px;
+                                color: variables.$Secundary_Color;
+
+                                @include responsive.screen_tablet(){
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                    }
+
+                    .sobre-descripion{
+                        position: relative;
+                        width: 40%;
+                        height: auto;
+                        margin: 0 0 50px 0 auto;
+
+                        @include responsive.screen_laptop(){
+                            width: 80%;
+                            margin: 70px auto;
+                            text-align: center;
+                        }
+
+                        @include responsive.screen_small(){
+                            width: 80%;
+                            margin: 0 auto;
+                        }
+
+                        .sobre-titulo{
+                            width: initial;
+                            height: auto;
+
+                            h1{
+                                @include mixins.text_formatting(normal, normal, 500, 1px);
+                                font-size: 25px;
+                                text-transform: uppercase;
+                            }
+
+                            p{
+                                font-size: 20px;
+                                color: variables.$Text_Color_White_Smoker_dwo;
+                                margin: 10px 0 15px 0;
+                            }
+                        }
+
+                        .sobre-descripiton-bio{
+                            @include mixins.text_formatting(justify, italic, 300, 1px);
+                            font-size: 16px;
+
+                            p{
+                                margin: 0 0 20px 0;
+
+                                @include responsive.screen_laptop(){
+                                    &:nth-child(1){
+                                        text-align: center;
+                                    }
+                                }
+
+                                span{
+                                    font-style: normal;
+                                }
+                            }
 
                         }
                     }
                 }
-            } 
+
+            }
+
         }
-
-    }
-
-    .button-top {
-       
-        position: fixed;    
-        right: 0;
-        bottom: 0;
-        opacity: 0;
-        margin-right: 50px;
-        margin-bottom: 20px;
-        background-color: transparent;
-        transition: variables.$Transition_ease;
-          
-        .cicle {
-            @include mixins.align_center(flex, center);
-            width: 50px;
-            height: 50px;
-            background-color: variables.$gray_primary;
-            border-radius: 50px;
+    
+        .button-top {
+            position: fixed;    
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            margin-right: 50px;
+            margin-bottom: 20px;
+            background-color: transparent;
             transition: variables.$Transition_ease;
-            cursor: pointer;
     
-            &:hover {
-                width: 100px;
+            @include responsive.screen_small(){ 
+                margin-right: 25px;
+                margin-bottom: 20px;
+            }
+              
+            .cicle {
+                @include mixins.align(relative, flex, center, center);
+                width: 50px;
+                height: 50px;
+                background-color: variables.$gray_primary;
+                border-radius: 50px;
                 transition: variables.$Transition_ease;
-                background-color: variables.$Primary_Color;
+                cursor: pointer;
+        
+                &:hover {
+                    width: 100px;
+                    transition: variables.$Transition_ease;
+                    background-color: variables.$Secundary_Color;
+                }
+        
+                .fa-arrow-up-from-bracket {
+                    color: variables.$Text_Color_White;
+                    font-size: 20px;
+                }
             }
-    
-            .fa-arrow-up-from-bracket {
-                color: variables.$Text_Color_White;
-                font-size: 20px;
-            }
+        
+        
         }
     
-    
     }
-
+    
 }
 
 
@@ -281,5 +659,5 @@ body {
 }
 
 .header_aux {
-    background-color: variables.$Smoker_dwo;
+    background-color: variables.$Smoker_dwo;   
 }

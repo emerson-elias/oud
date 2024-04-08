@@ -1,4 +1,3 @@
-
 /* Responsivo para dispositivos large: */
 
 @mixin screen_large(){
@@ -28,5 +27,43 @@
 @mixin screen_small(){
     @media screen and (max-width:600px){
        @content;
+    }
+}
+
+@mixin screen_width_not_suport(){
+    @media screen and (max-width:300px){
+        @content;
+        &::before{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content: 'screen não suportado, abra a tela e saiba mais :)';
+            color: #ffffffd0;
+            width: 100%;
+            height: 100vh;
+            font-size: 40px;
+            font-family: 'Alumni Sans Inline One', sans-serif;
+            text-align: center;
+        }
+    }
+}
+
+@mixin screen_height_not_suport(){
+    @media screen and (max-height:440px){
+        @content;
+        &::before{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content: 'screen não suportado, abra a tela e saiba mais :)';
+            color: #ffffffd0;
+            width: 100%;
+            height: 100vh;
+            font-size: 40px;
+            font-family: 'Alumni Sans Inline One', sans-serif;
+            text-align: center;
+        }
     }
 }

@@ -13,30 +13,6 @@
 /* Responsivo para dispositivos Laptops: */
 /* Responsivo para dispositivos Tablets: */
 /* Responsivo para dispositivos Móveis: */
-/* animação do circulo aumentando quando passado o mouse*/
-@keyframes circle-inside {
-  0% {
-    clip-path: circle(5%);
-  }
-  40% {
-    clip-path: circle(40%);
-  }
-  100% {
-    clip-path: circle(125%);
-  }
-}
-/* animação do circulo diminuindo quando passado o mouse*/
-@keyframes circle-outside {
-  0% {
-    clip-path: circle(125%);
-  }
-  40% {
-    clip-path: circle(40%);
-  }
-  100% {
-    clip-path: circle(5%);
-  }
-}
 * {
   padding: 0;
   margin: 0;
@@ -47,10 +23,80 @@
   width: 0;
 }
 
-body {
-  position: relative;
+@media screen and (max-height: 440px) {
+  html {
+    background-color: #161616;
+  }
+  html::before {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "screen não suportado, abra a tela e saiba mais :)";
+    color: rgba(255, 255, 255, 0.8156862745);
+    width: 100%;
+    height: 100vh;
+    font-size: 40px;
+    font-family: "Alumni Sans Inline One", sans-serif;
+    text-align: center;
+  }
 }
-body header {
+@media screen and (max-width: 300px) {
+  html {
+    background-color: #161616;
+  }
+  html::before {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "screen não suportado, abra a tela e saiba mais :)";
+    color: rgba(255, 255, 255, 0.8156862745);
+    width: 100%;
+    height: 100vh;
+    font-size: 40px;
+    font-family: "Alumni Sans Inline One", sans-serif;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 300px) {
+  html body {
+    display: none;
+  }
+  html body::before {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "screen não suportado, abra a tela e saiba mais :)";
+    color: rgba(255, 255, 255, 0.8156862745);
+    width: 100%;
+    height: 100vh;
+    font-size: 40px;
+    font-family: "Alumni Sans Inline One", sans-serif;
+    text-align: center;
+  }
+}
+@media screen and (max-height: 440px) {
+  html body {
+    display: none;
+  }
+  html body::before {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "screen não suportado, abra a tela e saiba mais :)";
+    color: rgba(255, 255, 255, 0.8156862745);
+    width: 100%;
+    height: 100vh;
+    font-size: 40px;
+    font-family: "Alumni Sans Inline One", sans-serif;
+    text-align: center;
+  }
+}
+html body header {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,9 +104,11 @@ body header {
   width: 100%;
   height: auto;
   transition: 0.5s all ease;
-  z-index: 1;
+  z-index: 9999;
+  overflow: hidden;
 }
-body header .navbar {
+html body header .navbar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,48 +119,61 @@ body header .navbar {
   border-bottom: 1px solid #ffffff;
 }
 @media screen and (max-width: 992px) {
-  body header .navbar {
+  html body header .navbar {
     padding-right: 30px;
   }
 }
-body header .navbar li {
+html body header .navbar li {
   list-style: none;
 }
-body header .navbar li .fa-wolf-pack-battalion {
+html body header .navbar li .fa-wolf-pack-battalion {
   font-size: 50px;
   margin-right: 7px;
 }
-body header .navbar li .fa-bars, body header .navbar li .fa-circle-xmark {
+html body header .navbar li .fa-bars, html body header .navbar li .fa-circle-xmark {
   display: none;
   font-size: 30px;
   color: #ffffff;
   cursor: pointer;
 }
 @media screen and (max-width: 992px) {
-  body header .navbar li .fa-bars, body header .navbar li .fa-circle-xmark {
+  html body header .navbar li .fa-bars, html body header .navbar li .fa-circle-xmark {
     display: block;
   }
 }
-body header .navbar .active-bar {
-  width: 250px;
+html body header .navbar .active-bar {
+  position: relative;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
+  width: 230px;
   height: 60px;
-  margin: 10px;
+  margin-left: 20px;
   cursor: pointer;
 }
-body header .navbar .active-bar a {
+html body header .navbar .active-bar a {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   font-size: 20px;
   color: #ffffff;
+  transition: 0.5s all ease;
 }
-body header .navbar .links-ul {
+@media screen and (max-width: 600px) {
+  html body header .navbar .active-bar a {
+    font-size: 17px;
+  }
+}
+html body header .navbar .links-ul {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-body header .navbar .links-ul .li-link {
+html body header .navbar .links-ul .li-link {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,22 +182,33 @@ body header .navbar .links-ul .li-link {
   margin: 10px;
   cursor: pointer;
 }
-body header .navbar .links-ul .li-link .link {
+html body header .navbar .links-ul .li-link::after {
+  position: absolute;
+  content: "";
+  top: 45px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #caa986;
+  width: 0%;
+  height: 3px;
+  border-radius: 5px;
+  transition: 0.3s all;
+}
+html body header .navbar .links-ul .li-link:hover::after {
+  width: 100%;
+  transition: 0.3s all;
+}
+html body header .navbar .links-ul .li-link .link {
   color: #ffffff;
   text-decoration: none;
   font-size: 15px;
-  transition: 0.3s all ease-in-out;
 }
-body header .navbar .links-ul .li-link .link:hover {
-  transform: scale(1.1);
-  transition: 0.3s all ease-in-out;
-  color: #eb5726;
-}
-body header .navbar .links-ul .li-link .link i {
+html body header .navbar .links-ul .li-link .link i {
   margin-right: 7px;
 }
 @media screen and (max-width: 992px) {
-  body header .navbar .links-ul {
+  html body header .navbar .links-ul {
     position: fixed;
     top: 0;
     right: 0;
@@ -147,103 +219,495 @@ body header .navbar .links-ul .li-link .link i {
     transform: translate(100%);
     transition: 0.5s all ease;
     background-color: rgba(0, 0, 0, 0.929);
-    /* Cor de fundo escura com transparência */
     backdrop-filter: blur(10px);
+    z-index: 9999;
   }
 }
-body main {
+html body main {
   position: relative;
 }
-body main .banner {
+html body main .banner {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4823529412), rgba(0, 0, 0, 0.5490196078)), url(../img/banner-one.jpg);
-  background-attachment: fixed;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4823529412), #161616), url(../img/banner-one.jpg);
+  /*  background-attachment: fixed; */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 120vh;
-  z-index: -1;
 }
-body main .banner .row {
+@media screen and (max-width: 600px) {
+  html body main .banner {
+    height: 105vh;
+  }
+}
+html body main .banner .row {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  position: relative;
+  align-items: end;
   width: 95%;
   height: 80vh;
-  align-items: end;
   color: #ffffff;
-  background-color: transparent;
+  transition: 0.5s all ease;
 }
-body main .banner .row .profession {
+@media screen and (max-width: 992px) {
+  html body main .banner .row {
+    display: block;
+    height: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .banner .row {
+    width: 90%;
+  }
+}
+html body main .banner .row .profession {
   position: relative;
-  width: 40%;
+  width: 50%;
   height: auto;
   font-family: "cosi azure";
 }
-body main .banner .row .profession .profission-text {
+@media screen and (max-width: 992px) {
+  html body main .banner .row .profession {
+    width: initial;
+  }
+}
+html body main .banner .row .profession .follow {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  top: 90px;
+  width: 185%;
+  height: 100px;
+}
+@media screen and (max-width: 992px) {
+  html body main .banner .row .profession .follow {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .banner .row .profession .follow {
+    width: inherit;
+  }
+}
+html body main .banner .row .profession .follow .fa-map-pin {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 5px;
+}
+html body main .banner .row .profession .follow p {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 1px;
+  width: 180px;
+  height: 100px;
+  color: #ffffff;
+  font-size: 10px;
+}
+@media screen and (max-width: 600px) {
+  html body main .banner .row .profession .follow p {
+    width: 120px;
+    font-size: 10px;
+  }
+}
+html body main .banner .row .profession .profission-text {
   position: relative;
   width: 150px;
   top: 40px;
   font-size: 26px;
   border-bottom: 1px solid #ffffff;
 }
-body main .banner .row .profession .profession-name {
+@media screen and (max-width: 992px) {
+  html body main .banner .row .profession .profission-text {
+    top: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .banner .row .profession .profission-text {
+    font-size: 18px;
+  }
+}
+html body main .banner .row .profession .profession-name {
   position: relative;
   width: 100%;
   height: auto;
   margin-top: 100px;
 }
-body main .banner .row .profession .profession-name span {
+html body main .banner .row .profession .profession-name span {
   display: block;
   font-size: 3.5em;
   transform: scaleY(4);
-  margin-top: 110px;
-  margin-bottom: 60px;
+  margin: 110px 0 60px 0;
   letter-spacing: -2px;
 }
-body main .banner .row .banner-descripiton {
+@media screen and (max-width: 992px) {
+  html body main .banner .row .profession .profession-name span {
+    font-size: 3em;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .banner .row .profession .profession-name span {
+    transform: scaleY(4);
+    letter-spacing: 2px;
+    font-size: 1.7em;
+    margin: 0 0 60px 0;
+  }
+}
+html body main .banner .row .banner-descripiton {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: end;
-  width: 40%;
+  width: 50%;
   height: auto;
-  margin-right: 20px;
 }
-body main .banner .row .banner-descripiton p {
+@media screen and (max-width: 992px) {
+  html body main .banner .row .banner-descripiton {
+    width: initial;
+    margin-top: 70px;
+  }
+}
+html body main .banner .row .banner-descripiton p {
   text-align: end;
   font-size: 25px;
   letter-spacing: 2px;
   font-family: "cosi azure";
   color: #ffffff;
 }
-body main .banner .row .banner-descripiton .know {
+@media screen and (max-width: 992px) {
+  html body main .banner .row .banner-descripiton p {
+    width: 75%;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .banner .row .banner-descripiton p {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+html body main .banner .row .banner-descripiton .know {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
   margin: 10px;
-  width: 150px;
+  width: 160px;
   height: 50px;
   border: 2px solid #ffffff;
   transition: 0.5s all ease;
   border-radius: 30px;
   cursor: pointer;
 }
-body main .banner .row .banner-descripiton .know:hover {
-  background-color: #152a4b;
+html body main .banner .row .banner-descripiton .know:hover {
+  background-color: #caa986;
   transition: 0.5s all ease;
 }
-body main .banner .row .banner-descripiton .know span {
+html body main .banner .row .banner-descripiton .know span {
   font-family: "cosi azure";
   font-size: 15px;
   color: #ffffff;
 }
-body .button-top {
+@media screen and (max-width: 992px) {
+  html body main .banner .row .banner-descripiton .know span {
+    font-size: 13px;
+  }
+}
+html body main .hero-me {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -1px;
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me {
+    height: auto;
+    padding: 100px 0 40px 0;
+  }
+}
+html body main .hero-me .hero-titulo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: 100px;
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .hero-titulo {
+    margin: 0 0 50px 0;
+  }
+}
+html body main .hero-me .hero-titulo h1 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 10px;
+  font-size: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .hero-titulo h1 {
+    font-size: 20px;
+  }
+}
+html body main .hero-me .hero-titulo h1 span {
+  color: #caa986;
+}
+html body main .hero-me .hero-sobre-text-fundo {
+  position: absolute;
+  top: 15%;
+  left: 30px;
+  right: 0;
+  font-size: 120px;
+  font-family: "cosi azure";
+  color: rgba(255, 255, 255, 0.1607843137);
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .hero-sobre-text-fundo {
+    top: 5%;
+    font-size: 110px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .hero-sobre-text-fundo {
+    top: 0;
+    font-size: 65px;
+  }
+}
+html body main .hero-me .sobre-mim {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  height: auto;
+  color: #ffffff;
+}
+@media screen and (max-width: 1200px) {
+  html body main .hero-me .sobre-mim {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: auto;
+}
+html body main .hero-me .sobre-mim .sobre-img::after {
+  position: absolute;
+  content: "";
+  width: 290px;
+  height: 250px;
+  z-index: 1;
+  transform: translate(-15%, -15%);
+  border: 12px solid #caa986;
+}
+@media screen and (max-width: 1200px) {
+  html body main .hero-me .sobre-mim .sobre-img::after {
+    transform: translate(-10%, -15%);
+  }
+}
+@media screen and (max-width: 768px) {
+  html body main .hero-me .sobre-mim .sobre-img::after {
+    width: 250px;
+    transform: translate(-10%, -8%);
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-img::after {
+    height: 230px;
+    transform: translate(-10%, -12%);
+  }
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-img {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-img {
+    width: inherit;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-img img {
+  position: relative;
+  width: 300px;
+  height: auto;
+  z-index: 2;
+  filter: grayscale(100%);
+  transition: 0.5s all ease;
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-img img {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 768px) {
+  html body main .hero-me .sobre-mim .sobre-img img {
+    width: 270px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-img img {
+    width: 250px;
+    height: auto;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-img img:hover {
+  filter: grayscale(0%);
+  transition: 0.5s all ease;
+}
+html body main .hero-me .sobre-mim .sobre-academy {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: normal;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 1px;
+  flex-direction: column;
+  width: 25%;
+  height: auto;
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-academy {
+    padding: 0 0 0 100px;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  html body main .hero-me .sobre-mim .sobre-academy {
+    padding: 0 0 0 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-academy {
+    width: inherit;
+    margin: 50px auto;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-academy h1, html body main .hero-me .sobre-mim .sobre-academy h2 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 9px 0 9px 0;
+}
+@media screen and (max-width: 768px) {
+  html body main .hero-me .sobre-mim .sobre-academy h1, html body main .hero-me .sobre-mim .sobre-academy h2 {
+    font-size: 15px;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-academy p {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-left: 20px;
+  font-style: italic;
+  padding: 9px 0 9px 0;
+}
+@media screen and (max-width: 768px) {
+  html body main .hero-me .sobre-mim .sobre-academy p {
+    font-size: 12px;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-academy p i {
+  font-size: 20px;
+  color: #caa986;
+}
+@media screen and (max-width: 768px) {
+  html body main .hero-me .sobre-mim .sobre-academy p i {
+    font-size: 18px;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-descripion {
+  position: relative;
+  width: 40%;
+  height: auto;
+  margin: 0 0 50px 0 auto;
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-descripion {
+    width: 80%;
+    margin: 70px auto;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-descripion {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo {
+  width: initial;
+  height: auto;
+}
+html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo h1 {
+  text-align: normal;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo p {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.4274509804);
+  margin: 10px 0 15px 0;
+}
+html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio {
+  text-align: justify;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 16px;
+}
+html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
+  margin: 0 0 20px 0;
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p:nth-child(1) {
+    text-align: center;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p span {
+  font-style: normal;
+}
+html body .button-top {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -253,7 +717,14 @@ body .button-top {
   background-color: transparent;
   transition: 0.5s all ease;
 }
-body .button-top .cicle {
+@media screen and (max-width: 600px) {
+  html body .button-top {
+    margin-right: 25px;
+    margin-bottom: 20px;
+  }
+}
+html body .button-top .cicle {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,12 +735,12 @@ body .button-top .cicle {
   transition: 0.5s all ease;
   cursor: pointer;
 }
-body .button-top .cicle:hover {
+html body .button-top .cicle:hover {
   width: 100px;
   transition: 0.5s all ease;
-  background-color: #152a4b;
+  background-color: #caa986;
 }
-body .button-top .cicle .fa-arrow-up-from-bracket {
+html body .button-top .cicle .fa-arrow-up-from-bracket {
   color: #ffffff;
   font-size: 20px;
 }
@@ -288,7 +759,7 @@ body .button-top .cicle .fa-arrow-up-from-bracket {
 }
 
 .header_aux {
-  background-color: rgba(0, 0, 0, 0.5490196078);
+  background-color: rgba(0, 0, 0, 0.7176470588);
 }
 
 /*# sourceMappingURL=estilos.css.map */

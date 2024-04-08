@@ -13,15 +13,21 @@ li.map((elementos) => {
 })
 
 
+const know = document.getElementById('know')
+
+know.addEventListener('click',()=>{
+    console.log(know)
+})
+
+
 window.addEventListener("scroll", () => {
     const scroll_Y = window.scrollY
-    const header = document.getElementById('blur')
+    const header = document.getElementById('header')
     const navbar = document.getElementById('nav')
     const topo = document.getElementById('topo')
 
     navbar.classList.toggle('navbar_aux', scroll_Y > 100)
     header.classList.toggle('header_aux', scroll_Y > 150)
-
 
     if (scroll_Y > 250){
         topo.style.opacity = '1'
@@ -36,3 +42,13 @@ window.addEventListener("scroll", () => {
     }
 
 })
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
