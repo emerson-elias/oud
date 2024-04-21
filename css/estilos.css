@@ -59,6 +59,9 @@
     text-align: center;
   }
 }
+html body {
+  background-color: #161616;
+}
 @media screen and (max-width: 300px) {
   html body {
     display: none;
@@ -126,9 +129,18 @@ html body header .navbar {
 html body header .navbar li {
   list-style: none;
 }
-html body header .navbar li .fa-wolf-pack-battalion {
-  font-size: 50px;
-  margin-right: 7px;
+html body header .navbar li .game-icons--fox {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='m214.5 23.24l-1 8.1c-14 61.5 21 88.66 21 88.66l11-13s-24-19.76-18-63.56c41 11.6 58 36.6 64 48.8c-44 15.76-56 57.26-80 87.96l21-3.9l-2 31.3s44-8.7 69 17.7c5-8.6 8-18.9 6-29.2l-3-28.2c-3-1.1-7-3-11-5.4c-12-7.3-25-19.1-25-19.1c-2-1.9-2-5.2-1-7.8c2-2.5 5-3.7 7-2.7c0 0 11 3.5 21 6.7c11 3.9 20 14.3 21 26.6c1 8.4 3 18.9 4 28.3c2 15.4-3 30.8-12 42.7l7 18.3h38l7-18.3c-9-11.9-14-27.3-12-42.7c1-9.4 3-19.9 4-28.3c1-12.3 10-22.7 21-26.6c10-3.2 21-6.7 21-6.7c2-1 5 .2 7 2.7c1 2.6 1 5.9-1 7.8c0 0-13 11.8-25 19.1c-4 2.4-8 4.3-11 5.4l-3 28.2c-2 10.3 1 20.6 6 29.2c25-26.4 69-17.7 69-17.7l-2-31.3l21 3.9c-24-30.7-36-72.2-80-87.96c6-12.2 23-37.2 64-48.8c6 43.8-18 63.56-18 63.56l11 13s35-27.16 21-88.66l-1-8.1c-43.3 7.32-85.9 35.37-110 62.9c-5.5-.13-10.5-.52-16 0c-42.8-34.75-61.3-56.12-110-62.9m24.7 205.26c38.2 53.2-87.7 46.6-153.61 119.5c-26.11 28-32.53 56.3-25.95 80.3c12.23 44 71.86 73 144.06 55c49.8-13 96-32 134.8-40c35.1-8 63.8-5 82.3 24l15.3-5c-2.9-38-14.4-68.8-36.5-87.5c-16.8-14.2-39.9-22-70.9-21.1c-29.3.8-65.9 9.3-111.2 27.3c-27 9.5-76.5 27.7-102.4 12.6c-9.1-5.6-11.9-15-11.2-24.3c34.4 52 124.1-27 198.5-35.7c0 0 6.6-88.3-63.2-105.1m188.6 0c-53.1 12.4-64.1 54.1-65.2 105.1c26.5-.2 49.9 23.7 49.9 23.7s-27-98.6 15.3-128.8m-100.3 1.3h10c3 0 6 2.8 6 6.3c0 3.4-3 6.2-6 6.2h-10c-3 0-6-2.8-6-6.2c0-3.5 3-6.3 6-6.3m61.4 157.7c13.7 11.6 22.2 28.8 26.8 49.8c-15.8-12-35-16-57.1-14c-24.1 2-51.9 10-82.3 20l26.1-25c-28.3 14-53.1 17-75.4 12l80.9-40.2l-61.2 11.2c23.8-20.2 95.2-52.2 142.2-13.8'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 html body header .navbar li .fa-bars, html body header .navbar li .fa-circle-xmark {
   display: none;
@@ -146,9 +158,9 @@ html body header .navbar .active-bar {
   display: flex;
   justify-content: baseline;
   align-items: center;
-  width: 230px;
+  width: 240px;
   height: 60px;
-  margin-left: 20px;
+  margin: 0 0 0 10px;
   cursor: pointer;
 }
 html body header .navbar .active-bar a {
@@ -177,7 +189,7 @@ html body header .navbar .links-ul .li-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 160px;
+  width: 150px;
   height: 50px;
   margin: 10px;
   cursor: pointer;
@@ -238,6 +250,7 @@ html body main .banner {
   background-size: cover;
   width: 100%;
   height: 120vh;
+  overflow: hidden;
 }
 @media screen and (max-width: 600px) {
   html body main .banner {
@@ -335,6 +348,7 @@ html body main .banner .row .profession .profission-text {
 }
 @media screen and (max-width: 600px) {
   html body main .banner .row .profession .profission-text {
+    width: 110px;
     font-size: 18px;
   }
 }
@@ -350,6 +364,7 @@ html body main .banner .row .profession .profession-name span {
   transform: scaleY(4);
   margin: 110px 0 60px 0;
   letter-spacing: -2px;
+  word-spacing: 17px;
 }
 @media screen and (max-width: 992px) {
   html body main .banner .row .profession .profession-name span {
@@ -433,6 +448,7 @@ html body main .hero-me {
   margin-top: -1px;
   width: 100%;
   height: 100vh;
+  padding-top: 80px;
   background-color: #161616;
 }
 @media screen and (max-width: 992px) {
@@ -474,7 +490,7 @@ html body main .hero-me .hero-titulo h1 span {
 }
 html body main .hero-me .hero-sobre-text-fundo {
   position: absolute;
-  top: 15%;
+  top: 20%;
   left: 30px;
   right: 0;
   font-size: 120px;
@@ -562,7 +578,7 @@ html body main .hero-me .sobre-mim .sobre-img img {
   width: 300px;
   height: auto;
   z-index: 2;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   transition: 0.5s all ease;
 }
 @media screen and (max-width: 992px) {
@@ -582,7 +598,7 @@ html body main .hero-me .sobre-mim .sobre-img img {
   }
 }
 html body main .hero-me .sobre-mim .sobre-img img:hover {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
   transition: 0.5s all ease;
 }
 html body main .hero-me .sobre-mim .sobre-academy {
@@ -666,7 +682,7 @@ html body main .hero-me .sobre-mim .sobre-descripion {
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .sobre-mim .sobre-descripion {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
 }
@@ -695,6 +711,7 @@ html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio {
   font-weight: 300;
   letter-spacing: 1px;
   font-size: 16px;
+  line-height: 1.5;
 }
 html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
   margin: 0 0 20px 0;
@@ -704,22 +721,184 @@ html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
     text-align: center;
   }
 }
-html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p span {
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+html body main .cards-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 150px 0 150px 0;
+}
+@media screen and (max-width: 992px) {
+  html body main .cards-container {
+    margin: 0 0 100px 0;
+  }
+}
+html body main .cards-container .cards-omega {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: auto;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 1200px) {
+  html body main .cards-container .cards-omega {
+    width: 95%;
+  }
+}
+html body main .cards-container .cards-omega .card-bg {
+  position: relative;
+  width: 27%;
+  height: 350px;
+  border: 1px solid #ffffff;
+  overflow: hidden;
+}
+html body main .cards-container .cards-omega .card-bg .span-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: inherit;
+  background-color: rgba(255, 255, 255, 0.1607843137);
+  transition: all 1s ease;
+}
+html body main .cards-container .cards-omega .card-bg .span-card span {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 32px;
+  font-family: "cosi azure";
+  color: #caa986;
+}
+html body main .cards-container .cards-omega .card-bg:hover .span-card {
+  width: 100%;
+  transition: all 1s ease;
+  filter: blur(10px);
+  background-color: #caa986;
+}
+html body main .cards-container .cards-omega .card-bg .fa-rocket, html body main .cards-container .cards-omega .card-bg .fa-square-poll-vertical, html body main .cards-container .cards-omega .card-bg .fa-people-group {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.0274509804);
+  font-size: 300px;
+  top: 20px;
+}
+@media screen and (max-width: 992px) {
+  html body main .cards-container .cards-omega .card-bg {
+    width: 40%;
+    margin: 0 0 100px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg {
+    width: 45%;
+    margin: 0 0 50px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .cards-container .cards-omega .card-bg {
+    width: 85%;
+    margin: 0 0 40px 0;
+  }
+}
+html body main .cards-container .cards-omega .card-bg .card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 40px;
+  width: initial;
+  height: inherit;
+  transition: 0.5s all ease;
+  overflow: hidden;
+}
+html body main .cards-container .cards-omega .card-bg .card .ph--rocket-launch-thin {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M219.86 47.36a12 12 0 0 0-11.22-11.22c-12-.71-42.82.38-68.35 25.91L134.35 68h-60a11.9 11.9 0 0 0-8.48 3.52l-34.35 34.33a12 12 0 0 0 6.81 20.37l39.79 5.55l46.11 46.11l5.55 39.81a12 12 0 0 0 20.37 6.79l34.34-34.35a11.9 11.9 0 0 0 3.52-8.48v-60l5.94-5.94c25.53-25.53 26.62-56.3 25.91-68.35M36.21 115.6a3.94 3.94 0 0 1 1-4.09l34.32-34.34A4 4 0 0 1 74.35 76h52l-47.77 47.76l-39.14-5.46a3.94 3.94 0 0 1-3.23-2.7M180 181.65a4 4 0 0 1-1.17 2.83l-34.35 34.34a4 4 0 0 1-6.79-2.25l-5.46-39.15L180 129.65Zm-52-11.31L85.66 128l60.28-60.29c23.24-23.24 51.25-24.23 62.22-23.58a3.93 3.93 0 0 1 3.71 3.71c.65 11-.35 39-23.58 62.22Zm-29.79 19.14C94 198.66 80 220 40 220a4 4 0 0 1-4-4c0-40 21.34-54 30.52-58.21a4 4 0 0 1 3.32 7.28c-7.46 3.41-24.43 14.66-25.76 46.85c32.19-1.33 43.44-18.3 46.85-25.76a4 4 0 1 1 7.28 3.32'/%3E%3C/svg%3E");
+}
+html body main .cards-container .cards-omega .card-bg .card .pajamas--search-results {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ededed' fill-rule='evenodd' d='M1.75 1a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5zM1 4.75A.75.75 0 0 1 1.75 4H7a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 4.75m9 7.75a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5m0 1.5c.834 0 1.607-.255 2.248-.691l1.472 1.471a.75.75 0 1 0 1.06-1.06l-1.471-1.472A4 4 0 1 0 10 14M1.75 7a.75.75 0 0 0 0 1.5H4A.75.75 0 0 0 4 7z' clip-rule='evenodd'/%3E%3C/svg%3E");
+}
+html body main .cards-container .cards-omega .card-bg .card .fluent--people-team-20-regular {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23ededed' d='M10 3a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3M7.5 4.5a2.5 2.5 0 1 1 5 0a2.5 2.5 0 0 1-5 0m8-.5a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0m-10 0a1 1 0 1 1 2 0a1 1 0 0 1-2 0m1-2a2 2 0 1 0 0 4a2 2 0 0 0 0-4m.6 11.998L5 15a2 2 0 0 1-2-2V9.25A.25.25 0 0 1 3.25 9h1.764c.04-.367.17-.708.365-1H3.25C2.56 8 2 8.56 2 9.25V13a3 3 0 0 0 3.404 2.973a5 5 0 0 1-.304-.975m9.496.975Q14.794 16 15 16a3 3 0 0 0 3-3V9.25C18 8.56 17.44 8 16.75 8h-2.129c.196.292.325.633.365 1h1.764a.25.25 0 0 1 .25.25V13a2 2 0 0 1-2.1 1.998a5 5 0 0 1-.304.975M7.25 8C6.56 8 6 8.56 6 9.25V14a4 4 0 0 0 8 0V9.25C14 8.56 13.44 8 12.75 8zM7 9.25A.25.25 0 0 1 7.25 9h5.5a.25.25 0 0 1 .25.25V14a3 3 0 1 1-6 0z'/%3E%3C/svg%3E");
+}
+html body main .cards-container .cards-omega .card-bg .card h1 {
+  text-align: center;
+  margin: 10px 0 10px 0;
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-family: "cosi azure";
+  color: #ffffff;
+}
+html body main .cards-container .cards-omega .card-bg .card h1 i {
+  font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg .card h1 {
+    font-size: 18px;
+  }
+}
+html body main .cards-container .cards-omega .card-bg .card p {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 15px;
+  transform: translateY(170px);
+  transition: 0.5s all ease;
+}
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg .card p {
+    font-size: 14px;
+  }
+}
+html body main .cards-container .cards-omega .card-bg .card:hover p {
+  transform: translateY(0);
+  margin: 0 0 70px 0;
 }
 html body .button-top {
   position: fixed;
   right: 0;
   bottom: 0;
   opacity: 0;
-  margin-right: 50px;
+  margin-right: 30px;
   margin-bottom: 20px;
   background-color: transparent;
   transition: 0.5s all ease;
 }
 @media screen and (max-width: 600px) {
   html body .button-top {
-    margin-right: 25px;
+    margin-right: 15px;
     margin-bottom: 20px;
   }
 }
@@ -728,17 +907,11 @@ html body .button-top .cicle {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  background-color: #161616;
+  width: 45px;
+  height: 45px;
   border-radius: 50px;
-  transition: 0.5s all ease;
+  border: 1px solid #ffffff;
   cursor: pointer;
-}
-html body .button-top .cicle:hover {
-  width: 100px;
-  transition: 0.5s all ease;
-  background-color: #caa986;
 }
 html body .button-top .cicle .fa-arrow-up-from-bracket {
   color: #ffffff;
