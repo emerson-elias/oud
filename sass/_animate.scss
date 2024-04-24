@@ -1,0 +1,13 @@
+
+/*==========================================*/
+
+/*==========================================*/
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg); /* rotação inicial */
+    }
+    to {
+        transform: rotate(360deg); /* rotação final */
+    }
+}

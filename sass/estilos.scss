@@ -2,14 +2,13 @@
 @use 'components';
 @use 'mixins';
 @use 'responsive';
-@use 'key_frames';
+@use 'animate';
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
 
 ::-webkit-scrollbar {
     width: 0;
@@ -28,6 +27,21 @@ html{
 
     body {
         background-color: variables.$gray_primary;
+        cursor: none;
+
+        #cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border: 1px solid variables.$Text_Color_White;
+            pointer-events: none; 
+            transition: transform  all 0.1s ease;
+            transform: translate(-2em);
+            z-index: 9999;
+        }
 
         @include responsive.screen_width_not_suport(){
             display: none;
@@ -41,10 +55,9 @@ html{
             position: fixed;
             width: 100%;
             height: auto;
-            transition: variables.$Transition_ease;
+            transition: variables.$Transition_ease; 
             z-index: 9999;
-            overflow: hidden;
-    
+
             .navbar {
                 @include mixins.align(relative, flex, space-between, center);
                 width: 95%;
@@ -78,7 +91,7 @@ html{
                         display: none;
                         font-size: 30px;
                         color: variables.$Text_Color_White;
-                        cursor: pointer;
+                        cursor: crosshair;
     
                         @include responsive.screen_laptop() {
                             display: block;
@@ -92,7 +105,7 @@ html{
                     width: 240px;
                     height: 60px;
                     margin: 0 0 0 10px;
-                    cursor: pointer;
+                    cursor: crosshair;
     
                     a {
                         @include mixins.align(relative, flex, center, center);
@@ -116,7 +129,10 @@ html{
                         width: 150px;
                         height: 50px;
                         margin: 10px;
-                        cursor: pointer;
+
+                        a{
+                            cursor: crosshair;
+                        }
 
                         &::after{
                             position: absolute;
@@ -160,8 +176,9 @@ html{
                         transform: translate(100%);
                         transition: variables.$Transition_ease;
                         background-color: variables.$Smoker;
-                        backdrop-filter: blur(10px);
                         z-index: 9999;
+                        cursor: crosshair;
+                        
                     }
     
                 }
@@ -174,9 +191,9 @@ html{
     
             .banner {
                 @include mixins.align(relative, flex, center, center);
-                background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$gray_primary), url(../img/banner-one.jpg);
-              /*  background-attachment: fixed; */
-                background-position: center center;
+                background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$gray_primary), url(../img/herobg-hd.jpg);
+               /* background-attachment: fixed;*/
+                background-position: top center;
                 background-repeat: no-repeat;
                 background-size: cover;
                 width: 100%;
@@ -335,17 +352,18 @@ html{
                             border: 2px solid variables.$Text_Color_White;
                             transition: variables.$Transition_ease;
                             border-radius: 30px;
-                            cursor: pointer;
     
                             &:hover{
-                                background-color: variables.$Secundary_Color;
+                                backdrop-filter: blur(5px);
                                 transition: variables.$Transition_ease;
                             }
     
-                            span{
+                            a{
                                 font-family: 'cosi azure';
-                                font-size: 15px;
+                                font-size: 19px;
                                 color: variables.$Text_Color_White;
+                                text-decoration: none;
+                                cursor: crosshair;
     
                                 @include responsive.screen_laptop(){ 
                                     font-size: 13px;
@@ -361,19 +379,24 @@ html{
                 flex-direction: column;
                 margin-top: -1px;
                 width: 100%;
-                height: 100vh;
-                padding-top: 80px;
+                height: auto;
+                padding: 150px 0 0 0;
                 background-color: variables.$gray_primary;
 
                 @include responsive.screen_laptop(){
                     height: auto;
-                    padding: 100px 0 40px 0;
+                }
+
+                @include responsive.screen_small(){
+                    padding-top: 80px;
+
                 }
 
                 .hero-titulo{
                     @include mixins.align(relative, flex, center, center);
                     width: inherit;
                     height: 100px;
+                    margin: 30px;
 
                     @include responsive.screen_small(){
                         margin: 0 0 50px 0;
@@ -381,7 +404,7 @@ html{
 
                     h1{
                         @include mixins.text_formatting(center, normal, 500, 10px);
-                        font-size: 30px;
+                        font-size: 40px;
                         color: variables.$Text_Color_White;
                         text-transform: uppercase;
 
@@ -405,12 +428,12 @@ html{
                     color: variables.$Text_Color_White_Smoker;
 
                     @include responsive.screen_laptop(){
-                        top: 5%;
+                        top: 10%;
                         font-size: 110px;
                     }
 
                     @include responsive.screen_small(){
-                        top: 0;
+                        top: 5%;
                         font-size: 65px;
                     }
                 }
@@ -420,6 +443,8 @@ html{
                     width: 85%;
                     height: auto;
                     color: variables.$Text_Color_White;
+
+                    background-color: rgba(102, 51, 153, 0);
 
                     @include responsive.screen_large(){
                         width: 95%;
@@ -434,6 +459,8 @@ html{
                         @include mixins.align(relative, flex, center, center);
                         width: 30%;
                         height: auto;
+
+                        background-color: rgba(0, 0, 255, 0);
                        
                         &::after{
                             position: absolute;
@@ -496,12 +523,14 @@ html{
                         }
                     }
 
-                    .sobre-academy{
+                    .sobre-habilits{
                         @include mixins.align(relative, flex, space-around, center);
                         @include mixins.text_formatting(normal, normal, 300, 1px);
                         flex-direction: column;
                         width: 25%;
                         height: auto;
+
+                        background-color: rgba(255, 192, 203, 0);
 
                         @include responsive.screen_laptop(){
                             padding: 0 0 0 100px;
@@ -517,13 +546,14 @@ html{
                             margin: 50px auto;    
                         }
 
-                        h1,h2{
+                        h1{
                             position: relative;
                             width: 100%;
                             height: auto;
                             text-transform: uppercase;
-                            font-size: 18px;
-                            padding: 9px 0 9px 0;
+                            font-size: 23px;
+                            font-family: 'cosi azure';
+                            padding: 0 0 9px 0;
 
                             @include responsive.screen_tablet(){
                                 font-size: 15px;
@@ -534,15 +564,15 @@ html{
                             position: relative;
                             width: 100%;
                             height: auto;
-                            padding-left: 20px;
                             font-style: italic;
-                            padding: 9px 0 9px 0;
+                            padding: 10px 0 10px 0;
 
                             @include responsive.screen_tablet(){
                                 font-size: 12px;
                             }
 
                             i{
+                                padding-right: 5px;
                                 font-size: 20px;
                                 color: variables.$Secundary_Color;
 
@@ -559,6 +589,8 @@ html{
                         height: auto;
                         margin: 0 0 50px 0 auto;
 
+                        background-color: rgba(255, 166, 0, 0);
+
                         @include responsive.screen_laptop(){
                             width: 80%;
                             margin: 70px auto;
@@ -566,7 +598,7 @@ html{
                         }
 
                         @include responsive.screen_small(){
-                            width: 90%;
+                            width: 85%;
                             margin: 0 auto;
                         }
 
@@ -575,15 +607,9 @@ html{
                             height: auto;
 
                             h1{
-                                @include mixins.text_formatting(normal, normal, 500, 1px);
-                                font-size: 25px;
+                                font-family: 'cosi azure';
+                                font-size: 23px;
                                 text-transform: uppercase;
-                            }
-
-                            p{
-                                font-size: 20px;
-                                color: variables.$Text_Color_White_Smoker_dwo;
-                                margin: 10px 0 15px 0;
                             }
                         }
 
@@ -593,8 +619,8 @@ html{
                             line-height: 1.5;
 
                             p{
-                                margin: 0 0 20px 0;
-
+                                margin: 10px 0 15px 0;
+        
                                 @include responsive.screen_laptop(){
                                     &:nth-child(1){
                                         text-align: center;
@@ -616,12 +642,66 @@ html{
 
             .cards-container{
                 @include mixins.align(relative, flex, center, center);
+                flex-direction: column;
                 width: 100%;
                 height: auto;
-                margin: 150px 0 150px 0;
+                margin: 200px 0 150px 0;
 
                 @include responsive.screen_laptop(){
-                    margin: 0 0 100px 0;
+                    margin: 100px 0 150px 0;
+                }
+
+                .boll-bg{
+                    position: absolute;
+                    top: 0;
+                    right: 70%;
+                    width: 900px;
+                    height: 900px;
+                    border: 5px dashed variables.$Text_Color_White_Smoker_dwo;
+                    border-radius: 50%;
+                    animation: girar 50s linear infinite;
+                    z-index: -1;
+    
+                    @include responsive.screen_laptop(){
+                        right: 50%;
+                    }
+                  
+                }
+
+                .card-title{
+                    position: relative;
+                    width: 70%;
+                    text-align: center;
+                    margin: 50px;
+
+                    h1{
+                        @include mixins.text_formatting(center, normal, 500, 10px);
+                        font-size: 40px;
+                        color: variables.$Text_Color_White;
+                        text-transform: uppercase;
+                        word-break: break-all;
+
+                        span{
+                            color: variables.$Secundary_Color;   
+                        }
+
+                        @include responsive.screen_small{
+                            font-size: 25px;
+                        }
+
+                    }
+                    p{
+                        @include mixins.text_formatting(center, italic, 300, 1px);
+                        width: 70%;
+                        margin:0 auto;
+                        padding: 50px 0 10px 0;
+                        color: variables.$Text_Color_White;
+
+                        @include responsive.screen_small{
+                            width: 95%;
+                        }
+
+                    }
                 }
 
                 .cards-omega{
@@ -636,11 +716,13 @@ html{
 
                     .card-bg{ 
                         position: relative; 
-                        width: 27%;
-                        height: 350px;                                
-                        border: 1px solid variables.$Text_Color_White;
+                        width: 26%;
+                        height: 320px;                                
+                        border: 1px solid variables.$Text_Color_White; 
+                        background-color: variables.$gray_primary;
                         overflow: hidden;
-                      
+
+
                         .span-card{
                             position: absolute;
                             display: flex;
@@ -670,7 +752,7 @@ html{
                             background-color: variables.$Secundary_Color;
                         }
 
-                        .fa-rocket, .fa-square-poll-vertical, .fa-people-group{
+                        .fa-music, .fa-pizza-slice, .fa-code{
                             position: absolute;
                             color: variables.$Icon_color_Smoker;
                             font-size: 300px;
@@ -702,32 +784,31 @@ html{
                             transition: variables.$Transition_ease;
                             overflow: hidden;
 
-                            .ph--rocket-launch-thin {
+                            .arcticons--music-you {
                                 display: inline-block;
                                 width: 100px;
                                 height: 100px;
                                 background-repeat: no-repeat;
                                 background-size: 100% 100%;
-                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M219.86 47.36a12 12 0 0 0-11.22-11.22c-12-.71-42.82.38-68.35 25.91L134.35 68h-60a11.9 11.9 0 0 0-8.48 3.52l-34.35 34.33a12 12 0 0 0 6.81 20.37l39.79 5.55l46.11 46.11l5.55 39.81a12 12 0 0 0 20.37 6.79l34.34-34.35a11.9 11.9 0 0 0 3.52-8.48v-60l5.94-5.94c25.53-25.53 26.62-56.3 25.91-68.35M36.21 115.6a3.94 3.94 0 0 1 1-4.09l34.32-34.34A4 4 0 0 1 74.35 76h52l-47.77 47.76l-39.14-5.46a3.94 3.94 0 0 1-3.23-2.7M180 181.65a4 4 0 0 1-1.17 2.83l-34.35 34.34a4 4 0 0 1-6.79-2.25l-5.46-39.15L180 129.65Zm-52-11.31L85.66 128l60.28-60.29c23.24-23.24 51.25-24.23 62.22-23.58a3.93 3.93 0 0 1 3.71 3.71c.65 11-.35 39-23.58 62.22Zm-29.79 19.14C94 198.66 80 220 40 220a4 4 0 0 1-4-4c0-40 21.34-54 30.52-58.21a4 4 0 0 1 3.32 7.28c-7.46 3.41-24.43 14.66-25.76 46.85c32.19-1.33 43.44-18.3 46.85-25.76a4 4 0 1 1 7.28 3.32'/%3E%3C/svg%3E");                         
-                               
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='18.538' cy='35.378' r='8.122' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M26.66 35.378V12.834M28.69 4.5h6.864a2.03 2.03 0 0 1 2.03 2.03v4.273a2.03 2.03 0 0 1-2.03 2.03H26.66h0V6.53a2.03 2.03 0 0 1 2.03-2.03'/%3E%3C/svg%3E");
                             }
 
-                            .pajamas--search-results {
+                            .arcticons--pizza-boy-gbc {
                                 display: inline-block;
                                 width: 100px;
                                 height: 100px;
                                 background-repeat: no-repeat;
                                 background-size: 100% 100%;
-                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23ededed' fill-rule='evenodd' d='M1.75 1a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5zM1 4.75A.75.75 0 0 1 1.75 4H7a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 4.75m9 7.75a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5m0 1.5c.834 0 1.607-.255 2.248-.691l1.472 1.471a.75.75 0 1 0 1.06-1.06l-1.471-1.472A4 4 0 1 0 10 14M1.75 7a.75.75 0 0 0 0 1.5H4A.75.75 0 0 0 4 7z' clip-rule='evenodd'/%3E%3C/svg%3E");
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='22.245' cy='23.357' r='3.617' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='33.469' cy='23.808' r='3.979' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27.059' cy='34.697' r='2.962' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M23.99 13.27c-.33 1.75-.91 4.02-1.65 6.48'/%3E%3Cellipse cx='42.57' cy='28.808' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' rx='2.537' ry='1.834' transform='rotate(-16.754 42.57 28.807)'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M33.7 19.844c-3.32-3.19-6.99-5.48-8.98-6.24a3 3 0 0 0-.34-.12a2.54 2.54 0 0 1-1.31-3.34c.56-1.29 2.01-1.68 3.34-1.32c1.91.51 6.05 3.01 9.96 6.55c3.92 3.53 7.61 8.09 8.63 12.7m-4.86 1.46c-.55-1.89-1.52-3.7-2.71-5.39m-11.51 13.3c-4.09.96-8.4 1.6-12.4 1.86c2.02-1.93 4.54-7.33 6.63-13m9.26 10.2c2.04-.61 3.98-1.3 5.73-2.07c.72-.32.24 2.24 2.2 2.03c.99-.1 1.52-.79 1.66-2.66c.11-1.46 1.79-2.69 2.34-3.2'/%3E%3Ccircle cx='26.362' cy='18.615' r='.75' fill='white'/%3E%3Ccircle cx='25.862' cy='29.308' r='.75' fill='white'/%3E%3Ccircle cx='19.681' cy='36.244' r='.75' fill='white'/%3E%3Ccircle cx='35.638' cy='30.71' r='.75' fill='white'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m16.26 35.27l-3.2.9c-1.04.29-2.12-.32-2.41-1.36L5.07 14.92a1.96 1.96 0 0 1 1.35-2.41l11.64-3.27c1.04-.29 2.11.32 2.41 1.36l2.23 7.93'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m19.88 20.644l-9.25 2.59a.525.525 0 0 1-.64-.36l-2.17-7.72c-.07-.27.09-.56.36-.63l9.42-2.65c.28-.07.56.09.64.36l2.16 7.72c.03.11.03.22-.02.31m-7.603 6.059l.931 3.319m1.194-2.125l-3.319.931'/%3E%3Ccircle cx='19.175' cy='26.722' r='.75' fill='white'/%3E%3C/svg%3E");
                             }
 
-                            .fluent--people-team-20-regular {
+                            .material-symbols-light--developer-mode-tv-outline-rounded {
                                 display: inline-block;
                                 width: 100px;
                                 height: 100px;
                                 background-repeat: no-repeat;
                                 background-size: 100% 100%;
-                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23ededed' d='M10 3a1.5 1.5 0 1 0 0 3a1.5 1.5 0 0 0 0-3M7.5 4.5a2.5 2.5 0 1 1 5 0a2.5 2.5 0 0 1-5 0m8-.5a1 1 0 1 0 0 2a1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0a2 2 0 0 1-4 0m-10 0a1 1 0 1 1 2 0a1 1 0 0 1-2 0m1-2a2 2 0 1 0 0 4a2 2 0 0 0 0-4m.6 11.998L5 15a2 2 0 0 1-2-2V9.25A.25.25 0 0 1 3.25 9h1.764c.04-.367.17-.708.365-1H3.25C2.56 8 2 8.56 2 9.25V13a3 3 0 0 0 3.404 2.973a5 5 0 0 1-.304-.975m9.496.975Q14.794 16 15 16a3 3 0 0 0 3-3V9.25C18 8.56 17.44 8 16.75 8h-2.129c.196.292.325.633.365 1h1.764a.25.25 0 0 1 .25.25V13a2 2 0 0 1-2.1 1.998a5 5 0 0 1-.304.975M7.25 8C6.56 8 6 8.56 6 9.25V14a4 4 0 0 0 8 0V9.25C14 8.56 13.44 8 12.75 8zM7 9.25A.25.25 0 0 1 7.25 9h5.5a.25.25 0 0 1 .25.25V14a3 3 0 1 1-6 0z'/%3E%3C/svg%3E");
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='m4.415 11l2.247-2.246q.14-.14.15-.344t-.15-.364t-.354-.16q-.195 0-.354.16l-2.389 2.389q-.242.242-.242.565t.242.565l2.389 2.389q.14.14.344.15t.364-.15t.16-.354t-.16-.354zm15.17 0l-2.247 2.246q-.14.14-.15.344t.15.364t.354.16t.354-.16l2.389-2.389q.242-.242.242-.565t-.242-.565l-2.389-2.389q-.14-.14-.344-.15t-.364.15t-.16.354t.16.354zM3 6.77V5.614q0-.69.463-1.152T4.615 4h14.77q.69 0 1.152.463T21 5.615V6.77q0 .214-.143.357t-.357.143t-.357-.143T20 6.769V5.615q0-.269-.173-.442T19.385 5H4.615q-.269 0-.442.173T4 5.615V6.77q0 .214-.143.357T3.5 7.27t-.357-.143T3 6.769M9.808 20q-.348 0-.578-.23T9 19.192V18H4.615q-.69 0-1.152-.462T3 16.385v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .269.173.442t.442.173h14.77q.269 0 .442-.173t.173-.442v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .69-.462 1.152T19.385 18H15v1.192q0 .348-.23.578t-.578.23zM12 11'/%3E%3C/svg%3E");
                             }
 
                             h1{   
@@ -748,10 +829,10 @@ html{
                             }
                             
                             p{
-                                @include mixins.text_formatting(center, normal, 300, 1px);
+                                @include mixins.text_formatting(center, italic, 400, 1px);
                                 line-height: 1.2;
                                 color: variables.$Text_Color_White;                    
-                                font-size: 16px;
+                                font-size: 15px;
                                 padding: 15px;
                                 transform: translateY(170px);               
                                 transition: variables.$Transition_ease; 
@@ -771,6 +852,187 @@ html{
                     }
                 }
 
+            }
+
+            .tecnology-container{
+                @include mixins.align(relative, flex, center, center);
+                width: 100%;
+                height: 100vh;
+                margin: 200px 0 0 0;
+                flex-direction: column;
+
+                @include responsive.screen_laptop(){
+                    margin: 0;
+                }
+
+                @include responsive.screen_tablet(){
+                    height: auto;
+                }
+
+                .tecnology-text-bg{
+                    position: absolute;
+                    top: 15%;
+                    left: 30px;
+                    right: 0;   
+                    font-size: 130px;
+                    word-break: break-all;
+                    font-family: 'cosi azure';
+                    color: variables.$Text_Color_White_Smoker;
+
+                    @include responsive.screen_laptop(){
+                        top: 5%;
+                        font-size: 80px;
+                    }
+
+                    @include responsive.screen_small(){
+                        top: 0;
+                        left: 20px;
+                        font-size: 85px;
+                    }
+                }
+
+                .tecnology-title{
+                    position: relative;
+                    width: inherit;
+                    margin: 90px 0 50px 0;
+
+                    h1{
+                        @include mixins.text_formatting(center, normal, 500, 10px);
+                        font-size: 40px;
+                        color: variables.$Secundary_Color;
+                        text-transform: uppercase;
+                        word-break: break-all;
+
+                        span{
+                            color: variables.$Text_Color_White;   
+                        }
+
+                        @include responsive.screen_small(){
+                            font-size: 25px;
+                        }
+                    }
+                }
+
+                .tecnology{
+                    @include mixins.align(relative, flex, center, center);
+                    flex-wrap: wrap;
+                    width: initial;
+                    height: auto;
+                    margin: 50px 0 0 0;
+                    
+                    .html, .css, .sass, .react, .javascript, .typescript, .php, .boostrap, .java, .jquery, .sql, .git{
+                        @include mixins.align(relative, flex, normal, center);
+                        width: 20%;
+                        height: auto;
+                        margin: 20px;
+                        
+                        img{
+                            width: 60px;
+                            filter: grayscale(100%);
+                            transition: variables.$Transition_ease;
+                        }
+
+                        &:hover img{
+                            filter: grayscale(0%);
+                            transition: variables.$Transition_ease;
+                        }
+                        h2{
+                            font-size: 30px;
+                            color: variables.$Text_Color_White_Smoker;
+                            font-family: 'cosi azure';
+                            transition: variables.$Transition_ease;
+                            word-break: break-all;
+                            padding: 0 0 0 15px;
+                        }
+
+                        @include responsive.screen_laptop(){
+                            width: 40%;
+                        }
+
+                        @include responsive.screen_small(){
+                            width: 30%;
+                            justify-content: center;
+
+                            h2{
+                                display: none;
+                            }
+                        }
+
+                    }
+                    .html{
+                        &:hover h2{
+                            color: variables.$HTML;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .css{
+                        &:hover h2{
+                            color: variables.$CSS;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .sass{
+                        &:hover h2{
+                            color: variables.$SASS;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .react{
+                        &:hover h2{
+                            color: variables.$REACT;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .javascript{
+                        &:hover h2{
+                            color: variables.$JS;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .typescript{
+                        &:hover h2{
+                            color: variables.$TS;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .php{
+                        &:hover h2{
+                            color: variables.$PHP;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .boostrap{
+                        &:hover h2{
+                            color: variables.$BOOSTRAP;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .java{
+                        &:hover h2{
+                            color: variables.$JAVA;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .jquery{
+                        &:hover h2{
+                            color: variables.$JQUERY;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .sql{
+                        &:hover h2{
+                            color: variables.$SQL;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+                    .git{
+                        &:hover h2{
+                            color: variables.$GIT;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+
+                }
             }
 
         }
@@ -796,7 +1058,7 @@ html{
                 height: 45px;
                 border-radius: 50px;
                 border: 1px solid variables.$Text_Color_White;
-                cursor: pointer;
+                cursor: crosshair;
         
                 .fa-arrow-up-from-bracket {
                     color: variables.$Text_Color_White;
@@ -810,8 +1072,6 @@ html{
     }
     
 }
-
-
 
 /*============================ Classes auxiliares ======================*/
 
@@ -828,5 +1088,5 @@ html{
 }
 
 .header_aux {
-    background-color: variables.$Smoker_dwo;   
+    backdrop-filter: blur(5px) !important;  
 }

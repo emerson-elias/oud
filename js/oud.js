@@ -12,14 +12,6 @@ li.map((elementos) => {
     })
 })
 
-
-const know = document.getElementById('know')
-
-know.addEventListener('click',()=>{
-    console.log(know)
-})
-
-
 window.addEventListener("scroll", () => {
     const scroll_Y = window.scrollY
     const header = document.getElementById('header')
@@ -43,12 +35,18 @@ window.addEventListener("scroll", () => {
 
 })
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+document.querySelectorAll('a[href^="#"]').forEach(ancora => {
+    ancora.addEventListener('click', function (e) {
+        e.preventDefault()
 
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         })
     })
 })
+
+const cursor = document.getElementById('cursor')
+
+    document.addEventListener('mousemove', (e)=> {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+    })
