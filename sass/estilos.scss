@@ -18,11 +18,9 @@ html{
  
     @include responsive.screen_height_not_suport(){
         background-color: variables.$gray_primary;
-    }
-    
+    }   
     @include responsive.screen_width_not_suport(){
-        background-color: variables.$gray_primary;
-        
+        background-color: variables.$gray_primary;      
     }
 
     body {
@@ -61,7 +59,7 @@ html{
             .navbar {
                 @include mixins.align(relative, flex, space-between, center);
                 width: 95%;
-                height: 100px;
+                height: 13vh;
                 font-family: 'cosi azure';
                 transition: variables.$Transition_ease;
                 border-bottom: 1px solid variables.$Text_Color_White;
@@ -87,7 +85,7 @@ html{
                         mask-size: 100% 100%;
                     }
     
-                    .fa-bars, .fa-circle-xmark {
+                    .fa-bars-staggered, .fa-circle-xmark {
                         display: none;
                         font-size: 30px;
                         color: variables.$Text_Color_White;
@@ -110,7 +108,7 @@ html{
                     a {
                         @include mixins.align(relative, flex, center, center);
                         text-decoration: none;
-                        font-size: 20px;
+                        font-size: 1.5vw;
                         color: variables.$Text_Color_White;
                         transition: variables.$Transition_ease;
 
@@ -187,8 +185,7 @@ html{
         }
     
         main {
-            position: relative;
-    
+                
             .banner {
                 @include mixins.align(relative, flex, center, center);
                 background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$gray_primary), url(../img/herobg-hd.jpg);
@@ -244,10 +241,26 @@ html{
                                 width: inherit;                             
                             }
 
-                            .fa-map-pin{
-                                font-size: 20px;
-                                color: variables.$Text_Color_White;
-                                margin: 5px;
+                            .arcticons--fonts-art {
+                                display: inline-block;
+                                width: 50px;
+                                height: 50px;
+                                background-repeat: no-repeat;
+                                background-size: 100% 100%;
+                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M6.57 40.134C8.358 29.57 12.686 5.907 16.727 5.504s5.83 36.996 5.83 36.996'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M6.57 23.684c4.674-2.135 18.93-6.464 24.356-6.464m3.487 7.162c-3.198-4.796-7.008-2.198-7.18 2.65c-.174 4.848 4.682 4.668 6.471 1.263'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M35.024 21.837c-1.154 4.329-3.348 15.238.52 15.988s5.887-7.994 5.887-7.994M40.215 13.12a1.219 1.219 0 0 0-1.958-1.293a1.217 1.217 0 0 0-2.402.342c.027 1.226 1.327 2.983 1.327 2.983s2.082-.663 2.821-1.642q.14-.17.212-.39'/%3E%3C/svg%3E");
+                            }
+                            .arcticons--dailyart {
+                                display: inline-block;
+                                width: 50px;
+                                height: 50px;
+                                --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='13.557' height='19.545' x='14.99' y='9.468' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' rx='6.779'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M28.547 22.235v20.336M21.09 29.013v3.728c-4.8 0-12.088 6.27-12.088 9.83'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M42.5 42.57s-2.937-8.981-7.642-8.981V16.21A10.78 10.78 0 0 0 24.077 5.43h0a10.78 10.78 0 0 0-10.782 10.781v17.378C9.737 34.888 6.008 39.972 5.5 42.57'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M19.029 22.178c.263.874 2.523.933 2.895 0m-2.895-4.848c-.283-.874-2.712-.933-3.112 0m9.263 0c-.283-.874-2.712-.933-3.112 0m-3.915 7.136a3.16 3.16 0 0 0 2.324.763a3.18 3.18 0 0 0 2.407-.89'/%3E%3Ccircle cx='18.075' cy='17.68' r='.75' fill='%23000'/%3E%3Ccircle cx='24.43' cy='17.68' r='.75' fill='%23000'/%3E%3C/svg%3E");
+                                background-color: variables.$Text_Color_White;
+                                -webkit-mask-image: var(--svg);
+                                mask-image: var(--svg);
+                                -webkit-mask-repeat: no-repeat;
+                                mask-repeat: no-repeat;
+                                -webkit-mask-size: 100% 100%;
+                                mask-size: 100% 100%;
                             }
 
                             p{
@@ -291,11 +304,11 @@ html{
 
                             span{
                                 display: block;
-                                font-size: 3.5em;
+                                font-size: 3.7vw;
                                 transform: scaleY(4);
                                 margin: 110px 0 60px 0;
-                                letter-spacing: -2px;
-                                word-spacing: 17px;
+                                letter-spacing: 3px;
+                                word-spacing: 5px;
                                                               
                                 @include responsive.screen_laptop(){ 
                                     font-size: 3em;
@@ -654,16 +667,59 @@ html{
                 .boll-bg{
                     position: absolute;
                     top: 0;
-                    right: 70%;
+                    right: 69%;
                     width: 900px;
                     height: 900px;
-                    border: 5px dashed variables.$Text_Color_White_Smoker_dwo;
+                    border: 2px solid variables.$Text_Color_White_Smoker_dwo;
                     border-radius: 50%;
-                    animation: girar 50s linear infinite;
+                    animation: girar_left 40s linear infinite;
                     z-index: -1;
     
                     @include responsive.screen_laptop(){
                         right: 50%;
+                    }
+
+                    .icon-park-outline--loading {
+                        display: inline-block;
+                        width: inherit;
+                        height: inherit;
+                        --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='0.1'%3E%3Cpath d='M4 24c0 11.046 8.954 20 20 20v0c11.046 0 20-8.954 20-20S35.046 4 24 4'/%3E%3Cpath d='M36 24c0-6.627-5.373-12-12-12s-12 5.373-12 12s5.373 12 12 12v0'/%3E%3C/g%3E%3C/svg%3E");
+                        background-color: variables.$Text_Color_White_Smoker;
+                        -webkit-mask-image: var(--svg);
+                        mask-image: var(--svg);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        -webkit-mask-size: 100% 100%;
+                        mask-size: 100% 100%;
+                    }
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 20%;
+                        right: 0;
+                        bottom: 0;
+                        width: 100px;
+                        height: 100px;
+                        background-color: transparent;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid variables.$Text_Color_White;
+                        border-radius: 50%;
+                    }
+
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        left: 20%;
+                        right: 0;
+                        bottom: 0;
+                        width: 100px;
+                        height: 100px;
+                        background-color: transparent;
+                        backdrop-filter: blur(10px);
+                        border: 1px solid variables.$Text_Color_White;
+                        border-radius: 50%;
                     }
                   
                 }
@@ -857,9 +913,11 @@ html{
             .tecnology-container{
                 @include mixins.align(relative, flex, center, center);
                 width: 100%;
-                height: 100vh;
-                margin: 200px 0 0 0;
+                height: auto;
+                margin: 200px 0 200px 0;
                 flex-direction: column;
+
+             //   background-color: rgba(102, 51, 153, 0.381);
 
                 @include responsive.screen_laptop(){
                     margin: 0;
@@ -894,7 +952,7 @@ html{
                 .tecnology-title{
                     position: relative;
                     width: inherit;
-                    margin: 90px 0 50px 0;
+                    margin: 170px 0 50px 0;
 
                     h1{
                         @include mixins.text_formatting(center, normal, 500, 10px);
@@ -918,13 +976,15 @@ html{
                     flex-wrap: wrap;
                     width: initial;
                     height: auto;
-                    margin: 50px 0 0 0;
+                    margin: 10px 0 0 0;
+
+                  //  background-color: rgba(238, 232, 170, 0.315);
                     
-                    .html, .css, .sass, .react, .javascript, .typescript, .php, .boostrap, .java, .jquery, .sql, .git{
+                    .html, .css, .sass, .react, .javascript, .typescript, .php, .bulma, .java, .jquery, .sql, .git, .boostrap, .materialize, .tailwind, .railway{
                         @include mixins.align(relative, flex, normal, center);
                         width: 20%;
                         height: auto;
-                        margin: 20px;
+                        margin: 20px;   
                         
                         img{
                             width: 60px;
@@ -1001,9 +1061,9 @@ html{
                             transition: variables.$Transition_ease;
                         }
                     }
-                    .boostrap{
+                    .bulma{
                         &:hover h2{
-                            color: variables.$BOOSTRAP;
+                            color: variables.$BULMA;
                             transition: variables.$Transition_ease;
                         }
                     }
@@ -1032,6 +1092,33 @@ html{
                         }
                     }
 
+                    .boostrap{
+                        &:hover h2{
+                            color: variables.$BOOSTRAP;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+
+                    .materialize{
+                        &:hover h2{
+                            color: variables.$MATERIALIZE;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+
+                    .tailwind{
+                        &:hover h2{
+                            color: variables.$TAILWIND;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+
+                    .railway{
+                        &:hover h2{
+                            color: variables.$RAILWAY;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
                 }
             }
 
@@ -1068,9 +1155,7 @@ html{
         
         
         }
-    
-    }
-    
+    }   
 }
 
 /*============================ Classes auxiliares ======================*/
@@ -1078,15 +1163,12 @@ html{
 .collapse-true {
     transform: translate(0%) !important;
 }
-
 .burguer-ocult {
     display: none !important;
 }
-
 .navbar_aux {
     height: 75px !important;
 }
-
 .header_aux {
     backdrop-filter: blur(5px) !important;  
 }
