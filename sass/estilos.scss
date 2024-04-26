@@ -26,6 +26,7 @@ html{
     body {
         background-color: variables.$gray_primary;
         cursor: none;
+        scroll-behavior: smooth;
 
         #cursor {
             position: fixed;
@@ -60,21 +61,21 @@ html{
                 @include mixins.align(relative, flex, space-between, center);
                 width: 95%;
                 height: 13vh;
-                font-family: 'cosi azure';
+                padding: 0;
+                margin: 0;
+                font-family: 'grand slang';
                 transition: variables.$Transition_ease;
                 border-bottom: 1px solid variables.$Text_Color_White;
     
-                @include responsive.screen_laptop() {
-                    padding-right: 30px;
-                }
-    
                 li {
+                    position: relative;
+                    padding: 0 20px 0 0;
                     list-style: none;
     
                     .game-icons--fox {
                         display: inline-block;
-                        width: 3em;
-                        height: 3em;
+                        width: 4vw;
+                        height: 4vw;
                         --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='m214.5 23.24l-1 8.1c-14 61.5 21 88.66 21 88.66l11-13s-24-19.76-18-63.56c41 11.6 58 36.6 64 48.8c-44 15.76-56 57.26-80 87.96l21-3.9l-2 31.3s44-8.7 69 17.7c5-8.6 8-18.9 6-29.2l-3-28.2c-3-1.1-7-3-11-5.4c-12-7.3-25-19.1-25-19.1c-2-1.9-2-5.2-1-7.8c2-2.5 5-3.7 7-2.7c0 0 11 3.5 21 6.7c11 3.9 20 14.3 21 26.6c1 8.4 3 18.9 4 28.3c2 15.4-3 30.8-12 42.7l7 18.3h38l7-18.3c-9-11.9-14-27.3-12-42.7c1-9.4 3-19.9 4-28.3c1-12.3 10-22.7 21-26.6c10-3.2 21-6.7 21-6.7c2-1 5 .2 7 2.7c1 2.6 1 5.9-1 7.8c0 0-13 11.8-25 19.1c-4 2.4-8 4.3-11 5.4l-3 28.2c-2 10.3 1 20.6 6 29.2c25-26.4 69-17.7 69-17.7l-2-31.3l21 3.9c-24-30.7-36-72.2-80-87.96c6-12.2 23-37.2 64-48.8c6 43.8-18 63.56-18 63.56l11 13s35-27.16 21-88.66l-1-8.1c-43.3 7.32-85.9 35.37-110 62.9c-5.5-.13-10.5-.52-16 0c-42.8-34.75-61.3-56.12-110-62.9m24.7 205.26c38.2 53.2-87.7 46.6-153.61 119.5c-26.11 28-32.53 56.3-25.95 80.3c12.23 44 71.86 73 144.06 55c49.8-13 96-32 134.8-40c35.1-8 63.8-5 82.3 24l15.3-5c-2.9-38-14.4-68.8-36.5-87.5c-16.8-14.2-39.9-22-70.9-21.1c-29.3.8-65.9 9.3-111.2 27.3c-27 9.5-76.5 27.7-102.4 12.6c-9.1-5.6-11.9-15-11.2-24.3c34.4 52 124.1-27 198.5-35.7c0 0 6.6-88.3-63.2-105.1m188.6 0c-53.1 12.4-64.1 54.1-65.2 105.1c26.5-.2 49.9 23.7 49.9 23.7s-27-98.6 15.3-128.8m-100.3 1.3h10c3 0 6 2.8 6 6.3c0 3.4-3 6.2-6 6.2h-10c-3 0-6-2.8-6-6.2c0-3.5 3-6.3 6-6.3m61.4 157.7c13.7 11.6 22.2 28.8 26.8 49.8c-15.8-12-35-16-57.1-14c-24.1 2-51.9 10-82.3 20l26.1-25c-28.3 14-53.1 17-75.4 12l80.9-40.2l-61.2 11.2c23.8-20.2 95.2-52.2 142.2-13.8'/%3E%3C/svg%3E");
                         background-color: currentColor;
                         -webkit-mask-image: var(--svg);
@@ -83,16 +84,22 @@ html{
                         mask-repeat: no-repeat;
                         -webkit-mask-size: 100% 100%;
                         mask-size: 100% 100%;
+
+                        @include responsive.screen_laptop(){
+                            width: 50px;
+                            height: 50px;
+                        }
                     }
     
                     .fa-bars-staggered, .fa-circle-xmark {
                         display: none;
-                        font-size: 30px;
+                        font-size: 3vw;
                         color: variables.$Text_Color_White;
                         cursor: crosshair;
     
-                        @include responsive.screen_laptop() {
+                        @include responsive.screen_laptop(){
                             display: block;
+                            font-size: 30px;
                         }
                     }
     
@@ -100,20 +107,33 @@ html{
     
                 .active-bar {
                     @include mixins.align(relative, flex, baseline, center);
-                    width: 240px;
-                    height: 60px;
+                    width: 25vw;
+                    height: inherit;
                     margin: 0 0 0 10px;
                     cursor: crosshair;
+
+                    @include responsive.screen_laptop(){
+                        width: 70vw;
+                    }
     
                     a {
                         @include mixins.align(relative, flex, center, center);
                         text-decoration: none;
-                        font-size: 1.5vw;
+                        font-size: 1.3vw;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
                         color: variables.$Text_Color_White;
                         transition: variables.$Transition_ease;
 
+                        @include responsive.screen_large(){
+                            font-size: 1.7vw;
+                        }
+                        @include responsive.screen_laptop(){
+                            font-size: 2vw;
+                        }
+
                         @include responsive.screen_small(){
-                            font-size: 17px;
+                            font-size: 15px;
                         }
 
                     }
@@ -121,12 +141,28 @@ html{
     
                 .links-ul {
                     @include mixins.align(relative, flex, space-between, center);
-    
+                    width: 50vw;
+                    height: inherit;
+
+                    @include responsive.screen_large(){
+                       width: 70vw;
+                    }
+
                     .li-link {
                         @include mixins.align(relative, flex, center, center);
-                        width: 150px;
-                        height: 50px;
-                        margin: 10px;
+                        width: 12vw;
+                        height: inherit;
+                        margin: 0;
+                        padding: 0;
+
+                        @include responsive.screen_large(){
+                            width: inherit;           
+                        }
+
+                        @include responsive.screen_laptop(){
+                            width: 200px;
+                            margin: 40px 0 0 0;           
+                        }
 
                         a{
                             cursor: crosshair;
@@ -135,13 +171,14 @@ html{
                         &::after{
                             position: absolute;
                             content: '';
-                            top: 45px;
-                            left: 0;
+                            top: 50%;
+                            left: 50%;   
                             right: 0;
                             bottom: 0;
-                            background-color: variables.$Secundary_Color;
                             width: 0%;
                             height: 3px;
+                            transform: translate(-50%, -50%);
+                            background-color: variables.$Secundary_Color;
                             border-radius: 5px;
                             transition: 0.3s all;
                         }
@@ -154,10 +191,20 @@ html{
                         .link {
                             color: variables.$Text_Color_White;
                             text-decoration: none;
-                            font-size: 15px;
+                            font-size: 1.1vw;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
 
                             i {
                                 margin-right: 7px;
+                            }
+
+                            @include responsive.screen_large(){
+                                font-size: 1.5vw;
+                            }
+
+                            @include responsive.screen_laptop(){
+                                font-size: 18px;
                             }
                         }
     
@@ -189,7 +236,6 @@ html{
             .banner {
                 @include mixins.align(relative, flex, center, center);
                 background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$gray_primary), url(../img/herobg-hd.jpg);
-               /* background-attachment: fixed;*/
                 background-position: top center;
                 background-repeat: no-repeat;
                 background-size: cover;
@@ -200,190 +246,208 @@ html{
                 @include responsive.screen_small{
                     height: 105vh;
                 }
-        
+                        
                 .row{
-                    @include mixins.align(relative, flex, space-between, end);
+                    @include mixins.align(relative, flex, end, normal);
+                    flex-direction: column;
                     width: 95%;
                     height: 80vh;             
                     color: variables.$Text_Color_White;
                     transition: variables.$Transition_ease;
-
-                    @include responsive.screen_laptop(){
-                        display: block;
-                        height: auto;
-                    }
     
-                    @include responsive.screen_small(){ 
+                    @include responsive.screen_small(){
+                        top: 60px; 
                         width: 90%;
+                        justify-content: center;
                     }
-                    
-                    .profession{
-                        position: relative; 
-                        width: 50%;
-                        height: auto;                   
-                        font-family: 'cosi azure';
-    
-                        @include responsive.screen_laptop(){ 
-                            width: initial;                          
+
+                    .follow{
+                        @include mixins.align(relative, flex, end, center);
+                        width: inherit;
+                        height: 7vw;
+
+                        @include responsive.screen_laptop(){
+                            width: 90%;
                         }
 
-                        .follow{
-                            @include mixins.align(relative, flex, end, center);
-                            top: 90px;
-                            width: 185%;
-                            height: 100px;
+                        @include responsive.screen_small(){
+                            width: 100%;                             
+                        }
+                  
+                        .arcticons--dailyart {
+                            display: inline-block;
+                            width: 2.5vw;
+                            height: 2.5vw;
+                            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='13.557' height='19.545' x='14.99' y='9.468' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' rx='6.779'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M28.547 22.235v20.336M21.09 29.013v3.728c-4.8 0-12.088 6.27-12.088 9.83'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M42.5 42.57s-2.937-8.981-7.642-8.981V16.21A10.78 10.78 0 0 0 24.077 5.43h0a10.78 10.78 0 0 0-10.782 10.781v17.378C9.737 34.888 6.008 39.972 5.5 42.57'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M19.029 22.178c.263.874 2.523.933 2.895 0m-2.895-4.848c-.283-.874-2.712-.933-3.112 0m9.263 0c-.283-.874-2.712-.933-3.112 0m-3.915 7.136a3.16 3.16 0 0 0 2.324.763a3.18 3.18 0 0 0 2.407-.89'/%3E%3Ccircle cx='18.075' cy='17.68' r='.75' fill='%23000'/%3E%3Ccircle cx='24.43' cy='17.68' r='.75' fill='%23000'/%3E%3C/svg%3E");
+                            background-color: variables.$Text_Color_White;
+                            -webkit-mask-image: var(--svg);
+                            mask-image: var(--svg);
+                            -webkit-mask-repeat: no-repeat;
+                            mask-repeat: no-repeat;
+                            -webkit-mask-size: 100% 100%;
+                            mask-size: 100% 100%;
 
+                            @include responsive.screen_small(){
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+
+                        p{
+                            @include mixins.align(relative, flex, center, center);
+                            @include mixins.text_formatting(center, italic, 300, 1px);
+                            width: 15vw;
+                            height: inherit;
+                            color: variables.$Text_Color_White;
+                            font-size: 0.7vw;
+                            
                             @include responsive.screen_laptop(){
-                                width: 90%;
+                                width: 200px;
+                                font-size: 8px;
                             }
 
                             @include responsive.screen_small(){
-                                width: inherit;                             
-                            }
-
-                            .arcticons--fonts-art {
-                                display: inline-block;
-                                width: 50px;
-                                height: 50px;
-                                background-repeat: no-repeat;
-                                background-size: 100% 100%;
-                                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M6.57 40.134C8.358 29.57 12.686 5.907 16.727 5.504s5.83 36.996 5.83 36.996'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M6.57 23.684c4.674-2.135 18.93-6.464 24.356-6.464m3.487 7.162c-3.198-4.796-7.008-2.198-7.18 2.65c-.174 4.848 4.682 4.668 6.471 1.263'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M35.024 21.837c-1.154 4.329-3.348 15.238.52 15.988s5.887-7.994 5.887-7.994M40.215 13.12a1.219 1.219 0 0 0-1.958-1.293a1.217 1.217 0 0 0-2.402.342c.027 1.226 1.327 2.983 1.327 2.983s2.082-.663 2.821-1.642q.14-.17.212-.39'/%3E%3C/svg%3E");
-                            }
-                            .arcticons--dailyart {
-                                display: inline-block;
-                                width: 50px;
-                                height: 50px;
-                                --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='13.557' height='19.545' x='14.99' y='9.468' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' rx='6.779'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M28.547 22.235v20.336M21.09 29.013v3.728c-4.8 0-12.088 6.27-12.088 9.83'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M42.5 42.57s-2.937-8.981-7.642-8.981V16.21A10.78 10.78 0 0 0 24.077 5.43h0a10.78 10.78 0 0 0-10.782 10.781v17.378C9.737 34.888 6.008 39.972 5.5 42.57'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M19.029 22.178c.263.874 2.523.933 2.895 0m-2.895-4.848c-.283-.874-2.712-.933-3.112 0m9.263 0c-.283-.874-2.712-.933-3.112 0m-3.915 7.136a3.16 3.16 0 0 0 2.324.763a3.18 3.18 0 0 0 2.407-.89'/%3E%3Ccircle cx='18.075' cy='17.68' r='.75' fill='%23000'/%3E%3Ccircle cx='24.43' cy='17.68' r='.75' fill='%23000'/%3E%3C/svg%3E");
-                                background-color: variables.$Text_Color_White;
-                                -webkit-mask-image: var(--svg);
-                                mask-image: var(--svg);
-                                -webkit-mask-repeat: no-repeat;
-                                mask-repeat: no-repeat;
-                                -webkit-mask-size: 100% 100%;
-                                mask-size: 100% 100%;
-                            }
-
-                            p{
-                                @include mixins.align(relative, flex, center, center);
-                                @include mixins.text_formatting(center, italic, 300, 1px);
-                                width: 180px;
-                                height: 100px;
-                                color: variables.$Text_Color_White;
-                                font-size: 10px;
-                                
-                                @include responsive.screen_small(){
-                                    width: 120px;
-                                    font-size: 10px;
-                                }
-                            }
-                            
-                        }
-    
-                        .profission-text{
-                            position: relative;
-                            width: 150px;
-                            top: 40px;
-                            font-size: 26px;
-                            border-bottom: 1px solid variables.$Text_Color_White;
-    
-                            @include responsive.screen_laptop(){ 
-                                top: 50px;
-                            }
-    
-                            @include responsive.screen_small(){ 
-                                width: 110px;     
-                                font-size: 18px;
+                                width: 150px;
+                                font-size: 7px;
                             }
                         }
-        
-                        .profession-name{
-                            position: relative;
-                            width: 100%;
-                            height: auto;
-                            margin-top: 100px;
-
-                            span{
-                                display: block;
-                                font-size: 3.7vw;
-                                transform: scaleY(4);
-                                margin: 110px 0 60px 0;
-                                letter-spacing: 3px;
-                                word-spacing: 5px;
-                                                              
-                                @include responsive.screen_laptop(){ 
-                                    font-size: 3em;
-                                }
-    
-                                @include responsive.screen_small(){ 
-                                    transform: scaleY(4);
-                                    letter-spacing: 2px;
-                                    font-size: 1.7em;
-                                    margin: 0 0 60px 0;
-                                }
-                              
-                            }
-                            
-                        }
+                        
                     }
-        
-                    .banner-descripiton{
-                        position: relative;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: end;
-                        width: 50%;
-                        height: auto;
+                    
+                    .row-itens{
+                        @include mixins.align(relative, flex, space-between, end);
+                        width: initial;
+                        height: auto;  
+                        font-family: 'grand slang', sans-serif;
+                        text-transform: uppercase;
+                        font-weight: 500;
     
                         @include responsive.screen_laptop(){ 
-                            width: initial;
-                            margin-top: 70px;
+                            flex-direction: column;                        
                         }
-    
-                        p{
-                            text-align: end;
-                            font-size: 25px;
-                            letter-spacing: 2px;
-                            font-family: 'cosi azure';
-                            color: variables.$Text_Color_White;
-    
+
+                        section{
+                            flex-direction: column;
+                            width: 50%;
+
                             @include responsive.screen_laptop(){ 
-                                width: 75%;
-                                font-size: 20px
+                                width: 100%;                       
                             }
-    
-                            @include responsive.screen_small(){ 
-                                width: 100%;
-                                font-size: 14px;
-                            }
-                        }
-    
-                        .know{
-                            @include mixins.align(relative, flex, center, center);
-                            margin: 10px;
-                            width: 160px;
-                            height: 50px;
-                            border: 2px solid variables.$Text_Color_White;
-                            transition: variables.$Transition_ease;
-                            border-radius: 30px;
-    
-                            &:hover{
-                                backdrop-filter: blur(5px);
-                                transition: variables.$Transition_ease;
-                            }
-    
-                            a{
-                                font-family: 'cosi azure';
-                                font-size: 19px;
-                                color: variables.$Text_Color_White;
-                                text-decoration: none;
-                                cursor: crosshair;
-    
+
+                            .item-creat{
+                                position: relative;
+                                flex-direction: column;
+                                width: 10.5vw;    
+                                font-size: 2vw;
+                                border-bottom: 1px solid variables.$Text_Color_White;
+        
                                 @include responsive.screen_laptop(){ 
-                                    font-size: 13px;
+                                    width: 130px;
+                                    font-size: 25px;
+                                }
+        
+                                @include responsive.screen_small(){ 
+                                    width: 90px;     
+                                    font-size: 18px;
+                                    margin: 0 0 25px 0;
                                 }
                             }
+
+                            .item-profession{
+                                position: relative;
+                                width: initial;
+                                height: auto;
+                                top: 2.8vw;
+    
+                                span{
+                                    display: block;
+                                    height: auto;
+                                    margin: 1vw 0 4vw 0;
+                                    font-size: 5vw;                                 
+                                    transform: scaleY(2.5);
+                                    letter-spacing: 3px;
+                                    word-spacing: 5px;
+    
+                                    @include responsive.screen_laptop(){ 
+                                        font-size: 3em;
+                                    }
+        
+                                    @include responsive.screen_small(){ 
+                                        transform: scaleY(4);
+                                        letter-spacing: 2px;
+                                        font-size: 1.7em;
+                                        margin: 0 0 60px 0;
+                                    }
+                                  
+                                }
+                                
+                            }
                         }
-                    }
+
+                        .banner-descripiton{
+                            @include mixins.align(relative, flex, normal, end);
+                            flex-direction: column;            
+                            width: 50%;
+                            height: inherit;
+        
+                            @include responsive.screen_laptop(){ 
+                                width: initial;
+                                margin: 4vw 0 0 0;
+                            }
+        
+                            p{
+                                text-align: end;
+                                font-size: 1.8vw;
+                                letter-spacing: 2px;
+                                font-family: 'grand slang';              
+                                text-transform: uppercase;
+                                color: variables.$Text_Color_White;
+        
+                                @include responsive.screen_laptop(){ 
+                                    width: 75%;
+                                    font-size: 20px
+                                }
+        
+                                @include responsive.screen_small(){ 
+                                    width: 100%;
+                                    font-size: 14px;
+                                }
+                            }
+        
+                            .know{
+                                @include mixins.align(relative, flex, center, center);
+                                margin: 10px;
+                                width: 11vw;
+                                height: 3vw;
+                                border: 1px solid variables.$Text_Color_White;
+                                transition: variables.$Transition_ease;
+                                border-radius: 2vw;
+        
+                                @include responsive.screen_small(){ 
+                                    width: 100px;
+                                    height: 30px;
+                                    border-radius: 30px;
+                                }
+
+                                &:hover{
+                                    backdrop-filter: blur(5px);
+                                    transition: variables.$Transition_ease;
+                                }
+        
+                                a{
+                                    font-family: 'cosi azure';
+                                    font-size: 1.2vw;
+                                    color: variables.$Text_Color_White;
+                                    text-decoration: none;
+                                    cursor: crosshair;
+
+                                    @include responsive.screen_small{
+                                        font-size: 11px;
+                                    }
+                                }
+                            }
+                        }                   
+                    }                 
                 } 
             }
     
@@ -391,38 +455,37 @@ html{
                 @include mixins.align(relative, flex, center, center);
                 flex-direction: column;
                 margin-top: -1px;
-                width: 100%;
+                width: 100vw;
                 height: auto;
-                padding: 150px 0 0 0;
+                padding: 11vw 0 5vw 0;
                 background-color: variables.$gray_primary;
 
                 @include responsive.screen_laptop(){
-                    height: auto;
+                    padding: 110px 0 0 0;
                 }
 
                 @include responsive.screen_small(){
                     padding-top: 80px;
-
                 }
 
                 .hero-titulo{
                     @include mixins.align(relative, flex, center, center);
                     width: inherit;
-                    height: 100px;
-                    margin: 30px;
+                    height: 6vw;
+                    margin: 2vw;
 
                     @include responsive.screen_small(){
-                        margin: 0 0 50px 0;
+                        margin: 40px 0 50px 0;
                     }
 
                     h1{
                         @include mixins.text_formatting(center, normal, 500, 10px);
-                        font-size: 40px;
+                        font-size: 2.5vw;
                         color: variables.$Text_Color_White;
                         text-transform: uppercase;
 
                         @include responsive.screen_small{
-                            font-size: 20px;
+                            font-size: 22px;
                         }
 
                         span{
@@ -433,11 +496,14 @@ html{
 
                 .hero-sobre-text-fundo{
                     position: absolute;
-                    top: 20%;
-                    left: 30px;
+                    top: 9vw;
+                    left: 3vw;
                     right: 0;   
-                    font-size: 120px;
-                    font-family: 'cosi azure';
+                    font-size: 10vw;
+                    font-family: 'grand slang';
+                    text-transform: uppercase;
+                    font-style: italic;
+                    font-weight: 500;
                     color: variables.$Text_Color_White_Smoker;
 
                     @include responsive.screen_laptop(){
@@ -447,6 +513,7 @@ html{
 
                     @include responsive.screen_small(){
                         top: 5%;
+                        left: 5px;
                         font-size: 65px;
                     }
                 }
@@ -457,50 +524,22 @@ html{
                     height: auto;
                     color: variables.$Text_Color_White;
 
-                    background-color: rgba(102, 51, 153, 0);
-
                     @include responsive.screen_large(){
                         width: 95%;
                     }
 
                     @include responsive.screen_laptop(){
                         width: 100%;
-                        flex-wrap: wrap;
+                        flex-wrap: wrap
                     }
 
                     .sobre-img{
                         @include mixins.align(relative, flex, center, center);
-                        width: 30%;
+                        width: 30vw;
                         height: auto;
 
-                        background-color: rgba(0, 0, 255, 0);
-                       
-                        &::after{
-                            position: absolute;
-                            content: '';
-                            width: 290px;
-                            height: 250px;
-                            z-index: 1;
-                            transform: translate(-15%,-15%);
-                            border: 12px solid variables.$Secundary_Color; 
-                            
-                            @include responsive.screen_large(){
-                                transform: translate(-10%,-15%);
-                            }
-
-                            @include responsive.screen_tablet(){
-                                width: 250px;
-                                transform: translate(-10%,-8%);
-                            }
-
-                            @include responsive.screen_small{
-                                height: 230px;
-                                transform: translate(-10%,-12%);
-                            }
-                        }
-
                         @include responsive.screen_laptop(){
-                            width: 50%;                     
+                            width: 50%;                  
                         }
                         
                         @include responsive.screen_small(){
@@ -509,14 +548,18 @@ html{
 
                         img{
                             position: relative;
-                            width: 300px;
+                            width: 20vw;
                             height: auto;
                             z-index: 2; 
                             filter: grayscale(0%);
-                            transition: variables.$Transition_ease;                           
-                            
-                            @include responsive.screen_laptop(){
+                            transition: variables.$Transition_ease;
+
+                            @include responsive.screen_large(){
                                 width: 300px;
+                            }
+
+                            @include responsive.screen_laptop(){
+                                width: 280px;
                             }
 
                             @include responsive.screen_tablet(){
@@ -532,7 +575,35 @@ html{
                                 filter: grayscale(100%);
                                 transition: variables.$Transition_ease;
                             }
+                            
     
+                        }
+
+                        &::after{
+                            position: absolute;
+                            content: '';
+                            width: 18vw;
+                            height: 17vw;
+                            z-index: 1;
+                            transform: translate(-15%,-15%);
+                            border: 0.8vw solid variables.$Secundary_Color; 
+                            
+                            @include responsive.screen_large(){
+                                width: 280px;
+                                height: 250px;
+                                transform: translate(-10%,-15%);
+                            }
+
+                            @include responsive.screen_tablet(){
+                                width: 250px;
+                                transform: translate(-10%,-8%);
+                            }
+
+                            @include responsive.screen_small{
+                                border: 10px solid variables.$Secundary_Color;
+                                height: 230px;
+                                transform: translate(-10%,-12%);
+                            }
                         }
                     }
 
@@ -540,14 +611,13 @@ html{
                         @include mixins.align(relative, flex, space-around, center);
                         @include mixins.text_formatting(normal, normal, 300, 1px);
                         flex-direction: column;
-                        width: 25%;
+                        width: 30vw;
                         height: auto;
 
-                        background-color: rgba(255, 192, 203, 0);
 
                         @include responsive.screen_laptop(){
-                            padding: 0 0 0 100px;
-                            width: 50%;                          
+                            width: 50%;
+                            height: 270px;               
                         }
 
                         @include responsive.screen_tablet(){
@@ -564,12 +634,12 @@ html{
                             width: 100%;
                             height: auto;
                             text-transform: uppercase;
-                            font-size: 23px;
+                            font-size: 1.7vw;
                             font-family: 'cosi azure';
-                            padding: 0 0 9px 0;
+                            padding: 0 0 1vw 0;
 
                             @include responsive.screen_tablet(){
-                                font-size: 15px;
+                                font-size: 22px;
                             }                           
                         }
 
@@ -577,17 +647,26 @@ html{
                             position: relative;
                             width: 100%;
                             height: auto;
+                            font-size: 1.1vw;
                             font-style: italic;
-                            padding: 10px 0 10px 0;
+                            padding: 0.7vw 0 0.5vw 0;
+
+                            @include responsive.screen_large(){
+                                 font-size: 16px;                    
+                            }
 
                             @include responsive.screen_tablet(){
-                                font-size: 12px;
+                                font-size: 15px;
                             }
 
                             i{
                                 padding-right: 5px;
-                                font-size: 20px;
+                                font-size: 1.5vw;
                                 color: variables.$Secundary_Color;
+
+                                @include responsive.screen_laptop(){
+                                    font-size: 25px;              
+                                }
 
                                 @include responsive.screen_tablet(){
                                     font-size: 18px;
@@ -598,16 +677,18 @@ html{
 
                     .sobre-descripion{
                         position: relative;
-                        width: 40%;
+                        width: 40vw;
                         height: auto;
                         margin: 0 0 50px 0 auto;
 
-                        background-color: rgba(255, 166, 0, 0);
+                        @include responsive.screen_large(){
+                            width: 35%;                       
+                        }
 
                         @include responsive.screen_laptop(){
                             width: 80%;
-                            margin: 70px auto;
-                            text-align: center;
+                            height: auto;
+                            margin: 50px auto;
                         }
 
                         @include responsive.screen_small(){
@@ -618,31 +699,41 @@ html{
                         .sobre-titulo{
                             width: initial;
                             height: auto;
+                            margin: 5px 0 20px 0;
 
                             h1{
                                 font-family: 'cosi azure';
-                                font-size: 23px;
+                                font-size: 1.7vw;
                                 text-transform: uppercase;
+
+                                @include responsive.screen_laptop(){
+                                    font-size: 22px;
+                                    text-align: center
+                                }
                             }
                         }
 
                         .sobre-descripiton-bio{
                             @include mixins.text_formatting(justify, italic, 300, 1px);
-                            font-size: 16px;
+                            font-size: 1vw;
                             line-height: 1.5;
 
                             p{
-                                margin: 10px 0 15px 0;
+                                margin: 1vw 0 1.2vw 0;
+
+                                @include responsive.screen_large(){
+                                    font-size: 12px;          
+                                }
         
                                 @include responsive.screen_laptop(){
                                     &:nth-child(1){
                                         text-align: center;
+                                        font-size: 16px;
                                     }
                                 }
 
                                 @include responsive.screen_small(){
-                                    text-align: left;
-                                    font-size: 14px;
+                                    font-size: 15px;
                                     line-height: 1.7;
                                 } 
                             }
@@ -658,25 +749,27 @@ html{
                 flex-direction: column;
                 width: 100%;
                 height: auto;
-                margin: 200px 0 150px 0;
+                margin: 10vw 0 10vw 0;
 
                 @include responsive.screen_laptop(){
-                    margin: 100px 0 150px 0;
+                    margin: 100px 0 100px 0;
                 }
 
                 .boll-bg{
                     position: absolute;
                     top: 0;
-                    right: 69%;
-                    width: 900px;
-                    height: 900px;
+                    right: 70vw;
+                    width: 55vw;
+                    height: 55vw;
                     border: 2px solid variables.$Text_Color_White_Smoker_dwo;
                     border-radius: 50%;
                     animation: girar_left 40s linear infinite;
                     z-index: -1;
     
                     @include responsive.screen_laptop(){
-                        right: 50%;
+                        right: 60%;
+                        width: 650px;
+                        height: 650px;
                     }
 
                     .icon-park-outline--loading {
@@ -700,8 +793,8 @@ html{
                         left: 20%;
                         right: 0;
                         bottom: 0;
-                        width: 100px;
-                        height: 100px;
+                        width: 7vw;
+                        height: 7vw;
                         background-color: transparent;
                         backdrop-filter: blur(10px);
                         border: 1px solid variables.$Text_Color_White;
@@ -714,8 +807,8 @@ html{
                         left: 20%;
                         right: 0;
                         bottom: 0;
-                        width: 100px;
-                        height: 100px;
+                        width: 7vw;
+                        height: 7vw;
                         background-color: transparent;
                         backdrop-filter: blur(10px);
                         border: 1px solid variables.$Text_Color_White;
@@ -732,7 +825,7 @@ html{
 
                     h1{
                         @include mixins.text_formatting(center, normal, 500, 10px);
-                        font-size: 40px;
+                        font-size: 2.5vw;
                         color: variables.$Text_Color_White;
                         text-transform: uppercase;
                         word-break: break-all;
@@ -749,12 +842,14 @@ html{
                     p{
                         @include mixins.text_formatting(center, italic, 300, 1px);
                         width: 70%;
-                        margin:0 auto;
-                        padding: 50px 0 10px 0;
+                        margin: 0 auto;
+                        font-size: 1.1vw;
+                        padding: 3vw 0 2vw 0;
                         color: variables.$Text_Color_White;
 
                         @include responsive.screen_small{
                             width: 95%;
+                            font-size: 12px;
                         }
 
                     }
@@ -773,31 +868,52 @@ html{
                     .card-bg{ 
                         position: relative; 
                         width: 26%;
-                        height: 320px;                                
+                        height: 22vw;                                
                         border: 1px solid variables.$Text_Color_White; 
                         background-color: variables.$gray_primary;
                         overflow: hidden;
 
+                        @include responsive.screen_laptop(){
+                            width: 30%;
+                            margin: 0 0 100px 0;
+                        }
+
+                        @include responsive.screen_tablet(){
+                            width: 40%;
+                            height: 230px;
+                            margin: 0 0 50px 0;
+                        }
+
+                        @include responsive.screen_small(){
+                            width: 80%;
+                            margin: 0 0 40px 0;
+                            height: 260px;
+                        }
 
                         .span-card{
-                            position: absolute;
-                            display: flex;
+                            @include mixins.align(absolute, flex, center, center);
                             flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            width: 50px;
+                            width: 3.5vw;
                             height: inherit;
                             background-color: variables.$Text_Color_White_Smoker;
                             transition: all 1s ease;
+
+                            @include responsive.screen_tablet(){
+                                width: 30px;
+                               
+                            }
 
                             span{
                                 position: relative;
                                 display: flex;
                                 flex-direction: column;
-                                font-size: 32px;
+                                font-size: 2.2vw;
                                 font-family: 'cosi azure';
                                 color: variables.$Secundary_Color;
-                                                                                         
+                                
+                                @include responsive.screen_tablet(){
+                                    font-size: 22px;
+                                }
                             }                            
                         }
 
@@ -811,39 +927,28 @@ html{
                         .fa-music, .fa-pizza-slice, .fa-code{
                             position: absolute;
                             color: variables.$Icon_color_Smoker;
-                            font-size: 300px;
-                            top: 20px;
+                            font-size: 20vw;
+                            top: 1vw;
                             
-                        }
-
-                        @include responsive.screen_laptop(){
-                            width: 40%;
-                            margin: 0 0 100px 0;
-                        }
-
-                        @include responsive.screen_tablet(){
-                            width: 45%;
-                            margin: 0 0 50px 0;
-                        }
-
-                        @include responsive.screen_small(){
-                            width: 85%;
-                            margin: 0 0 40px 0;
                         }
 
                         .card{
                             @include mixins.align(relative, flex, center, center);
                             flex-direction: column;
-                            top: 40px;
+                            top: 2.5vw;
                             width: initial;
                             height: inherit;
                             transition: variables.$Transition_ease;
                             overflow: hidden;
 
+                            @include responsive.screen_tablet(){
+                                top: 20px;
+                            }
+
                             .arcticons--music-you {
                                 display: inline-block;
-                                width: 100px;
-                                height: 100px;
+                                width: 5vw;
+                                height: 5vw;
                                 background-repeat: no-repeat;
                                 background-size: 100% 100%;
                                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='18.538' cy='35.378' r='8.122' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M26.66 35.378V12.834M28.69 4.5h6.864a2.03 2.03 0 0 1 2.03 2.03v4.273a2.03 2.03 0 0 1-2.03 2.03H26.66h0V6.53a2.03 2.03 0 0 1 2.03-2.03'/%3E%3C/svg%3E");
@@ -851,8 +956,8 @@ html{
 
                             .arcticons--pizza-boy-gbc {
                                 display: inline-block;
-                                width: 100px;
-                                height: 100px;
+                                width: 5vw;
+                                height: 5vw;
                                 background-repeat: no-repeat;
                                 background-size: 100% 100%;
                                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='22.245' cy='23.357' r='3.617' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='33.469' cy='23.808' r='3.979' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27.059' cy='34.697' r='2.962' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M23.99 13.27c-.33 1.75-.91 4.02-1.65 6.48'/%3E%3Cellipse cx='42.57' cy='28.808' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' rx='2.537' ry='1.834' transform='rotate(-16.754 42.57 28.807)'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M33.7 19.844c-3.32-3.19-6.99-5.48-8.98-6.24a3 3 0 0 0-.34-.12a2.54 2.54 0 0 1-1.31-3.34c.56-1.29 2.01-1.68 3.34-1.32c1.91.51 6.05 3.01 9.96 6.55c3.92 3.53 7.61 8.09 8.63 12.7m-4.86 1.46c-.55-1.89-1.52-3.7-2.71-5.39m-11.51 13.3c-4.09.96-8.4 1.6-12.4 1.86c2.02-1.93 4.54-7.33 6.63-13m9.26 10.2c2.04-.61 3.98-1.3 5.73-2.07c.72-.32.24 2.24 2.2 2.03c.99-.1 1.52-.79 1.66-2.66c.11-1.46 1.79-2.69 2.34-3.2'/%3E%3Ccircle cx='26.362' cy='18.615' r='.75' fill='white'/%3E%3Ccircle cx='25.862' cy='29.308' r='.75' fill='white'/%3E%3Ccircle cx='19.681' cy='36.244' r='.75' fill='white'/%3E%3Ccircle cx='35.638' cy='30.71' r='.75' fill='white'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m16.26 35.27l-3.2.9c-1.04.29-2.12-.32-2.41-1.36L5.07 14.92a1.96 1.96 0 0 1 1.35-2.41l11.64-3.27c1.04-.29 2.11.32 2.41 1.36l2.23 7.93'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m19.88 20.644l-9.25 2.59a.525.525 0 0 1-.64-.36l-2.17-7.72c-.07-.27.09-.56.36-.63l9.42-2.65c.28-.07.56.09.64.36l2.16 7.72c.03.11.03.22-.02.31m-7.603 6.059l.931 3.319m1.194-2.125l-3.319.931'/%3E%3Ccircle cx='19.175' cy='26.722' r='.75' fill='white'/%3E%3C/svg%3E");
@@ -860,23 +965,34 @@ html{
 
                             .material-symbols-light--developer-mode-tv-outline-rounded {
                                 display: inline-block;
-                                width: 100px;
-                                height: 100px;
+                                width: 5vw;
+                                height: 5vw;
                                 background-repeat: no-repeat;
                                 background-size: 100% 100%;
                                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='m4.415 11l2.247-2.246q.14-.14.15-.344t-.15-.364t-.354-.16q-.195 0-.354.16l-2.389 2.389q-.242.242-.242.565t.242.565l2.389 2.389q.14.14.344.15t.364-.15t.16-.354t-.16-.354zm15.17 0l-2.247 2.246q-.14.14-.15.344t.15.364t.354.16t.354-.16l2.389-2.389q.242-.242.242-.565t-.242-.565l-2.389-2.389q-.14-.14-.344-.15t-.364.15t-.16.354t.16.354zM3 6.77V5.614q0-.69.463-1.152T4.615 4h14.77q.69 0 1.152.463T21 5.615V6.77q0 .214-.143.357t-.357.143t-.357-.143T20 6.769V5.615q0-.269-.173-.442T19.385 5H4.615q-.269 0-.442.173T4 5.615V6.77q0 .214-.143.357T3.5 7.27t-.357-.143T3 6.769M9.808 20q-.348 0-.578-.23T9 19.192V18H4.615q-.69 0-1.152-.462T3 16.385v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .269.173.442t.442.173h14.77q.269 0 .442-.173t.173-.442v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .69-.462 1.152T19.385 18H15v1.192q0 .348-.23.578t-.578.23zM12 11'/%3E%3C/svg%3E");
                             }
 
+                            .arcticons--music-you, .arcticons--pizza-boy-gbc, .material-symbols-light--developer-mode-tv-outline-rounded{
+                                @include responsive.screen_tablet(){
+                                    width: 70px;
+                                    height: 70px;
+                                }
+                            }
+                            
                             h1{   
                                 text-align: center;
-                                margin: 10px 0 10px 0;
-                                font-size: 15px;
+                                margin: 1vw 0 1vw 0;
+                                font-size: 1.2vw;
                                 letter-spacing: 3px;
                                 font-family: 'cosi azure';
                                 color: variables.$Text_Color_White;
 
                                 i{
-                                    font-size: 20px;
+                                    font-size: 1.4vw;
+
+                                    @include responsive.screen_tablet(){
+                                        font-size: 18px;
+                                    }
                                 }
 
                                 @include responsive.screen_tablet(){
@@ -888,19 +1004,20 @@ html{
                                 @include mixins.text_formatting(center, italic, 400, 1px);
                                 line-height: 1.2;
                                 color: variables.$Text_Color_White;                    
-                                font-size: 15px;
-                                padding: 15px;
-                                transform: translateY(170px);               
+                                font-size: 1vw;
+                                padding: 1vw;
+                                transform: translateY(35vw);               
                                 transition: variables.$Transition_ease; 
                             
                                 @include responsive.screen_tablet(){
-                                    font-size: 14px;
+                                    font-size: 12px;
+                                    padding: 10px;
                                 }
                             }
            
                             &:hover p{ 
                                 transform: translateY(0);
-                                margin: 0 0 70px 0;                              
+                                margin: 0 0 5vw 0;                              
                             }
            
                         }
@@ -914,49 +1031,51 @@ html{
                 @include mixins.align(relative, flex, center, center);
                 width: 100%;
                 height: auto;
-                margin: 200px 0 200px 0;
+                margin: 10vw 0 10vw 0;
                 flex-direction: column;
-
-             //   background-color: rgba(102, 51, 153, 0.381);
 
                 @include responsive.screen_laptop(){
                     margin: 0;
                 }
 
                 @include responsive.screen_tablet(){
+                    margin: 0;
                     height: auto;
                 }
 
                 .tecnology-text-bg{
                     position: absolute;
-                    top: 15%;
-                    left: 30px;
+                    top: 9vw;
+                    left: 3vw;
                     right: 0;   
-                    font-size: 130px;
+                    font-size: 10vw;
+                    font-family: 'grand slang';
+                    text-transform: uppercase;
+                    font-style: italic;
                     word-break: break-all;
-                    font-family: 'cosi azure';
+                    font-weight: 500;
                     color: variables.$Text_Color_White_Smoker;
 
                     @include responsive.screen_laptop(){
-                        top: 5%;
-                        font-size: 80px;
+                        top: 2%;
+                        left: 5px;
+                        font-size: 110px;
                     }
 
                     @include responsive.screen_small(){
                         top: 0;
-                        left: 20px;
-                        font-size: 85px;
+                        font-size: 65px;
                     }
                 }
 
                 .tecnology-title{
                     position: relative;
                     width: inherit;
-                    margin: 170px 0 50px 0;
+                    margin: 14vw 0 5vw 0;
 
                     h1{
                         @include mixins.text_formatting(center, normal, 500, 10px);
-                        font-size: 40px;
+                        font-size: 2.7vw;
                         color: variables.$Secundary_Color;
                         text-transform: uppercase;
                         word-break: break-all;
@@ -978,44 +1097,62 @@ html{
                     height: auto;
                     margin: 10px 0 0 0;
 
-                  //  background-color: rgba(238, 232, 170, 0.315);
                     
                     .html, .css, .sass, .react, .javascript, .typescript, .php, .bulma, .java, .jquery, .sql, .git, .boostrap, .materialize, .tailwind, .railway{
                         @include mixins.align(relative, flex, normal, center);
-                        width: 20%;
+                        width: 20vw;
                         height: auto;
-                        margin: 20px;   
+                        margin: 1.5vw;
+
+                        @include responsive.screen_laptop(){
+                            margin: 20px 0 20px 30px;
+                            width: 250px;                    
+                        }
+
+                        @include responsive.screen_small(){
+                            width: 100%;                    
+                        }
                         
                         img{
-                            width: 60px;
+                            width: 4.5vw;
+                            height: 4.5vw;
+                            object-fit: contain;
                             filter: grayscale(100%);
                             transition: variables.$Transition_ease;
+
+                            @include responsive.screen_laptop(){   
+                               width: 60px;          
+                               height: 60px;
+                            }
+
+                            @include responsive.screen_small(){
+                                width: 50px;
+                                height: 50px;               
+                            }
                         }
 
                         &:hover img{
                             filter: grayscale(0%);
                             transition: variables.$Transition_ease;
                         }
+
                         h2{
-                            font-size: 30px;
+                            font-size: 1.8vw;
                             color: variables.$Text_Color_White_Smoker;
                             font-family: 'cosi azure';
                             transition: variables.$Transition_ease;
                             word-break: break-all;
-                            padding: 0 0 0 15px;
-                        }
+                            padding: 0 0 0 1vw;
 
-                        @include responsive.screen_laptop(){
-                            width: 40%;
-                        }
-
-                        @include responsive.screen_small(){
-                            width: 30%;
-                            justify-content: center;
-
-                            h2{
-                                display: none;
+                            @include responsive.screen_laptop(){
+                                padding: 0 0 0 10px;
+                                font-size: 25px;           
                             }
+
+                            @include responsive.screen_small(){
+                                font-size: 30px;                      
+                            }
+    
                         }
 
                     }
@@ -1141,15 +1278,15 @@ html{
               
             .cicle {
                 @include mixins.align(relative, flex, center, center);
-                width: 45px;
-                height: 45px;
+                width: 35px;
+                height: 35px;
                 border-radius: 50px;
                 border: 1px solid variables.$Text_Color_White;
                 cursor: crosshair;
         
                 .fa-arrow-up-from-bracket {
                     color: variables.$Text_Color_White;
-                    font-size: 20px;
+                    font-size: 15px;
                 }
             }
         
@@ -1167,8 +1304,8 @@ html{
     display: none !important;
 }
 .navbar_aux {
-    height: 75px !important;
+    height: 10vh !important;
 }
 .header_aux {
-    backdrop-filter: blur(5px) !important;  
+    backdrop-filter: blur(10px) !important;  
 }

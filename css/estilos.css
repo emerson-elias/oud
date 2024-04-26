@@ -9,6 +9,10 @@
   font-family: "cosi azure";
   src: url(../fonts/CosiAzure-Black.ttf);
 }
+@font-face {
+  font-family: "grand slang";
+  src: url(../fonts/GrandSlang-Roman.ttf);
+}
 /* Responsivo para dispositivos large: */
 /* Responsivo para dispositivos Laptops: */
 /* Responsivo para dispositivos Tablets: */
@@ -72,6 +76,7 @@
 html body {
   background-color: #161616;
   cursor: none;
+  scroll-behavior: smooth;
 }
 html body #cursor {
   position: fixed;
@@ -140,22 +145,21 @@ html body header .navbar {
   align-items: center;
   width: 95%;
   height: 13vh;
-  font-family: "cosi azure";
+  padding: 0;
+  margin: 0;
+  font-family: "grand slang";
   transition: 0.5s all ease;
   border-bottom: 1px solid #ffffff;
 }
-@media screen and (max-width: 992px) {
-  html body header .navbar {
-    padding-right: 30px;
-  }
-}
 html body header .navbar li {
+  position: relative;
+  padding: 0 20px 0 0;
   list-style: none;
 }
 html body header .navbar li .game-icons--fox {
   display: inline-block;
-  width: 3em;
-  height: 3em;
+  width: 4vw;
+  height: 4vw;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='m214.5 23.24l-1 8.1c-14 61.5 21 88.66 21 88.66l11-13s-24-19.76-18-63.56c41 11.6 58 36.6 64 48.8c-44 15.76-56 57.26-80 87.96l21-3.9l-2 31.3s44-8.7 69 17.7c5-8.6 8-18.9 6-29.2l-3-28.2c-3-1.1-7-3-11-5.4c-12-7.3-25-19.1-25-19.1c-2-1.9-2-5.2-1-7.8c2-2.5 5-3.7 7-2.7c0 0 11 3.5 21 6.7c11 3.9 20 14.3 21 26.6c1 8.4 3 18.9 4 28.3c2 15.4-3 30.8-12 42.7l7 18.3h38l7-18.3c-9-11.9-14-27.3-12-42.7c1-9.4 3-19.9 4-28.3c1-12.3 10-22.7 21-26.6c10-3.2 21-6.7 21-6.7c2-1 5 .2 7 2.7c1 2.6 1 5.9-1 7.8c0 0-13 11.8-25 19.1c-4 2.4-8 4.3-11 5.4l-3 28.2c-2 10.3 1 20.6 6 29.2c25-26.4 69-17.7 69-17.7l-2-31.3l21 3.9c-24-30.7-36-72.2-80-87.96c6-12.2 23-37.2 64-48.8c6 43.8-18 63.56-18 63.56l11 13s35-27.16 21-88.66l-1-8.1c-43.3 7.32-85.9 35.37-110 62.9c-5.5-.13-10.5-.52-16 0c-42.8-34.75-61.3-56.12-110-62.9m24.7 205.26c38.2 53.2-87.7 46.6-153.61 119.5c-26.11 28-32.53 56.3-25.95 80.3c12.23 44 71.86 73 144.06 55c49.8-13 96-32 134.8-40c35.1-8 63.8-5 82.3 24l15.3-5c-2.9-38-14.4-68.8-36.5-87.5c-16.8-14.2-39.9-22-70.9-21.1c-29.3.8-65.9 9.3-111.2 27.3c-27 9.5-76.5 27.7-102.4 12.6c-9.1-5.6-11.9-15-11.2-24.3c34.4 52 124.1-27 198.5-35.7c0 0 6.6-88.3-63.2-105.1m188.6 0c-53.1 12.4-64.1 54.1-65.2 105.1c26.5-.2 49.9 23.7 49.9 23.7s-27-98.6 15.3-128.8m-100.3 1.3h10c3 0 6 2.8 6 6.3c0 3.4-3 6.2-6 6.2h-10c-3 0-6-2.8-6-6.2c0-3.5 3-6.3 6-6.3m61.4 157.7c13.7 11.6 22.2 28.8 26.8 49.8c-15.8-12-35-16-57.1-14c-24.1 2-51.9 10-82.3 20l26.1-25c-28.3 14-53.1 17-75.4 12l80.9-40.2l-61.2 11.2c23.8-20.2 95.2-52.2 142.2-13.8'/%3E%3C/svg%3E");
   background-color: currentColor;
   -webkit-mask-image: var(--svg);
@@ -165,15 +169,22 @@ html body header .navbar li .game-icons--fox {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
+@media screen and (max-width: 992px) {
+  html body header .navbar li .game-icons--fox {
+    width: 50px;
+    height: 50px;
+  }
+}
 html body header .navbar li .fa-bars-staggered, html body header .navbar li .fa-circle-xmark {
   display: none;
-  font-size: 30px;
+  font-size: 3vw;
   color: #ffffff;
   cursor: crosshair;
 }
 @media screen and (max-width: 992px) {
   html body header .navbar li .fa-bars-staggered, html body header .navbar li .fa-circle-xmark {
     display: block;
+    font-size: 30px;
   }
 }
 html body header .navbar .active-bar {
@@ -181,10 +192,15 @@ html body header .navbar .active-bar {
   display: flex;
   justify-content: baseline;
   align-items: center;
-  width: 240px;
-  height: 60px;
+  width: 25vw;
+  height: inherit;
   margin: 0 0 0 10px;
   cursor: crosshair;
+}
+@media screen and (max-width: 992px) {
+  html body header .navbar .active-bar {
+    width: 70vw;
+  }
 }
 html body header .navbar .active-bar a {
   position: relative;
@@ -192,13 +208,25 @@ html body header .navbar .active-bar a {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   color: #ffffff;
   transition: 0.5s all ease;
 }
+@media screen and (max-width: 1200px) {
+  html body header .navbar .active-bar a {
+    font-size: 1.7vw;
+  }
+}
+@media screen and (max-width: 992px) {
+  html body header .navbar .active-bar a {
+    font-size: 2vw;
+  }
+}
 @media screen and (max-width: 600px) {
   html body header .navbar .active-bar a {
-    font-size: 17px;
+    font-size: 15px;
   }
 }
 html body header .navbar .links-ul {
@@ -206,15 +234,34 @@ html body header .navbar .links-ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 50vw;
+  height: inherit;
+}
+@media screen and (max-width: 1200px) {
+  html body header .navbar .links-ul {
+    width: 70vw;
+  }
 }
 html body header .navbar .links-ul .li-link {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 50px;
-  margin: 10px;
+  width: 12vw;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (max-width: 1200px) {
+  html body header .navbar .links-ul .li-link {
+    width: inherit;
+  }
+}
+@media screen and (max-width: 992px) {
+  html body header .navbar .links-ul .li-link {
+    width: 200px;
+    margin: 40px 0 0 0;
+  }
 }
 html body header .navbar .links-ul .li-link a {
   cursor: crosshair;
@@ -222,13 +269,14 @@ html body header .navbar .links-ul .li-link a {
 html body header .navbar .links-ul .li-link::after {
   position: absolute;
   content: "";
-  top: 45px;
-  left: 0;
+  top: 50%;
+  left: 50%;
   right: 0;
   bottom: 0;
-  background-color: #caa986;
   width: 0%;
   height: 3px;
+  transform: translate(-50%, -50%);
+  background-color: #caa986;
   border-radius: 5px;
   transition: 0.3s all;
 }
@@ -239,10 +287,22 @@ html body header .navbar .links-ul .li-link:hover::after {
 html body header .navbar .links-ul .li-link .link {
   color: #ffffff;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 1.1vw;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 html body header .navbar .links-ul .li-link .link i {
   margin-right: 7px;
+}
+@media screen and (max-width: 1200px) {
+  html body header .navbar .links-ul .li-link .link {
+    font-size: 1.5vw;
+  }
+}
+@media screen and (max-width: 992px) {
+  html body header .navbar .links-ul .li-link .link {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 992px) {
   html body header .navbar .links-ul {
@@ -266,7 +326,6 @@ html body main .banner {
   justify-content: center;
   align-items: center;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2666666667), #161616), url(../img/herobg-hd.jpg);
-  /* background-attachment: fixed;*/
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -282,66 +341,43 @@ html body main .banner {
 html body main .banner .row {
   position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: end;
+  justify-content: end;
+  align-items: normal;
+  flex-direction: column;
   width: 95%;
   height: 80vh;
   color: #ffffff;
   transition: 0.5s all ease;
 }
-@media screen and (max-width: 992px) {
-  html body main .banner .row {
-    display: block;
-    height: auto;
-  }
-}
 @media screen and (max-width: 600px) {
   html body main .banner .row {
+    top: 60px;
     width: 90%;
+    justify-content: center;
   }
 }
-html body main .banner .row .profession {
-  position: relative;
-  width: 50%;
-  height: auto;
-  font-family: "cosi azure";
-}
-@media screen and (max-width: 992px) {
-  html body main .banner .row .profession {
-    width: initial;
-  }
-}
-html body main .banner .row .profession .follow {
+html body main .banner .row .follow {
   position: relative;
   display: flex;
   justify-content: end;
   align-items: center;
-  top: 90px;
-  width: 185%;
-  height: 100px;
+  width: inherit;
+  height: 7vw;
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .profession .follow {
+  html body main .banner .row .follow {
     width: 90%;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .banner .row .profession .follow {
-    width: inherit;
+  html body main .banner .row .follow {
+    width: 100%;
   }
 }
-html body main .banner .row .profession .follow .arcticons--fonts-art {
+html body main .banner .row .follow .arcticons--dailyart {
   display: inline-block;
-  width: 50px;
-  height: 50px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M6.57 40.134C8.358 29.57 12.686 5.907 16.727 5.504s5.83 36.996 5.83 36.996'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M6.57 23.684c4.674-2.135 18.93-6.464 24.356-6.464m3.487 7.162c-3.198-4.796-7.008-2.198-7.18 2.65c-.174 4.848 4.682 4.668 6.471 1.263'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M35.024 21.837c-1.154 4.329-3.348 15.238.52 15.988s5.887-7.994 5.887-7.994M40.215 13.12a1.219 1.219 0 0 0-1.958-1.293a1.217 1.217 0 0 0-2.402.342c.027 1.226 1.327 2.983 1.327 2.983s2.082-.663 2.821-1.642q.14-.17.212-.39'/%3E%3C/svg%3E");
-}
-html body main .banner .row .profession .follow .arcticons--dailyart {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 2.5vw;
+  height: 2.5vw;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='13.557' height='19.545' x='14.99' y='9.468' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' rx='6.779'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M28.547 22.235v20.336M21.09 29.013v3.728c-4.8 0-12.088 6.27-12.088 9.83'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M42.5 42.57s-2.937-8.981-7.642-8.981V16.21A10.78 10.78 0 0 0 24.077 5.43h0a10.78 10.78 0 0 0-10.782 10.781v17.378C9.737 34.888 6.008 39.972 5.5 42.57'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M19.029 22.178c.263.874 2.523.933 2.895 0m-2.895-4.848c-.283-.874-2.712-.933-3.112 0m9.263 0c-.283-.874-2.712-.933-3.112 0m-3.915 7.136a3.16 3.16 0 0 0 2.324.763a3.18 3.18 0 0 0 2.407-.89'/%3E%3Ccircle cx='18.075' cy='17.68' r='.75' fill='%23000'/%3E%3Ccircle cx='24.43' cy='17.68' r='.75' fill='%23000'/%3E%3C/svg%3E");
   background-color: #ffffff;
   -webkit-mask-image: var(--svg);
@@ -351,7 +387,13 @@ html body main .banner .row .profession .follow .arcticons--dailyart {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
 }
-html body main .banner .row .profession .follow p {
+@media screen and (max-width: 600px) {
+  html body main .banner .row .follow .arcticons--dailyart {
+    width: 20px;
+    height: 20px;
+  }
+}
+html body main .banner .row .follow p {
   position: relative;
   display: flex;
   justify-content: center;
@@ -361,121 +403,164 @@ html body main .banner .row .profession .follow p {
   font-style: italic;
   font-weight: 300;
   letter-spacing: 1px;
-  width: 180px;
-  height: 100px;
+  width: 15vw;
+  height: inherit;
   color: #ffffff;
-  font-size: 10px;
+  font-size: 0.7vw;
 }
-@media screen and (max-width: 600px) {
-  html body main .banner .row .profession .follow p {
-    width: 120px;
-    font-size: 10px;
+@media screen and (max-width: 992px) {
+  html body main .banner .row .follow p {
+    width: 200px;
+    font-size: 8px;
   }
 }
-html body main .banner .row .profession .profission-text {
+@media screen and (max-width: 600px) {
+  html body main .banner .row .follow p {
+    width: 150px;
+    font-size: 7px;
+  }
+}
+html body main .banner .row .row-itens {
   position: relative;
-  width: 150px;
-  top: 40px;
-  font-size: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  width: initial;
+  height: auto;
+  font-family: "grand slang", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+@media screen and (max-width: 992px) {
+  html body main .banner .row .row-itens {
+    flex-direction: column;
+  }
+}
+html body main .banner .row .row-itens section {
+  flex-direction: column;
+  width: 50%;
+}
+@media screen and (max-width: 992px) {
+  html body main .banner .row .row-itens section {
+    width: 100%;
+  }
+}
+html body main .banner .row .row-itens section .item-creat {
+  position: relative;
+  flex-direction: column;
+  width: 10.5vw;
+  font-size: 2vw;
   border-bottom: 1px solid #ffffff;
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .profession .profission-text {
-    top: 50px;
+  html body main .banner .row .row-itens section .item-creat {
+    width: 130px;
+    font-size: 25px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .banner .row .profession .profission-text {
-    width: 110px;
+  html body main .banner .row .row-itens section .item-creat {
+    width: 90px;
     font-size: 18px;
+    margin: 0 0 25px 0;
   }
 }
-html body main .banner .row .profession .profession-name {
+html body main .banner .row .row-itens section .item-profession {
   position: relative;
-  width: 100%;
+  width: initial;
   height: auto;
-  margin-top: 100px;
+  top: 2.8vw;
 }
-html body main .banner .row .profession .profession-name span {
+html body main .banner .row .row-itens section .item-profession span {
   display: block;
-  font-size: 3.7vw;
-  transform: scaleY(4);
-  margin: 110px 0 60px 0;
+  height: auto;
+  margin: 1vw 0 4vw 0;
+  font-size: 5vw;
+  transform: scaleY(2.5);
   letter-spacing: 3px;
   word-spacing: 5px;
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .profession .profession-name span {
+  html body main .banner .row .row-itens section .item-profession span {
     font-size: 3em;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .banner .row .profession .profession-name span {
+  html body main .banner .row .row-itens section .item-profession span {
     transform: scaleY(4);
     letter-spacing: 2px;
     font-size: 1.7em;
     margin: 0 0 60px 0;
   }
 }
-html body main .banner .row .banner-descripiton {
+html body main .banner .row .row-itens .banner-descripiton {
   position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: normal;
   align-items: end;
+  flex-direction: column;
   width: 50%;
-  height: auto;
+  height: inherit;
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .banner-descripiton {
+  html body main .banner .row .row-itens .banner-descripiton {
     width: initial;
-    margin-top: 70px;
+    margin: 4vw 0 0 0;
   }
 }
-html body main .banner .row .banner-descripiton p {
+html body main .banner .row .row-itens .banner-descripiton p {
   text-align: end;
-  font-size: 25px;
+  font-size: 1.8vw;
   letter-spacing: 2px;
-  font-family: "cosi azure";
+  font-family: "grand slang";
+  text-transform: uppercase;
   color: #ffffff;
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .banner-descripiton p {
+  html body main .banner .row .row-itens .banner-descripiton p {
     width: 75%;
     font-size: 20px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .banner .row .banner-descripiton p {
+  html body main .banner .row .row-itens .banner-descripiton p {
     width: 100%;
     font-size: 14px;
   }
 }
-html body main .banner .row .banner-descripiton .know {
+html body main .banner .row .row-itens .banner-descripiton .know {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px;
-  width: 160px;
-  height: 50px;
-  border: 2px solid #ffffff;
+  width: 11vw;
+  height: 3vw;
+  border: 1px solid #ffffff;
   transition: 0.5s all ease;
-  border-radius: 30px;
+  border-radius: 2vw;
 }
-html body main .banner .row .banner-descripiton .know:hover {
+@media screen and (max-width: 600px) {
+  html body main .banner .row .row-itens .banner-descripiton .know {
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+  }
+}
+html body main .banner .row .row-itens .banner-descripiton .know:hover {
   backdrop-filter: blur(5px);
   transition: 0.5s all ease;
 }
-html body main .banner .row .banner-descripiton .know a {
+html body main .banner .row .row-itens .banner-descripiton .know a {
   font-family: "cosi azure";
-  font-size: 19px;
+  font-size: 1.2vw;
   color: #ffffff;
   text-decoration: none;
   cursor: crosshair;
 }
-@media screen and (max-width: 992px) {
-  html body main .banner .row .banner-descripiton .know a {
-    font-size: 13px;
+@media screen and (max-width: 600px) {
+  html body main .banner .row .row-itens .banner-descripiton .know a {
+    font-size: 11px;
   }
 }
 html body main .hero-me {
@@ -485,14 +570,14 @@ html body main .hero-me {
   align-items: center;
   flex-direction: column;
   margin-top: -1px;
-  width: 100%;
+  width: 100vw;
   height: auto;
-  padding: 150px 0 0 0;
+  padding: 11vw 0 5vw 0;
   background-color: #161616;
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me {
-    height: auto;
+    padding: 110px 0 0 0;
   }
 }
 @media screen and (max-width: 600px) {
@@ -506,12 +591,12 @@ html body main .hero-me .hero-titulo {
   justify-content: center;
   align-items: center;
   width: inherit;
-  height: 100px;
-  margin: 30px;
+  height: 6vw;
+  margin: 2vw;
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .hero-titulo {
-    margin: 0 0 50px 0;
+    margin: 40px 0 50px 0;
   }
 }
 html body main .hero-me .hero-titulo h1 {
@@ -520,13 +605,13 @@ html body main .hero-me .hero-titulo h1 {
   font-style: normal;
   font-weight: 500;
   letter-spacing: 10px;
-  font-size: 40px;
+  font-size: 2.5vw;
   color: #ffffff;
   text-transform: uppercase;
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .hero-titulo h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 html body main .hero-me .hero-titulo h1 span {
@@ -534,11 +619,14 @@ html body main .hero-me .hero-titulo h1 span {
 }
 html body main .hero-me .hero-sobre-text-fundo {
   position: absolute;
-  top: 20%;
-  left: 30px;
+  top: 9vw;
+  left: 3vw;
   right: 0;
-  font-size: 120px;
-  font-family: "cosi azure";
+  font-size: 10vw;
+  font-family: "grand slang";
+  text-transform: uppercase;
+  font-style: italic;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.1607843137);
 }
 @media screen and (max-width: 992px) {
@@ -550,6 +638,7 @@ html body main .hero-me .hero-sobre-text-fundo {
 @media screen and (max-width: 600px) {
   html body main .hero-me .hero-sobre-text-fundo {
     top: 5%;
+    left: 5px;
     font-size: 65px;
   }
 }
@@ -561,7 +650,6 @@ html body main .hero-me .sobre-mim {
   width: 85%;
   height: auto;
   color: #ffffff;
-  background-color: rgba(102, 51, 153, 0);
 }
 @media screen and (max-width: 1200px) {
   html body main .hero-me .sobre-mim {
@@ -579,35 +667,8 @@ html body main .hero-me .sobre-mim .sobre-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30%;
+  width: 30vw;
   height: auto;
-  background-color: rgba(0, 0, 255, 0);
-}
-html body main .hero-me .sobre-mim .sobre-img::after {
-  position: absolute;
-  content: "";
-  width: 290px;
-  height: 250px;
-  z-index: 1;
-  transform: translate(-15%, -15%);
-  border: 12px solid #caa986;
-}
-@media screen and (max-width: 1200px) {
-  html body main .hero-me .sobre-mim .sobre-img::after {
-    transform: translate(-10%, -15%);
-  }
-}
-@media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-img::after {
-    width: 250px;
-    transform: translate(-10%, -8%);
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-img::after {
-    height: 230px;
-    transform: translate(-10%, -12%);
-  }
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .sobre-mim .sobre-img {
@@ -621,15 +682,20 @@ html body main .hero-me .sobre-mim .sobre-img::after {
 }
 html body main .hero-me .sobre-mim .sobre-img img {
   position: relative;
-  width: 300px;
+  width: 20vw;
   height: auto;
   z-index: 2;
   filter: grayscale(0%);
   transition: 0.5s all ease;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   html body main .hero-me .sobre-mim .sobre-img img {
     width: 300px;
+  }
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-img img {
+    width: 280px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -647,6 +713,35 @@ html body main .hero-me .sobre-mim .sobre-img img:hover {
   filter: grayscale(100%);
   transition: 0.5s all ease;
 }
+html body main .hero-me .sobre-mim .sobre-img::after {
+  position: absolute;
+  content: "";
+  width: 18vw;
+  height: 17vw;
+  z-index: 1;
+  transform: translate(-15%, -15%);
+  border: 0.8vw solid #caa986;
+}
+@media screen and (max-width: 1200px) {
+  html body main .hero-me .sobre-mim .sobre-img::after {
+    width: 280px;
+    height: 250px;
+    transform: translate(-10%, -15%);
+  }
+}
+@media screen and (max-width: 768px) {
+  html body main .hero-me .sobre-mim .sobre-img::after {
+    width: 250px;
+    transform: translate(-10%, -8%);
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-img::after {
+    border: 10px solid #caa986;
+    height: 230px;
+    transform: translate(-10%, -12%);
+  }
+}
 html body main .hero-me .sobre-mim .sobre-habilits {
   position: relative;
   display: flex;
@@ -658,14 +753,13 @@ html body main .hero-me .sobre-mim .sobre-habilits {
   font-weight: 300;
   letter-spacing: 1px;
   flex-direction: column;
-  width: 25%;
+  width: 30vw;
   height: auto;
-  background-color: rgba(255, 192, 203, 0);
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .sobre-mim .sobre-habilits {
-    padding: 0 0 0 100px;
     width: 50%;
+    height: 270px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -684,31 +778,42 @@ html body main .hero-me .sobre-mim .sobre-habilits h1 {
   width: 100%;
   height: auto;
   text-transform: uppercase;
-  font-size: 23px;
+  font-size: 1.7vw;
   font-family: "cosi azure";
-  padding: 0 0 9px 0;
+  padding: 0 0 1vw 0;
 }
 @media screen and (max-width: 768px) {
   html body main .hero-me .sobre-mim .sobre-habilits h1 {
-    font-size: 15px;
+    font-size: 22px;
   }
 }
 html body main .hero-me .sobre-mim .sobre-habilits p {
   position: relative;
   width: 100%;
   height: auto;
+  font-size: 1.1vw;
   font-style: italic;
-  padding: 10px 0 10px 0;
+  padding: 0.7vw 0 0.5vw 0;
+}
+@media screen and (max-width: 1200px) {
+  html body main .hero-me .sobre-mim .sobre-habilits p {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 768px) {
   html body main .hero-me .sobre-mim .sobre-habilits p {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 html body main .hero-me .sobre-mim .sobre-habilits p i {
   padding-right: 5px;
-  font-size: 20px;
+  font-size: 1.5vw;
   color: #caa986;
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-habilits p i {
+    font-size: 25px;
+  }
 }
 @media screen and (max-width: 768px) {
   html body main .hero-me .sobre-mim .sobre-habilits p i {
@@ -717,16 +822,20 @@ html body main .hero-me .sobre-mim .sobre-habilits p i {
 }
 html body main .hero-me .sobre-mim .sobre-descripion {
   position: relative;
-  width: 40%;
+  width: 40vw;
   height: auto;
   margin: 0 0 50px 0 auto;
-  background-color: rgba(255, 166, 0, 0);
+}
+@media screen and (max-width: 1200px) {
+  html body main .hero-me .sobre-mim .sobre-descripion {
+    width: 35%;
+  }
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .sobre-mim .sobre-descripion {
     width: 80%;
-    margin: 70px auto;
-    text-align: center;
+    height: auto;
+    margin: 50px auto;
   }
 }
 @media screen and (max-width: 600px) {
@@ -738,11 +847,18 @@ html body main .hero-me .sobre-mim .sobre-descripion {
 html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo {
   width: initial;
   height: auto;
+  margin: 5px 0 20px 0;
 }
 html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo h1 {
   font-family: "cosi azure";
-  font-size: 23px;
+  font-size: 1.7vw;
   text-transform: uppercase;
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo h1 {
+    font-size: 22px;
+    text-align: center;
+  }
 }
 html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio {
   text-align: justify;
@@ -750,21 +866,26 @@ html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio {
   font-style: italic;
   font-weight: 300;
   letter-spacing: 1px;
-  font-size: 16px;
+  font-size: 1vw;
   line-height: 1.5;
 }
 html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
-  margin: 10px 0 15px 0;
+  margin: 1vw 0 1.2vw 0;
+}
+@media screen and (max-width: 1200px) {
+  html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
+    font-size: 12px;
+  }
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p:nth-child(1) {
     text-align: center;
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
-    text-align: left;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.7;
   }
 }
@@ -776,19 +897,19 @@ html body main .cards-container {
   flex-direction: column;
   width: 100%;
   height: auto;
-  margin: 200px 0 150px 0;
+  margin: 10vw 0 10vw 0;
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container {
-    margin: 100px 0 150px 0;
+    margin: 100px 0 100px 0;
   }
 }
 html body main .cards-container .boll-bg {
   position: absolute;
   top: 0;
-  right: 69%;
-  width: 900px;
-  height: 900px;
+  right: 70vw;
+  width: 55vw;
+  height: 55vw;
   border: 2px solid rgba(255, 255, 255, 0.4274509804);
   border-radius: 50%;
   animation: girar_left 40s linear infinite;
@@ -796,7 +917,9 @@ html body main .cards-container .boll-bg {
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container .boll-bg {
-    right: 50%;
+    right: 60%;
+    width: 650px;
+    height: 650px;
   }
 }
 html body main .cards-container .boll-bg .icon-park-outline--loading {
@@ -819,8 +942,8 @@ html body main .cards-container .boll-bg::before {
   left: 20%;
   right: 0;
   bottom: 0;
-  width: 100px;
-  height: 100px;
+  width: 7vw;
+  height: 7vw;
   background-color: transparent;
   backdrop-filter: blur(10px);
   border: 1px solid #ffffff;
@@ -832,8 +955,8 @@ html body main .cards-container .boll-bg::after {
   left: 20%;
   right: 0;
   bottom: 0;
-  width: 100px;
-  height: 100px;
+  width: 7vw;
+  height: 7vw;
   background-color: transparent;
   backdrop-filter: blur(10px);
   border: 1px solid #ffffff;
@@ -851,7 +974,7 @@ html body main .cards-container .card-title h1 {
   font-style: normal;
   font-weight: 500;
   letter-spacing: 10px;
-  font-size: 40px;
+  font-size: 2.5vw;
   color: #ffffff;
   text-transform: uppercase;
   word-break: break-all;
@@ -872,12 +995,14 @@ html body main .cards-container .card-title p {
   letter-spacing: 1px;
   width: 70%;
   margin: 0 auto;
-  padding: 50px 0 10px 0;
+  font-size: 1.1vw;
+  padding: 3vw 0 2vw 0;
   color: #ffffff;
 }
 @media screen and (max-width: 600px) {
   html body main .cards-container .card-title p {
     width: 95%;
+    font-size: 12px;
   }
 }
 html body main .cards-container .cards-omega {
@@ -897,29 +1022,59 @@ html body main .cards-container .cards-omega {
 html body main .cards-container .cards-omega .card-bg {
   position: relative;
   width: 26%;
-  height: 320px;
+  height: 22vw;
   border: 1px solid #ffffff;
   background-color: #161616;
   overflow: hidden;
 }
+@media screen and (max-width: 992px) {
+  html body main .cards-container .cards-omega .card-bg {
+    width: 30%;
+    margin: 0 0 100px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg {
+    width: 40%;
+    height: 230px;
+    margin: 0 0 50px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .cards-container .cards-omega .card-bg {
+    width: 80%;
+    margin: 0 0 40px 0;
+    height: 260px;
+  }
+}
 html body main .cards-container .cards-omega .card-bg .span-card {
   position: absolute;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 50px;
+  align-items: center;
+  flex-direction: column;
+  width: 3.5vw;
   height: inherit;
   background-color: rgba(255, 255, 255, 0.1607843137);
   transition: all 1s ease;
+}
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg .span-card {
+    width: 30px;
+  }
 }
 html body main .cards-container .cards-omega .card-bg .span-card span {
   position: relative;
   display: flex;
   flex-direction: column;
-  font-size: 32px;
+  font-size: 2.2vw;
   font-family: "cosi azure";
   color: #caa986;
+}
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg .span-card span {
+    font-size: 22px;
+  }
 }
 html body main .cards-container .cards-omega .card-bg:hover .span-card {
   width: 100%;
@@ -930,26 +1085,8 @@ html body main .cards-container .cards-omega .card-bg:hover .span-card {
 html body main .cards-container .cards-omega .card-bg .fa-music, html body main .cards-container .cards-omega .card-bg .fa-pizza-slice, html body main .cards-container .cards-omega .card-bg .fa-code {
   position: absolute;
   color: rgba(255, 255, 255, 0.0274509804);
-  font-size: 300px;
-  top: 20px;
-}
-@media screen and (max-width: 992px) {
-  html body main .cards-container .cards-omega .card-bg {
-    width: 40%;
-    margin: 0 0 100px 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  html body main .cards-container .cards-omega .card-bg {
-    width: 45%;
-    margin: 0 0 50px 0;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .cards-container .cards-omega .card-bg {
-    width: 85%;
-    margin: 0 0 40px 0;
-  }
+  font-size: 20vw;
+  top: 1vw;
 }
 html body main .cards-container .cards-omega .card-bg .card {
   position: relative;
@@ -957,46 +1094,62 @@ html body main .cards-container .cards-omega .card-bg .card {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  top: 40px;
+  top: 2.5vw;
   width: initial;
   height: inherit;
   transition: 0.5s all ease;
   overflow: hidden;
 }
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg .card {
+    top: 20px;
+  }
+}
 html body main .cards-container .cards-omega .card-bg .card .arcticons--music-you {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 5vw;
+  height: 5vw;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='18.538' cy='35.378' r='8.122' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M26.66 35.378V12.834M28.69 4.5h6.864a2.03 2.03 0 0 1 2.03 2.03v4.273a2.03 2.03 0 0 1-2.03 2.03H26.66h0V6.53a2.03 2.03 0 0 1 2.03-2.03'/%3E%3C/svg%3E");
 }
 html body main .cards-container .cards-omega .card-bg .card .arcticons--pizza-boy-gbc {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 5vw;
+  height: 5vw;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='22.245' cy='23.357' r='3.617' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='33.469' cy='23.808' r='3.979' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27.059' cy='34.697' r='2.962' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M23.99 13.27c-.33 1.75-.91 4.02-1.65 6.48'/%3E%3Cellipse cx='42.57' cy='28.808' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' rx='2.537' ry='1.834' transform='rotate(-16.754 42.57 28.807)'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M33.7 19.844c-3.32-3.19-6.99-5.48-8.98-6.24a3 3 0 0 0-.34-.12a2.54 2.54 0 0 1-1.31-3.34c.56-1.29 2.01-1.68 3.34-1.32c1.91.51 6.05 3.01 9.96 6.55c3.92 3.53 7.61 8.09 8.63 12.7m-4.86 1.46c-.55-1.89-1.52-3.7-2.71-5.39m-11.51 13.3c-4.09.96-8.4 1.6-12.4 1.86c2.02-1.93 4.54-7.33 6.63-13m9.26 10.2c2.04-.61 3.98-1.3 5.73-2.07c.72-.32.24 2.24 2.2 2.03c.99-.1 1.52-.79 1.66-2.66c.11-1.46 1.79-2.69 2.34-3.2'/%3E%3Ccircle cx='26.362' cy='18.615' r='.75' fill='white'/%3E%3Ccircle cx='25.862' cy='29.308' r='.75' fill='white'/%3E%3Ccircle cx='19.681' cy='36.244' r='.75' fill='white'/%3E%3Ccircle cx='35.638' cy='30.71' r='.75' fill='white'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m16.26 35.27l-3.2.9c-1.04.29-2.12-.32-2.41-1.36L5.07 14.92a1.96 1.96 0 0 1 1.35-2.41l11.64-3.27c1.04-.29 2.11.32 2.41 1.36l2.23 7.93'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m19.88 20.644l-9.25 2.59a.525.525 0 0 1-.64-.36l-2.17-7.72c-.07-.27.09-.56.36-.63l9.42-2.65c.28-.07.56.09.64.36l2.16 7.72c.03.11.03.22-.02.31m-7.603 6.059l.931 3.319m1.194-2.125l-3.319.931'/%3E%3Ccircle cx='19.175' cy='26.722' r='.75' fill='white'/%3E%3C/svg%3E");
 }
 html body main .cards-container .cards-omega .card-bg .card .material-symbols-light--developer-mode-tv-outline-rounded {
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 5vw;
+  height: 5vw;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='m4.415 11l2.247-2.246q.14-.14.15-.344t-.15-.364t-.354-.16q-.195 0-.354.16l-2.389 2.389q-.242.242-.242.565t.242.565l2.389 2.389q.14.14.344.15t.364-.15t.16-.354t-.16-.354zm15.17 0l-2.247 2.246q-.14.14-.15.344t.15.364t.354.16t.354-.16l2.389-2.389q.242-.242.242-.565t-.242-.565l-2.389-2.389q-.14-.14-.344-.15t-.364.15t-.16.354t.16.354zM3 6.77V5.614q0-.69.463-1.152T4.615 4h14.77q.69 0 1.152.463T21 5.615V6.77q0 .214-.143.357t-.357.143t-.357-.143T20 6.769V5.615q0-.269-.173-.442T19.385 5H4.615q-.269 0-.442.173T4 5.615V6.77q0 .214-.143.357T3.5 7.27t-.357-.143T3 6.769M9.808 20q-.348 0-.578-.23T9 19.192V18H4.615q-.69 0-1.152-.462T3 16.385v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .269.173.442t.442.173h14.77q.269 0 .442-.173t.173-.442v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .69-.462 1.152T19.385 18H15v1.192q0 .348-.23.578t-.578.23zM12 11'/%3E%3C/svg%3E");
 }
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg .card .arcticons--music-you, html body main .cards-container .cards-omega .card-bg .card .arcticons--pizza-boy-gbc, html body main .cards-container .cards-omega .card-bg .card .material-symbols-light--developer-mode-tv-outline-rounded {
+    width: 70px;
+    height: 70px;
+  }
+}
 html body main .cards-container .cards-omega .card-bg .card h1 {
   text-align: center;
-  margin: 10px 0 10px 0;
-  font-size: 15px;
+  margin: 1vw 0 1vw 0;
+  font-size: 1.2vw;
   letter-spacing: 3px;
   font-family: "cosi azure";
   color: #ffffff;
 }
 html body main .cards-container .cards-omega .card-bg .card h1 i {
-  font-size: 20px;
+  font-size: 1.4vw;
+}
+@media screen and (max-width: 768px) {
+  html body main .cards-container .cards-omega .card-bg .card h1 i {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 768px) {
   html body main .cards-container .cards-omega .card-bg .card h1 {
@@ -1011,19 +1164,20 @@ html body main .cards-container .cards-omega .card-bg .card p {
   letter-spacing: 1px;
   line-height: 1.2;
   color: #ffffff;
-  font-size: 15px;
-  padding: 15px;
-  transform: translateY(170px);
+  font-size: 1vw;
+  padding: 1vw;
+  transform: translateY(35vw);
   transition: 0.5s all ease;
 }
 @media screen and (max-width: 768px) {
   html body main .cards-container .cards-omega .card-bg .card p {
-    font-size: 14px;
+    font-size: 12px;
+    padding: 10px;
   }
 }
 html body main .cards-container .cards-omega .card-bg .card:hover p {
   transform: translateY(0);
-  margin: 0 0 70px 0;
+  margin: 0 0 5vw 0;
 }
 html body main .tecnology-container {
   position: relative;
@@ -1032,7 +1186,7 @@ html body main .tecnology-container {
   align-items: center;
   width: 100%;
   height: auto;
-  margin: 200px 0 200px 0;
+  margin: 10vw 0 10vw 0;
   flex-direction: column;
 }
 @media screen and (max-width: 992px) {
@@ -1042,36 +1196,40 @@ html body main .tecnology-container {
 }
 @media screen and (max-width: 768px) {
   html body main .tecnology-container {
+    margin: 0;
     height: auto;
   }
 }
 html body main .tecnology-container .tecnology-text-bg {
   position: absolute;
-  top: 15%;
-  left: 30px;
+  top: 9vw;
+  left: 3vw;
   right: 0;
-  font-size: 130px;
+  font-size: 10vw;
+  font-family: "grand slang";
+  text-transform: uppercase;
+  font-style: italic;
   word-break: break-all;
-  font-family: "cosi azure";
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.1607843137);
 }
 @media screen and (max-width: 992px) {
   html body main .tecnology-container .tecnology-text-bg {
-    top: 5%;
-    font-size: 80px;
+    top: 2%;
+    left: 5px;
+    font-size: 110px;
   }
 }
 @media screen and (max-width: 600px) {
   html body main .tecnology-container .tecnology-text-bg {
     top: 0;
-    left: 20px;
-    font-size: 85px;
+    font-size: 65px;
   }
 }
 html body main .tecnology-container .tecnology-title {
   position: relative;
   width: inherit;
-  margin: 170px 0 50px 0;
+  margin: 14vw 0 5vw 0;
 }
 html body main .tecnology-container .tecnology-title h1 {
   text-align: center;
@@ -1079,7 +1237,7 @@ html body main .tecnology-container .tecnology-title h1 {
   font-style: normal;
   font-weight: 500;
   letter-spacing: 10px;
-  font-size: 40px;
+  font-size: 2.7vw;
   color: #caa986;
   text-transform: uppercase;
   word-break: break-all;
@@ -1107,39 +1265,61 @@ html body main .tecnology-container .tecnology .html, html body main .tecnology-
   display: flex;
   justify-content: normal;
   align-items: center;
-  width: 20%;
+  width: 20vw;
   height: auto;
-  margin: 20px;
+  margin: 1.5vw;
+}
+@media screen and (max-width: 992px) {
+  html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .bulma, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .jquery, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .railway {
+    margin: 20px 0 20px 30px;
+    width: 250px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .bulma, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .jquery, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .railway {
+    width: 100%;
+  }
 }
 html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .bulma img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .jquery img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .railway img {
-  width: 60px;
+  width: 4.5vw;
+  height: 4.5vw;
+  object-fit: contain;
   filter: grayscale(100%);
   transition: 0.5s all ease;
+}
+@media screen and (max-width: 992px) {
+  html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .bulma img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .jquery img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .railway img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .bulma img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .jquery img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .railway img {
+    width: 50px;
+    height: 50px;
+  }
 }
 html body main .tecnology-container .tecnology .html:hover img, html body main .tecnology-container .tecnology .css:hover img, html body main .tecnology-container .tecnology .sass:hover img, html body main .tecnology-container .tecnology .react:hover img, html body main .tecnology-container .tecnology .javascript:hover img, html body main .tecnology-container .tecnology .typescript:hover img, html body main .tecnology-container .tecnology .php:hover img, html body main .tecnology-container .tecnology .bulma:hover img, html body main .tecnology-container .tecnology .java:hover img, html body main .tecnology-container .tecnology .jquery:hover img, html body main .tecnology-container .tecnology .sql:hover img, html body main .tecnology-container .tecnology .git:hover img, html body main .tecnology-container .tecnology .boostrap:hover img, html body main .tecnology-container .tecnology .materialize:hover img, html body main .tecnology-container .tecnology .tailwind:hover img, html body main .tecnology-container .tecnology .railway:hover img {
   filter: grayscale(0%);
   transition: 0.5s all ease;
 }
 html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .bulma h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .jquery h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .railway h2 {
-  font-size: 30px;
+  font-size: 1.8vw;
   color: rgba(255, 255, 255, 0.1607843137);
   font-family: "cosi azure";
   transition: 0.5s all ease;
   word-break: break-all;
-  padding: 0 0 0 15px;
+  padding: 0 0 0 1vw;
 }
 @media screen and (max-width: 992px) {
-  html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .bulma, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .jquery, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .railway {
-    width: 40%;
+  html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .bulma h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .jquery h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .railway h2 {
+    padding: 0 0 0 10px;
+    font-size: 25px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .bulma, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .jquery, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .railway {
-    width: 30%;
-    justify-content: center;
-  }
   html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .bulma h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .jquery h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .railway h2 {
-    display: none;
+    font-size: 30px;
   }
 }
 html body main .tecnology-container .tecnology .html:hover h2 {
@@ -1227,15 +1407,15 @@ html body .button-top .cicle {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   border-radius: 50px;
   border: 1px solid #ffffff;
   cursor: crosshair;
 }
 html body .button-top .cicle .fa-arrow-up-from-bracket {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /*============================ Classes auxiliares ======================*/
@@ -1248,11 +1428,11 @@ html body .button-top .cicle .fa-arrow-up-from-bracket {
 }
 
 .navbar_aux {
-  height: 75px !important;
+  height: 10vh !important;
 }
 
 .header_aux {
-  backdrop-filter: blur(5px) !important;
+  backdrop-filter: blur(10px) !important;
 }
 
 /*# sourceMappingURL=estilos.css.map */
