@@ -335,7 +335,7 @@ html body main .banner {
 }
 @media screen and (max-width: 600px) {
   html body main .banner {
-    height: 105vh;
+    height: 110vh;
   }
 }
 html body main .banner .row {
@@ -389,8 +389,8 @@ html body main .banner .row .follow .arcticons--dailyart {
 }
 @media screen and (max-width: 600px) {
   html body main .banner .row .follow .arcticons--dailyart {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
   }
 }
 html body main .banner .row .follow p {
@@ -411,13 +411,13 @@ html body main .banner .row .follow p {
 @media screen and (max-width: 992px) {
   html body main .banner .row .follow p {
     width: 200px;
-    font-size: 8px;
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 600px) {
   html body main .banner .row .follow p {
-    width: 150px;
-    font-size: 7px;
+    width: 170px;
+    font-size: 8px;
   }
 }
 html body main .banner .row .row-itens {
@@ -525,7 +525,7 @@ html body main .banner .row .row-itens .banner-descripiton p {
 @media screen and (max-width: 600px) {
   html body main .banner .row .row-itens .banner-descripiton p {
     width: 100%;
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 html body main .banner .row .row-itens .banner-descripiton .know {
@@ -542,8 +542,8 @@ html body main .banner .row .row-itens .banner-descripiton .know {
 }
 @media screen and (max-width: 600px) {
   html body main .banner .row .row-itens .banner-descripiton .know {
-    width: 100px;
-    height: 30px;
+    width: 130px;
+    height: 40px;
     border-radius: 30px;
   }
 }
@@ -560,7 +560,7 @@ html body main .banner .row .row-itens .banner-descripiton .know a {
 }
 @media screen and (max-width: 600px) {
   html body main .banner .row .row-itens .banner-descripiton .know a {
-    font-size: 11px;
+    font-size: 15px;
   }
 }
 html body main .hero-me {
@@ -949,6 +949,13 @@ html body main .cards-container .boll-bg::before {
   border: 1px solid #ffffff;
   border-radius: 50%;
 }
+@media screen and (max-width: 992px) {
+  html body main .cards-container .boll-bg::before {
+    width: 100px;
+    height: 100px;
+    left: 15%;
+  }
+}
 html body main .cards-container .boll-bg::after {
   content: "";
   position: absolute;
@@ -961,6 +968,13 @@ html body main .cards-container .boll-bg::after {
   backdrop-filter: blur(10px);
   border: 1px solid #ffffff;
   border-radius: 50%;
+}
+@media screen and (max-width: 992px) {
+  html body main .cards-container .boll-bg::after {
+    width: 100px;
+    height: 100px;
+    left: 15%;
+  }
 }
 html body main .cards-container .card-title {
   position: relative;
@@ -1087,6 +1101,11 @@ html body main .cards-container .cards-omega .card-bg .fa-music, html body main 
   color: rgba(255, 255, 255, 0.0274509804);
   font-size: 20vw;
   top: 1vw;
+}
+@media screen and (max-width: 600px) {
+  html body main .cards-container .cards-omega .card-bg .fa-music, html body main .cards-container .cards-omega .card-bg .fa-pizza-slice, html body main .cards-container .cards-omega .card-bg .fa-code {
+    font-size: 200px;
+  }
 }
 html body main .cards-container .cards-omega .card-bg .card {
   position: relative;
