@@ -912,8 +912,7 @@ html body main .cards-container .boll-bg {
   height: 55vw;
   border: 2px solid rgba(255, 255, 255, 0.4274509804);
   border-radius: 50%;
-  animation: girar_left 40s linear infinite;
-  z-index: -1;
+  animation: girar_left 30s linear infinite;
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container .boll-bg {
@@ -948,6 +947,7 @@ html body main .cards-container .boll-bg::before {
   backdrop-filter: blur(10px);
   border: 1px solid #ffffff;
   border-radius: 50%;
+  z-index: 10;
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container .boll-bg::before {
@@ -968,6 +968,7 @@ html body main .cards-container .boll-bg::after {
   backdrop-filter: blur(10px);
   border: 1px solid #ffffff;
   border-radius: 50%;
+  z-index: 1;
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container .boll-bg::after {
@@ -981,6 +982,7 @@ html body main .cards-container .card-title {
   width: 70%;
   text-align: center;
   margin: 50px;
+  z-index: -1;
 }
 html body main .cards-container .card-title h1 {
   text-align: center;

@@ -763,8 +763,8 @@ html{
                     height: 55vw;
                     border: 2px solid variables.$Text_Color_White_Smoker_dwo;
                     border-radius: 50%;
-                    animation: girar_left 40s linear infinite;
-                    z-index: -1;
+                    animation: girar_left 30s linear infinite;
+                   
     
                     @include responsive.screen_laptop(){
                         right: 60%;
@@ -799,6 +799,7 @@ html{
                         backdrop-filter: blur(10px);
                         border: 1px solid variables.$Text_Color_White;
                         border-radius: 50%;
+                        z-index: 10;
 
                         @include responsive.screen_laptop(){
                             width: 100px;
@@ -819,6 +820,7 @@ html{
                         backdrop-filter: blur(10px);
                         border: 1px solid variables.$Text_Color_White;
                         border-radius: 50%;
+                        z-index: 1;
 
                         @include responsive.screen_laptop(){
                             width: 100px;
@@ -834,6 +836,7 @@ html{
                     width: 70%;
                     text-align: center;
                     margin: 50px;
+                    z-index: -1;
 
                     h1{
                         @include mixins.text_formatting(center, normal, 500, 10px);
