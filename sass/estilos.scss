@@ -401,6 +401,7 @@ html{
                                 letter-spacing: 2px;
                                 font-family: 'grand slang';              
                                 text-transform: uppercase;
+                                background-color: rgb(0, 255, 55);
                                 color: variables.$Text_Color_White;
         
                                 @include responsive.screen_laptop(){ 
