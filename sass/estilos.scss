@@ -319,7 +319,6 @@ html{
                         width: initial;
                         height: auto;  
                         font-family: 'grand slang', sans-serif;
-                        text-transform: uppercase;
                         font-weight: 500;
     
                         @include responsive.screen_laptop(){ 
@@ -329,6 +328,7 @@ html{
                         section{
                             flex-direction: column;
                             width: 50%;
+                            text-transform: uppercase;
 
                             @include responsive.screen_laptop(){ 
                                 width: 100%;                       
@@ -399,9 +399,9 @@ html{
                                 text-align: end;
                                 font-size: 1.8vw;
                                 letter-spacing: 2px;
-                                font-family: 'grand slang';              
-                                text-transform: uppercase;
-                                background-color: rgb(0, 255, 55);
+                                font-family: 'Montserrat';              
+                                
+                                font-weight: 300;
                                 color: variables.$Text_Color_White;
         
                                 @include responsive.screen_laptop(){ 

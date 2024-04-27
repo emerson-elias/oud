@@ -428,7 +428,6 @@ html body main .banner .row .row-itens {
   width: initial;
   height: auto;
   font-family: "grand slang", sans-serif;
-  text-transform: uppercase;
   font-weight: 500;
 }
 @media screen and (max-width: 992px) {
@@ -439,6 +438,7 @@ html body main .banner .row .row-itens {
 html body main .banner .row .row-itens section {
   flex-direction: column;
   width: 50%;
+  text-transform: uppercase;
 }
 @media screen and (max-width: 992px) {
   html body main .banner .row .row-itens section {
@@ -512,8 +512,8 @@ html body main .banner .row .row-itens .banner-descripiton p {
   text-align: end;
   font-size: 1.8vw;
   letter-spacing: 2px;
-  font-family: "grand slang";
-  text-transform: uppercase;
+  font-family: "Montserrat";
+  font-weight: 300;
   color: #ffffff;
 }
 @media screen and (max-width: 992px) {
