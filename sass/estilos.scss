@@ -68,7 +68,7 @@ html{
     
                 li {
                     position: relative;
-                    padding: 0 20px 0 0;
+                    padding: 0;
                     list-style: none;
     
                     .game-icons--fox {
@@ -265,7 +265,8 @@ html{
                     .follow{
                         @include mixins.align(relative, flex, end, center);
                         width: inherit;
-                        height: 7vw;
+                        height: initial;
+                        margin: 0 0 2vh 0;
 
                         @include responsive.screen_laptop(){
                             width: 90%;
@@ -289,8 +290,8 @@ html{
                             mask-size: 100% 100%;
 
                             @include responsive.screen_small(){
-                                width: 30px;
-                                height: 30px;
+                                width: 35px;
+                                height: 35px;
                             }
                         }
 
@@ -309,7 +310,7 @@ html{
 
                             @include responsive.screen_small(){
                                 width: 170px;
-                                font-size: 8px;
+                                font-size: 9px;
                             }
                         }
                         
@@ -368,6 +369,7 @@ html{
                                     transform: scaleY(2.5);
                                     letter-spacing: 3px;
                                     word-spacing: 5px;
+                                  
     
                                     @include responsive.screen_laptop(){ 
                                         font-size: 3em;
@@ -375,9 +377,10 @@ html{
         
                                     @include responsive.screen_small(){ 
                                         transform: scaleY(4);
-                                        letter-spacing: 2px;
+                                        letter-spacing: 5px;
                                         font-size: 1.7em;
                                         margin: 0 0 60px 0;
+                                        font-weight: 600;
                                     }
                                   
                                 }

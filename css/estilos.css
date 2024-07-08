@@ -152,7 +152,7 @@ html body header .navbar {
 }
 html body header .navbar li {
   position: relative;
-  padding: 0 20px 0 0;
+  padding: 0;
   list-style: none;
 }
 html body header .navbar li .game-icons--fox {
@@ -363,7 +363,8 @@ html body main .banner .row .follow {
   justify-content: end;
   align-items: center;
   width: inherit;
-  height: 7vw;
+  height: initial;
+  margin: 0 0 2vh 0;
 }
 @media screen and (max-width: 992px) {
   html body main .banner .row .follow {
@@ -390,8 +391,8 @@ html body main .banner .row .follow .arcticons--dailyart {
 }
 @media screen and (max-width: 600px) {
   html body main .banner .row .follow .arcticons--dailyart {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 }
 html body main .banner .row .follow p {
@@ -418,7 +419,7 @@ html body main .banner .row .follow p {
 @media screen and (max-width: 600px) {
   html body main .banner .row .follow p {
     width: 170px;
-    font-size: 8px;
+    font-size: 9px;
   }
 }
 html body main .banner .row .row-itens {
@@ -489,9 +490,10 @@ html body main .banner .row .row-itens section .item-profession span {
 @media screen and (max-width: 600px) {
   html body main .banner .row .row-itens section .item-profession span {
     transform: scaleY(4);
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     font-size: 1.7em;
     margin: 0 0 60px 0;
+    font-weight: 600;
   }
 }
 html body main .banner .row .row-itens .banner-descripiton {
