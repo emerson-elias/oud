@@ -1,5 +1,9 @@
 console.log("======= HELLO CURIOUS DEVELOPER, WELCOME ;) =======")
 
+//====================================================================================//
+
+              /* SCRIPT PARA EXIBIR/OCUTAR A NAVBAR AO CLICAR */
+
 let li = [...document.querySelectorAll('li')]
 
 li.map((elementos) => {
@@ -11,6 +15,10 @@ li.map((elementos) => {
         burgue.classList.toggle('burguer-ocult')
     })
 })
+
+//====================================================================================//
+
+                /* EFEITO DE BLUR NA NAVBAR AO ROLAR O SCROLL DO MOUSE */
 
 window.addEventListener("scroll", () => {
     const scroll_Y = window.scrollY
@@ -35,6 +43,10 @@ window.addEventListener("scroll", () => {
 
 })
 
+//====================================================================================//
+
+                /* EFEITO DE SUAVIDADE AO CLICAR NOS LIKES "LI" */
+
 document.querySelectorAll('a[href^="#"]').forEach(ancora => {
     ancora.addEventListener('click', function (el) {
         el.preventDefault()
@@ -45,8 +57,35 @@ document.querySelectorAll('a[href^="#"]').forEach(ancora => {
     })
 })
 
+
+//====================================================================================//
+
+                /* EFEITO DE CIRCULO QUE SEGUE O CURSOR DO MOUSE */
+
 const cursor = document.getElementById('cursor')
 
     document.addEventListener('mousemove', (e)=> {
         cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
     })
+
+
+//====================================================================================//
+
+                /* SCRIPT PARA ACESSO RÁPIDO AO EMAIL */
+
+const ancora_email = [...document.getElementsByClassName('email')]
+
+ancora_email.map((el) => {
+
+    el.addEventListener('click', () => {
+        const email = 'emersonees808@gmail.com';
+        const subject = 'Vamos trabalhar juntos :)';
+        const body = 'Olá Emerson Elias.\n\nVi seus projetos no seu portifólio e gostaria de saber mais sobre suas habilidades, vamos trabalhar juntos?.\n\nAtenciosamente:\n---- Seu Nome ----';
+        const mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        
+        window.location.href = mailtoLink;
+    })
+})
+    
+
+    
