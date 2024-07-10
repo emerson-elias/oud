@@ -73,19 +73,13 @@ const cursor = document.getElementById('cursor')
 
                 /* SCRIPT PARA ACESSO RÁPIDO AO EMAIL */
 
-const ancora_email = [...document.getElementsByClassName('email')]
+const ancora_email = document.getElementById('email')
 
-ancora_email.map((el) => {
-
-    el.addEventListener('click', () => {
-        const email = 'emersonees808@gmail.com';
-        const subject = 'Vamos trabalhar juntos :)';
-        const body = 'Olá Emerson Elias.\n\nVi seus projetos no seu portifólio e gostaria de saber mais sobre suas habilidades, vamos trabalhar juntos?.\n\nAtenciosamente:\n---- Seu Nome ----';
-        const mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+ancora_email.addEventListener('click', () => {
+        const email = 'emersonees808@gmail.com'
+        const subject = 'Vamos trabalhar juntos :)'
+        const body = 'Olá Emerson Elias.\n\nVi seus projetos no seu portifólio e gostaria de saber mais sobre suas habilidades, vamos trabalhar juntos?.\n\nAtenciosamente:\n---- Seu Nome ----'
+        const mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body)
         
-        window.location.href = mailtoLink;
+        window.location.href = mailtoLink
     })
-})
-    
-
-    

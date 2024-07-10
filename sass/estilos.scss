@@ -25,8 +25,8 @@ html{
 
     body {
         background-color: variables.$gray_primary;
-        cursor: none;
         scroll-behavior: smooth;
+        cursor: none;
 
         #cursor {
             position: fixed;
@@ -54,7 +54,7 @@ html{
             width: 100%;
             height: auto;
             transition: variables.$Transition_ease; 
-            z-index: 9999;
+            z-index: 99;
 
             .navbar {
                 @include mixins.align(relative, flex, space-between, center);
@@ -98,11 +98,17 @@ html{
                         display: none;
                         font-size: 3vw;
                         color: variables.$Color_White;
-                        cursor: crosshair;
+                        cursor: none;
     
                         @include responsive.screen_laptop(){
                             display: block;
                             font-size: 30px;
+                        }
+                    }
+
+                    .fa-bars-staggered{
+                        @include responsive.screen_laptop(){
+                            margin: 0 20px 0 0;
                         }
                     }
     
@@ -113,7 +119,7 @@ html{
                     width: 25vw;
                     height: inherit;
                     margin: 0 0 0 10px;
-                    cursor: crosshair;
+                    cursor: none;
 
                     @include responsive.screen_laptop(){
                         width: 70vw;
@@ -170,7 +176,7 @@ html{
                         a{
                             width: initial;
                             padding: 20px 0 20px 0;
-                            cursor: crosshair;
+                            cursor: none;
                         }
 
                         &::after{
@@ -227,7 +233,6 @@ html{
                         transition: variables.$Transition_ease;
                         background-color: variables.$Smoker;
                         z-index: 9999;
-                        cursor: crosshair;
                         
                     }
     
@@ -452,7 +457,7 @@ html{
                                     font-size: 3vh;
                                     color: variables.$Color_White;
                                     text-decoration: none;
-                                    cursor: crosshair;
+                                    cursor: none;
 
                                     @include responsive.screen_small{
                                         font-size: 15px;
@@ -518,7 +523,7 @@ html{
                     @include responsive.screen_small(){
                         top: 5%;
                         left: 5px;
-                        font-size: 65px;
+                        font-size: 60px;
                     }
                 }
                  
@@ -1077,7 +1082,7 @@ html{
 
                     @include responsive.screen_small(){
                         top: 0;
-                        font-size: 65px;
+                        font-size: 53px;
                     }
                 }
 
@@ -1280,12 +1285,14 @@ html{
             .footer-container{
                 @include mixins.align(relative, flex, center, center);
                 width: 100%;
-                height: 100vh; // POR ENQUANTO, USE %  
+                height: auto; // POR ENQUANTO, USE %  
                 flex-direction: column;
-                background-color: variables.$Color_Black;  
+                background-color: variables.$Color_Black;
+                
 
                 .footer-text-bg{
                     @include mixins.text-bg();
+                    top: 7vh;
 
                     @include responsive.screen_laptop(){
                         top: 2%;
@@ -1294,7 +1301,7 @@ html{
                     }
 
                     @include responsive.screen_small(){
-                        top: 0;
+                        top: 20px;
                         font-size: 65px;
                     }
                 }
@@ -1303,89 +1310,175 @@ html{
                     @include mixins.align(relative, flex, space-between, center);
                     width: 90%; 
                     height: auto;
+                    padding: 20vh 0 20vh 0;
                     flex-wrap: wrap;
 
-
-                    background-color: rgba(0, 255, 255, 0);
-                    
-
-                    .footer-like-tex{
-                        position: relative;
-                        width: 40%;
-                        height: 40vh;
-
-                        span{
-                            display: block;
-                            font-size: 6vw;
-                            font-family: 'grand slang', sans-serif;
-                            color: variables.$Color_White_B9;
-                        }
+                    @include responsive.screen_small(){
+                        padding: 5vh 0 20vh 0;
                     }
+                   
 
                     .footer-contact{
-                        position: relative;
-                        width: 60%;
-                        height: 40vh;
+                        @include mixins.align(relative, flex, space-between, center);
+                        top: 8vh;
+                        width: 100%;
+                        height: auto;
+                        overflow: hidden;
 
-                        background-color: rgba(255, 166, 0, 0);
+                        @include responsive.screen_laptop(){
+                            flex-direction: column;
+                            justify-content: end;
+                        }
+
+                        .footer-like-tex{
+                            position: relative;
+                            width: 40%;
+                            height: inherit;
+
+                            @include responsive.screen_laptop(){
+                                width: inherit;
+                            }                     
+    
+                            span{
+                                display: block;
+                                font-size: 5.5vw;
+                                font-family: 'grand slang', sans-serif;
+                                color: variables.$Color_White_B9;
+
+                 
+                                @include responsive.screen_laptop(){
+                                    font-size: 100px;
+                                }
+
+                                @include responsive.screen_small(){
+                                    font-size: 50px;
+                                }
+                            }
+                        }
 
                         .andress{
                             position: relative;
                             display: flex;
                             flex-direction: column;
-                            width: 40%;
+                            width: 25%;
                             height: inherit;
                            
-
-                            background-color: rgba(255, 192, 203, 0);
+                            @include responsive.screen_laptop(){
+                                padding: 50px 0 30px 0;
+                                width: inherit;
+                            }
 
                             h1{
                                 border-bottom: 1px solid variables.$Color_White;
-                                width: 140px;
-                                font-size: 25px;
-                                margin-left: 10px;
-                                letter-spacing: 3px;
+                                width: 9vw;
+                                font-size: 3.5vh;
+                                letter-spacing: 3.1px;
                                 color: variables.$Color_White;
-                                font-family: 'grand slang', sans-serif;
-                                
+                                font-family: 'grand slang', sans-serif;                              
                             }
                             
                             P{
                                 position: relative;
                                 width: initial;
-                                height: 10vh;
+                                height: auto;
                                 display: flex;
                                 align-items: center;
-                                margin: 10px 0 20px 0;
-                                font-size: 15px;
+                                padding: 20px 0 10px 0;
+                                font-size: 2.4vh;
+                                letter-spacing: 1px;
                                 color: variables.$Color_White_B9;
 
-
-                                background-color: rgba(255, 0, 0, 0);
-
-                                
+                                @include responsive.screen_small(){
+                                    font-size: 15px;
+                                }
+                            
                                 .clarity--email-line {
-                                    display: inline-block;
-                                    width: 1.5em;
-                                    height: 1.5em;
-                                    padding: 0 40px 0 0;
-                                    background-repeat: no-repeat;
-                                    background-size: 100% 100%;
+                                    @include mixins.formatting-icon(2em, 2em);
+                                    margin: 0 15px 0 0;
                                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='white' d='M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z' class='clr-i-outline clr-i-outline-path-1'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
                                 }
                                 
                                 .ph--phone-light {
-                                    display: inline-block;
-                                    width: 1.5em;
-                                    height: 1.5em;
-                                    padding: 0 40px 0 0;
-                                    background-repeat: no-repeat;
-                                    background-size: 100% 100%;
+                                    @include mixins.formatting-icon(2em, 2em);
+                                    margin: 0 15px 0 0;                                 
                                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='m221.59 160.3l-47.24-21.17a14 14 0 0 0-13.28 1.22a5 5 0 0 0-.56.42l-24.69 21a1.88 1.88 0 0 1-1.68.06c-15.87-7.66-32.31-24-40-39.65a1.91 1.91 0 0 1 0-1.68l21.07-25a6 6 0 0 0 .42-.58a14 14 0 0 0 1.12-13.27L95.73 34.49a14 14 0 0 0-14.56-8.38A54.24 54.24 0 0 0 34 80c0 78.3 63.7 142 142 142a54.25 54.25 0 0 0 53.89-47.17a14 14 0 0 0-8.3-14.53M176 210c-71.68 0-130-58.32-130-130a42.23 42.23 0 0 1 36.67-42h.23a2 2 0 0 1 1.84 1.31l21.1 47.11a2 2 0 0 1 0 1.67l-21.11 25.06a5 5 0 0 0-.43.57a14 14 0 0 0-.91 13.73c8.87 18.16 27.17 36.32 45.53 45.19a14 14 0 0 0 13.77-1c.19-.13.38-.27.56-.42l24.68-21a1.92 1.92 0 0 1 1.6-.1l47.25 21.17a2 2 0 0 1 1.21 2A42.24 42.24 0 0 1 176 210'/%3E%3C/svg%3E");
                                 }
                             }
                           
                         }
+
+                        .footer-cicle-animate{ 
+                            @include mixins.align(relative, flex, center, center);
+                            padding: 20px 0 10px 0;
+                            width: 25%;
+                            transform-origin: center center;
+                            animation: girar_right 10s linear infinite;
+
+                            @include responsive.screen_laptop(){
+                                width: inherit;
+                                justify-content: end;
+                                align-items: end;
+                            }
+
+                            @include responsive.screen_small(){
+                                justify-content: center;
+                            }
+
+                            textPath{
+                                letter-spacing: 2px;
+                                font-family: 'grand slang', sans-serif;
+                            }
+                            
+                        }
+                    }
+
+                    .social-midia{
+                        @include mixins.align(relative, flex, center, center);
+                        top: 15vh;
+                        width: 100%;
+                        height: auto;
+                        
+                        @include responsive.screen_small(){
+                            margin: 5vh 0 0 0;
+                        }
+
+                        .facebook, .instagram, .linkedin, .git-icon-footer{
+                            @include mixins.align(relative, flex, center, center);
+                            width: 8vh;
+                            height: 8vh;
+                            margin: 0 15px 0 15px;
+                            border-radius: 100%;
+                            border: 1px solid variables.$Color_White;
+                            cursor: none;
+                            transition: variables.$Transition_ease;
+
+                            &:hover{
+                                transform: translateY(-20px);
+                            }
+                            
+                        }
+
+                        .uit--facebook-f {
+                            @include mixins.formatting-icon(5vh, 5vh);
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M17.99 1.596a27.982 27.982 0 0 0-3.037-.156C11.59 1.44 9.5 3.582 9.5 7.03v2.341H6.675a.5.5 0 0 0-.5.5v3.85a.5.5 0 0 0 .5.5H9.5v7.72a.5.5 0 0 0 .5.5h3.978a.5.5 0 0 0 .5-.5v-7.72h2.816a.5.5 0 0 0 .496-.435l.497-3.85a.5.5 0 0 0-.496-.565h-3.313V7.412c0-.97.195-1.375 1.408-1.375h2.039a.5.5 0 0 0 .5-.5V2.092a.5.5 0 0 0-.435-.496m-.565 3.44l-1.54.001c-2.157 0-2.407 1.356-2.407 2.375v2.46a.5.5 0 0 0 .499.5h3.246l-.369 2.85h-2.876a.5.5 0 0 0-.5.5v7.718H10.5v-7.718a.5.5 0 0 0-.5-.5H7.176v-2.85H10a.5.5 0 0 0 .5-.5V7.03c0-2.874 1.665-4.59 4.453-4.59c1.009 0 1.92.055 2.472.103z'/%3E%3C/svg%3E");
+                        }
+                        
+                        .ph--instagram-logo-light {
+                            @include mixins.formatting-icon(5vh, 5vh);
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46m0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34m48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54m42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10'/%3E%3C/svg%3E");
+                        }
+                        
+                        .uit--linkedin-alt {
+                            @include mixins.formatting-icon(5vh, 5vh);
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M7.5 9h-4a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5M7 21H4V10h3zM18 9c-1.085 0-2.14.358-3 1.019V9.5a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V16a1.5 1.5 0 1 1 3 0v5.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V14a5.006 5.006 0 0 0-5-5m4 12h-3v-5a2.5 2.5 0 1 0-5 0v5h-3V10h3v1.203a.5.5 0 0 0 .89.313A3.983 3.983 0 0 1 22 14zM5.868 2.002A2.73 2.73 0 0 0 5.515 2a2.74 2.74 0 0 0-2.926 2.729a2.71 2.71 0 0 0 2.869 2.728h.028a2.734 2.734 0 1 0 .382-5.455M5.833 6.46a1.75 1.75 0 0 1-.347-.003h-.028A1.736 1.736 0 1 1 5.515 3a1.737 1.737 0 0 1 .318 3.46'/%3E%3C/svg%3E");
+                        }
+
+                        .teenyicons--git-outline {
+                            @include mixins.formatting-icon(5vh, 5vh);
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='white' d='m6.793 1.207l.353.354zM1.207 6.793l-.353-.354zm0 1.414l.354-.353zm5.586 5.586l-.354.353zm1.414 0l-.353-.354zm5.586-5.586l.353.354zm0-1.414l-.354.353zM8.207 1.207l.354-.353zM6.44.854L.854 6.439l.707.707l5.585-5.585zM.854 8.56l5.585 5.585l.707-.707l-5.585-5.585zm7.707 5.585l5.585-5.585l-.707-.707l-5.585 5.585zm5.585-7.707L8.561.854l-.707.707l5.585 5.585zm0 2.122a1.5 1.5 0 0 0 0-2.122l-.707.707a.5.5 0 0 1 0 .708zM6.44 14.146a1.5 1.5 0 0 0 2.122 0l-.707-.707a.5.5 0 0 1-.708 0zM.854 6.44a1.5 1.5 0 0 0 0 2.122l.707-.707a.5.5 0 0 1 0-.708zm6.292-4.878a.5.5 0 0 1 .708 0L8.56.854a1.5 1.5 0 0 0-2.122 0zm-2 1.293l1 1l.708-.708l-1-1zM7.5 5a.5.5 0 0 1-.5-.5H6A1.5 1.5 0 0 0 7.5 6zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 9 4.5zM7.5 4a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 7.5 3zm0-1A1.5 1.5 0 0 0 6 4.5h1a.5.5 0 0 1 .5-.5zm.646 2.854l1.5 1.5l.707-.708l-1.5-1.5zM10.5 8a.5.5 0 0 1-.5-.5H9A1.5 1.5 0 0 0 10.5 9zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 12 7.5zm-.5-.5a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 10.5 6zm0-1A1.5 1.5 0 0 0 9 7.5h1a.5.5 0 0 1 .5-.5zM7 5.5v4h1v-4zm.5 5.5a.5.5 0 0 1-.5-.5H6A1.5 1.5 0 0 0 7.5 12zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 9 10.5zm-.5-.5a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 7.5 9zm0-1A1.5 1.5 0 0 0 6 10.5h1a.5.5 0 0 1 .5-.5z'/%3E%3C/svg%3E");
+                        }
+
+                        
                     }
                 }
 
@@ -1393,14 +1486,14 @@ html{
                     position: relative;
                     width: 95%;
                     height: auto;
-                    padding: 30px;
+                    padding: 2.5vh;
                     border-top: 0.1px solid variables.$Color_White;
                    
                     p{
                         text-align: center;
                         font-family: 'grand slang', sans-serif;
                         color: variables.$Color_White;
-                        font-size: 20px;
+                        font-size: 3vh;
                         word-spacing: 3px;
                     }
                 }
@@ -1426,11 +1519,11 @@ html{
               
             .cicle {
                 @include mixins.align(relative, flex, center, center);
-                width: 35px;
-                height: 35px;
+                width: 40px;
+                height: 40px;
                 border-radius: 50px;
                 border: 1px solid variables.$Color_White;
-                cursor: crosshair;
+                cursor: none;
         
                 .fa-arrow-up-from-bracket {
                     color: variables.$Color_White;

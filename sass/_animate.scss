@@ -1,13 +1,22 @@
 
 /*==========================================*/
 
-/*==========================================*/
-
 @keyframes girar_left {
     from {
         transform: rotate(0deg); /* rotação inicial */
     }
     to {
         transform: rotate(360deg); /* rotação final */
+    }
+}
+
+/*==========================================*/
+
+@keyframes girar_right {
+    from {
+        transform: rotate(0deg); /* rotação inicial */
+    }
+    to {
+        transform: rotate(-360deg); /* rotação final */
     }
 }

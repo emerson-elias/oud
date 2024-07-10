@@ -16,7 +16,7 @@
     letter-spacing: $spacing;
 }
 
-@mixin text-bg{
+@mixin text-bg(){
     position: absolute;
     top: 9vw;
     left: 3vw;
@@ -28,4 +28,12 @@
     word-break: break-all;
     font-weight: 500;
     color: variables.$Color_White_Smoker;
+}
+
+@mixin formatting-icon($widht, $height){
+    display: inline-block;
+    width: $widht;
+    height: $height;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
