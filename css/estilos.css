@@ -1631,9 +1631,9 @@ html body main .footer-container .footer .social-midia .facebook, html body main
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 8vh;
-  height: 8vh;
-  margin: 0 15px 0 15px;
+  width: 7vh;
+  height: 7vh;
+  margin: 0 10px 0 10px;
   border-radius: 100%;
   border: 1px solid rgba(255, 255, 255, 0.9960784314);
   cursor: none;
@@ -1687,6 +1687,11 @@ html body main .footer-container .credits p {
   color: rgba(255, 255, 255, 0.9960784314);
   font-size: 3vh;
   word-spacing: 3px;
+}
+@media screen and (max-width: 600px) {
+  html body main .footer-container .credits p {
+    font-size: 20px;
+  }
 }
 html body .button-top {
   position: fixed;

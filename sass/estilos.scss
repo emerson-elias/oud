@@ -1444,9 +1444,9 @@ html{
 
                         .facebook, .instagram, .linkedin, .git-icon-footer{
                             @include mixins.align(relative, flex, center, center);
-                            width: 8vh;
-                            height: 8vh;
-                            margin: 0 15px 0 15px;
+                            width: 7vh;
+                            height: 7vh;
+                            margin: 0 10px 0 10px;
                             border-radius: 100%;
                             border: 1px solid variables.$Color_White;
                             cursor: none;
@@ -1495,6 +1495,10 @@ html{
                         color: variables.$Color_White;
                         font-size: 3vh;
                         word-spacing: 3px;
+
+                        @include responsive.screen_small(){
+                            font-size: 20px;
+                        }
                     }
                 }
                 
