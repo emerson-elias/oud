@@ -154,7 +154,8 @@ html body header .navbar {
   height: 13vh;
   padding: 0;
   margin: 0;
-  font-family: "grand slang";
+  font-family: "grand slang", sans-serif;
+  text-transform: uppercase;
   transition: 0.5s all ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.9960784314);
 }
@@ -226,8 +227,7 @@ html body header .navbar .active-bar a {
   align-items: center;
   text-decoration: none;
   font-size: 1.3vw;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.9960784314);
   transition: 0.5s all ease;
 }
@@ -308,7 +308,6 @@ html body header .navbar .links-ul .li-link .link {
   text-decoration: none;
   font-size: 1.1vw;
   letter-spacing: 2px;
-  text-transform: uppercase;
 }
 html body header .navbar .links-ul .li-link .link i {
   margin-right: 7px;
@@ -362,8 +361,9 @@ html body main .banner .row {
   justify-content: end;
   align-items: normal;
   flex-direction: column;
+  top: 4.5em;
   width: 95%;
-  height: 80vh;
+  height: auto;
   color: rgba(255, 255, 255, 0.9960784314);
   transition: 0.5s all ease;
 }
@@ -532,7 +532,7 @@ html body main .banner .row .row-itens .banner-descripiton p {
   text-align: end;
   font-size: 1.8vw;
   letter-spacing: 2px;
-  font-family: "grand slang";
+  font-family: "grand slang", sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.9960784314);
@@ -578,8 +578,8 @@ html body main .banner .row .row-itens .banner-descripiton .know:hover {
   transition: 0.5s all ease;
 }
 html body main .banner .row .row-itens .banner-descripiton .know a {
-  font-family: "cosi azure";
-  font-size: 3vh;
+  font-family: "cosi azure", sans-serif;
+  font-size: 1.5vmax;
   color: rgba(255, 255, 255, 0.9960784314);
   text-decoration: none;
   cursor: none;
@@ -681,11 +681,6 @@ html body main .hero-me .sobre-mim {
 @media screen and (max-width: 1200px) {
   html body main .hero-me .sobre-mim {
     width: 95%;
-  }
-}
-@media screen and (max-width: 992px) {
-  html body main .hero-me .sobre-mim {
-    width: 100%;
     flex-wrap: wrap;
   }
 }
@@ -779,6 +774,7 @@ html body main .hero-me .sobre-mim .sobre-habilits {
   font-style: normal;
   font-weight: 300;
   letter-spacing: 1px;
+  top: -5px;
   flex-direction: column;
   width: 30vw;
   height: auto;
@@ -806,7 +802,7 @@ html body main .hero-me .sobre-mim .sobre-habilits h1 {
   height: auto;
   text-transform: uppercase;
   font-size: 1.7vw;
-  font-family: "cosi azure";
+  font-family: "grand slang", sans-serif;
   padding: 0 0 1vw 0;
 }
 @media screen and (max-width: 768px) {
@@ -819,12 +815,13 @@ html body main .hero-me .sobre-mim .sobre-habilits p {
   width: 100%;
   height: auto;
   font-size: 1.1vw;
-  font-style: italic;
+  font-style: normal;
   padding: 0.7vw 0 0.5vw 0;
+  font-family: "grand slang", sans-serif;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 992px) {
   html body main .hero-me .sobre-mim .sobre-habilits p {
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -849,6 +846,10 @@ html body main .hero-me .sobre-mim .sobre-habilits p i {
 }
 html body main .hero-me .sobre-mim .sobre-descripion {
   position: relative;
+  display: flex;
+  justify-content: normal;
+  align-items: normal;
+  flex-direction: column;
   width: 40vw;
   height: auto;
   margin: 0 0 50px 0 auto;
@@ -861,14 +862,13 @@ html body main .hero-me .sobre-mim .sobre-descripion {
 @media screen and (max-width: 992px) {
   html body main .hero-me .sobre-mim .sobre-descripion {
     width: 80%;
-    height: auto;
     margin: 50px auto;
   }
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .sobre-mim .sobre-descripion {
     width: 85%;
-    margin: 0 auto;
+    align-items: center;
   }
 }
 html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo {
@@ -877,7 +877,7 @@ html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo {
   margin: 5px 0 20px 0;
 }
 html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo h1 {
-  font-family: "cosi azure";
+  font-family: "grand slang", sans-serif;
   font-size: 1.7vw;
   text-transform: uppercase;
 }
@@ -887,33 +887,59 @@ html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo h1 {
     text-align: center;
   }
 }
-html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio {
-  text-align: justify;
+html body main .hero-me .sobre-mim .sobre-descripion p {
+  text-align: normal;
   font-family: "Montserrat", sans-serif;
-  font-style: italic;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: 500;
   letter-spacing: 1px;
-  font-size: 1vw;
-  line-height: 1.5;
-}
-html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
+  font-size: 2.3vh;
+  line-height: 1.8;
   margin: 1vw 0 1.2vw 0;
+  font-family: "grand slang", sans-serif;
 }
 @media screen and (max-width: 1200px) {
-  html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
+  html body main .hero-me .sobre-mim .sobre-descripion p {
     font-size: 12px;
   }
 }
 @media screen and (max-width: 992px) {
-  html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p:nth-child(1) {
+  html body main .hero-me .sobre-mim .sobre-descripion p {
     text-align: center;
     font-size: 16px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-descripion .sobre-descripiton-bio p {
+  html body main .hero-me .sobre-mim .sobre-descripion p {
     font-size: 15px;
     line-height: 1.7;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-descripion .may-cv {
+  position: relative;
+  width: 8vw;
+  height: 6.5vh;
+  border: 0.5px solid rgba(255, 255, 255, 0.9960784314);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, 0.9960784314);
+  font-size: 1.3vmax;
+  font-family: "grand slang", sans-serif;
+  background-color: transparent;
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-descripion .may-cv {
+    top: 15px;
+    width: 130px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-descripion .may-cv {
+    width: 140px;
+    height: 45px;
+    font-size: 25px;
+    margin: 15px 0 0 0;
   }
 }
 html body main .cards-container {
@@ -1011,6 +1037,11 @@ html body main .cards-container .card-title {
   margin: 50px;
   z-index: -1;
 }
+@media screen and (max-width: 600px) {
+  html body main .cards-container .card-title {
+    width: 80%;
+  }
+}
 html body main .cards-container .card-title h1 {
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -1033,19 +1064,25 @@ html body main .cards-container .card-title h1 span {
 html body main .cards-container .card-title p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   width: 70%;
   margin: 0 auto;
-  font-size: 1.1vw;
+  font-size: 1.2vw;
   padding: 3vw 0 2vw 0;
   color: rgba(255, 255, 255, 0.9960784314);
+  font-family: "grand slang", sans-serif;
+}
+@media screen and (max-width: 992px) {
+  html body main .cards-container .card-title p {
+    font-size: 15px;
+  }
 }
 @media screen and (max-width: 600px) {
   html body main .cards-container .card-title p {
     width: 95%;
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 html body main .cards-container .cards-omega {
@@ -1072,7 +1109,8 @@ html body main .cards-container .cards-omega .card-bg {
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container .cards-omega .card-bg {
-    width: 30%;
+    width: 40%;
+    height: 35vw;
     margin: 0 0 100px 0;
   }
 }
@@ -1111,7 +1149,7 @@ html body main .cards-container .cards-omega .card-bg .span-card span {
   display: flex;
   flex-direction: column;
   font-size: 2.2vw;
-  font-family: "cosi azure";
+  font-family: "cosi azure", sans-serif;
   color: #caa986;
 }
 @media screen and (max-width: 768px) {
@@ -1177,6 +1215,12 @@ html body main .cards-container .cards-omega .card-bg .card .material-symbols-li
   background-size: 100% 100%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='m4.415 11l2.247-2.246q.14-.14.15-.344t-.15-.364t-.354-.16q-.195 0-.354.16l-2.389 2.389q-.242.242-.242.565t.242.565l2.389 2.389q.14.14.344.15t.364-.15t.16-.354t-.16-.354zm15.17 0l-2.247 2.246q-.14.14-.15.344t.15.364t.354.16t.354-.16l2.389-2.389q.242-.242.242-.565t-.242-.565l-2.389-2.389q-.14-.14-.344-.15t-.364.15t-.16.354t.16.354zM3 6.77V5.614q0-.69.463-1.152T4.615 4h14.77q.69 0 1.152.463T21 5.615V6.77q0 .214-.143.357t-.357.143t-.357-.143T20 6.769V5.615q0-.269-.173-.442T19.385 5H4.615q-.269 0-.442.173T4 5.615V6.77q0 .214-.143.357T3.5 7.27t-.357-.143T3 6.769M9.808 20q-.348 0-.578-.23T9 19.192V18H4.615q-.69 0-1.152-.462T3 16.385v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .269.173.442t.442.173h14.77q.269 0 .442-.173t.173-.442v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .69-.462 1.152T19.385 18H15v1.192q0 .348-.23.578t-.578.23zM12 11'/%3E%3C/svg%3E");
 }
+@media screen and (max-width: 992px) {
+  html body main .cards-container .cards-omega .card-bg .card .arcticons--music-you, html body main .cards-container .cards-omega .card-bg .card .arcticons--pizza-boy-gbc, html body main .cards-container .cards-omega .card-bg .card .material-symbols-light--developer-mode-tv-outline-rounded {
+    width: 100px;
+    height: 100px;
+  }
+}
 @media screen and (max-width: 768px) {
   html body main .cards-container .cards-omega .card-bg .card .arcticons--music-you, html body main .cards-container .cards-omega .card-bg .card .arcticons--pizza-boy-gbc, html body main .cards-container .cards-omega .card-bg .card .material-symbols-light--developer-mode-tv-outline-rounded {
     width: 70px;
@@ -1207,15 +1251,16 @@ html body main .cards-container .cards-omega .card-bg .card h1 i {
 html body main .cards-container .cards-omega .card-bg .card p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 2px;
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.9960784314);
   font-size: 1vw;
   padding: 1vw;
   transform: translateY(35vw);
   transition: 0.5s all ease;
+  font-family: "grand slang", sans-serif;
 }
 @media screen and (max-width: 768px) {
   html body main .cards-container .cards-omega .card-bg .card p {
@@ -1517,13 +1562,13 @@ html body main .footer-container .footer .footer-contact .footer-like-tex {
 }
 html body main .footer-container .footer .footer-contact .footer-like-tex span {
   display: block;
-  font-size: 5.5vw;
+  font-size: 5vmax;
   font-family: "grand slang", sans-serif;
   color: rgba(255, 255, 255, 0.7254901961);
 }
 @media screen and (max-width: 992px) {
   html body main .footer-container .footer .footer-contact .footer-like-tex span {
-    font-size: 100px;
+    font-size: 70px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1531,7 +1576,7 @@ html body main .footer-container .footer .footer-contact .footer-like-tex span {
     font-size: 50px;
   }
 }
-html body main .footer-container .footer .footer-contact .andress {
+html body main .footer-container .footer .footer-contact .contatc {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1539,36 +1584,42 @@ html body main .footer-container .footer .footer-contact .andress {
   height: inherit;
 }
 @media screen and (max-width: 992px) {
-  html body main .footer-container .footer .footer-contact .andress {
+  html body main .footer-container .footer .footer-contact .contatc {
     padding: 50px 0 30px 0;
     width: inherit;
   }
 }
-html body main .footer-container .footer .footer-contact .andress h1 {
+html body main .footer-container .footer .footer-contact .contatc h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.9960784314);
-  width: 9vw;
-  font-size: 3.5vh;
+  width: 150px;
+  padding: 0 0 2px 0;
+  font-size: 2vmax;
   letter-spacing: 3.1px;
   color: rgba(255, 255, 255, 0.9960784314);
   font-family: "grand slang", sans-serif;
 }
-html body main .footer-container .footer .footer-contact .andress P {
+@media screen and (max-width: 992px) {
+  html body main .footer-container .footer .footer-contact .contatc h1 {
+    font-size: 25px;
+  }
+}
+html body main .footer-container .footer .footer-contact .contatc P {
   position: relative;
   width: initial;
   height: auto;
   display: flex;
   align-items: center;
   padding: 20px 0 10px 0;
-  font-size: 2.4vh;
+  font-size: 1vmax;
   letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.7254901961);
 }
-@media screen and (max-width: 600px) {
-  html body main .footer-container .footer .footer-contact .andress P {
+@media screen and (max-width: 992px) {
+  html body main .footer-container .footer .footer-contact .contatc P {
     font-size: 15px;
   }
 }
-html body main .footer-container .footer .footer-contact .andress P .clarity--email-line {
+html body main .footer-container .footer .footer-contact .contatc P .clarity--email-line {
   display: inline-block;
   width: 2em;
   height: 2em;
@@ -1577,7 +1628,7 @@ html body main .footer-container .footer .footer-contact .andress P .clarity--em
   margin: 0 15px 0 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='white' d='M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z' class='clr-i-outline clr-i-outline-path-1'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
 }
-html body main .footer-container .footer .footer-contact .andress P .ph--phone-light {
+html body main .footer-container .footer .footer-contact .contatc P .ph--phone-light {
   display: inline-block;
   width: 2em;
   height: 2em;
@@ -1599,8 +1650,6 @@ html body main .footer-container .footer .footer-contact .footer-cicle-animate {
 @media screen and (max-width: 992px) {
   html body main .footer-container .footer .footer-contact .footer-cicle-animate {
     width: inherit;
-    justify-content: end;
-    align-items: end;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1641,6 +1690,7 @@ html body main .footer-container .footer .social-midia .facebook, html body main
 }
 html body main .footer-container .footer .social-midia .facebook:hover, html body main .footer-container .footer .social-midia .instagram:hover, html body main .footer-container .footer .social-midia .linkedin:hover, html body main .footer-container .footer .social-midia .git-icon-footer:hover {
   transform: translateY(-20px);
+  background-color: #caa986;
 }
 html body main .footer-container .footer .social-midia .uit--facebook-f {
   display: inline-block;

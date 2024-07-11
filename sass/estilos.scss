@@ -62,7 +62,8 @@ html{
                 height: 13vh;
                 padding: 0;
                 margin: 0;
-                font-family: 'grand slang';
+                font-family: variables.$fonty_primary;
+                text-transform: uppercase;
                 transition: variables.$Transition_ease;
                 border-bottom: 1px solid variables.$Color_White;
 
@@ -129,8 +130,7 @@ html{
                         @include mixins.align(relative, flex, center, center);
                         text-decoration: none;
                         font-size: 1.3vw;
-                        letter-spacing: 2px;
-                        text-transform: uppercase;
+                        letter-spacing: 1px;
                         color: variables.$Color_White;
                         transition: variables.$Transition_ease;
 
@@ -140,7 +140,6 @@ html{
                         @include responsive.screen_laptop(){
                             font-size: 2vw;
                         }
-
                         @include responsive.screen_small(){
                             font-size: 15px;
                         }
@@ -204,7 +203,6 @@ html{
                             text-decoration: none;
                             font-size: 1.1vw;
                             letter-spacing: 2px;
-                            text-transform: uppercase;
 
                             i {
                                 margin-right: 7px;
@@ -260,11 +258,12 @@ html{
                 .row{
                     @include mixins.align(relative, flex, end, normal);
                     flex-direction: column;
+                    top: 4.5em;
                     width: 95%;
-                    height: 80vh;             
+                    height: auto;             
                     color: variables.$Color_White;
                     transition: variables.$Transition_ease;
-    
+
                     @include responsive.screen_small(){
                         top: 60px; 
                         width: 90%;
@@ -329,7 +328,7 @@ html{
                         @include mixins.align(relative, flex, space-between, end);
                         width: initial;
                         height: auto;  
-                        font-family: 'grand slang', sans-serif;
+                        font-family: variables.$fonty_primary;
                         font-weight: 500;
     
                         @include responsive.screen_laptop(){ 
@@ -412,7 +411,7 @@ html{
                                 text-align: end;
                                 font-size: 1.8vw;
                                 letter-spacing: 2px;
-                                font-family: 'grand slang';              
+                                font-family: variables.$fonty_primary;             
                                 text-transform: uppercase;
                                 font-weight: 300;
                                 color: variables.$Color_White;
@@ -453,8 +452,8 @@ html{
                                 }
         
                                 a{
-                                    font-family: 'cosi azure';
-                                    font-size: 3vh;
+                                    font-family: 'cosi azure' , sans-serif;
+                                    font-size: 1.5vmax;
                                     color: variables.$Color_White;
                                     text-decoration: none;
                                     cursor: none;
@@ -535,10 +534,6 @@ html{
 
                     @include responsive.screen_large(){
                         width: 95%;
-                    }
-
-                    @include responsive.screen_laptop(){
-                        width: 100%;
                         flex-wrap: wrap
                     }
 
@@ -619,10 +614,10 @@ html{
                     .sobre-habilits{
                         @include mixins.align(relative, flex, space-around, center);
                         @include mixins.text_formatting(normal, normal, 300, 1px);
+                        top: -5px;
                         flex-direction: column;
                         width: 30vw;
                         height: auto;
-
 
                         @include responsive.screen_laptop(){
                             width: 50%;
@@ -644,7 +639,7 @@ html{
                             height: auto;
                             text-transform: uppercase;
                             font-size: 1.7vw;
-                            font-family: 'cosi azure';
+                            font-family: variables.$fonty_primary;
                             padding: 0 0 1vw 0;
 
                             @include responsive.screen_tablet(){
@@ -657,11 +652,12 @@ html{
                             width: 100%;
                             height: auto;
                             font-size: 1.1vw;
-                            font-style: italic;
+                            font-style: normal;
                             padding: 0.7vw 0 0.5vw 0;
+                            font-family: variables.$fonty_primary;
 
-                            @include responsive.screen_large(){
-                                 font-size: 16px;                    
+                            @include responsive.screen_laptop(){
+                                 font-size: 17px;                    
                             }
 
                             @include responsive.screen_tablet(){
@@ -685,7 +681,8 @@ html{
                     }
 
                     .sobre-descripion{
-                        position: relative;
+                        @include mixins.align(relative, flex, normal, normal);
+                        flex-direction: column;
                         width: 40vw;
                         height: auto;
                         margin: 0 0 50px 0 auto;
@@ -696,13 +693,12 @@ html{
 
                         @include responsive.screen_laptop(){
                             width: 80%;
-                            height: auto;
                             margin: 50px auto;
                         }
 
                         @include responsive.screen_small(){
                             width: 85%;
-                            margin: 0 auto;
+                            align-items: center;
                         }
 
                         .sobre-titulo{
@@ -711,43 +707,69 @@ html{
                             margin: 5px 0 20px 0;
 
                             h1{
-                                font-family: 'cosi azure';
+                                font-family: variables.$fonty_primary;
                                 font-size: 1.7vw;
                                 text-transform: uppercase;
 
                                 @include responsive.screen_laptop(){
                                     font-size: 22px;
-                                    text-align: center
+                                    text-align: center;
                                 }
                             }
                         }
+                                              
+                        p{
+                            @include mixins.text_formatting(normal, normal, 500, 1px);
+                            font-size: 2.3vh;
+                            line-height: 1.8;
+                            margin: 1vw 0 1.2vw 0;
+                            font-family: variables.$fonty_primary;
 
-                        .sobre-descripiton-bio{
-                            @include mixins.text_formatting(justify, italic, 300, 1px);
-                            font-size: 1vw;
-                            line-height: 1.5;
-
-                            p{
-                                margin: 1vw 0 1.2vw 0;
-
-                                @include responsive.screen_large(){
-                                    font-size: 12px;          
-                                }
+                            @include responsive.screen_large(){
+                                font-size: 12px;          
+                            }
         
-                                @include responsive.screen_laptop(){
-                                    &:nth-child(1){
-                                        text-align: center;
-                                        font-size: 16px;
-                                    }
-                                }
+                            @include responsive.screen_laptop(){                             
+                                text-align: center;
+                                font-size: 16px;
+                                
+                            }
 
-                                @include responsive.screen_small(){
-                                    font-size: 15px;
-                                    line-height: 1.7;
-                                } 
+                            @include responsive.screen_small(){
+                                font-size: 15px;
+                                line-height: 1.7;
                             }
 
                         }
+
+                        .may-cv{
+                            position: relative;
+                            width: 8vw;
+                            height: 6.5vh;
+                            border: 0.5px solid variables.$Color_White;
+                            border-radius: 20px;
+                            color: variables.$Color_White;
+                            font-size: 1.3vmax;
+                            font-family: variables.$fonty_primary;
+                            background-color: transparent;
+
+                            @include responsive.screen_laptop(){
+                                top: 15px;
+                                width: 130px;
+                                height: 40px;
+                                font-size: 20px;
+                            }
+
+                            @include responsive.screen_small(){
+                                width: 140px;
+                                height: 45px;
+                                font-size: 25px;
+                                margin: 15px 0 0 0;
+                            }
+                
+                        }
+
+                        
                     }
                 }
 
@@ -847,6 +869,10 @@ html{
                     margin: 50px;
                     z-index: -1;
 
+                    @include responsive.screen_small{
+                        width: 80%;
+                    }
+
                     h1{
                         @include mixins.text_formatting(center, normal, 500, 10px);
                         font-size: 2.5vw;
@@ -864,16 +890,21 @@ html{
 
                     }
                     p{
-                        @include mixins.text_formatting(center, italic, 300, 1px);
+                        @include mixins.text_formatting(center, normal, 300, 2px);
                         width: 70%;
                         margin: 0 auto;
-                        font-size: 1.1vw;
+                        font-size: 1.2vw;
                         padding: 3vw 0 2vw 0;
                         color: variables.$Color_White;
+                        font-family: variables.$fonty_primary;
+
+                        @include responsive.screen_laptop(){
+                            font-size: 15px;
+                        }
 
                         @include responsive.screen_small{
                             width: 95%;
-                            font-size: 12px;
+                            font-size: 14px;
                         }
 
                     }
@@ -898,7 +929,8 @@ html{
                         overflow: hidden;
 
                         @include responsive.screen_laptop(){
-                            width: 30%;
+                            width: 40%;
+                            height: 35vw;
                             margin: 0 0 100px 0;
                         }
 
@@ -932,7 +964,7 @@ html{
                                 display: flex;
                                 flex-direction: column;
                                 font-size: 2.2vw;
-                                font-family: 'cosi azure';
+                                font-family: 'cosi azure', sans-serif;
                                 color: variables.$Secundary_Color;
                                 
                                 @include responsive.screen_tablet(){
@@ -1001,6 +1033,11 @@ html{
                             }
 
                             .arcticons--music-you, .arcticons--pizza-boy-gbc, .material-symbols-light--developer-mode-tv-outline-rounded{
+                                
+                                @include responsive.screen_laptop(){
+                                    width: 100px;
+                                    height: 100px;
+                                }
                                 @include responsive.screen_tablet(){
                                     width: 70px;
                                     height: 70px;
@@ -1029,13 +1066,14 @@ html{
                             }
                             
                             p{
-                                @include mixins.text_formatting(center, italic, 400, 1px);
+                                @include mixins.text_formatting(center, normal, 500, 2px);
                                 line-height: 1.2;
                                 color: variables.$Color_White;                    
                                 font-size: 1vw;
                                 padding: 1vw;
                                 transform: translateY(35vw);               
                                 transition: variables.$Transition_ease; 
+                                font-family: variables.$fonty_primary;
                             
                                 @include responsive.screen_tablet(){
                                     font-size: 12px;
@@ -1341,13 +1379,13 @@ html{
     
                             span{
                                 display: block;
-                                font-size: 5.5vw;
-                                font-family: 'grand slang', sans-serif;
+                                font-size: 5vmax;
+                                font-family: variables.$fonty_primary;
                                 color: variables.$Color_White_B9;
 
                  
                                 @include responsive.screen_laptop(){
-                                    font-size: 100px;
+                                    font-size: 70px;
                                 }
 
                                 @include responsive.screen_small(){
@@ -1356,7 +1394,7 @@ html{
                             }
                         }
 
-                        .andress{
+                        .contatc{
                             position: relative;
                             display: flex;
                             flex-direction: column;
@@ -1370,11 +1408,16 @@ html{
 
                             h1{
                                 border-bottom: 1px solid variables.$Color_White;
-                                width: 9vw;
-                                font-size: 3.5vh;
+                                width: 150px;
+                                padding: 0 0 2px 0;
+                                font-size: 2vmax;
                                 letter-spacing: 3.1px;
                                 color: variables.$Color_White;
-                                font-family: 'grand slang', sans-serif;                              
+                                font-family: variables.$fonty_primary;
+                                
+                                @include responsive.screen_laptop(){
+                                    font-size: 25px;
+                                }                           
                             }
                             
                             P{
@@ -1384,13 +1427,14 @@ html{
                                 display: flex;
                                 align-items: center;
                                 padding: 20px 0 10px 0;
-                                font-size: 2.4vh;
+                                font-size: 1vmax;
                                 letter-spacing: 1px;
                                 color: variables.$Color_White_B9;
 
-                                @include responsive.screen_small(){
+                                @include responsive.screen_laptop(){
                                     font-size: 15px;
                                 }
+
                             
                                 .clarity--email-line {
                                     @include mixins.formatting-icon(2em, 2em);
@@ -1416,8 +1460,6 @@ html{
 
                             @include responsive.screen_laptop(){
                                 width: inherit;
-                                justify-content: end;
-                                align-items: end;
                             }
 
                             @include responsive.screen_small(){
@@ -1426,7 +1468,7 @@ html{
 
                             textPath{
                                 letter-spacing: 2px;
-                                font-family: 'grand slang', sans-serif;
+                                font-family: variables.$fonty_primary;
                             }
                             
                         }
@@ -1454,6 +1496,7 @@ html{
 
                             &:hover{
                                 transform: translateY(-20px);
+                                background-color: variables.$Secundary_Color;
                             }
                             
                         }
@@ -1491,7 +1534,7 @@ html{
                    
                     p{
                         text-align: center;
-                        font-family: 'grand slang', sans-serif;
+                        font-family: variables.$fonty_primary;
                         color: variables.$Color_White;
                         font-size: 3vh;
                         word-spacing: 3px;
