@@ -41,7 +41,7 @@ html{
             z-index: 9999;
 
             @include responsive.screen_tablet(){
-                display: none;
+                opacity: 0;
             }
         }
 

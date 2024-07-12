@@ -60,12 +60,3 @@
       transform: translate3d(0, 0, 0) translateZ(0);
     }
 }
-
-@keyframes douwn {
-    from{
-        transform: translateY(0vh);
-    }
-    to{
-        transform: translateY(50vh);
-    }
-}

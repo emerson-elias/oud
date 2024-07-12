@@ -71,14 +71,6 @@
     transform: translate3d(0, 0, 0) translateZ(0);
   }
 }
-@keyframes douwn {
-  from {
-    transform: translateY(0vh);
-  }
-  to {
-    transform: translateY(50vh);
-  }
-}
 * {
   padding: 0;
   margin: 0;
@@ -144,7 +136,7 @@ html body #cursor {
 }
 @media screen and (max-width: 768px) {
   html body #cursor {
-    display: none;
+    opacity: 0;
   }
 }
 @media screen and (max-width: 300px) {
