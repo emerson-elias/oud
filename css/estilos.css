@@ -973,6 +973,7 @@ html body main .hero-me .hero-cv {
   height: auto;
   margin-top: -20px;
   text-decoration: none;
+  cursor: none;
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .hero-cv {
