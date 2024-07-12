@@ -60,7 +60,7 @@ document.querySelectorAll('a[href^="#"]').forEach(ancora => {
 
 //====================================================================================//
 
-                /* EFEITO DE CIRCULO QUE SEGUE O CURSOR DO MOUSE */
+     /* EFEITO DE CIRCULO QUE SEGUE O CURSOR DO MOUSE E OCULTA QUANDO SAI DA TELA */
 
 const cursor = document.getElementById('cursor')
 
@@ -68,6 +68,15 @@ const cursor = document.getElementById('cursor')
         cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
     })
 
+    document.addEventListener('mouseout', (e) => {
+        if (!e.relatedTarget || e.relatedTarget.nodeName === "HTML") {
+            cursor.style.display = 'none'
+        }
+    })
+
+    document.addEventListener('mouseenter', () => {
+        cursor.style.display = 'block'
+    })
 
 //====================================================================================//
 

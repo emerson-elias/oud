@@ -39,6 +39,10 @@ html{
             pointer-events: none; 
             transform: translate(-2em);
             z-index: 9999;
+
+            @include responsive.screen_tablet(){
+                display: none;
+            }
         }
 
         @include responsive.screen_width_not_suport(){
@@ -875,7 +879,7 @@ html{
                         backdrop-filter: blur(10px);
                         border: 1px solid variables.$Color_White;
                         border-radius: 50%;
-                        z-index: 10;
+                        z-index: 0;
 
                         @include responsive.screen_laptop(){
                             width: 100px;
@@ -896,7 +900,7 @@ html{
                         backdrop-filter: blur(10px);
                         border: 1px solid variables.$Color_White;
                         border-radius: 50%;
-                        z-index: 1;
+                        z-index: 0;
 
                         @include responsive.screen_laptop(){
                             width: 100px;
@@ -912,7 +916,7 @@ html{
                     width: 70%;
                     text-align: center;
                     margin: 50px;
-                    z-index: -1;
+                    z-index: 1;
 
                     @include responsive.screen_small{
                         width: 80%;
@@ -1500,34 +1504,18 @@ html{
                             @include mixins.align(relative, flex, center, center);
                             padding: 20px 0 10px 0;
                             width: 25%;
-                
-
                             animation: girar_right 10s linear infinite;
-                        
-                          
 
                             @include responsive.screen_laptop(){
                                 width: inherit;
                             }
-
                             @include responsive.screen_small(){
                                 justify-content: center;
                             }
-
                             textPath{
                                 letter-spacing: 2px;
                                 font-family: variables.$fonty_primary;
-                            }
-
-                            &:hover{
-                                transform: rotateY(180deg);
-                               // background-color: red
-                            }
-
-                            .oi{
-                                position: relative;
-                            }
-                            
+                            }                                            
                         }
                     }
 

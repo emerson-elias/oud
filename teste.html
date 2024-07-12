@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Seguindo o Cursor</title>
+    <style>
+        .seguidor {
+            width: 50px;
+            height: 50px;
+            background-color: coral;
+            border: 2px solid black;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none; /* Para que a div não interfira nas interações do mouse */
+            display: none; /* Inicialmente oculta */
+        }
+    </style>
+</head>
+<body>
+    <div class="seguidor"></div>
+
+    <script>
+        document.addEventListener('mousemove', function(event) {
+            const seguidor = document.querySelector('.seguidor');
+            seguidor.style.left = `${event.clientX}px`;
+            seguidor.style.top = `${event.clientY}px`;
+            seguidor.style.display = 'block';
+        });
+
+        document.addEventListener('mouseout', function(event) {
+            if (!event.relatedTarget || event.relatedTarget.nodeName === "HTML") {
+                document.querySelector('.seguidor').style.display = 'none';
+            }
+        });
+
+        document.addEventListener('mouseenter', function() {
+            document.querySelector('.seguidor').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

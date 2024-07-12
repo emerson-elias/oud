@@ -53,6 +53,7 @@
     transform: rotate(0deg) translate3d(0, 0, 0);
   }
 }
+/*==========================================*/
 @keyframes btn-storm {
   0% {
     transform: translate3d(0, 0, 0) translateZ(0);
@@ -68,6 +69,14 @@
   }
   100% {
     transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+@keyframes douwn {
+  from {
+    transform: translateY(0vh);
+  }
+  to {
+    transform: translateY(50vh);
   }
 }
 * {
@@ -132,6 +141,11 @@ html body #cursor {
   pointer-events: none;
   transform: translate(-2em);
   z-index: 9999;
+}
+@media screen and (max-width: 768px) {
+  html body #cursor {
+    display: none;
+  }
 }
 @media screen and (max-width: 300px) {
   html body {
@@ -1097,7 +1111,7 @@ html body main .cards-container .boll-bg::before {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.9960784314);
   border-radius: 50%;
-  z-index: 10;
+  z-index: 0;
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container .boll-bg::before {
@@ -1118,7 +1132,7 @@ html body main .cards-container .boll-bg::after {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.9960784314);
   border-radius: 50%;
-  z-index: 1;
+  z-index: 0;
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container .boll-bg::after {
@@ -1132,7 +1146,7 @@ html body main .cards-container .card-title {
   width: 70%;
   text-align: center;
   margin: 50px;
-  z-index: -1;
+  z-index: 1;
 }
 @media screen and (max-width: 600px) {
   html body main .cards-container .card-title {
@@ -1757,12 +1771,6 @@ html body main .footer-container .footer .footer-contact .footer-cicle-animate {
 html body main .footer-container .footer .footer-contact .footer-cicle-animate textPath {
   letter-spacing: 2px;
   font-family: "grand slang", sans-serif;
-}
-html body main .footer-container .footer .footer-contact .footer-cicle-animate:hover {
-  transform: rotateY(180deg);
-}
-html body main .footer-container .footer .footer-contact .footer-cicle-animate .oi {
-  position: relative;
 }
 html body main .footer-container .footer .social-midia {
   position: relative;
