@@ -34,7 +34,7 @@ html{
             height: 20px;
             border-radius: 50%;
             background-color: transparent;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(2px);
             border: 1px solid variables.$Color_White;
             pointer-events: none; 
             transform: translate(-2em);
@@ -81,18 +81,9 @@ html{
                     list-style: none;
     
                     .game-icons--fox {
-                        display: inline-block;
-                        width: 4vw;
-                        height: 4vw;
+                        @include mixins.formatting-icon(4vw, 4vw, variables.$Color_White);                    
                         --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='m214.5 23.24l-1 8.1c-14 61.5 21 88.66 21 88.66l11-13s-24-19.76-18-63.56c41 11.6 58 36.6 64 48.8c-44 15.76-56 57.26-80 87.96l21-3.9l-2 31.3s44-8.7 69 17.7c5-8.6 8-18.9 6-29.2l-3-28.2c-3-1.1-7-3-11-5.4c-12-7.3-25-19.1-25-19.1c-2-1.9-2-5.2-1-7.8c2-2.5 5-3.7 7-2.7c0 0 11 3.5 21 6.7c11 3.9 20 14.3 21 26.6c1 8.4 3 18.9 4 28.3c2 15.4-3 30.8-12 42.7l7 18.3h38l7-18.3c-9-11.9-14-27.3-12-42.7c1-9.4 3-19.9 4-28.3c1-12.3 10-22.7 21-26.6c10-3.2 21-6.7 21-6.7c2-1 5 .2 7 2.7c1 2.6 1 5.9-1 7.8c0 0-13 11.8-25 19.1c-4 2.4-8 4.3-11 5.4l-3 28.2c-2 10.3 1 20.6 6 29.2c25-26.4 69-17.7 69-17.7l-2-31.3l21 3.9c-24-30.7-36-72.2-80-87.96c6-12.2 23-37.2 64-48.8c6 43.8-18 63.56-18 63.56l11 13s35-27.16 21-88.66l-1-8.1c-43.3 7.32-85.9 35.37-110 62.9c-5.5-.13-10.5-.52-16 0c-42.8-34.75-61.3-56.12-110-62.9m24.7 205.26c38.2 53.2-87.7 46.6-153.61 119.5c-26.11 28-32.53 56.3-25.95 80.3c12.23 44 71.86 73 144.06 55c49.8-13 96-32 134.8-40c35.1-8 63.8-5 82.3 24l15.3-5c-2.9-38-14.4-68.8-36.5-87.5c-16.8-14.2-39.9-22-70.9-21.1c-29.3.8-65.9 9.3-111.2 27.3c-27 9.5-76.5 27.7-102.4 12.6c-9.1-5.6-11.9-15-11.2-24.3c34.4 52 124.1-27 198.5-35.7c0 0 6.6-88.3-63.2-105.1m188.6 0c-53.1 12.4-64.1 54.1-65.2 105.1c26.5-.2 49.9 23.7 49.9 23.7s-27-98.6 15.3-128.8m-100.3 1.3h10c3 0 6 2.8 6 6.3c0 3.4-3 6.2-6 6.2h-10c-3 0-6-2.8-6-6.2c0-3.5 3-6.3 6-6.3m61.4 157.7c13.7 11.6 22.2 28.8 26.8 49.8c-15.8-12-35-16-57.1-14c-24.1 2-51.9 10-82.3 20l26.1-25c-28.3 14-53.1 17-75.4 12l80.9-40.2l-61.2 11.2c23.8-20.2 95.2-52.2 142.2-13.8'/%3E%3C/svg%3E");
-                        background-color: currentColor;
-                        -webkit-mask-image: var(--svg);
-                        mask-image: var(--svg);
-                        -webkit-mask-repeat: no-repeat;
-                        mask-repeat: no-repeat;
-                        -webkit-mask-size: 100% 100%;
-                        mask-size: 100% 100%;
-
+                       
                         @include responsive.screen_laptop(){
                             width: 50px;
                             height: 50px;
@@ -273,8 +264,8 @@ html{
                         width: 90%;
                         justify-content: center;
                     }
-
-                    .follow{
+                   
+                   .inspiration{
                         @include mixins.align(relative, flex, end, center);
                         width: inherit;
                         height: initial;
@@ -432,14 +423,15 @@ html{
                             .know{
                                 @include mixins.align(relative, flex, center, center);
                                 margin: 10px;
-                                width: 12vw;
-                                height: 7vh;
+                                width: 13vw;
+                                height: auto;
+                                padding: 10px;
                                 border: 1px solid variables.$Color_White;
                                 transition: variables.$Transition_ease;
                                 border-radius: 2vw;
 
                                 @include responsive.screen_laptop(){
-                                    width: 170px;
+                                    width: 130px;
                                 }       
                                 @include responsive.screen_small(){ 
                                     width: 130px;
@@ -779,12 +771,13 @@ html{
                         }
                     }
 
-                    .may-cv {
+                    .my-cv {
                         @include mixins.align(relative, flex, center, center); 
                         left: 25%;
                         margin: 0 15px 0 15px;                                               
                         width: 9vw;
-                        height: 7vh;                                             
+                        height: auto;
+                        padding: 12px;                                             
                         border-radius: 50px;
                         background-color: transparent;
                         border: 1px solid variables.$Color_White;
@@ -854,17 +847,9 @@ html{
                     }
 
                     .icon-park-outline--loading {
-                        display: inline-block;
-                        width: inherit;
-                        height: inherit;
+                        @include mixins.formatting-icon(inherit, inherit, variables.$Color_White_Smoker);
                         --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='0.1'%3E%3Cpath d='M4 24c0 11.046 8.954 20 20 20v0c11.046 0 20-8.954 20-20S35.046 4 24 4'/%3E%3Cpath d='M36 24c0-6.627-5.373-12-12-12s-12 5.373-12 12s5.373 12 12 12v0'/%3E%3C/g%3E%3C/svg%3E");
-                        background-color: variables.$Color_White_Smoker;
-                        -webkit-mask-image: var(--svg);
-                        mask-image: var(--svg);
-                        -webkit-mask-repeat: no-repeat;
-                        mask-repeat: no-repeat;
-                        -webkit-mask-size: 100% 100%;
-                        mask-size: 100% 100%;
+
                     }
 
                     &::before{
@@ -1033,9 +1018,11 @@ html{
 
                         .fa-music, .fa-pizza-slice, .fa-code{
                             position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
                             color: variables.$Icon_color_Smoker;
                             font-size: 20vw;
-                            top: 1vw;
 
                             @include responsive.screen_small(){
                                 font-size: 200px;
@@ -1057,29 +1044,17 @@ html{
                             }
 
                             .arcticons--music-you {
-                                display: inline-block;
-                                width: 5vw;
-                                height: 5vw;
-                                background-repeat: no-repeat;
-                                background-size: 100% 100%;
+                                @include mixins.formatting-icon(5vw, 5vw, transparent);
                                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='18.538' cy='35.378' r='8.122' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M26.66 35.378V12.834M28.69 4.5h6.864a2.03 2.03 0 0 1 2.03 2.03v4.273a2.03 2.03 0 0 1-2.03 2.03H26.66h0V6.53a2.03 2.03 0 0 1 2.03-2.03'/%3E%3C/svg%3E");
                             }
 
                             .arcticons--pizza-boy-gbc {
-                                display: inline-block;
-                                width: 5vw;
-                                height: 5vw;
-                                background-repeat: no-repeat;
-                                background-size: 100% 100%;
+                                @include mixins.formatting-icon(5vw, 5vw, transparent);
                                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='22.245' cy='23.357' r='3.617' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='33.469' cy='23.808' r='3.979' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27.059' cy='34.697' r='2.962' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M23.99 13.27c-.33 1.75-.91 4.02-1.65 6.48'/%3E%3Cellipse cx='42.57' cy='28.808' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' rx='2.537' ry='1.834' transform='rotate(-16.754 42.57 28.807)'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M33.7 19.844c-3.32-3.19-6.99-5.48-8.98-6.24a3 3 0 0 0-.34-.12a2.54 2.54 0 0 1-1.31-3.34c.56-1.29 2.01-1.68 3.34-1.32c1.91.51 6.05 3.01 9.96 6.55c3.92 3.53 7.61 8.09 8.63 12.7m-4.86 1.46c-.55-1.89-1.52-3.7-2.71-5.39m-11.51 13.3c-4.09.96-8.4 1.6-12.4 1.86c2.02-1.93 4.54-7.33 6.63-13m9.26 10.2c2.04-.61 3.98-1.3 5.73-2.07c.72-.32.24 2.24 2.2 2.03c.99-.1 1.52-.79 1.66-2.66c.11-1.46 1.79-2.69 2.34-3.2'/%3E%3Ccircle cx='26.362' cy='18.615' r='.75' fill='white'/%3E%3Ccircle cx='25.862' cy='29.308' r='.75' fill='white'/%3E%3Ccircle cx='19.681' cy='36.244' r='.75' fill='white'/%3E%3Ccircle cx='35.638' cy='30.71' r='.75' fill='white'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m16.26 35.27l-3.2.9c-1.04.29-2.12-.32-2.41-1.36L5.07 14.92a1.96 1.96 0 0 1 1.35-2.41l11.64-3.27c1.04-.29 2.11.32 2.41 1.36l2.23 7.93'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m19.88 20.644l-9.25 2.59a.525.525 0 0 1-.64-.36l-2.17-7.72c-.07-.27.09-.56.36-.63l9.42-2.65c.28-.07.56.09.64.36l2.16 7.72c.03.11.03.22-.02.31m-7.603 6.059l.931 3.319m1.194-2.125l-3.319.931'/%3E%3Ccircle cx='19.175' cy='26.722' r='.75' fill='white'/%3E%3C/svg%3E");
                             }
 
                             .material-symbols-light--developer-mode-tv-outline-rounded {
-                                display: inline-block;
-                                width: 5vw;
-                                height: 5vw;
-                                background-repeat: no-repeat;
-                                background-size: 100% 100%;
+                                @include mixins.formatting-icon(5vw, 5vw, transparent);
                                 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='m4.415 11l2.247-2.246q.14-.14.15-.344t-.15-.364t-.354-.16q-.195 0-.354.16l-2.389 2.389q-.242.242-.242.565t.242.565l2.389 2.389q.14.14.344.15t.364-.15t.16-.354t-.16-.354zm15.17 0l-2.247 2.246q-.14.14-.15.344t.15.364t.354.16t.354-.16l2.389-2.389q.242-.242.242-.565t-.242-.565l-2.389-2.389q-.14-.14-.344-.15t-.364.15t-.16.354t.16.354zM3 6.77V5.614q0-.69.463-1.152T4.615 4h14.77q.69 0 1.152.463T21 5.615V6.77q0 .214-.143.357t-.357.143t-.357-.143T20 6.769V5.615q0-.269-.173-.442T19.385 5H4.615q-.269 0-.442.173T4 5.615V6.77q0 .214-.143.357T3.5 7.27t-.357-.143T3 6.769M9.808 20q-.348 0-.578-.23T9 19.192V18H4.615q-.69 0-1.152-.462T3 16.385v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .269.173.442t.442.173h14.77q.269 0 .442-.173t.173-.442v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .69-.462 1.152T19.385 18H15v1.192q0 .348-.23.578t-.578.23zM12 11'/%3E%3C/svg%3E");
                             }
 
@@ -1150,9 +1125,11 @@ html{
                 height: auto;
                 margin: 10vw 0 10vw 0;
                 flex-direction: column;
+                overflow: hidden;
 
                 @include responsive.screen_laptop(){
                     margin: 0;
+                    padding: 0 0 20vh 0;
                 }
 
                 @include responsive.screen_tablet(){
@@ -1367,14 +1344,245 @@ html{
             }
 
             .project-container{
-               position: relative;
-               
+                @include mixins.align(relative, flex, center, center);
+                background-image: url(../img/herobg-hd.jpg);
+                background-attachment: fixed;
+                background-position: center top;
+                background-repeat: no-repeat;
+                background-size: cover;
+                flex-direction: column;
+                width: 100%;
+                height: 130vh;
+                overflow: hidden;
+
+
+                @include responsive.screen_laptop(){
+                    height: auto;
+                    padding: 200px 0 200px 0;
+                }
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: inherit;
+                    height: 50%;
+                    background: linear-gradient(to bottom, variables.$gray_primary, variables.$Smoker_there_0);
+                    pointer-events: none;
+                    outline: none;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 80%;
+                    left: 0;
+                    width: inherit;
+                    height: 20%;
+                    background: linear-gradient(to top, variables.$Color_Black, variables.$Smoker_there_0);
+                    pointer-events: none;
+                }
+
+                .circle{
+                    position: absolute;
+                    width: 1000px;
+                    height: 1000px;
+                    top: 50%;
+                    left: -30%;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 50%;
+                    background-color: transparent;
+                    border: 1.5px solid variables.$Color_White;
+
+                    @include responsive.screen_laptop(){
+                        top: 35%;
+                        left: -70%;
+                    }
+
+                    @include responsive.screen_small(){
+                        display: none;
+                    }
+                    
+                }
+
+                .projects-tittle{
+                    @include mixins.text_formatting(center, normal, 500, 10px);
+                    position: relative;
+                    width: inherit;
+                    height: auto;
+                    top: -5vh;
+                    font-size: 2.7vw;
+                    color: variables.$Color_White;
+                    text-transform: uppercase;
+
+
+                    @include responsive.screen_laptop(){
+                        top: -70px;
+                        font-size: 30px;
+                    }
+
+                    @include responsive.screen_small(){
+                        font-size: 25px;
+                    }
+
+                    span{
+                        color: variables.$Secundary_Color;
+                    }
+                }
+
+                .project-hero{
+                    @include mixins.align(relative, flex, space-between, center);
+                    width: 95%;
+                    height: 70vh;
+
+                    @include responsive.screen_laptop(){
+                        flex-direction: column;
+                        height: auto;
+                    }
+
+                    .projects-happy{
+                        @include mixins.align(relative, flex, center, center);
+                        width: 40vw;
+                        height: auto;
+                        padding: 0 0 0 70px;
+
+                        @include responsive.screen_laptop(){
+                            width: inherit;
+                            height: auto;
+                            justify-content: normal;
+                            padding: 50px 0 100px 0;
+                        }
+    
+                        h1{
+                            font-weight: bold;
+                            font-size: 3.1vmax;
+                            font-family: variables.$fonty_primary;
+                            color: variables.$Color_White;
+                            letter-spacing: 3px;
+                            text-transform: capitalize;
+                            transform: scaleY(2.1);
+                            line-height: 0.9;
+
+                            @include responsive.screen_laptop(){
+                                width: 50%;
+                                font-size: 55px;
+                                transform: scaleY(1.2);
+                            }
+                            
+                            @include responsive.screen_small(){
+                                width: inherit;
+                            }
+                        }
+
+                    }
+
+                    .projects{
+                        @include  mixins.align(relative, flex, space-between, normal);
+                        flex-direction: column;
+                        width: 50vw;
+                        height: auto;
+
+                        @include responsive.screen_laptop(){
+                            width: inherit;
+                        }
+    
+                        .project-layers{
+                            @include mixins.align(relative, flex, space-between, center);
+                            width: initial;
+                            height: 8vh;
+                            margin: 0 0 25px 0;
+                            padding: 0 25px 0 25px;                     
+                            border-bottom: 1px solid variables.$Color_White; 
+                            
+                            @include responsive.screen_laptop(){
+                                font-size: 25px;
+                                height: auto;
+                            }
+    
+                            .simple-icons--burton {
+                                @include mixins.formatting-icon(2vw, 2vw, variables.$Color_White);
+                                --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M11.985 1.543a.25.25 0 0 0-.21.116l-.974 1.51a.62.62 0 0 1-.353.261l-.575.164a.75.75 0 0 0-.452.362L6.955 8.474a.74.74 0 0 1-.48.369c-.154.036-.388.087-.621.132a.55.55 0 0 0-.402.323L4.297 11.98a1 1 0 0 1-.51.516l-.424.191a1 1 0 0 0-.542.601s-.648 1.666-1.147 3.167C1.22 17.812.04 21.9.04 21.9a.43.43 0 0 0 .09.492a.32.32 0 0 0 .467-.107s1.576-3.373 2.151-4.473a.31.31 0 0 1 .462-.093c.253.165.378.607.663.864a.258.258 0 0 0 .421-.103c.206-.504.69-2.074.851-2.724c.136-.54.596-.59.858-.193l.19.234a2.25 2.25 0 0 0 .713.592l.35.185a.5.5 0 0 1 .228.245l.383.897a.75.75 0 0 0 .66.455l.12.005a.75.75 0 0 1 .633.398c.176.331.461.932.704 1.326a.26.26 0 0 0 .473-.06a15.4 15.4 0 0 0 .6-2.06c.14-.717.579-.625.73-.431c.055.07.245.357.296.416a.252.252 0 0 0 .459-.097a12 12 0 0 0 .403-1.905c.039-.29.358-.328.51-.079c.164.266.43.741.574 1.023a2.6 2.6 0 0 1 .236.617l.211.951a2.2 2.2 0 0 0 .666 1.128a3.4 3.4 0 0 0 .477.422a.268.268 0 0 0 .41-.106c.11-.255.25-.687.334-.935a.25.25 0 0 1 .193-.168c.107-.02.18-.03.333-.07a.84.84 0 0 0 .564-.493l.207-.5a.257.257 0 0 1 .466-.011c.075.135.209.417.272.572a2 2 0 0 1 .089.246l.164.636a2.3 2.3 0 0 0 .29.66l.075.116a2.13 2.13 0 0 0 .785.722a.25.25 0 0 0 .35-.122c.234-.546.325-1.36.432-1.884a.285.285 0 0 1 .517-.092a456 456 0 0 1 2.326 3.92a.312.312 0 0 0 .541-.309c-.043-.099-1.506-3.787-2.912-7.053c-1.285-2.985-2.525-5.575-2.525-5.575a.46.46 0 0 0-.557-.247c-.376.112-.786.357-1.07.456a.54.54 0 0 1-.647-.253c-.347-.636-1.112-2.298-1.815-3.614c-.761-1.424-1.726-3.32-2.243-4.069a.25.25 0 0 0-.214-.11'/%3E%3C/svg%3E");
+
+                                @include responsive.screen_laptop(){
+                                    width: 50px;
+                                    height: 50px;
+                                }
+                            }
+
+                            p{
+                                text-align: center;
+                                font-size: 2vmax;
+                                color: variables.$Color_White;
+                                font-family: variables.$fonty_primary;
+
+
+                                @include responsive.screen_small(){
+                                    font-size: 20px;
+                                }
+                            }
+
+                            i{
+                                color: variables.$Color_White;
+                                font-size: 2vmax;
+
+                                @include responsive.screen_laptop(){
+                                    font-size: 25px;
+                                }
+                            }
+                
+                        }
+                        
+                    }
+                }
+       
+                .project-button-plus {
+                    position: relative;
+                    width: 12vw;
+                    height: auto;
+                    padding: 1vmax;
+                    background-color: transparent;
+                    transition: 0.5s all ease;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid variables.$Color_White;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    cursor: none;
+
+                    @include responsive.screen_laptop(){
+                        width: 180px;
+                        padding: 12px;
+                    }
+                  
+                    a {
+                        color: variables.$Color_White;
+                        font-size: 1.2vmax;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        text-decoration: none;
+                        font-family: variables.$fonty_primary;
+                        cursor: none;
+
+                        @include responsive.screen_laptop(){
+                            font-size: 18px;
+                        }
+                    }
+                    
+                    &:hover{
+                        background-color: variables.$Secundary_Color;
+                        transition: 0.5s all ease;
+                    }
+
+                }
+                  
             }
 
             .footer-container{
                 @include mixins.align(relative, flex, center, center);
                 width: 100%;
-                height: auto; // POR ENQUANTO, USE %  
+                height: auto;  
                 flex-direction: column;
                 background-color: variables.$Color_Black;
                 
@@ -1421,11 +1629,13 @@ html{
 
                         .footer-like-tex{
                             position: relative;
+                            top: -50px;
                             width: 40%;
                             height: inherit;
 
                             @include responsive.screen_laptop(){
-                                width: inherit;
+                                top: 0;
+                                width: inherit;          
                             }                     
     
                             span{
@@ -1446,8 +1656,7 @@ html{
                         }
 
                         .contatc{
-                            position: relative;
-                            display: flex;
+                            @include mixins.align(relative, flex, center, normal);
                             flex-direction: column;
                             width: 25%;
                             height: inherit;
@@ -1470,31 +1679,45 @@ html{
                                     font-size: 25px;
                                 }                           
                             }
-                            
-                            P{
+
+                            .click{
+                                text-align: center;
+                                font-size: 20px;
+                                text-transform: uppercase;
+                                font-family: variables.$fonty_primary;
+
+                                @include responsive.screen_laptop(){
+                                    text-align: start;
+                                    left: 70px;
+                                    margin: 20px;
+                                }
+
+                            }
+
+                            p{
                                 position: relative;
-                                width: initial;
-                                height: auto;
-                                display: flex;
-                                align-items: center;
-                                padding: 20px 0 10px 0;
+                                width: initial;              
+                                margin: 10px 0 10px 0;
                                 font-size: 1vmax;
                                 letter-spacing: 1px;
                                 color: variables.$Color_White_B9;
+                            
 
                                 @include responsive.screen_laptop(){
                                     font-size: 15px;
                                 }
                        
                                 .clarity--email-line {
-                                    @include mixins.formatting-icon(2em, 2em);
+                                    @include mixins.formatting-icon(2em, 2em, transparent);
                                     margin: 0 15px 0 0;
+                                    transform: translateY(10px);
                                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='white' d='M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z' class='clr-i-outline clr-i-outline-path-1'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
                                 }
                                 
                                 .ph--phone-light {
-                                    @include mixins.formatting-icon(2em, 2em);
-                                    margin: 0 15px 0 0;                                 
+                                    @include mixins.formatting-icon(2em, 2em, transparent);
+                                    margin: 0 15px 0 0; 
+                                    transform: translateY(10px);                               
                                     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='m221.59 160.3l-47.24-21.17a14 14 0 0 0-13.28 1.22a5 5 0 0 0-.56.42l-24.69 21a1.88 1.88 0 0 1-1.68.06c-15.87-7.66-32.31-24-40-39.65a1.91 1.91 0 0 1 0-1.68l21.07-25a6 6 0 0 0 .42-.58a14 14 0 0 0 1.12-13.27L95.73 34.49a14 14 0 0 0-14.56-8.38A54.24 54.24 0 0 0 34 80c0 78.3 63.7 142 142 142a54.25 54.25 0 0 0 53.89-47.17a14 14 0 0 0-8.3-14.53M176 210c-71.68 0-130-58.32-130-130a42.23 42.23 0 0 1 36.67-42h.23a2 2 0 0 1 1.84 1.31l21.1 47.11a2 2 0 0 1 0 1.67l-21.11 25.06a5 5 0 0 0-.43.57a14 14 0 0 0-.91 13.73c8.87 18.16 27.17 36.32 45.53 45.19a14 14 0 0 0 13.77-1c.19-.13.38-.27.56-.42l24.68-21a1.92 1.92 0 0 1 1.6-.1l47.25 21.17a2 2 0 0 1 1.21 2A42.24 42.24 0 0 1 176 210'/%3E%3C/svg%3E");
                                 }
                             }
@@ -1548,22 +1771,22 @@ html{
                         }
 
                         .uit--facebook-f {
-                            @include mixins.formatting-icon(5vh, 5vh);
+                            @include mixins.formatting-icon(5vh, 5vh, transparent);
                             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M17.99 1.596a27.982 27.982 0 0 0-3.037-.156C11.59 1.44 9.5 3.582 9.5 7.03v2.341H6.675a.5.5 0 0 0-.5.5v3.85a.5.5 0 0 0 .5.5H9.5v7.72a.5.5 0 0 0 .5.5h3.978a.5.5 0 0 0 .5-.5v-7.72h2.816a.5.5 0 0 0 .496-.435l.497-3.85a.5.5 0 0 0-.496-.565h-3.313V7.412c0-.97.195-1.375 1.408-1.375h2.039a.5.5 0 0 0 .5-.5V2.092a.5.5 0 0 0-.435-.496m-.565 3.44l-1.54.001c-2.157 0-2.407 1.356-2.407 2.375v2.46a.5.5 0 0 0 .499.5h3.246l-.369 2.85h-2.876a.5.5 0 0 0-.5.5v7.718H10.5v-7.718a.5.5 0 0 0-.5-.5H7.176v-2.85H10a.5.5 0 0 0 .5-.5V7.03c0-2.874 1.665-4.59 4.453-4.59c1.009 0 1.92.055 2.472.103z'/%3E%3C/svg%3E");
                         }
                         
                         .ph--instagram-logo-light {
-                            @include mixins.formatting-icon(5vh, 5vh);
+                            @include mixins.formatting-icon(5vh, 5vh, transparent);
                             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46m0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34m48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54m42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10'/%3E%3C/svg%3E");
                         }
                         
                         .uit--linkedin-alt {
-                            @include mixins.formatting-icon(5vh, 5vh);
+                            @include mixins.formatting-icon(5vh, 5vh, transparent);
                             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M7.5 9h-4a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5M7 21H4V10h3zM18 9c-1.085 0-2.14.358-3 1.019V9.5a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V16a1.5 1.5 0 1 1 3 0v5.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V14a5.006 5.006 0 0 0-5-5m4 12h-3v-5a2.5 2.5 0 1 0-5 0v5h-3V10h3v1.203a.5.5 0 0 0 .89.313A3.983 3.983 0 0 1 22 14zM5.868 2.002A2.73 2.73 0 0 0 5.515 2a2.74 2.74 0 0 0-2.926 2.729a2.71 2.71 0 0 0 2.869 2.728h.028a2.734 2.734 0 1 0 .382-5.455M5.833 6.46a1.75 1.75 0 0 1-.347-.003h-.028A1.736 1.736 0 1 1 5.515 3a1.737 1.737 0 0 1 .318 3.46'/%3E%3C/svg%3E");
                         }
 
                         .teenyicons--git-outline {
-                            @include mixins.formatting-icon(5vh, 5vh);
+                            @include mixins.formatting-icon(5vh, 5vh, transparent);
                             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='white' d='m6.793 1.207l.353.354zM1.207 6.793l-.353-.354zm0 1.414l.354-.353zm5.586 5.586l-.354.353zm1.414 0l-.353-.354zm5.586-5.586l.353.354zm0-1.414l-.354.353zM8.207 1.207l.354-.353zM6.44.854L.854 6.439l.707.707l5.585-5.585zM.854 8.56l5.585 5.585l.707-.707l-5.585-5.585zm7.707 5.585l5.585-5.585l-.707-.707l-5.585 5.585zm5.585-7.707L8.561.854l-.707.707l5.585 5.585zm0 2.122a1.5 1.5 0 0 0 0-2.122l-.707.707a.5.5 0 0 1 0 .708zM6.44 14.146a1.5 1.5 0 0 0 2.122 0l-.707-.707a.5.5 0 0 1-.708 0zM.854 6.44a1.5 1.5 0 0 0 0 2.122l.707-.707a.5.5 0 0 1 0-.708zm6.292-4.878a.5.5 0 0 1 .708 0L8.56.854a1.5 1.5 0 0 0-2.122 0zm-2 1.293l1 1l.708-.708l-1-1zM7.5 5a.5.5 0 0 1-.5-.5H6A1.5 1.5 0 0 0 7.5 6zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 9 4.5zM7.5 4a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 7.5 3zm0-1A1.5 1.5 0 0 0 6 4.5h1a.5.5 0 0 1 .5-.5zm.646 2.854l1.5 1.5l.707-.708l-1.5-1.5zM10.5 8a.5.5 0 0 1-.5-.5H9A1.5 1.5 0 0 0 10.5 9zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 12 7.5zm-.5-.5a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 10.5 6zm0-1A1.5 1.5 0 0 0 9 7.5h1a.5.5 0 0 1 .5-.5zM7 5.5v4h1v-4zm.5 5.5a.5.5 0 0 1-.5-.5H6A1.5 1.5 0 0 0 7.5 12zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 9 10.5zm-.5-.5a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 7.5 9zm0-1A1.5 1.5 0 0 0 6 10.5h1a.5.5 0 0 1 .5-.5z'/%3E%3C/svg%3E");
                         }
 
@@ -1622,8 +1845,8 @@ html{
                     color: variables.$Color_White;
                     font-size: 15px;
                 }
-            }
-        
+                
+            }      
         
         }
     }   

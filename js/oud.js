@@ -84,11 +84,21 @@ const cursor = document.getElementById('cursor')
 
 const ancora_email = document.getElementById('email')
 
-ancora_email.addEventListener('click', () => {
+    ancora_email.addEventListener('click', () => {
         const email = 'emersonees808@gmail.com'
         const subject = 'Vamos trabalhar juntos :)'
         const body = 'Olá Emerson Elias.\n\nVi seus projetos no seu portifólio e gostaria de saber mais sobre suas habilidades, vamos trabalhar juntos?.\n\nAtenciosamente:\n---- Seu Nome ----'
         const mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body)
         
         window.location.href = mailtoLink
+    })
+
+
+//====================================================================================//
+
+            /* DESENVOLVER UM EASTER EGGS AO CLICAR */
+const easter_eggs = document.getElementsByClassName('click')[0]
+
+    easter_eggs.addEventListener('click', () => {
+        alert('Aguarde ... em desenvolvimento!')
     })

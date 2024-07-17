@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>&merson &lias 🤟</title>
+    <meta name="theme-color" content="#161616">
+    <title>&merson &lias 🧑🏾‍💻</title>
     <link rel="shortcut icon" href="img/icon.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -37,7 +38,7 @@
         <section class="banner">
             <section class="row">
 
-                <div class="follow">
+                <div class="inspiration">
                     <span class="arcticons--dailyart"></span>
                     <p> Inspire-se na arte, aprecie os momentos e enxergue a beleza nas pequenas coisas</p>
                 </div>
@@ -74,10 +75,10 @@
 
         <section class="hero-me">
 
-            <div class="hero-text-bg"  id="sobre-mim" data-aos="fade-right" data-aos-duration="1000">About me</div>
+            <div class="hero-text-bg"  id="sobre-mim" data-aos="fade-right" data-aos-duration="1000">About</div>
 
             <div class="hero-titulo">
-                <h1>Sobre<span>.mim</span></h1>
+                <h1>Sobre<span> mim</span></h1>
             </div>
             
             <div class="sobre-mim">
@@ -112,13 +113,13 @@
             </div>   
             
             <a class="hero-cv" href="#">
-                <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"></div>
+                <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000"></div>
 
-                <button class="may-cv" data-aos="flip-up" data-aos-duration="2000">
+                <button class="my-cv" data-aos="flip-up" data-aos-duration="2000">
                     <span class="btn-cv">Meu cv</span>                      
                 </button>
 
-                <div data-aos="fade-down" data-aos-easing="linear"data-aos-duration="1500"></div>
+                <div data-aos="fade-down" data-aos-easing="linear"data-aos-duration="1000"></div>
             </a>
 
         </section>
@@ -130,7 +131,7 @@
             </section>
 
             <div class="card-title">
-                <h1>hob<span>ies</span></h1>
+                <h1>hob<span>bie</span></h1>
                 <p>Desde colecionar itens, explorar trilhas na natureza, passar o dia jogando ou comendo pizza haha,
                      cada hobby é uma porta para um mundo de interesses e paixões.</p>
             </div>  
@@ -325,6 +326,39 @@
         </section>
 
         <section class="project-container" id="projetos">
+
+            <div class="circle"></div>
+
+            <h1 class="projects-tittle">Pro<span>jet</span>os</h1>
+            
+            <div class="project-hero">
+
+                <div class="projects-happy" data-aos="fade-up" data-aos-duration="2000">
+                    <h1>Fico feliz em desenvolver estes projetos</h1>                                                 
+                </div>
+    
+                <div class="projects">
+                    
+                    <div class="project-layers"> 
+                        <span class="simple-icons--burton"></span>  
+                        <p>Em desenvolvimento</p>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+      
+                    
+                </div>
+
+            </div>
+
+            <button class="project-button-plus">
+                
+                <a href="#">
+                    <i class="fa-solid fa-plus"></i>
+                    em breve
+                </a>
+                
+            </button>
+
         </section>
         
         <section class="footer-container" id="contatos">
@@ -341,11 +375,15 @@
                     </div>
 
                     <div class="contatc">
-                            <h1>Contatos</h1>
+                        <h1>Contatos</h1>
                         
-                            <p id="email"><span class="clarity--email-line"></span>emersonees808@gmail.com</p> 
-                            <p><span class="ph--phone-light"></span>(94) 99117-1807</p>
-                             <!-- <p>Vamos trabalhar juntos para podemos realizar grandes conquitas </p> -->
+                        <p id="email"><span class="clarity--email-line"></span>emersonees808@gmail.com</p> 
+                        <p><span class="ph--phone-light"></span>(94) 99117-1807</p>
+                        <p class="click">click up !</p>
+
+                        <svg width="136" height="90" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.791 49.777c-.154 4.195-.626 7.827.954 11.852C7.36 73.39 17.485 82.682 29.442 85.955c6.397 1.75 13.576 2.803 20.193 1.89C62.927 86.012 76.9 76.609 87.222 68.784c20.494-15.536 36.094-38.7 35.837-65.222-.256 2.407 2.277 5.37 3.358 7.347 3.17 5.796 5.405 12.093 8.129 18.101.294-2.43-1.167-8.517-1.441-9.82a58.697 58.697 0 0 0-4.824-15.298 6.762 6.762 0 0 1-1.419-2.863c-3.007-.098-5.698.975-8.074 3.217-7.107 4.072-13.72 9.399-19.817 14.854" stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd"></path>
+                        </svg>
 
                     </div>
                     
@@ -395,17 +433,16 @@
         </section>
 
         <section class="button-top" id="topo">
-            <div class="cicle">
+            <a class="cicle">
                 <i class="fa-solid fa-arrow-up-from-bracket"></i>
-            </div>       
+            </a>       
         </section>       
     </main>
 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script> 
     
-        PARA USO DO GSAP
-    -->
+    
 
     <script src="https://kit.fontawesome.com/091f30ca3a.js" crossorigin="anonymous"></script>
     <script src="js/oud.js"></script>

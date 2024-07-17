@@ -30,10 +30,17 @@
     color: variables.$Color_White_Smoker;
 }
 
-@mixin formatting-icon($widht, $height){
+@mixin formatting-icon($widht, $height, $color-bg){
     display: inline-block;
     width: $widht;
     height: $height;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-color: $color-bg;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
 }
