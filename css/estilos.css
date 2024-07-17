@@ -1622,12 +1622,12 @@ html body main .project-container {
   align-items: center;
   background-image: url(../img/herobg-hd.jpg);
   background-attachment: fixed;
-  background-position: center top;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   flex-direction: column;
   width: 100%;
-  height: 130vh;
+  height: 100vh;
   overflow: hidden;
 }
 @media screen and (max-width: 992px) {

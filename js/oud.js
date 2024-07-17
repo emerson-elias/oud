@@ -97,6 +97,7 @@ const ancora_email = document.getElementById('email')
 //====================================================================================//
 
             /* DESENVOLVER UM EASTER EGGS AO CLICAR */
+            
 const easter_eggs = document.getElementsByClassName('click')[0]
 
     easter_eggs.addEventListener('click', () => {
