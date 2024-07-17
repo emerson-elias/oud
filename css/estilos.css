@@ -1630,10 +1630,34 @@ html body main .project-container {
   height: 130vh;
   overflow: hidden;
   /*
-                  @include responsive.screen_laptop(){
-                      height: auto;
-                      padding: 200px 0 200px 0;
+                  .circle{
+                      position: absolute;
+                      width: 1000px;
+                      height: 1000px;
+                      top: 50%;
+                      left: -30%;
+                      right: 0;
+                      bottom: 0;
+                      border-radius: 50%;
+                      background-color: transparent;
+                      border: 1.5px solid variables.$Color_White;
+
+                      @include responsive.screen_laptop(){
+                          top: 35%;
+                          left: -70%;
+                      }
+
+                      @include responsive.screen_small(){
+                          display: none;
+                      }
+
                   }*/
+}
+@media screen and (max-width: 992px) {
+  html body main .project-container {
+    height: auto;
+    padding: 200px 0 200px 0;
+  }
 }
 html body main .project-container::before {
   content: "";
@@ -1655,29 +1679,6 @@ html body main .project-container::after {
   height: 20%;
   background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
   pointer-events: none;
-}
-html body main .project-container .circle {
-  position: absolute;
-  width: 1000px;
-  height: 1000px;
-  top: 50%;
-  left: -30%;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  background-color: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.9960784314);
-}
-@media screen and (max-width: 992px) {
-  html body main .project-container .circle {
-    top: 35%;
-    left: -70%;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .project-container .circle {
-    display: none;
-  }
 }
 html body main .project-container .projects-tittle {
   text-align: center;
@@ -2196,6 +2197,7 @@ html body .button-top {
   margin-right: 30px;
   margin-bottom: 20px;
   background-color: transparent;
+  backdrop-filter: blur(10px);
   transition: 0.5s all ease;
 }
 @media screen and (max-width: 600px) {

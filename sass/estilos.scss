@@ -1355,11 +1355,11 @@ html{
                 height: 130vh;
                 overflow: hidden;
 
-/*
+
                 @include responsive.screen_laptop(){
                     height: auto;
                     padding: 200px 0 200px 0;
-                }*/
+                }
 
                 &::before {
                     content: '';
@@ -1383,7 +1383,7 @@ html{
                     background: linear-gradient(to top, variables.$Color_Black, variables.$Smoker_there_0);
                     pointer-events: none;
                 }
-
+/*
                 .circle{
                     position: absolute;
                     width: 1000px;
@@ -1405,7 +1405,7 @@ html{
                         display: none;
                     }
                     
-                }
+                }*/
 
                 .projects-tittle{
                     @include mixins.text_formatting(center, normal, 500, 10px);
@@ -1826,6 +1826,7 @@ html{
             margin-right: 30px;
             margin-bottom: 20px;
             background-color: transparent;
+            backdrop-filter: blur(10px);
             transition: variables.$Transition_ease;
     
             @include responsive.screen_small(){ 
