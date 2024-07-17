@@ -103,3 +103,20 @@ const easter_eggs = document.getElementsByClassName('click')[0]
     easter_eggs.addEventListener('click', () => {
         alert('Aguarde ... em desenvolvimento!')
     })
+
+
+//====================================================================================//
+
+            /* PAUSE PARA ANIMAÇÃO */
+
+const pauseElements = document.querySelectorAll('.ferraments-links')
+
+    pauseElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            pauseElements.forEach(el => el.classList.add('paused'))
+        })
+
+        element.addEventListener('mouseleave', () => {
+            pauseElements.forEach(el => el.classList.remove('paused'))
+        })
+    })

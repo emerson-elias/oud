@@ -41,9 +41,9 @@
     }
   }
 
-  /*==========================================*/
+/*==========================================*/
   
-  @keyframes btn-storm {
+@keyframes btn-storm {
     0% {
       transform: translate3d(0, 0, 0) translateZ(0);
     }
@@ -59,4 +59,15 @@
     100% {
       transform: translate3d(0, 0, 0) translateZ(0);
     }
+}
+
+/*==========================================*/
+
+@keyframes text-linear {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

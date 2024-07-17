@@ -280,18 +280,9 @@ html{
                         }
                   
                         .arcticons--dailyart {
-                            display: inline-block;
-                            width: 2.5vw;
-                            height: 2.5vw;
+                            @include mixins.formatting-icon(2.5vw, 2.5vw, variables.$Color_White);
                             --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='13.557' height='19.545' x='14.99' y='9.468' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' rx='6.779'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M28.547 22.235v20.336M21.09 29.013v3.728c-4.8 0-12.088 6.27-12.088 9.83'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M42.5 42.57s-2.937-8.981-7.642-8.981V16.21A10.78 10.78 0 0 0 24.077 5.43h0a10.78 10.78 0 0 0-10.782 10.781v17.378C9.737 34.888 6.008 39.972 5.5 42.57'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M19.029 22.178c.263.874 2.523.933 2.895 0m-2.895-4.848c-.283-.874-2.712-.933-3.112 0m9.263 0c-.283-.874-2.712-.933-3.112 0m-3.915 7.136a3.16 3.16 0 0 0 2.324.763a3.18 3.18 0 0 0 2.407-.89'/%3E%3Ccircle cx='18.075' cy='17.68' r='.75' fill='%23000'/%3E%3Ccircle cx='24.43' cy='17.68' r='.75' fill='%23000'/%3E%3C/svg%3E");
-                            background-color: variables.$Color_White;
-                            -webkit-mask-image: var(--svg);
-                            mask-image: var(--svg);
-                            -webkit-mask-repeat: no-repeat;
-                            mask-repeat: no-repeat;
-                            -webkit-mask-size: 100% 100%;
-                            mask-size: 100% 100%;
-
+                            
                             @include responsive.screen_small(){
                                 width: 35px;
                                 height: 35px;
@@ -1222,7 +1213,7 @@ html{
 
                         h2{
                             font-size: 1.8vw;
-                            color: variables.$Color_White_Smoker;
+                            color: variables.$Color_White_Smoker_dwo;
                             font-family: 'cosi azure';
                             transition: variables.$Transition_ease;
                             word-break: break-all;
@@ -1341,6 +1332,38 @@ html{
                         }
                     }
                 }
+
+                .ferraments{
+                    position: relative;
+                    margin: 20vh 0 0 0;
+                    width: 100vw;
+                    height: 20vh;
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    .ferraments-links{
+                        position: relative;
+                        display: inline-block;
+                        top: 50px;
+                        animation: text-linear 50s linear infinite;
+
+                        a{
+                            text-decoration: none;
+                            color: variables.$Color_White_Smoker_dwo;
+                            margin: 0 10px 0 30px;
+                            font-size: 6vmax;
+                            font-family: variables.$fonty_primary;
+                            text-transform: capitalize;
+                            cursor: none;
+
+                            @include responsive.screen_small(){
+                                font-size: 70px;
+                            }
+                        }
+
+                    }
+
+                }
             }
 
             .project-container{
@@ -1353,7 +1376,6 @@ html{
                 flex-direction: column;
                 width: 100%;
                 height: 130vh;
-                overflow: hidden;
 
 
                 @include responsive.screen_laptop(){
@@ -1368,9 +1390,9 @@ html{
                     left: 0;
                     width: inherit;
                     height: 50%;
+                    transform: translateY(-1px);
                     background: linear-gradient(to bottom, variables.$gray_primary, variables.$Smoker_there_0);
                     pointer-events: none;
-                    outline: none;
                 }
 
                 &::after {
@@ -1380,10 +1402,11 @@ html{
                     left: 0;
                     width: inherit;
                     height: 20%;
+                    transform: translateY(1px);
                     background: linear-gradient(to top, variables.$Color_Black, variables.$Smoker_there_0);
                     pointer-events: none;
                 }
-/*
+
                 .circle{
                     position: absolute;
                     width: 1000px;
@@ -1405,14 +1428,14 @@ html{
                         display: none;
                     }
                     
-                }*/
+                }
 
                 .projects-tittle{
                     @include mixins.text_formatting(center, normal, 500, 10px);
                     position: relative;
                     width: inherit;
                     height: auto;
-                    top: -5vh;
+                    top: -7vh;
                     font-size: 2.7vw;
                     color: variables.$Color_White;
                     text-transform: uppercase;
@@ -1444,12 +1467,14 @@ html{
 
                     .projects-happy{
                         @include mixins.align(relative, flex, center, center);
+                        top: -25px;
                         width: 40vw;
                         height: auto;
                         padding: 0 0 0 70px;
 
                         @include responsive.screen_laptop(){
                             width: inherit;
+                            top: 0;
                             height: auto;
                             justify-content: normal;
                             padding: 50px 0 100px 0;
@@ -1486,6 +1511,10 @@ html{
 
                         @include responsive.screen_laptop(){
                             width: inherit;
+                        }
+
+                        @include responsive.screen_small(){
+                            margin: 50px 0 100px 0;
                         }
     
                         .project-layers{
@@ -1826,7 +1855,6 @@ html{
             margin-right: 30px;
             margin-bottom: 20px;
             background-color: transparent;
-            backdrop-filter: blur(10px);
             transition: variables.$Transition_ease;
     
             @include responsive.screen_small(){ 
@@ -1839,6 +1867,7 @@ html{
                 width: 40px;
                 height: 40px;
                 border-radius: 50px;
+                backdrop-filter: blur(10px);
                 border: 1px solid variables.$Color_White;
                 cursor: none;
         
@@ -1866,4 +1895,7 @@ html{
 }
 .header_aux {
     backdrop-filter: blur(10px) !important;  
+}
+.paused{
+    animation-play-state: paused !important;
 }
