@@ -15,7 +15,8 @@
 }
 
 html{
- 
+    background-color: variables.$gray_primary;
+
     @include responsive.screen_height_not_suport(){
         background-color: variables.$gray_primary;
     }   
@@ -24,7 +25,6 @@ html{
     }
 
     body {
-        background-color: variables.$gray_primary;
         scroll-behavior: smooth;
         cursor: none;
 
@@ -243,7 +243,7 @@ html{
                 background-repeat: no-repeat;
                 background-size: cover;
                 width: 100%;
-                height: 120vh;
+                height: 120dvh;
                 overflow: hidden;
 
                 @include responsive.screen_small{
@@ -1114,7 +1114,7 @@ html{
                 @include mixins.align(relative, flex, center, center);
                 width: 100%;
                 height: auto;
-                margin: 10vw 0 10vw 0;
+                margin: 20vw 0 10vw 0;
                 flex-direction: column;
                 overflow: hidden;
 
@@ -1335,11 +1335,14 @@ html{
 
                 .ferraments{
                     position: relative;
-                    margin: 20vh 0 0 0;
+                    margin: 200px 0 150px 0;
                     width: 100vw;
                     height: 20vh;
-                    overflow: hidden;
                     white-space: nowrap;
+
+                    @include responsive.screen_small(){
+                        margin: 10dvh 0 5dvh 0;
+                    }
 
                     .ferraments-links{
                         position: relative;
@@ -1353,13 +1356,19 @@ html{
                             margin: 0 10px 0 30px;
                             font-size: 6vmax;
                             font-family: variables.$fonty_primary;
+                            transition: variables.$Transition_ease;
                             text-transform: capitalize;
                             cursor: none;
 
                             @include responsive.screen_small(){
                                 font-size: 70px;
                             }
-                        }
+
+                            &:hover{
+                                color: variables.$Secundary_Color;
+                                transition: variables.$Transition_ease;
+                            }
+                        }     
 
                     }
 
@@ -1375,7 +1384,7 @@ html{
                 background-size: cover;
                 flex-direction: column;
                 width: 100%;
-                height: 130vh;
+                height: 130dvh;
 
 
                 @include responsive.screen_laptop(){
@@ -1530,10 +1539,10 @@ html{
                                 height: auto;
                             }
     
-                            .simple-icons--burton {
-                                @include mixins.formatting-icon(2vw, 2vw, variables.$Color_White);
-                                --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M11.985 1.543a.25.25 0 0 0-.21.116l-.974 1.51a.62.62 0 0 1-.353.261l-.575.164a.75.75 0 0 0-.452.362L6.955 8.474a.74.74 0 0 1-.48.369c-.154.036-.388.087-.621.132a.55.55 0 0 0-.402.323L4.297 11.98a1 1 0 0 1-.51.516l-.424.191a1 1 0 0 0-.542.601s-.648 1.666-1.147 3.167C1.22 17.812.04 21.9.04 21.9a.43.43 0 0 0 .09.492a.32.32 0 0 0 .467-.107s1.576-3.373 2.151-4.473a.31.31 0 0 1 .462-.093c.253.165.378.607.663.864a.258.258 0 0 0 .421-.103c.206-.504.69-2.074.851-2.724c.136-.54.596-.59.858-.193l.19.234a2.25 2.25 0 0 0 .713.592l.35.185a.5.5 0 0 1 .228.245l.383.897a.75.75 0 0 0 .66.455l.12.005a.75.75 0 0 1 .633.398c.176.331.461.932.704 1.326a.26.26 0 0 0 .473-.06a15.4 15.4 0 0 0 .6-2.06c.14-.717.579-.625.73-.431c.055.07.245.357.296.416a.252.252 0 0 0 .459-.097a12 12 0 0 0 .403-1.905c.039-.29.358-.328.51-.079c.164.266.43.741.574 1.023a2.6 2.6 0 0 1 .236.617l.211.951a2.2 2.2 0 0 0 .666 1.128a3.4 3.4 0 0 0 .477.422a.268.268 0 0 0 .41-.106c.11-.255.25-.687.334-.935a.25.25 0 0 1 .193-.168c.107-.02.18-.03.333-.07a.84.84 0 0 0 .564-.493l.207-.5a.257.257 0 0 1 .466-.011c.075.135.209.417.272.572a2 2 0 0 1 .089.246l.164.636a2.3 2.3 0 0 0 .29.66l.075.116a2.13 2.13 0 0 0 .785.722a.25.25 0 0 0 .35-.122c.234-.546.325-1.36.432-1.884a.285.285 0 0 1 .517-.092a456 456 0 0 1 2.326 3.92a.312.312 0 0 0 .541-.309c-.043-.099-1.506-3.787-2.912-7.053c-1.285-2.985-2.525-5.575-2.525-5.575a.46.46 0 0 0-.557-.247c-.376.112-.786.357-1.07.456a.54.54 0 0 1-.647-.253c-.347-.636-1.112-2.298-1.815-3.614c-.761-1.424-1.726-3.32-2.243-4.069a.25.25 0 0 0-.214-.11'/%3E%3C/svg%3E");
-
+                            .clarity--beta-line {
+                                @include mixins.formatting-icon(4vw, 4vw, variables.$Color_White);                               
+                                --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23000' d='M7.21 14.07h3a1.61 1.61 0 0 1 1.81 1.5a1.44 1.44 0 0 1-.84 1.34a1.67 1.67 0 0 1 1.1 1.53a1.75 1.75 0 0 1-2 1.63H7.21Zm2.71 2.42c.48 0 .82-.28.82-.67s-.34-.65-.82-.65H8.49v1.32Zm.2 2.48a.75.75 0 1 0 0-1.47H8.49V19Z' class='clr-i-outline clr-i-outline-path-1'/%3E%3Cpath fill='%23000' d='M14.55 15.23v1.2h3v1.16h-3v1.32h3.33v1.16h-4.62v-6h4.62v1.16Z' class='clr-i-outline clr-i-outline-path-2'/%3E%3Cpath fill='%23000' d='M20.41 15.23h-1.87v-1.16h5v1.16H21.7v4.84h-1.29Z' class='clr-i-outline clr-i-outline-path-3'/%3E%3Cpath fill='%23000' d='M28 19.12h-2.68l-.38.95H23.5l2.44-6h1.44l2.45 6h-1.45ZM27.55 18l-.89-2.19l-.89 2.19Z' class='clr-i-outline clr-i-outline-path-4'/%3E%3Cpath fill='%23000' d='M8.06 30a.84.84 0 0 1-.38-.08a1 1 0 0 1-.62-.92v-4h-4a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h30a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H13.48l-4.71 4.71a1 1 0 0 1-.71.29m-4-7h4a1 1 0 0 1 1 1v2.59l3.3-3.3a1 1 0 0 1 .7-.29h19V11h-28Z' class='clr-i-outline clr-i-outline-path-5'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
+                                
                                 @include responsive.screen_laptop(){
                                     width: 50px;
                                     height: 50px;
