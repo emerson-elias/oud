@@ -1380,7 +1380,7 @@ html{
             }
 
             .project-container{
-                @include mixins.align(relative, flex, center, center);
+                @include mixins.align(sticky, flex, center, center);
                 background-image: url(../img/herobg-hd.jpg);
                 background-attachment: fixed;
                 background-position: center center;
@@ -1388,7 +1388,9 @@ html{
                 background-size: cover;
                 flex-direction: column;
                 width: 100%;
-                height: 130dvh;
+                height: auto;
+                box-sizing: border-box;
+                padding: 20dvh 0 20dvh 0;
 
 
                 @include responsive.screen_laptop(){
