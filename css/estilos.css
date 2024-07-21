@@ -1801,7 +1801,7 @@ html body main .project-container .project-hero .projects-happy h1 {
   font-weight: bold;
   font-size: 3.1vmax;
   font-family: "grand slang", sans-serif;
-  color: rgba(255, 255, 255, 0.9960784314);
+  color: #000;
   letter-spacing: 3px;
   text-transform: capitalize;
   transform: scaleY(2.1);
