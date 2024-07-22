@@ -102,7 +102,7 @@ const easter_eggs = document.getElementsByClassName('click')[0];
 
     easter_eggs.addEventListener('click', () => {
         Swal.fire({
-            imageUrl: '../img/meme.jpg',
+            imageUrl: '/img/meme.jpg',
             imageWidth: 300,
             imageHeight: 900, 
         })
