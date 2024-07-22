@@ -1857,40 +1857,40 @@ html{
                 
             }
 
-        }
-    
-        .button-top {
-            position: fixed;    
-            right: 0;
-            bottom: 0;
-            opacity: 0;
-            margin-right: 30px;
-            margin-bottom: 20px;
-            background-color: transparent;
-            transition: variables.$Transition_ease;
-    
-            @include responsive.screen_small(){ 
-                margin-right: 15px;
+            .button-top {
+                position: fixed;    
+                right: 0;
+                bottom: 0;
+                opacity: 0;
+                margin-right: 30px;
                 margin-bottom: 20px;
-            }
-              
-            .cicle {
-                @include mixins.align(relative, flex, center, center);
-                width: 40px;
-                height: 40px;
-                border-radius: 50px;
-                backdrop-filter: blur(10px);
-                border: 1px solid variables.$Color_White;
-                cursor: none;
+                background-color: transparent;
+                transition: variables.$Transition_ease;
         
-                .fa-arrow-up-from-bracket {
-                    color: variables.$Color_White;
-                    font-size: 15px;
+                @include responsive.screen_small(){ 
+                    margin-right: 15px;
+                    margin-bottom: 20px;
                 }
-                
-            }      
-        
+                  
+                .cicle {
+                    @include mixins.align(relative, flex, center, center);
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50px;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid variables.$Color_White;
+                    cursor: none;
+            
+                    .fa-arrow-up-from-bracket {
+                        color: variables.$Color_White;
+                        font-size: 15px;
+                    }
+                    
+                }      
+            
+            }
         }
+    
     }   
 }
 
