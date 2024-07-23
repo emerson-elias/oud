@@ -2250,7 +2250,7 @@ html body main .footer-container .credits p {
     font-size: 20px;
   }
 }
-html body .button-top {
+html body main .button-top {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -2261,12 +2261,12 @@ html body .button-top {
   transition: 0.5s all ease;
 }
 @media screen and (max-width: 600px) {
-  html body .button-top {
+  html body main .button-top {
     margin-right: 15px;
     margin-bottom: 20px;
   }
 }
-html body .button-top .cicle {
+html body main .button-top .cicle {
   position: relative;
   display: flex;
   justify-content: center;
@@ -2278,7 +2278,7 @@ html body .button-top .cicle {
   border: 1px solid rgba(255, 255, 255, 0.9960784314);
   cursor: none;
 }
-html body .button-top .cicle .fa-arrow-up-from-bracket {
+html body main .button-top .cicle .fa-arrow-up-from-bracket {
   color: rgba(255, 255, 255, 0.9960784314);
   font-size: 15px;
 }
