@@ -92,6 +92,7 @@
 
 html {
   background-color: #161616;
+  scrollbar-width: none;
 }
 @media screen and (max-height: 440px) {
   html {
@@ -131,8 +132,9 @@ html {
 }
 html body {
   scroll-behavior: smooth;
-  cursor: none;
   -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
+  cursor: none;
 }
 html body #cursor {
   position: fixed;
@@ -1676,7 +1678,8 @@ html body main .project-container {
   background-size: cover;
   flex-direction: column;
   width: 100%;
-  height: 130dvh;
+  height: 150dvh;
+  overflow: hidden;
 }
 @media screen and (max-width: 992px) {
   html body main .project-container {
@@ -1687,6 +1690,7 @@ html body main .project-container {
 @media screen and (max-width: 600px) {
   html body main .project-container {
     background-attachment: local;
+    overflow: visible;
   }
 }
 html body main .project-container::before {
@@ -1707,7 +1711,7 @@ html body main .project-container::after {
   left: 0;
   width: inherit;
   height: 20%;
-  transform: translateY(1px);
+  transform: translateY(5px);
   background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
   pointer-events: none;
 }
@@ -1715,18 +1719,21 @@ html body main .project-container .circle {
   position: absolute;
   width: 1000px;
   height: 1000px;
-  top: 40%;
-  left: -25%;
+  top: 50%;
+  left: -20%;
   right: 0;
   bottom: 0;
   border-radius: 50%;
   background-color: transparent;
+  pointer-events: none;
   border: 1.5px solid rgba(255, 255, 255, 0.9960784314);
 }
 @media screen and (max-width: 992px) {
   html body main .project-container .circle {
-    top: 35%;
-    left: -70%;
+    width: 700px;
+    height: 700px;
+    top: -20%;
+    left: 50%;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1774,6 +1781,12 @@ html body main .project-container .project-hero {
   html body main .project-container .project-hero {
     flex-direction: column;
     height: auto;
+    margin: 0 0 100px 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .project-container .project-hero {
+    margin: 0 0 50px 0;
   }
 }
 html body main .project-container .project-hero .projects-happy {
@@ -1842,7 +1855,7 @@ html body main .project-container .project-hero .projects .project-layers {
   justify-content: space-between;
   align-items: center;
   width: initial;
-  height: 8vh;
+  height: 10vh;
   margin: 0 0 25px 0;
   padding: 0 25px 0 25px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.9960784314);
@@ -1851,6 +1864,11 @@ html body main .project-container .project-hero .projects .project-layers {
   html body main .project-container .project-hero .projects .project-layers {
     font-size: 25px;
     height: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .project-container .project-hero .projects .project-layers {
+    height: 12vh;
   }
 }
 html body main .project-container .project-hero .projects .project-layers .clarity--beta-line {
@@ -1874,14 +1892,19 @@ html body main .project-container .project-hero .projects .project-layers .clari
     height: 50px;
   }
 }
-html body main .project-container .project-hero .projects .project-layers p {
+html body main .project-container .project-hero .projects .project-layers h1 {
   text-align: center;
-  font-size: 2vmax;
+  font-size: 1.8vmax;
   color: rgba(255, 255, 255, 0.9960784314);
   font-family: "grand slang", sans-serif;
 }
+@media screen and (max-width: 992px) {
+  html body main .project-container .project-hero .projects .project-layers h1 {
+    font-size: 25px;
+  }
+}
 @media screen and (max-width: 600px) {
-  html body main .project-container .project-hero .projects .project-layers p {
+  html body main .project-container .project-hero .projects .project-layers h1 {
     font-size: 20px;
   }
 }

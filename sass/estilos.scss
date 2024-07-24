@@ -16,6 +16,7 @@
 
 html{
     background-color: variables.$gray_primary;
+    scrollbar-width: none;
 
     @include responsive.screen_height_not_suport(){
         background-color: variables.$gray_primary;
@@ -26,8 +27,9 @@ html{
 
     body {
         scroll-behavior: smooth;
-        cursor: none;
         -webkit-font-smoothing: antialiased;
+        -ms-overflow-style: none;
+        cursor: none;
 
         #cursor {
             position: fixed;
@@ -1383,7 +1385,8 @@ html{
                 background-size: cover;
                 flex-direction: column;
                 width: 100%;
-                height: 130dvh;
+                height: 150dvh;
+                overflow: hidden;
 
 
                 @include responsive.screen_laptop(){
@@ -1393,6 +1396,7 @@ html{
 
                 @include responsive.screen_small(){
                     background-attachment: local;
+                    overflow: visible;
                 }
 
                 &::before {
@@ -1414,7 +1418,7 @@ html{
                     left: 0;
                     width: inherit;
                     height: 20%;
-                    transform: translateY(1px);
+                    transform: translateY(5px);
                     background: linear-gradient(to top, variables.$Color_Black, variables.$Smoker_there_0);
                     pointer-events: none;
                 }
@@ -1423,17 +1427,20 @@ html{
                     position: absolute;
                     width: 1000px;
                     height: 1000px;
-                    top: 40%;
-                    left: -25%;
+                    top: 50%;
+                    left: -20%;
                     right: 0;
                     bottom: 0;
                     border-radius: 50%;
                     background-color: transparent;
+                    pointer-events: none;
                     border: 1.5px solid variables.$Color_White;
 
                     @include responsive.screen_laptop(){
-                        top: 35%;
-                        left: -70%;
+                        width: 700px;
+                        height: 700px;
+                        top: -20%;
+                        left: 50%;
                     }
 
                     @include responsive.screen_small(){
@@ -1475,6 +1482,11 @@ html{
                     @include responsive.screen_laptop(){
                         flex-direction: column;
                         height: auto;
+                        margin: 0 0 100px 0;
+                    }
+
+                    @include responsive.screen_small(){
+                        margin: 0 0 50px 0;
                     }
 
                     .projects-happy{
@@ -1532,7 +1544,7 @@ html{
                         .project-layers{
                             @include mixins.align(relative, flex, space-between, center);
                             width: initial;
-                            height: 8vh;
+                            height: 10vh;
                             margin: 0 0 25px 0;
                             padding: 0 25px 0 25px;                     
                             border-bottom: 1px solid variables.$Color_White; 
@@ -1540,6 +1552,10 @@ html{
                             @include responsive.screen_laptop(){
                                 font-size: 25px;
                                 height: auto;
+                            }
+
+                            @include responsive.screen_small(){
+                                height: 12vh;
                             }
     
                             .clarity--beta-line {
@@ -1552,12 +1568,15 @@ html{
                                 }
                             }
 
-                            p{
+                            h1{
                                 text-align: center;
-                                font-size: 2vmax;
+                                font-size: 1.8vmax;
                                 color: variables.$Color_White;
                                 font-family: variables.$fonty_primary;
 
+                                @include responsive.screen_laptop(){
+                                    font-size: 25px;
+                                }
 
                                 @include responsive.screen_small(){
                                     font-size: 20px;
