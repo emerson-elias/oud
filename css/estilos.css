@@ -90,11 +90,7 @@
   width: 0;
 }
 
-html {
-  background-color: #161616;
-  scrollbar-width: none;
-}
-@media screen and (max-height: 440px) {
+@media screen and (max-width: 300px), (max-height: 250px) {
   html {
     background-color: #161616;
   }
@@ -103,38 +99,40 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    content: "screen não suportado, abra a tela e saiba mais :)";
+    content: "screen não suportado... !";
     color: rgba(255, 255, 255, 0.8156862745);
-    width: 100%;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     font-size: 40px;
-    font-family: "Alumni Sans Inline One", sans-serif;
     text-align: center;
-  }
-}
-@media screen and (max-width: 300px) {
-  html {
-    background-color: #161616;
-  }
-  html::before {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    content: "screen não suportado, abra a tela e saiba mais :)";
-    color: rgba(255, 255, 255, 0.8156862745);
-    width: 100%;
-    height: 100vh;
-    font-size: 40px;
     font-family: "Alumni Sans Inline One", sans-serif;
-    text-align: center;
   }
 }
 html body {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
+  background-color: #161616;
+  scrollbar-width: none;
   cursor: none;
+}
+@media screen and (max-width: 300px), (max-height: 250px) {
+  html body {
+    display: none;
+  }
+  html body::before {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "screen não suportado... !";
+    color: rgba(255, 255, 255, 0.8156862745);
+    width: 100dvw;
+    height: 100dvh;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Alumni Sans Inline One", sans-serif;
+  }
 }
 html body #cursor {
   position: fixed;
@@ -151,42 +149,6 @@ html body #cursor {
 @media screen and (max-width: 768px) {
   html body #cursor {
     opacity: 0;
-  }
-}
-@media screen and (max-width: 300px) {
-  html body {
-    display: none;
-  }
-  html body::before {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    content: "screen não suportado, abra a tela e saiba mais :)";
-    color: rgba(255, 255, 255, 0.8156862745);
-    width: 100%;
-    height: 100vh;
-    font-size: 40px;
-    font-family: "Alumni Sans Inline One", sans-serif;
-    text-align: center;
-  }
-}
-@media screen and (max-height: 440px) {
-  html body {
-    display: none;
-  }
-  html body::before {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    content: "screen não suportado, abra a tela e saiba mais :)";
-    color: rgba(255, 255, 255, 0.8156862745);
-    width: 100%;
-    height: 100vh;
-    font-size: 40px;
-    font-family: "Alumni Sans Inline One", sans-serif;
-    text-align: center;
   }
 }
 html body header {
@@ -513,17 +475,17 @@ html body main .banner .row .row-itens {
     flex-direction: column;
   }
 }
-html body main .banner .row .row-itens section {
+html body main .banner .row .row-itens .layres {
   flex-direction: column;
   width: 50%;
   text-transform: uppercase;
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .row-itens section {
+  html body main .banner .row .row-itens .layres {
     width: 100%;
   }
 }
-html body main .banner .row .row-itens section .item-creat {
+html body main .banner .row .row-itens .layres .item-creat {
   position: relative;
   flex-direction: column;
   width: 10.5vw;
@@ -531,25 +493,25 @@ html body main .banner .row .row-itens section .item-creat {
   border-bottom: 1px solid rgba(255, 255, 255, 0.9960784314);
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .row-itens section .item-creat {
+  html body main .banner .row .row-itens .layres .item-creat {
     width: 130px;
     font-size: 25px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .banner .row .row-itens section .item-creat {
+  html body main .banner .row .row-itens .layres .item-creat {
     width: 90px;
     font-size: 18px;
     margin: 0 0 25px 0;
   }
 }
-html body main .banner .row .row-itens section .item-profession {
+html body main .banner .row .row-itens .layres .item-profession {
   position: relative;
   width: initial;
   height: auto;
   top: 2.5vw;
 }
-html body main .banner .row .row-itens section .item-profession span {
+html body main .banner .row .row-itens .layres .item-profession span {
   display: block;
   height: auto;
   margin: 1vw 0 4vw 0;
@@ -559,12 +521,12 @@ html body main .banner .row .row-itens section .item-profession span {
   word-spacing: 5px;
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .row-itens section .item-profession span {
+  html body main .banner .row .row-itens .layres .item-profession span {
     font-size: 3em;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .banner .row .row-itens section .item-profession span {
+  html body main .banner .row .row-itens .layres .item-profession span {
     transform: scaleY(4);
     letter-spacing: 5px;
     font-size: 1.7em;
@@ -1551,10 +1513,13 @@ html body main .tecnology-container .tecnology .html:hover img, html body main .
 html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .bulma h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .jquery h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .railway h2 {
   font-size: 1.8vw;
   color: rgba(255, 255, 255, 0.4274509804);
-  font-family: "cosi azure";
+  font-family: "grand slang", sans-serif;
   transition: 0.5s all ease;
   word-break: break-all;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   padding: 0 0 0 1vw;
+  background-color: rgba(102, 51, 153, 0);
 }
 @media screen and (max-width: 992px) {
   html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .bulma h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .jquery h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .railway h2 {
@@ -1700,7 +1665,7 @@ html body main .project-container::before {
   left: 0;
   width: inherit;
   height: 50%;
-  transform: translateY(-1px);
+  transform: translateY(-5px);
   background: linear-gradient(to bottom, #161616, rgba(0, 0, 0, 0));
   pointer-events: none;
 }
@@ -1754,6 +1719,7 @@ html body main .project-container .projects-tittle {
   font-size: 2.7vw;
   color: rgba(255, 255, 255, 0.9960784314);
   text-transform: uppercase;
+  overflow: hidden;
 }
 @media screen and (max-width: 992px) {
   html body main .project-container .projects-tittle {

@@ -15,21 +15,22 @@
 }
 
 html{
-    background-color: variables.$gray_primary;
-    scrollbar-width: none;
 
-    @include responsive.screen_height_not_suport(){
-        background-color: variables.$gray_primary;
-    }   
-    @include responsive.screen_width_not_suport(){
-        background-color: variables.$gray_primary;      
+    @include responsive.screen_not_suport(){
+        background-color: variables.$gray_primary;     
     }
 
     body {
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
         -ms-overflow-style: none;
+        background-color: variables.$gray_primary;
+        scrollbar-width: none;
         cursor: none;
+
+        @include responsive.screen_not_suport(){
+            display: none;
+        }
 
         #cursor {
             position: fixed;
@@ -46,13 +47,6 @@ html{
             @include responsive.screen_tablet(){
                 opacity: 0;
             }
-        }
-
-        @include responsive.screen_width_not_suport(){
-            display: none;
-        }
-        @include responsive.screen_height_not_suport(){
-            display: none;
         }
         
         header {
@@ -323,7 +317,7 @@ html{
                             flex-direction: column;                        
                         }
 
-                        section{
+                        .layres{
                             flex-direction: column;
                             width: 50%;
                             text-transform: uppercase;
@@ -1217,10 +1211,14 @@ html{
                         h2{
                             font-size: 1.8vw;
                             color: variables.$Color_White_Smoker_dwo;
-                            font-family: 'cosi azure';
+                            font-family: variables.$fonty_primary;
                             transition: variables.$Transition_ease;
                             word-break: break-all;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
                             padding: 0 0 0 1vw;
+
+                            background-color: rgba(102, 51, 153, 0);
 
                             @include responsive.screen_laptop(){
                                 padding: 0 0 0 10px;
@@ -1406,7 +1404,7 @@ html{
                     left: 0;
                     width: inherit;
                     height: 50%;
-                    transform: translateY(-1px);
+                    transform: translateY(-5px);
                     background: linear-gradient(to bottom, variables.$gray_primary, variables.$Smoker_there_0);
                     pointer-events: none;
                 }
@@ -1458,7 +1456,7 @@ html{
                     font-size: 2.7vw;
                     color: variables.$Color_White;
                     text-transform: uppercase;
-
+                    overflow: hidden;
 
                     @include responsive.screen_laptop(){
                         top: -70px;
