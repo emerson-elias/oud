@@ -356,6 +356,9 @@ html body header .navbar .links-ul .li-link .link i {
     z-index: 9999;
   }
 }
+html body main {
+  overflow: hidden;
+}
 html body main .banner {
   position: relative;
   display: flex;
@@ -509,7 +512,7 @@ html body main .banner .row .row-itens .layres .item-profession {
   position: relative;
   width: initial;
   height: auto;
-  top: 2.5vw;
+  top: 2.5dvw;
 }
 html body main .banner .row .row-itens .layres .item-profession span {
   display: block;
@@ -576,22 +579,15 @@ html body main .banner .row .row-itens .banner-descripiton .know {
   justify-content: center;
   align-items: center;
   margin: 10px;
-  width: 13vw;
+  width: auto;
   height: auto;
-  padding: 10px;
+  padding: 10px 15px 10px 15px;
   border: 1px solid rgba(255, 255, 255, 0.9960784314);
   transition: 0.5s all ease;
   border-radius: 2vw;
 }
-@media screen and (max-width: 992px) {
-  html body main .banner .row .row-itens .banner-descripiton .know {
-    width: 130px;
-  }
-}
 @media screen and (max-width: 600px) {
   html body main .banner .row .row-itens .banner-descripiton .know {
-    width: 130px;
-    height: 40px;
     border-radius: 30px;
   }
 }
@@ -1644,7 +1640,33 @@ html body main .project-container {
   flex-direction: column;
   width: 100%;
   height: 150dvh;
-  overflow: hidden;
+  /*
+                  .circle{
+                      position: absolute;
+                      width: 1000px;
+                      height: 1000px;
+                      top: 50%;
+                      left: -20%;
+                      right: 0;
+                      bottom: 0;
+                      border-radius: 50%;
+                      background-color: transparent;
+                      pointer-events: none;
+                      border: 1.5px solid variables.$Color_White;
+
+                      @include responsive.screen_laptop(){
+                          width: 700px;
+                          height: 700px;
+                          top: -20%;
+                          left: 50%;
+                      }
+
+                      @include responsive.screen_small(){
+                          display: none;
+                      }
+
+                  }
+                  */
 }
 @media screen and (max-width: 992px) {
   html body main .project-container {
@@ -1655,7 +1677,6 @@ html body main .project-container {
 @media screen and (max-width: 600px) {
   html body main .project-container {
     background-attachment: local;
-    overflow: visible;
   }
 }
 html body main .project-container::before {
@@ -1679,32 +1700,6 @@ html body main .project-container::after {
   transform: translateY(5px);
   background: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
   pointer-events: none;
-}
-html body main .project-container .circle {
-  position: absolute;
-  width: 1000px;
-  height: 1000px;
-  top: 50%;
-  left: -20%;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  background-color: transparent;
-  pointer-events: none;
-  border: 1.5px solid rgba(255, 255, 255, 0.9960784314);
-}
-@media screen and (max-width: 992px) {
-  html body main .project-container .circle {
-    width: 700px;
-    height: 700px;
-    top: -20%;
-    left: 50%;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .project-container .circle {
-    display: none;
-  }
 }
 html body main .project-container .projects-tittle {
   text-align: center;
