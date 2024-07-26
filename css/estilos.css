@@ -2067,13 +2067,13 @@ html body main .footer-container .footer .footer-contact .contatc p {
     font-size: 15px;
   }
 }
-html body main .footer-container .footer .footer-contact .contatc p .clarity--email-line {
+html body main .footer-container .footer .footer-contact .contatc p .ic--outline-attach-email {
   display: inline-block;
   width: 2em;
   height: 2em;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.7254901961);
   -webkit-mask-image: var(--svg);
   mask-image: var(--svg);
   -webkit-mask-repeat: no-repeat;
@@ -2082,7 +2082,7 @@ html body main .footer-container .footer .footer-contact .contatc p .clarity--em
   mask-size: 100% 100%;
   margin: 0 15px 0 0;
   transform: translateY(10px);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='white' d='M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z' class='clr-i-outline clr-i-outline-path-1'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m3 6l8 5l8-5v3h2V4c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2L1 16c0 1.1.9 2 2 2h10v-2H3zm16-2l-8 5l-8-5z'/%3E%3Cpath fill='%23000' d='M21 14v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4.5c0-.28.22-.5.5-.5s.5.22.5.5V18h2v-4.5a2.5 2.5 0 0 0-5 0V18c0 2.21 1.79 4 4 4s4-1.79 4-4v-4z'/%3E%3C/svg%3E");
 }
 html body main .footer-container .footer .footer-contact .contatc p .ph--phone-light {
   display: inline-block;
