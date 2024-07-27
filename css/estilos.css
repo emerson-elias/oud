@@ -1463,7 +1463,7 @@ html body main .tecnology-container .tecnology {
   height: auto;
   margin: 10px 0 0 0;
 }
-html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .bulma, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .jquery, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .railway {
+html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .railway, html body main .tecnology-container .tecnology .figma, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .bulma {
   position: relative;
   display: flex;
   justify-content: normal;
@@ -1473,17 +1473,17 @@ html body main .tecnology-container .tecnology .html, html body main .tecnology-
   margin: 1.5vw;
 }
 @media screen and (max-width: 992px) {
-  html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .bulma, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .jquery, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .railway {
+  html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .railway, html body main .tecnology-container .tecnology .figma, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .bulma {
     margin: 20px 0 20px 30px;
     width: 250px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .bulma, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .jquery, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .railway {
+  html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .railway, html body main .tecnology-container .tecnology .figma, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .bulma {
     width: 100%;
   }
 }
-html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .bulma img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .jquery img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .railway img {
+html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .railway img, html body main .tecnology-container .tecnology .figma img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .bulma img {
   width: 4.5vw;
   height: 4.5vw;
   object-fit: contain;
@@ -1491,22 +1491,22 @@ html body main .tecnology-container .tecnology .html img, html body main .tecnol
   transition: 0.5s all ease;
 }
 @media screen and (max-width: 992px) {
-  html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .bulma img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .jquery img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .railway img {
+  html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .railway img, html body main .tecnology-container .tecnology .figma img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .bulma img {
     width: 60px;
     height: 60px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .bulma img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .jquery img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .railway img {
+  html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .railway img, html body main .tecnology-container .tecnology .figma img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .bulma img {
     width: 50px;
     height: 50px;
   }
 }
-html body main .tecnology-container .tecnology .html:hover img, html body main .tecnology-container .tecnology .css:hover img, html body main .tecnology-container .tecnology .sass:hover img, html body main .tecnology-container .tecnology .react:hover img, html body main .tecnology-container .tecnology .javascript:hover img, html body main .tecnology-container .tecnology .typescript:hover img, html body main .tecnology-container .tecnology .php:hover img, html body main .tecnology-container .tecnology .bulma:hover img, html body main .tecnology-container .tecnology .java:hover img, html body main .tecnology-container .tecnology .jquery:hover img, html body main .tecnology-container .tecnology .sql:hover img, html body main .tecnology-container .tecnology .git:hover img, html body main .tecnology-container .tecnology .boostrap:hover img, html body main .tecnology-container .tecnology .materialize:hover img, html body main .tecnology-container .tecnology .tailwind:hover img, html body main .tecnology-container .tecnology .railway:hover img {
+html body main .tecnology-container .tecnology .html:hover img, html body main .tecnology-container .tecnology .css:hover img, html body main .tecnology-container .tecnology .sass:hover img, html body main .tecnology-container .tecnology .react:hover img, html body main .tecnology-container .tecnology .javascript:hover img, html body main .tecnology-container .tecnology .typescript:hover img, html body main .tecnology-container .tecnology .php:hover img, html body main .tecnology-container .tecnology .java:hover img, html body main .tecnology-container .tecnology .railway:hover img, html body main .tecnology-container .tecnology .figma:hover img, html body main .tecnology-container .tecnology .sql:hover img, html body main .tecnology-container .tecnology .git:hover img, html body main .tecnology-container .tecnology .boostrap:hover img, html body main .tecnology-container .tecnology .materialize:hover img, html body main .tecnology-container .tecnology .tailwind:hover img, html body main .tecnology-container .tecnology .bulma:hover img {
   filter: grayscale(0%);
   transition: 0.5s all ease;
 }
-html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .bulma h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .jquery h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .railway h2 {
+html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .railway h2, html body main .tecnology-container .tecnology .figma h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .bulma h2 {
   font-size: 1.8vw;
   color: rgba(255, 255, 255, 0.4274509804);
   font-family: "grand slang", sans-serif;
@@ -1515,16 +1515,15 @@ html body main .tecnology-container .tecnology .html h2, html body main .tecnolo
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 0 0 0 1vw;
-  background-color: rgba(102, 51, 153, 0);
 }
 @media screen and (max-width: 992px) {
-  html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .bulma h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .jquery h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .railway h2 {
+  html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .railway h2, html body main .tecnology-container .tecnology .figma h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .bulma h2 {
     padding: 0 0 0 10px;
     font-size: 25px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .bulma h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .jquery h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .railway h2 {
+  html body main .tecnology-container .tecnology .html h2, html body main .tecnology-container .tecnology .css h2, html body main .tecnology-container .tecnology .sass h2, html body main .tecnology-container .tecnology .react h2, html body main .tecnology-container .tecnology .javascript h2, html body main .tecnology-container .tecnology .typescript h2, html body main .tecnology-container .tecnology .php h2, html body main .tecnology-container .tecnology .java h2, html body main .tecnology-container .tecnology .railway h2, html body main .tecnology-container .tecnology .figma h2, html body main .tecnology-container .tecnology .sql h2, html body main .tecnology-container .tecnology .git h2, html body main .tecnology-container .tecnology .boostrap h2, html body main .tecnology-container .tecnology .materialize h2, html body main .tecnology-container .tecnology .tailwind h2, html body main .tecnology-container .tecnology .bulma h2 {
     font-size: 30px;
   }
 }
@@ -1556,16 +1555,16 @@ html body main .tecnology-container .tecnology .php:hover h2 {
   color: #8f9ed1;
   transition: 0.5s all ease;
 }
-html body main .tecnology-container .tecnology .bulma:hover h2 {
-  color: #00d2b4;
-  transition: 0.5s all ease;
-}
 html body main .tecnology-container .tecnology .java:hover h2 {
   color: #427595;
   transition: 0.5s all ease;
 }
-html body main .tecnology-container .tecnology .jquery:hover h2 {
-  color: #0868ac;
+html body main .tecnology-container .tecnology .railway:hover h2 {
+  color: #ffffff;
+  transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .figma:hover h2 {
+  color: #02d084;
   transition: 0.5s all ease;
 }
 html body main .tecnology-container .tecnology .sql:hover h2 {
@@ -1588,8 +1587,8 @@ html body main .tecnology-container .tecnology .tailwind:hover h2 {
   color: #0dbfb9;
   transition: 0.5s all ease;
 }
-html body main .tecnology-container .tecnology .railway:hover h2 {
-  color: #ffffff;
+html body main .tecnology-container .tecnology .bulma:hover h2 {
+  color: #00d2b4;
   transition: 0.5s all ease;
 }
 html body main .tecnology-container .ferraments {
@@ -1608,7 +1607,7 @@ html body main .tecnology-container .ferraments .ferraments-links {
   position: relative;
   display: inline-block;
   top: 50px;
-  animation: text-linear 50s linear infinite;
+  animation: text-linear 80s linear infinite;
 }
 html body main .tecnology-container .ferraments .ferraments-links a {
   text-decoration: none;

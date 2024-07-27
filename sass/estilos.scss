@@ -1165,7 +1165,7 @@ html{
                     margin: 10px 0 0 0;
 
                     
-                    .html, .css, .sass, .react, .javascript, .typescript, .php, .bulma, .java, .jquery, .sql, .git, .boostrap, .materialize, .tailwind, .railway{
+                    .html, .css, .sass, .react, .javascript, .typescript, .php, .java, .railway, .figma, .sql, .git, .boostrap, .materialize, .tailwind, .bulma {
                         @include mixins.align(relative, flex, normal, center);
                         width: 20vw;
                         height: auto;
@@ -1212,8 +1212,6 @@ html{
                             text-transform: uppercase;
                             letter-spacing: 2px;
                             padding: 0 0 0 1vw;
-
-                            background-color: rgba(102, 51, 153, 0);
 
                             @include responsive.screen_laptop(){
                                 padding: 0 0 0 10px;
@@ -1269,21 +1267,24 @@ html{
                             transition: variables.$Transition_ease;
                         }
                     }
-                    .bulma{
-                        &:hover h2{
-                            color: variables.$BULMA;
-                            transition: variables.$Transition_ease;
-                        }
-                    }
+
                     .java{
                         &:hover h2{
                             color: variables.$JAVA;
                             transition: variables.$Transition_ease;
                         }
                     }
-                    .jquery{
+                    
+                    .railway{
                         &:hover h2{
-                            color: variables.$JQUERY;
+                            color: variables.$RAILWAY;
+                            transition: variables.$Transition_ease;
+                        }
+                    }
+
+                    .figma{
+                        &:hover h2{
+                            color: variables.$FIGMA;
                             transition: variables.$Transition_ease;
                         }
                     }
@@ -1321,9 +1322,9 @@ html{
                         }
                     }
 
-                    .railway{
+                    .bulma{
                         &:hover h2{
-                            color: variables.$RAILWAY;
+                            color: variables.$BULMA;
                             transition: variables.$Transition_ease;
                         }
                     }
@@ -1344,7 +1345,7 @@ html{
                         position: relative;
                         display: inline-block;
                         top: 50px;
-                        animation: text-linear 50s linear infinite;
+                        animation: text-linear 80s linear infinite;
 
                         a{
                             text-decoration: none;
