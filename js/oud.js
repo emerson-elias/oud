@@ -7,12 +7,18 @@ console.log("======= HELLO CURIOUS DEVELOPER, WELCOME ;) =======")
 let li = [...document.querySelectorAll('li')]
 
 li.map((elementos) => {
-    const menu_bar = document.getElementById('active-bars')
-    const burgue = document.getElementById('bars')
+    const ancora = document.getElementById('ancora')
+    const b1 = document.getElementById('b-one')
+    const b2 = document.getElementById('b-dwo')
+    const b3 = document.getElementById('b-there')
+    const burguer = document.getElementsByClassName('burguer')[0]
 
     elementos.addEventListener("click", () => {
-        menu_bar.classList.toggle('collapse-true')
-        burgue.classList.toggle('burguer-ocult')
+        ancora.classList.toggle('collapse-true') 
+        b1.classList.toggle('b-one')
+        b2.classList.toggle('b-dwo')
+        b3.classList.toggle('b-there')
+        burguer.classList.toggle('burguer-aux')
     })
 })
 
