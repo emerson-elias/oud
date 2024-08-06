@@ -89,7 +89,6 @@
 ::-webkit-scrollbar {
   width: 0;
   scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -114,6 +113,7 @@
 }
 html body {
   background-color: #161616;
+  -webkit-font-smoothing: antialiased;
   cursor: none;
 }
 @media screen and (max-width: 300px), (max-height: 250px) {
@@ -377,7 +377,7 @@ html body main .banner {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 120dvh;
+  height: 120vh;
   overflow: hidden;
 }
 @media screen and (max-width: 600px) {
@@ -1513,7 +1513,7 @@ html body main .tecnology-container .tecnology .html, html body main .tecnology-
   align-items: center;
   width: 20vw;
   height: auto;
-  margin: 1.5vw;
+  margin: 2vw;
 }
 @media screen and (max-width: 992px) {
   html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .railway, html body main .tecnology-container .tecnology .figma, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .bulma {
@@ -1523,7 +1523,7 @@ html body main .tecnology-container .tecnology .html, html body main .tecnology-
 }
 @media screen and (max-width: 600px) {
   html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .railway, html body main .tecnology-container .tecnology .figma, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .bulma {
-    width: 100%;
+    width: 90%;
   }
 }
 html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .railway img, html body main .tecnology-container .tecnology .figma img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .bulma img {
@@ -1570,69 +1570,173 @@ html body main .tecnology-container .tecnology .html h2, html body main .tecnolo
     font-size: 30px;
   }
 }
+html body main .tecnology-container .tecnology .html .descripton-tecnology, html body main .tecnology-container .tecnology .css .descripton-tecnology, html body main .tecnology-container .tecnology .sass .descripton-tecnology, html body main .tecnology-container .tecnology .react .descripton-tecnology, html body main .tecnology-container .tecnology .javascript .descripton-tecnology, html body main .tecnology-container .tecnology .typescript .descripton-tecnology, html body main .tecnology-container .tecnology .php .descripton-tecnology, html body main .tecnology-container .tecnology .java .descripton-tecnology, html body main .tecnology-container .tecnology .railway .descripton-tecnology, html body main .tecnology-container .tecnology .figma .descripton-tecnology, html body main .tecnology-container .tecnology .sql .descripton-tecnology, html body main .tecnology-container .tecnology .git .descripton-tecnology, html body main .tecnology-container .tecnology .boostrap .descripton-tecnology, html body main .tecnology-container .tecnology .materialize .descripton-tecnology, html body main .tecnology-container .tecnology .tailwind .descripton-tecnology, html body main .tecnology-container .tecnology .bulma .descripton-tecnology {
+  position: absolute;
+  left: 25%;
+  width: 18vw;
+  height: auto;
+  padding: 20px 10px;
+  border-radius: 10px;
+  text-align: center;
+  transform: translateY(10px);
+  color: rgba(255, 255, 255, 0.9960784314);
+  font-family: "grand slang", sans-serif;
+  font-size: 1vmax;
+  font-weight: 900;
+  letter-spacing: 2px;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .html .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .css .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .sass .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .react .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .javascript .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .typescript .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .php .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .java .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .railway .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .figma .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .sql .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .git .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .boostrap .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .materialize .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .tailwind .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .bulma .descripton-tecnology .solar--multiple-forward-right-linear {
+  display: inline-block;
+  width: 2.5vw;
+  height: 2.5vw;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: rgba(255, 255, 255, 0.9960784314);
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  position: absolute;
+  top: 60%;
+  left: -20%;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-width='1.05'%3E%3Cpath stroke-linejoin='round' d='m12.664 5.479l3.973 3.53c1.568 1.395 2.353 2.092 2.353 2.99s-.785 1.596-2.353 2.99l-3.973 3.53c-.716.637-1.074.956-1.369.823S11 18.731 11 17.772v-2.344c-3.6 0-7.5 1.714-9 4.571c0-9.142 5.333-11.428 9-11.428V6.226c0-.958 0-1.437.295-1.57c.295-.132.653.186 1.37.823'/%3E%3Cpath d='m15.539 4.5l5.216 4.844a3.897 3.897 0 0 1-.126 5.823l-5.09 4.333'/%3E%3C/g%3E%3C/svg%3E");
+}
+@media screen and (max-width: 992px) {
+  html body main .tecnology-container .tecnology .html .descripton-tecnology, html body main .tecnology-container .tecnology .css .descripton-tecnology, html body main .tecnology-container .tecnology .sass .descripton-tecnology, html body main .tecnology-container .tecnology .react .descripton-tecnology, html body main .tecnology-container .tecnology .javascript .descripton-tecnology, html body main .tecnology-container .tecnology .typescript .descripton-tecnology, html body main .tecnology-container .tecnology .php .descripton-tecnology, html body main .tecnology-container .tecnology .java .descripton-tecnology, html body main .tecnology-container .tecnology .railway .descripton-tecnology, html body main .tecnology-container .tecnology .figma .descripton-tecnology, html body main .tecnology-container .tecnology .sql .descripton-tecnology, html body main .tecnology-container .tecnology .git .descripton-tecnology, html body main .tecnology-container .tecnology .boostrap .descripton-tecnology, html body main .tecnology-container .tecnology .materialize .descripton-tecnology, html body main .tecnology-container .tecnology .tailwind .descripton-tecnology, html body main .tecnology-container .tecnology .bulma .descripton-tecnology {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .tecnology-container .tecnology .html .descripton-tecnology, html body main .tecnology-container .tecnology .css .descripton-tecnology, html body main .tecnology-container .tecnology .sass .descripton-tecnology, html body main .tecnology-container .tecnology .react .descripton-tecnology, html body main .tecnology-container .tecnology .javascript .descripton-tecnology, html body main .tecnology-container .tecnology .typescript .descripton-tecnology, html body main .tecnology-container .tecnology .php .descripton-tecnology, html body main .tecnology-container .tecnology .java .descripton-tecnology, html body main .tecnology-container .tecnology .railway .descripton-tecnology, html body main .tecnology-container .tecnology .figma .descripton-tecnology, html body main .tecnology-container .tecnology .sql .descripton-tecnology, html body main .tecnology-container .tecnology .git .descripton-tecnology, html body main .tecnology-container .tecnology .boostrap .descripton-tecnology, html body main .tecnology-container .tecnology .materialize .descripton-tecnology, html body main .tecnology-container .tecnology .tailwind .descripton-tecnology, html body main .tecnology-container .tecnology .bulma .descripton-tecnology {
+    width: 250px;
+  }
+}
+html body main .tecnology-container .tecnology .html:hover .descripton-tecnology, html body main .tecnology-container .tecnology .css:hover .descripton-tecnology, html body main .tecnology-container .tecnology .sass:hover .descripton-tecnology, html body main .tecnology-container .tecnology .react:hover .descripton-tecnology, html body main .tecnology-container .tecnology .javascript:hover .descripton-tecnology, html body main .tecnology-container .tecnology .typescript:hover .descripton-tecnology, html body main .tecnology-container .tecnology .php:hover .descripton-tecnology, html body main .tecnology-container .tecnology .java:hover .descripton-tecnology, html body main .tecnology-container .tecnology .railway:hover .descripton-tecnology, html body main .tecnology-container .tecnology .figma:hover .descripton-tecnology, html body main .tecnology-container .tecnology .sql:hover .descripton-tecnology, html body main .tecnology-container .tecnology .git:hover .descripton-tecnology, html body main .tecnology-container .tecnology .boostrap:hover .descripton-tecnology, html body main .tecnology-container .tecnology .materialize:hover .descripton-tecnology, html body main .tecnology-container .tecnology .tailwind:hover .descripton-tecnology, html body main .tecnology-container .tecnology .bulma:hover .descripton-tecnology {
+  transform: translateY(-6.5vmax);
+  opacity: 1;
+  transition: 0.5s all ease;
+}
 html body main .tecnology-container .tecnology .html:hover h2 {
   color: #ff641a;
   transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .html:hover .descripton-tecnology {
+  background: #ff641a;
 }
 html body main .tecnology-container .tecnology .css:hover h2 {
   color: #0d73b7;
   transition: 0.5s all ease;
 }
+html body main .tecnology-container .tecnology .css:hover .descripton-tecnology {
+  background: #0d73b7;
+}
 html body main .tecnology-container .tecnology .sass:hover h2 {
   color: #cc6699;
   transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .sass:hover .descripton-tecnology {
+  background: #cc6699;
 }
 html body main .tecnology-container .tecnology .react:hover h2 {
   color: #00d9ff;
   transition: 0.5s all ease;
 }
+html body main .tecnology-container .tecnology .react:hover .descripton-tecnology {
+  background: #00d9ff;
+  color: #000;
+}
 html body main .tecnology-container .tecnology .javascript:hover h2 {
   color: #ffdf00;
   transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .javascript:hover .descripton-tecnology {
+  background: #ffdf00;
+  color: #000;
 }
 html body main .tecnology-container .tecnology .typescript:hover h2 {
   color: #2d79c7;
   transition: 0.5s all ease;
 }
+html body main .tecnology-container .tecnology .typescript:hover .descripton-tecnology {
+  background: #2d79c7;
+}
 html body main .tecnology-container .tecnology .php:hover h2 {
   color: #8f9ed1;
   transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .php:hover .descripton-tecnology {
+  background: #8f9ed1;
 }
 html body main .tecnology-container .tecnology .java:hover h2 {
   color: #427595;
   transition: 0.5s all ease;
 }
+html body main .tecnology-container .tecnology .java:hover .descripton-tecnology {
+  background: #427595;
+}
 html body main .tecnology-container .tecnology .railway:hover h2 {
   color: #ffffff;
   transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .railway:hover .descripton-tecnology {
+  background: #ffffff;
+  color: #000;
 }
 html body main .tecnology-container .tecnology .figma:hover h2 {
   color: #02d084;
   transition: 0.5s all ease;
 }
+html body main .tecnology-container .tecnology .figma:hover .descripton-tecnology {
+  background: #02d084;
+  color: #000;
+}
 html body main .tecnology-container .tecnology .sql:hover h2 {
   color: #b71c1c;
   transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .sql:hover .descripton-tecnology {
+  background: #b71c1c;
 }
 html body main .tecnology-container .tecnology .git:hover h2 {
   color: #f05033;
   transition: 0.5s all ease;
 }
+html body main .tecnology-container .tecnology .git:hover .descripton-tecnology {
+  background: #f05033;
+}
 html body main .tecnology-container .tecnology .boostrap:hover h2 {
-  color: #5e3b7f;
+  color: #8812fb;
   transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .boostrap:hover .descripton-tecnology {
+  background: #8812fb;
 }
 html body main .tecnology-container .tecnology .materialize:hover h2 {
   color: #ec7178;
   transition: 0.5s all ease;
 }
+html body main .tecnology-container .tecnology .materialize:hover .descripton-tecnology {
+  background: #ec7178;
+}
 html body main .tecnology-container .tecnology .tailwind:hover h2 {
   color: #0dbfb9;
   transition: 0.5s all ease;
 }
+html body main .tecnology-container .tecnology .tailwind:hover .descripton-tecnology {
+  background: #0dbfb9;
+}
 html body main .tecnology-container .tecnology .bulma:hover h2 {
   color: #00d2b4;
   transition: 0.5s all ease;
+}
+html body main .tecnology-container .tecnology .bulma:hover .descripton-tecnology {
+  background: #00d2b4;
+  color: #000;
 }
 html body main .tecnology-container .ferraments {
   position: relative;
@@ -1681,7 +1785,7 @@ html body main .project-container {
   background-size: cover;
   flex-direction: column;
   width: 100%;
-  height: 150dvh;
+  height: 150vh;
 }
 @media screen and (max-width: 992px) {
   html body main .project-container {

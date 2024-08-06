@@ -10,7 +10,7 @@
 
 @mixin text_formatting($align, $style, $weight, $spacing){
     text-align: $align;
-    font-family: 'Montserrat' ,sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: $style;
     font-weight: $weight;
     letter-spacing: $spacing;
@@ -43,4 +43,23 @@
     mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
+}
+
+@mixin description-liguagens (){
+    position: absolute;
+    left: 25%;
+    width: 18vw;
+    height: auto;
+    padding: 20px 10px;
+    border-radius: 10px;
+    text-align: center;
+    transform: translateY(10px);
+    color: variables.$Color_White;
+    font-family: variables.$fonty_primary;
+    font-size: 1vmax;
+    font-weight: 900;
+    letter-spacing: 2px;
+    z-index: 1;
+    opacity: 0;
+    transition: variables.$Transition_ease; 
 }
