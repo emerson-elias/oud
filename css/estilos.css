@@ -3,7 +3,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /*===========================================================================*/
-/*DEFINIR NO PROCESSO DE DESENVOLVIMENTO*/
 /* Cor de fundo escura com transparência */
 @font-face {
   font-family: "cosi azure";
@@ -87,10 +86,10 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0;
+  width: 0 !important;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
-  scrollbar-width: none;
+  scrollbar-width: none !important;
 }
 
 @media screen and (max-width: 300px), (max-height: 250px) {
@@ -186,15 +185,10 @@ html body header .navbar .active-bar {
   display: flex;
   justify-content: normal;
   align-items: center;
-  width: 25vw;
+  width: auto;
   height: inherit;
   margin: 0 0 0 10px;
   cursor: pointer;
-}
-@media screen and (max-width: 992px) {
-  html body header .navbar .active-bar {
-    width: 70vw;
-  }
 }
 html body header .navbar .active-bar a {
   position: relative;
@@ -213,7 +207,7 @@ html body header .navbar .active-bar a {
 }
 @media screen and (max-width: 992px) {
   html body header .navbar .active-bar a {
-    font-size: 2vw;
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -388,10 +382,10 @@ html body main .banner {
 html body main .banner .row {
   position: relative;
   display: flex;
-  justify-content: end;
+  justify-content: normal;
   align-items: normal;
   flex-direction: column;
-  top: 4.5em;
+  top: 11vh;
   width: 95%;
   height: auto;
   color: rgba(255, 255, 255, 0.9960784314);
@@ -481,17 +475,17 @@ html body main .banner .row .row-itens {
   font-family: "grand slang", sans-serif;
   font-weight: 500;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   html body main .banner .row .row-itens {
     flex-direction: column;
   }
 }
 html body main .banner .row .row-itens .layres {
   flex-direction: column;
-  width: 50%;
+  width: 50vw;
   text-transform: uppercase;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
   html body main .banner .row .row-itens .layres {
     width: 100%;
   }
@@ -551,7 +545,7 @@ html body main .banner .row .row-itens .banner-descripiton {
   justify-content: normal;
   align-items: end;
   flex-direction: column;
-  width: 50%;
+  width: 50vw;
   height: inherit;
 }
 @media screen and (max-width: 992px) {
@@ -1446,6 +1440,11 @@ html body main .tecnology-container {
     height: auto;
   }
 }
+@media screen and (max-width: 600px) {
+  html body main .tecnology-container {
+    padding: 0 0 15vh 0;
+  }
+}
 html body main .tecnology-container .tecnology-text-bg {
   position: absolute;
   top: 9vw;
@@ -1524,6 +1523,7 @@ html body main .tecnology-container .tecnology .html, html body main .tecnology-
 @media screen and (max-width: 600px) {
   html body main .tecnology-container .tecnology .html, html body main .tecnology-container .tecnology .css, html body main .tecnology-container .tecnology .sass, html body main .tecnology-container .tecnology .react, html body main .tecnology-container .tecnology .javascript, html body main .tecnology-container .tecnology .typescript, html body main .tecnology-container .tecnology .php, html body main .tecnology-container .tecnology .java, html body main .tecnology-container .tecnology .railway, html body main .tecnology-container .tecnology .figma, html body main .tecnology-container .tecnology .sql, html body main .tecnology-container .tecnology .git, html body main .tecnology-container .tecnology .boostrap, html body main .tecnology-container .tecnology .materialize, html body main .tecnology-container .tecnology .tailwind, html body main .tecnology-container .tecnology .bulma {
     width: 90%;
+    margin: 70px 0 0 25px;
   }
 }
 html body main .tecnology-container .tecnology .html img, html body main .tecnology-container .tecnology .css img, html body main .tecnology-container .tecnology .sass img, html body main .tecnology-container .tecnology .react img, html body main .tecnology-container .tecnology .javascript img, html body main .tecnology-container .tecnology .typescript img, html body main .tecnology-container .tecnology .php img, html body main .tecnology-container .tecnology .java img, html body main .tecnology-container .tecnology .railway img, html body main .tecnology-container .tecnology .figma img, html body main .tecnology-container .tecnology .sql img, html body main .tecnology-container .tecnology .git img, html body main .tecnology-container .tecnology .boostrap img, html body main .tecnology-container .tecnology .materialize img, html body main .tecnology-container .tecnology .tailwind img, html body main .tecnology-container .tecnology .bulma img {
@@ -1606,6 +1606,13 @@ html body main .tecnology-container .tecnology .html .descripton-tecnology .sola
   left: -20%;
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-width='1.05'%3E%3Cpath stroke-linejoin='round' d='m12.664 5.479l3.973 3.53c1.568 1.395 2.353 2.092 2.353 2.99s-.785 1.596-2.353 2.99l-3.973 3.53c-.716.637-1.074.956-1.369.823S11 18.731 11 17.772v-2.344c-3.6 0-7.5 1.714-9 4.571c0-9.142 5.333-11.428 9-11.428V6.226c0-.958 0-1.437.295-1.57c.295-.132.653.186 1.37.823'/%3E%3Cpath d='m15.539 4.5l5.216 4.844a3.897 3.897 0 0 1-.126 5.823l-5.09 4.333'/%3E%3C/g%3E%3C/svg%3E");
 }
+@media screen and (max-width: 600px) {
+  html body main .tecnology-container .tecnology .html .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .css .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .sass .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .react .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .javascript .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .typescript .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .php .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .java .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .railway .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .figma .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .sql .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .git .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .boostrap .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .materialize .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .tailwind .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .bulma .descripton-tecnology .solar--multiple-forward-right-linear {
+    top: 50%;
+    width: 30px;
+    height: 30px;
+  }
+}
 @media screen and (max-width: 992px) {
   html body main .tecnology-container .tecnology .html .descripton-tecnology, html body main .tecnology-container .tecnology .css .descripton-tecnology, html body main .tecnology-container .tecnology .sass .descripton-tecnology, html body main .tecnology-container .tecnology .react .descripton-tecnology, html body main .tecnology-container .tecnology .javascript .descripton-tecnology, html body main .tecnology-container .tecnology .typescript .descripton-tecnology, html body main .tecnology-container .tecnology .php .descripton-tecnology, html body main .tecnology-container .tecnology .java .descripton-tecnology, html body main .tecnology-container .tecnology .railway .descripton-tecnology, html body main .tecnology-container .tecnology .figma .descripton-tecnology, html body main .tecnology-container .tecnology .sql .descripton-tecnology, html body main .tecnology-container .tecnology .git .descripton-tecnology, html body main .tecnology-container .tecnology .boostrap .descripton-tecnology, html body main .tecnology-container .tecnology .materialize .descripton-tecnology, html body main .tecnology-container .tecnology .tailwind .descripton-tecnology, html body main .tecnology-container .tecnology .bulma .descripton-tecnology {
     width: 200px;
@@ -1613,13 +1620,22 @@ html body main .tecnology-container .tecnology .html .descripton-tecnology .sola
 }
 @media screen and (max-width: 600px) {
   html body main .tecnology-container .tecnology .html .descripton-tecnology, html body main .tecnology-container .tecnology .css .descripton-tecnology, html body main .tecnology-container .tecnology .sass .descripton-tecnology, html body main .tecnology-container .tecnology .react .descripton-tecnology, html body main .tecnology-container .tecnology .javascript .descripton-tecnology, html body main .tecnology-container .tecnology .typescript .descripton-tecnology, html body main .tecnology-container .tecnology .php .descripton-tecnology, html body main .tecnology-container .tecnology .java .descripton-tecnology, html body main .tecnology-container .tecnology .railway .descripton-tecnology, html body main .tecnology-container .tecnology .figma .descripton-tecnology, html body main .tecnology-container .tecnology .sql .descripton-tecnology, html body main .tecnology-container .tecnology .git .descripton-tecnology, html body main .tecnology-container .tecnology .boostrap .descripton-tecnology, html body main .tecnology-container .tecnology .materialize .descripton-tecnology, html body main .tecnology-container .tecnology .tailwind .descripton-tecnology, html body main .tecnology-container .tecnology .bulma .descripton-tecnology {
-    width: 250px;
+    left: 18%;
+    width: 270px;
+    font-size: 12px;
+    text-align: center;
+    padding: 18px 9px;
   }
 }
 html body main .tecnology-container .tecnology .html:hover .descripton-tecnology, html body main .tecnology-container .tecnology .css:hover .descripton-tecnology, html body main .tecnology-container .tecnology .sass:hover .descripton-tecnology, html body main .tecnology-container .tecnology .react:hover .descripton-tecnology, html body main .tecnology-container .tecnology .javascript:hover .descripton-tecnology, html body main .tecnology-container .tecnology .typescript:hover .descripton-tecnology, html body main .tecnology-container .tecnology .php:hover .descripton-tecnology, html body main .tecnology-container .tecnology .java:hover .descripton-tecnology, html body main .tecnology-container .tecnology .railway:hover .descripton-tecnology, html body main .tecnology-container .tecnology .figma:hover .descripton-tecnology, html body main .tecnology-container .tecnology .sql:hover .descripton-tecnology, html body main .tecnology-container .tecnology .git:hover .descripton-tecnology, html body main .tecnology-container .tecnology .boostrap:hover .descripton-tecnology, html body main .tecnology-container .tecnology .materialize:hover .descripton-tecnology, html body main .tecnology-container .tecnology .tailwind:hover .descripton-tecnology, html body main .tecnology-container .tecnology .bulma:hover .descripton-tecnology {
   transform: translateY(-6.5vmax);
   opacity: 1;
   transition: 0.5s all ease;
+}
+@media screen and (max-width: 600px) {
+  html body main .tecnology-container .tecnology .html:hover .descripton-tecnology, html body main .tecnology-container .tecnology .css:hover .descripton-tecnology, html body main .tecnology-container .tecnology .sass:hover .descripton-tecnology, html body main .tecnology-container .tecnology .react:hover .descripton-tecnology, html body main .tecnology-container .tecnology .javascript:hover .descripton-tecnology, html body main .tecnology-container .tecnology .typescript:hover .descripton-tecnology, html body main .tecnology-container .tecnology .php:hover .descripton-tecnology, html body main .tecnology-container .tecnology .java:hover .descripton-tecnology, html body main .tecnology-container .tecnology .railway:hover .descripton-tecnology, html body main .tecnology-container .tecnology .figma:hover .descripton-tecnology, html body main .tecnology-container .tecnology .sql:hover .descripton-tecnology, html body main .tecnology-container .tecnology .git:hover .descripton-tecnology, html body main .tecnology-container .tecnology .boostrap:hover .descripton-tecnology, html body main .tecnology-container .tecnology .materialize:hover .descripton-tecnology, html body main .tecnology-container .tecnology .tailwind:hover .descripton-tecnology, html body main .tecnology-container .tecnology .bulma:hover .descripton-tecnology {
+    transform: translateY(-10vmax);
+  }
 }
 html body main .tecnology-container .tecnology .html:hover h2 {
   color: #ff641a;
@@ -1740,20 +1756,20 @@ html body main .tecnology-container .tecnology .bulma:hover .descripton-tecnolog
 }
 html body main .tecnology-container .ferraments {
   position: relative;
-  margin: 100px 0 100px 0;
+  margin: 130px 0 50px 0;
   width: 100vw;
   height: 20vh;
   white-space: nowrap;
 }
 @media screen and (max-width: 600px) {
   html body main .tecnology-container .ferraments {
-    margin: 7dvh 0 3dvh 0;
+    margin: 20vh 0 5vh 0;
   }
 }
 html body main .tecnology-container .ferraments .ferraments-links {
   position: relative;
   display: inline-block;
-  top: 50px;
+  top: 10px;
   animation: text-linear 80s linear infinite;
 }
 html body main .tecnology-container .ferraments .ferraments-links a {
@@ -2210,11 +2226,13 @@ html body .footer-container .footer .footer-contact .contatc a {
   margin: 10px 0 10px 0;
   font-size: 1vmax;
   letter-spacing: 1px;
+  text-decoration: none;
   color: rgba(255, 255, 255, 0.7254901961);
   cursor: pointer;
 }
 @media screen and (max-width: 992px) {
   html body .footer-container .footer .footer-contact .contatc a {
+    width: 290px;
     font-size: 15px;
   }
 }

@@ -11,10 +11,10 @@
 }
 
 ::-webkit-scrollbar {
-    width: 0;
+    width: 0 !important;
     scroll-behavior: smooth;
     -ms-overflow-style: none;
-    scrollbar-width: none;
+    scrollbar-width: none !important;
 }
 
 html{
@@ -74,14 +74,10 @@ html{
     
                 .active-bar {
                     @include mixins.align(relative, flex, normal, center);
-                    width: 25vw;
+                    width: auto;
                     height: inherit;
                     margin: 0 0 0 10px;
                     cursor: pointer;
-
-                    @include responsive.screen_laptop(){
-                        width: 70vw;
-                    }
     
                     a {
                         @include mixins.align(relative, flex, center, center);
@@ -94,7 +90,7 @@ html{
                             font-size: 1.7vw;
                         }
                         @include responsive.screen_laptop(){
-                            font-size: 2vw;
+                            font-size: 20px;
                         }
                         @include responsive.screen_small(){
                             font-size: 20px;
@@ -248,14 +244,14 @@ html{
                 }
                         
                 .row{
-                    @include mixins.align(relative, flex, end, normal);
+                    @include mixins.align(relative, flex, normal, normal);
                     flex-direction: column;
-                    top: 4.5em;
+                    top: 11vh;
                     width: 95%;
                     height: auto;             
                     color: variables.$Color_White;
                     transition: variables.$Transition_ease;
-
+                 
                     @include responsive.screen_small(){
                         top: 60px; 
                         width: 90%;
@@ -312,17 +308,17 @@ html{
                         height: auto;  
                         font-family: variables.$fonty_primary;
                         font-weight: 500;
-    
-                        @include responsive.screen_laptop(){ 
+
+                        @include responsive.screen_large(){ 
                             flex-direction: column;                        
                         }
 
                         .layres{
                             flex-direction: column;
-                            width: 50%;
+                            width: 50vw;
                             text-transform: uppercase;
 
-                            @include responsive.screen_laptop(){ 
+                            @include responsive.screen_large(){ 
                                 width: 100%;                       
                             }
 
@@ -381,7 +377,7 @@ html{
                         .banner-descripiton{
                             @include mixins.align(relative, flex, normal, end);
                             flex-direction: column;            
-                            width: 50%;
+                            width: 50vw;
                             height: inherit;
         
                             @include responsive.screen_laptop(){ 
@@ -1128,10 +1124,12 @@ html{
                     margin: 0;
                     padding: 0 0 20vh 0;
                 }
-
                 @include responsive.screen_tablet(){
                     margin: 0;
                     height: auto;
+                }
+                @include responsive.screen_small(){
+                    padding: 0 0 15vh 0;
                 }
 
                 .tecnology-text-bg{
@@ -1188,9 +1186,9 @@ html{
                             margin: 20px 0 20px 30px;
                             width: 250px;                    
                         }
-
                         @include responsive.screen_small(){
-                            width: 90%;                    
+                            width: 90%;
+                            margin: 70px 0 0 25px;                   
                         }
                         
                         img{
@@ -1246,13 +1244,23 @@ html{
                                 top: 60%;
                                 left: -20%;                  
                                 --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='%23000' stroke-linecap='round' stroke-width='1.05'%3E%3Cpath stroke-linejoin='round' d='m12.664 5.479l3.973 3.53c1.568 1.395 2.353 2.092 2.353 2.99s-.785 1.596-2.353 2.99l-3.973 3.53c-.716.637-1.074.956-1.369.823S11 18.731 11 17.772v-2.344c-3.6 0-7.5 1.714-9 4.571c0-9.142 5.333-11.428 9-11.428V6.226c0-.958 0-1.437.295-1.57c.295-.132.653.186 1.37.823'/%3E%3Cpath d='m15.539 4.5l5.216 4.844a3.897 3.897 0 0 1-.126 5.823l-5.09 4.333'/%3E%3C/g%3E%3C/svg%3E");            
+                                
+                                @include responsive.screen_small(){
+                                    top: 50%; 
+                                    width: 30px;
+                                    height: 30px;
+                                }
                             }
 
                             @include responsive.screen_laptop(){
                                 width: 200px;
                             }
                             @include responsive.screen_small(){
-                                width: 250px;
+                                left: 18%;
+                                width: 270px;
+                                font-size: 12px;
+                                text-align: center;
+                                padding: 18px 9px;
                             }
                         }
 
@@ -1260,6 +1268,10 @@ html{
                             transform: translateY(-6.5vmax);
                             opacity: 1;
                             transition: variables.$Transition_ease;
+
+                            @include responsive.screen_small(){
+                                transform: translateY(-10vmax);
+                            }
                         }
                     }
 
@@ -1416,19 +1428,19 @@ html{
 
                 .ferraments{
                     position: relative;
-                    margin: 100px 0 100px 0;
+                    margin: 130px 0 50px 0;
                     width: 100vw;
                     height: 20vh;
                     white-space: nowrap;
 
                     @include responsive.screen_small(){
-                        margin: 7dvh 0 3dvh 0;
+                        margin: 20vh 0 5vh 0;
                     }
 
                     .ferraments-links{
                         position: relative;
                         display: inline-block;
-                        top: 50px;
+                        top: 10px;
                         animation: text-linear 80s linear infinite;
 
                         a{
@@ -1834,7 +1846,6 @@ html{
                                 left: 70px;
                                 margin: 20px;
                             }
-
                         }
 
                         a{
@@ -1842,14 +1853,17 @@ html{
                             margin: 10px 0 10px 0;
                             font-size: 1vmax;
                             letter-spacing: 1px;
+                            text-decoration: none;
                             color: variables.$Color_White_B9;
                             cursor: pointer;
                         
 
                             @include responsive.screen_laptop(){
+                                width: 290px;
                                 font-size: 15px;
+                                
                             }
-                   
+
                             &:hover{
                                 color: variables.$Secundary_Color;
                             }

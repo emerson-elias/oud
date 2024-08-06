@@ -1,5 +1,11 @@
 console.log("======= HELLO CURIOUS DEVELOPER, WELCOME ;) =======")
 
+//==========  Quando a página for carregada, rola para o topo  =======================//
+
+window.onload = () => { 
+    window.scrollTo(0, 0)
+}
+
 //====================================================================================//
 
               /* SCRIPT PARA EXIBIR/OCUTAR A NAVBAR AO CLICAR */
@@ -98,7 +104,7 @@ const cursor = document.getElementById('cursor')
 
 //====================================================================================//
 
-                /* SCRIPT PARA ACESSO RÁPIDO AO EMAIL */
+                /* SCRIPT PARA ACESSO RÁPIDO AO EMAIL OU TEL*/
 
 const ancora_email = document.getElementById('email')
 
@@ -111,6 +117,11 @@ const ancora_email = document.getElementById('email')
         window.location.href = mailtoLink
     })
 
+const ancora_tel = document.getElementById('tel')
+
+    ancora_tel.addEventListener('click', () => {
+        window.location.href = "tel:+5594991171807"
+    })
 
 //====================================================================================//
 
