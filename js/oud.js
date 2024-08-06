@@ -83,6 +83,18 @@ const cursor = document.getElementById('cursor')
     document.addEventListener('mouseenter', () => {
         cursor.style.display = 'block'
     })
+    
+//=== Esconde o cursor quando o mouse passa sobre um elemento <a> ====================//
+    
+    document.querySelectorAll('a').forEach(anchor => {
+        anchor.addEventListener('mouseover', () => {
+             cursor.style.display = 'none'
+        })
+
+        anchor.addEventListener('mouseout', () => {
+            cursor.style.display = 'block'
+        })
+    })
 
 //====================================================================================//
 

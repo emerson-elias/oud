@@ -189,7 +189,7 @@ html body header .navbar .active-bar {
   width: 25vw;
   height: inherit;
   margin: 0 0 0 10px;
-  cursor: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 992px) {
   html body header .navbar .active-bar {
@@ -302,7 +302,7 @@ html body header .navbar ul li {
 html body header .navbar ul li::after {
   position: absolute;
   content: "";
-  top: 70%;
+  top: 50%;
   left: 50%;
   right: 0;
   bottom: 0;
@@ -314,7 +314,7 @@ html body header .navbar ul li::after {
   transition: 0.3s all;
 }
 html body header .navbar ul li:hover::after {
-  width: 100%;
+  width: 90%;
   transition: 0.3s all;
 }
 @media screen and (max-width: 1200px) {
@@ -334,7 +334,7 @@ html body header .navbar ul li a {
   font-size: 1.1vw;
   letter-spacing: 2px;
   padding: 20px 0 20px 0;
-  cursor: none;
+  cursor: pointer;
 }
 html body header .navbar ul li a i {
   margin-right: 7px;
@@ -608,7 +608,7 @@ html body main .banner .row .row-itens .banner-descripiton .know a {
   font-size: 1.5vmax;
   color: rgba(255, 255, 255, 0.9960784314);
   text-decoration: none;
-  cursor: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 600px) {
   html body main .banner .row .row-itens .banner-descripiton .know a {
@@ -620,10 +620,16 @@ html body main .hero-me {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: normal;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  letter-spacing: 1px;
   flex-direction: column;
   margin-top: -1px;
   width: 100vw;
   height: auto;
+  color: rgba(255, 255, 255, 0.9960784314);
   padding: 11vw 0 5vw 0;
   background-color: #161616;
 }
@@ -648,7 +654,7 @@ html body main .hero-me .hero-titulo {
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .hero-titulo {
-    margin: 40px 0 50px 0;
+    margin: 60px 0 30px 0;
   }
 }
 html body main .hero-me .hero-titulo h1 {
@@ -658,12 +664,11 @@ html body main .hero-me .hero-titulo h1 {
   font-weight: 500;
   letter-spacing: 10px;
   font-size: 2.5vw;
-  color: rgba(255, 255, 255, 0.9960784314);
   text-transform: uppercase;
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .hero-titulo h1 {
-    font-size: 22px;
+    font-size: 25px;
   }
 }
 html body main .hero-me .hero-titulo h1 span {
@@ -684,7 +689,7 @@ html body main .hero-me .hero-text-bg {
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .hero-text-bg {
-    top: 10%;
+    top: 7%;
     font-size: 110px;
   }
 }
@@ -692,7 +697,7 @@ html body main .hero-me .hero-text-bg {
   html body main .hero-me .hero-text-bg {
     top: 5%;
     left: 5px;
-    font-size: 60px;
+    font-size: 70px;
   }
 }
 html body main .hero-me .sobre-mim {
@@ -700,14 +705,24 @@ html body main .hero-me .sobre-mim {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 4vh;
   width: 85%;
-  height: auto;
-  color: rgba(255, 255, 255, 0.9960784314);
+  height: 60vh;
 }
 @media screen and (max-width: 1200px) {
   html body main .hero-me .sobre-mim {
     width: 95%;
     flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim {
+    height: auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim {
+    top: 80px;
   }
 }
 html body main .hero-me .sobre-mim .sobre-img {
@@ -716,25 +731,27 @@ html body main .hero-me .sobre-mim .sobre-img {
   justify-content: center;
   align-items: center;
   width: 30vw;
-  height: auto;
+  height: 28vw;
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .sobre-mim .sobre-img {
     width: 50%;
+    height: auto;
   }
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .sobre-mim .sobre-img {
-    width: inherit;
+    width: 100%;
   }
 }
 html body main .hero-me .sobre-mim .sobre-img img {
   position: relative;
   width: 20vw;
   height: auto;
-  z-index: 2;
+  border-radius: 50px;
   filter: grayscale(0%);
   transition: 0.5s all ease;
+  z-index: 2;
 }
 @media screen and (max-width: 1200px) {
   html body main .hero-me .sobre-mim .sobre-img img {
@@ -764,17 +781,18 @@ html body main .hero-me .sobre-mim .sobre-img img:hover {
 html body main .hero-me .sobre-mim .sobre-img::after {
   position: absolute;
   content: "";
-  width: 18vw;
-  height: 17vw;
-  z-index: 1;
-  transform: translate(-15%, -15%);
+  width: 20vw;
+  height: inherit;
+  transform: translate(-10%, -10%);
   border: 0.8vw solid #caa986;
+  border-radius: 50px;
+  z-index: 1;
 }
 @media screen and (max-width: 1200px) {
   html body main .hero-me .sobre-mim .sobre-img::after {
     width: 280px;
-    height: 250px;
-    transform: translate(-10%, -15%);
+    height: 400px;
+    transform: translate(-10%, -10%);
   }
 }
 @media screen and (max-width: 768px) {
@@ -786,57 +804,63 @@ html body main .hero-me .sobre-mim .sobre-img::after {
 @media screen and (max-width: 600px) {
   html body main .hero-me .sobre-mim .sobre-img::after {
     border: 10px solid #caa986;
-    height: 230px;
-    transform: translate(-10%, -12%);
+    height: 330px;
+    transform: translate(-8%, -12%);
   }
 }
-html body main .hero-me .sobre-mim .sobre-habilits {
+html body main .hero-me .sobre-mim .sobre-diferenciais {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: normal;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  letter-spacing: 1px;
   flex-direction: column;
   width: 25vw;
-  height: 40vh;
+  height: inherit;
+}
+@media screen and (max-width: 1200px) {
+  html body main .hero-me .sobre-mim .sobre-diferenciais {
+    width: 30vw;
+  }
 }
 @media screen and (max-width: 992px) {
-  html body main .hero-me .sobre-mim .sobre-habilits {
+  html body main .hero-me .sobre-mim .sobre-diferenciais {
     width: 50%;
-    height: 270px;
+    height: 410px;
   }
 }
 @media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-habilits {
+  html body main .hero-me .sobre-mim .sobre-diferenciais {
     padding: 0 0 0 15px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-habilits {
+  html body main .hero-me .sobre-mim .sobre-diferenciais {
     width: inherit;
     margin: 50px auto;
   }
 }
-html body main .hero-me .sobre-mim .sobre-habilits h1 {
+html body main .hero-me .sobre-mim .sobre-diferenciais h1 {
   position: relative;
-  width: 100%;
+  width: inherit;
   height: auto;
+  margin: 0 0 1.5vmax 0;
   text-transform: uppercase;
   font-size: 1.7vw;
+  letter-spacing: 3px;
   font-family: "grand slang", sans-serif;
-  padding: 0 0 1vw 0;
 }
-@media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-habilits h1 {
-    font-size: 22px;
-    margin: 0 0 20px 0;
+@media screen and (max-width: 992px) {
+  html body main .hero-me .sobre-mim .sobre-diferenciais h1 {
+    font-size: 25px;
   }
 }
-html body main .hero-me .sobre-mim .sobre-habilits p {
+@media screen and (max-width: 600px) {
+  html body main .hero-me .sobre-mim .sobre-diferenciais h1 {
+    position: relative;
+    margin: 0 0 35px 0;
+  }
+}
+html body main .hero-me .sobre-mim .sobre-diferenciais p {
   position: relative;
   width: 100%;
   height: auto;
@@ -845,33 +869,34 @@ html body main .hero-me .sobre-mim .sobre-habilits p {
   font-family: "grand slang", sans-serif;
 }
 @media screen and (max-width: 1200px) {
-  html body main .hero-me .sobre-mim .sobre-habilits p {
+  html body main .hero-me .sobre-mim .sobre-diferenciais p {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 992px) {
-  html body main .hero-me .sobre-mim .sobre-habilits p {
+  html body main .hero-me .sobre-mim .sobre-diferenciais p {
     font-size: 17px;
+    padding: 1.3vw 0 0.5vw 0;
   }
 }
 @media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-habilits p {
+  html body main .hero-me .sobre-mim .sobre-diferenciais p {
     font-size: 17px;
     line-height: 35px;
   }
 }
-html body main .hero-me .sobre-mim .sobre-habilits p i {
+html body main .hero-me .sobre-mim .sobre-diferenciais p i {
   padding-right: 5px;
   font-size: 1.5vw;
   color: #caa986;
 }
 @media screen and (max-width: 992px) {
-  html body main .hero-me .sobre-mim .sobre-habilits p i {
+  html body main .hero-me .sobre-mim .sobre-diferenciais p i {
     font-size: 25px;
   }
 }
 @media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-habilits p i {
+  html body main .hero-me .sobre-mim .sobre-diferenciais p i {
     font-size: 20px;
   }
 }
@@ -881,9 +906,8 @@ html body main .hero-me .sobre-mim .sobre-descripion {
   justify-content: center;
   align-items: normal;
   flex-direction: column;
-  top: -25px;
   width: 35vw;
-  height: auto;
+  height: inherit;
 }
 @media screen and (max-width: 1200px) {
   html body main .hero-me .sobre-mim .sobre-descripion {
@@ -893,6 +917,7 @@ html body main .hero-me .sobre-mim .sobre-descripion {
 @media screen and (max-width: 992px) {
   html body main .hero-me .sobre-mim .sobre-descripion {
     width: 80%;
+    height: auto;
     top: 25px;
     margin: 50px auto;
   }
@@ -905,19 +930,22 @@ html body main .hero-me .sobre-mim .sobre-descripion {
     align-items: center;
   }
 }
-html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo {
-  width: initial;
+html body main .hero-me .sobre-mim .sobre-descripion h1 {
+  position: relative;
+  width: 100%;
   height: auto;
-}
-html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo h1 {
-  font-family: "grand slang", sans-serif;
-  font-size: 1.7vw;
+  margin: 0 0 1.5vmax 0;
   text-transform: uppercase;
+  font-size: 1.7vw;
+  letter-spacing: 3px;
+  font-family: "grand slang", sans-serif;
 }
 @media screen and (max-width: 992px) {
-  html body main .hero-me .sobre-mim .sobre-descripion .sobre-titulo h1 {
-    font-size: 22px;
+  html body main .hero-me .sobre-mim .sobre-descripion h1 {
+    position: relative;
+    font-size: 25px;
     text-align: center;
+    margin: 0 0 1.5vw 0;
   }
 }
 html body main .hero-me .sobre-mim .sobre-descripion p {
@@ -928,8 +956,9 @@ html body main .hero-me .sobre-mim .sobre-descripion p {
   letter-spacing: 1px;
   font-size: 1.19vmax;
   line-height: 1.8;
-  margin: 1vw 0 0 0;
   font-family: "grand slang", sans-serif;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 @media screen and (max-width: 1200px) {
   html body main .hero-me .sobre-mim .sobre-descripion p {
@@ -949,6 +978,12 @@ html body main .hero-me .sobre-mim .sobre-descripion p {
     margin-top: 20px;
   }
 }
+html body main .hero-me .sobre-mim .sobre-descripion p a {
+  color: #caa986;
+  font-weight: bolder;
+  text-decoration: none;
+  font-style: italic;
+}
 html body main .hero-me .hero-cv {
   position: relative;
   display: flex;
@@ -956,18 +991,17 @@ html body main .hero-me .hero-cv {
   align-items: center;
   width: inherit;
   height: auto;
-  margin-top: -20px;
-  text-decoration: none;
+  margin: 3% 0 0 0;
   cursor: none;
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .hero-cv {
-    margin-top: 30px;
+    margin: 70px 0 50px 0;
   }
 }
 @media screen and (max-width: 600px) {
   html body main .hero-me .hero-cv {
-    margin-top: 30px;
+    margin: 100px 0 0 0;
   }
 }
 html body main .hero-me .hero-cv div {
@@ -995,16 +1029,17 @@ html body main .hero-me .hero-cv .my-cv {
   align-items: center;
   left: 25%;
   margin: 0 15px 0 15px;
-  width: 9vw;
+  width: auto;
   height: auto;
-  padding: 12px;
-  border-radius: 50px;
+  padding: 0.9vmax 2vmax;
+  border-radius: 5vmax;
+  text-decoration: none;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.9960784314);
   transition: 0.5s all ease;
   opacity: 1;
   outline: none;
-  cursor: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 992px) {
   html body main .hero-me .hero-cv .my-cv {
@@ -1625,7 +1660,7 @@ html body main .tecnology-container .ferraments .ferraments-links a {
   font-family: "grand slang", sans-serif;
   transition: 0.5s all ease;
   text-transform: capitalize;
-  cursor: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 600px) {
   html body main .tecnology-container .ferraments .ferraments-links a {
@@ -1884,7 +1919,7 @@ html body main .project-container .project-button-plus a {
   letter-spacing: 2px;
   text-decoration: none;
   font-family: "grand slang", sans-serif;
-  cursor: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 992px) {
   html body main .project-container .project-button-plus a {
@@ -1922,7 +1957,7 @@ html body main .button-top .cicle {
   border-radius: 50px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.9960784314);
-  cursor: none;
+  cursor: pointer;
 }
 html body main .button-top .cicle .fa-arrow-up-from-bracket {
   color: rgba(255, 255, 255, 0.9960784314);
@@ -2030,7 +2065,7 @@ html body .footer-container .footer .footer-contact .contatc {
   justify-content: center;
   align-items: normal;
   flex-direction: column;
-  width: 25%;
+  width: auto;
   height: inherit;
 }
 @media screen and (max-width: 992px) {
@@ -2066,23 +2101,23 @@ html body .footer-container .footer .footer-contact .contatc .click {
     margin: 20px;
   }
 }
-html body .footer-container .footer .footer-contact .contatc p {
+html body .footer-container .footer .footer-contact .contatc a {
   position: relative;
-  width: initial;
   margin: 10px 0 10px 0;
   font-size: 1vmax;
   letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.7254901961);
+  cursor: pointer;
 }
 @media screen and (max-width: 992px) {
-  html body .footer-container .footer .footer-contact .contatc p {
+  html body .footer-container .footer .footer-contact .contatc a {
     font-size: 15px;
   }
 }
-html body .footer-container .footer .footer-contact .contatc p:hover {
+html body .footer-container .footer .footer-contact .contatc a:hover {
   color: #caa986;
 }
-html body .footer-container .footer .footer-contact .contatc p .ic--outline-attach-email {
+html body .footer-container .footer .footer-contact .contatc a .ic--outline-attach-email {
   display: inline-block;
   width: 2em;
   height: 2em;
@@ -2099,7 +2134,7 @@ html body .footer-container .footer .footer-contact .contatc p .ic--outline-atta
   transform: translateY(10px);
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m3 6l8 5l8-5v3h2V4c0-1.1-.9-2-2-2H3c-1.1 0-1.99.9-1.99 2L1 16c0 1.1.9 2 2 2h10v-2H3zm16-2l-8 5l-8-5z'/%3E%3Cpath fill='%23000' d='M21 14v4c0 1.1-.9 2-2 2s-2-.9-2-2v-4.5c0-.28.22-.5.5-.5s.5.22.5.5V18h2v-4.5a2.5 2.5 0 0 0-5 0V18c0 2.21 1.79 4 4 4s4-1.79 4-4v-4z'/%3E%3C/svg%3E");
 }
-html body .footer-container .footer .footer-contact .contatc p .tabler--click {
+html body .footer-container .footer .footer-contact .contatc a .tabler--click {
   display: inline-block;
   width: 2em;
   height: 2em;
@@ -2115,7 +2150,7 @@ html body .footer-container .footer .footer-contact .contatc p .tabler--click {
   margin: 0 15px 0 0;
   transform: translateY(10px);
 }
-html body .footer-container .footer .footer-contact .contatc p .tabler--click {
+html body .footer-container .footer .footer-contact .contatc a .tabler--click {
   display: inline-block;
   width: 2em;
   height: 2em;
@@ -2132,7 +2167,7 @@ html body .footer-container .footer .footer-contact .contatc p .tabler--click {
   transform: translateY(10px);
   --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12h3m6-9v3M7.8 7.8L5.6 5.6m10.6 2.2l2.2-2.2M7.8 16.2l-2.2 2.2M12 12l9 3l-4 2l-2 4z'/%3E%3C/svg%3E");
 }
-html body .footer-container .footer .footer-contact .contatc p .solar--phone-broken {
+html body .footer-container .footer .footer-contact .contatc a .solar--phone-broken {
   display: inline-block;
   width: 2em;
   height: 2em;
@@ -2196,7 +2231,7 @@ html body .footer-container .footer .social-midia .facebook, html body .footer-c
   margin: 0 10px 0 10px;
   border-radius: 100%;
   border: 1px solid rgba(255, 255, 255, 0.9960784314);
-  cursor: none;
+  cursor: pointer;
   transition: 0.5s all ease;
 }
 html body .footer-container .footer .social-midia .facebook:hover, html body .footer-container .footer .social-midia .instagram:hover, html body .footer-container .footer .social-midia .linkedin:hover, html body .footer-container .footer .social-midia .git-icon-footer:hover {
