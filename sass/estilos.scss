@@ -12,6 +12,10 @@
 
 ::-webkit-scrollbar {
     width: 0;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -ms-overflow-style: none;
+     scrollbar-width: none;
 }
 
 html{
@@ -20,12 +24,8 @@ html{
         background-color: variables.$gray_primary;     
     }
 
-    body {
-        scroll-behavior: smooth;
-        -webkit-font-smoothing: antialiased;
-        -ms-overflow-style: none;
+    body {     
         background-color: variables.$gray_primary;
-        scrollbar-width: none;
         cursor: none;
 
         @include responsive.screen_not_suport(){
@@ -603,14 +603,14 @@ html{
                         @include responsive.screen_tablet(){
                             padding: 0 0 0 15px;
                         }                       
-                        @include responsive.screen_small{
+                        @include responsive.screen_small(){
                             width: inherit;
                             margin: 50px auto;   
                         }
 
                         h1{
                             position: relative;
-                            width: inherit;
+                            width: 100%;
                             height: auto;
                             margin: 0 0 1.5vmax 0;
                             text-transform: uppercase;

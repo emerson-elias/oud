@@ -88,6 +88,10 @@
 
 ::-webkit-scrollbar {
   width: 0;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @media screen and (max-width: 300px), (max-height: 250px) {
@@ -109,11 +113,7 @@
   }
 }
 html body {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -ms-overflow-style: none;
   background-color: #161616;
-  scrollbar-width: none;
   cursor: none;
 }
 @media screen and (max-width: 300px), (max-height: 250px) {
@@ -841,7 +841,7 @@ html body main .hero-me .sobre-mim .sobre-diferenciais {
 }
 html body main .hero-me .sobre-mim .sobre-diferenciais h1 {
   position: relative;
-  width: inherit;
+  width: 100%;
   height: auto;
   margin: 0 0 1.5vmax 0;
   text-transform: uppercase;
