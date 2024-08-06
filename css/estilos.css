@@ -355,8 +355,8 @@ html body header .navbar ul li a i {
     top: 0;
     right: 0;
     padding: 50px;
-    width: 100dvw;
-    height: 100dvh;
+    width: 100vw;
+    height: 100vh;
     flex-direction: column;
     transform: translate(100%);
     transition: 0.5s all ease;
@@ -1904,6 +1904,7 @@ html body main .button-top {
   margin-bottom: 20px;
   background-color: transparent;
   transition: 0.5s all ease;
+  z-index: 1;
 }
 @media screen and (max-width: 600px) {
   html body main .button-top {
