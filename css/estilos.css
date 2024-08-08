@@ -86,10 +86,12 @@
 }
 
 ::-webkit-scrollbar {
-  width: 0 !important;
+  width: 0;
+  display: none;
+  overflow: hidden;
   scroll-behavior: smooth;
   -ms-overflow-style: none;
-  scrollbar-width: none !important;
+  scrollbar-width: none;
 }
 
 @media screen and (max-width: 300px), (max-height: 250px) {
@@ -135,12 +137,12 @@ html body {
 }
 html body #cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 1.5vw;
+  height: 1.5vw;
   border-radius: 50%;
   background-color: transparent;
   backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.9960784314);
+  border: 2px solid rgba(255, 255, 255, 0.9960784314);
   pointer-events: none;
   transform: translate(-2em);
   z-index: 9999;
@@ -159,6 +161,7 @@ html body header {
   width: 100%;
   height: auto;
   transition: 0.5s all ease;
+  box-sizing: border-box;
   z-index: 99;
 }
 html body header .navbar {
@@ -166,18 +169,19 @@ html body header .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
+  width: 97%;
   height: 13dvh;
-  padding: 0;
+  padding-top: 3vmax;
   margin: 0;
   font-family: "grand slang", sans-serif;
   text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
   transition: 0.5s all ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9960784314);
 }
 @media screen and (max-width: 600px) {
   html body header .navbar {
     height: 10vh;
+    padding: 45px 10px 0 10px;
   }
 }
 html body header .navbar .active-bar {
@@ -306,9 +310,10 @@ html body header .navbar ul li::after {
   background-color: #caa986;
   border-radius: 5px;
   transition: 0.3s all;
+  pointer-events: none;
 }
 html body header .navbar ul li:hover::after {
-  width: 90%;
+  width: 95%;
   transition: 0.3s all;
 }
 @media screen and (max-width: 1200px) {
@@ -326,6 +331,7 @@ html body header .navbar ul li a {
   color: rgba(255, 255, 255, 0.9960784314);
   text-decoration: none;
   font-size: 1.1vw;
+  font-weight: 600;
   letter-spacing: 2px;
   padding: 20px 0 20px 0;
   cursor: pointer;
@@ -366,12 +372,12 @@ html body main .banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1490196078), #161616), url(../img/herobg-hd.jpg);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0941176471), #161616), url(../img/herobg-hd.jpg);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 120vh;
+  height: 100vh;
   overflow: hidden;
 }
 @media screen and (max-width: 600px) {
@@ -379,15 +385,34 @@ html body main .banner {
     height: 110vh;
   }
 }
+html body main .banner::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 97%;
+  height: 92%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.9960784314);
+  pointer-events: none;
+}
+@media screen and (max-width: 600px) {
+  html body main .banner::after {
+    top: 45%;
+    width: 90%;
+    height: 86%;
+  }
+}
 html body main .banner .row {
   position: relative;
   display: flex;
-  justify-content: normal;
+  justify-content: end;
   align-items: normal;
   flex-direction: column;
-  top: 11vh;
+  padding: 0 0 3vmax 0;
   width: 95%;
-  height: auto;
+  height: 100%;
   color: rgba(255, 255, 255, 0.9960784314);
   transition: 0.5s all ease;
 }
@@ -395,6 +420,7 @@ html body main .banner .row {
   html body main .banner .row {
     top: 60px;
     width: 90%;
+    padding: 15px;
     justify-content: center;
   }
 }
@@ -403,9 +429,9 @@ html body main .banner .row .inspiration {
   display: flex;
   justify-content: end;
   align-items: center;
-  width: inherit;
-  height: initial;
-  margin: 0 0 2vh 0;
+  width: 20%;
+  height: auto;
+  margin: 0 0 2vh 75%;
 }
 @media screen and (max-width: 992px) {
   html body main .banner .row .inspiration {
@@ -480,43 +506,44 @@ html body main .banner .row .row-itens {
     flex-direction: column;
   }
 }
-html body main .banner .row .row-itens .layres {
+html body main .banner .row .row-itens .layers {
   flex-direction: column;
   width: 50vw;
   text-transform: uppercase;
 }
 @media screen and (max-width: 1200px) {
-  html body main .banner .row .row-itens .layres {
+  html body main .banner .row .row-itens .layers {
     width: 100%;
   }
 }
-html body main .banner .row .row-itens .layres .item-creat {
+html body main .banner .row .row-itens .layers .item-creat {
   position: relative;
   flex-direction: column;
   width: 10.5vw;
   font-size: 2vw;
+  font-weight: 600;
   border-bottom: 1px solid rgba(255, 255, 255, 0.9960784314);
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .row-itens .layres .item-creat {
+  html body main .banner .row .row-itens .layers .item-creat {
     width: 130px;
     font-size: 25px;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .banner .row .row-itens .layres .item-creat {
+  html body main .banner .row .row-itens .layers .item-creat {
     width: 90px;
     font-size: 18px;
     margin: 0 0 25px 0;
   }
 }
-html body main .banner .row .row-itens .layres .item-profession {
+html body main .banner .row .row-itens .layers .item-profession {
   position: relative;
   width: initial;
   height: auto;
   top: 2.5dvw;
 }
-html body main .banner .row .row-itens .layres .item-profession span {
+html body main .banner .row .row-itens .layers .item-profession span {
   display: block;
   height: auto;
   margin: 1vw 0 4vw 0;
@@ -526,12 +553,12 @@ html body main .banner .row .row-itens .layres .item-profession span {
   word-spacing: 5px;
 }
 @media screen and (max-width: 992px) {
-  html body main .banner .row .row-itens .layres .item-profession span {
+  html body main .banner .row .row-itens .layers .item-profession span {
     font-size: 3em;
   }
 }
 @media screen and (max-width: 600px) {
-  html body main .banner .row .row-itens .layres .item-profession span {
+  html body main .banner .row .row-itens .layers .item-profession span {
     transform: scaleY(4);
     letter-spacing: 5px;
     font-size: 1.7em;
@@ -551,7 +578,12 @@ html body main .banner .row .row-itens .banner-descripiton {
 @media screen and (max-width: 992px) {
   html body main .banner .row .row-itens .banner-descripiton {
     width: initial;
-    margin: 4vw 0 0 0;
+    margin: 4vw 0 2vw 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .banner .row .row-itens .banner-descripiton {
+    margin: 2vw 0 15vw 0;
   }
 }
 html body main .banner .row .row-itens .banner-descripiton p {
@@ -560,7 +592,7 @@ html body main .banner .row .row-itens .banner-descripiton p {
   letter-spacing: 2px;
   font-family: "grand slang", sans-serif;
   text-transform: uppercase;
-  font-weight: 300;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.9960784314);
 }
 @media screen and (max-width: 992px) {
@@ -624,7 +656,7 @@ html body main .hero-me {
   width: 100vw;
   height: auto;
   color: rgba(255, 255, 255, 0.9960784314);
-  padding: 11vw 0 5vw 0;
+  padding: 20vw 0 5vw 0;
   background-color: #161616;
 }
 @media screen and (max-width: 992px) {
@@ -635,6 +667,32 @@ html body main .hero-me {
 @media screen and (max-width: 600px) {
   html body main .hero-me {
     padding-top: 80px;
+  }
+}
+html body main .hero-me .hero-text-bg {
+  position: absolute;
+  top: 35vh;
+  left: 3vw;
+  right: 0;
+  font-size: 10vw;
+  font-family: "grand slang";
+  text-transform: uppercase;
+  font-style: italic;
+  word-break: break-all;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.1607843137);
+}
+@media screen and (max-width: 992px) {
+  html body main .hero-me .hero-text-bg {
+    top: 7%;
+    font-size: 110px;
+  }
+}
+@media screen and (max-width: 600px) {
+  html body main .hero-me .hero-text-bg {
+    top: 5%;
+    left: 5px;
+    font-size: 70px;
   }
 }
 html body main .hero-me .hero-titulo {
@@ -667,32 +725,6 @@ html body main .hero-me .hero-titulo h1 {
 }
 html body main .hero-me .hero-titulo h1 span {
   color: #caa986;
-}
-html body main .hero-me .hero-text-bg {
-  position: absolute;
-  top: 9vw;
-  left: 3vw;
-  right: 0;
-  font-size: 10vw;
-  font-family: "grand slang";
-  text-transform: uppercase;
-  font-style: italic;
-  word-break: break-all;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.1607843137);
-}
-@media screen and (max-width: 992px) {
-  html body main .hero-me .hero-text-bg {
-    top: 7%;
-    font-size: 110px;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .hero-text-bg {
-    top: 5%;
-    left: 5px;
-    font-size: 70px;
-  }
 }
 html body main .hero-me .sobre-mim {
   position: relative;
@@ -1069,7 +1101,7 @@ html body main .cards-container {
   flex-direction: column;
   width: 100%;
   height: auto;
-  margin: 7vw 0 10vw 0;
+  margin: 10vw 0 10vw 0;
 }
 @media screen and (max-width: 992px) {
   html body main .cards-container {
@@ -1298,7 +1330,7 @@ html body main .cards-container .cards-omega .card-bg .fa-music, html body main 
     font-size: 200px;
   }
 }
-html body main .cards-container .cards-omega .card-bg .card {
+html body main .cards-container .cards-omega .card-bg .card-description {
   position: relative;
   display: flex;
   justify-content: center;
@@ -1311,11 +1343,11 @@ html body main .cards-container .cards-omega .card-bg .card {
   overflow: hidden;
 }
 @media screen and (max-width: 768px) {
-  html body main .cards-container .cards-omega .card-bg .card {
+  html body main .cards-container .cards-omega .card-bg .card-description {
     top: 20px;
   }
 }
-html body main .cards-container .cards-omega .card-bg .card .arcticons--music-you {
+html body main .cards-container .cards-omega .card-bg .card-description .arcticons--music-you {
   display: inline-block;
   width: 5vw;
   height: 5vw;
@@ -1330,7 +1362,7 @@ html body main .cards-container .cards-omega .card-bg .card .arcticons--music-yo
   mask-size: 100% 100%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='18.538' cy='35.378' r='8.122' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M26.66 35.378V12.834M28.69 4.5h6.864a2.03 2.03 0 0 1 2.03 2.03v4.273a2.03 2.03 0 0 1-2.03 2.03H26.66h0V6.53a2.03 2.03 0 0 1 2.03-2.03'/%3E%3C/svg%3E");
 }
-html body main .cards-container .cards-omega .card-bg .card .arcticons--pizza-boy-gbc {
+html body main .cards-container .cards-omega .card-bg .card-description .arcticons--pizza-boy-gbc {
   display: inline-block;
   width: 5vw;
   height: 5vw;
@@ -1345,7 +1377,7 @@ html body main .cards-container .cards-omega .card-bg .card .arcticons--pizza-bo
   mask-size: 100% 100%;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='22.245' cy='23.357' r='3.617' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='33.469' cy='23.808' r='3.979' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27.059' cy='34.697' r='2.962' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M23.99 13.27c-.33 1.75-.91 4.02-1.65 6.48'/%3E%3Cellipse cx='42.57' cy='28.808' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' rx='2.537' ry='1.834' transform='rotate(-16.754 42.57 28.807)'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='M33.7 19.844c-3.32-3.19-6.99-5.48-8.98-6.24a3 3 0 0 0-.34-.12a2.54 2.54 0 0 1-1.31-3.34c.56-1.29 2.01-1.68 3.34-1.32c1.91.51 6.05 3.01 9.96 6.55c3.92 3.53 7.61 8.09 8.63 12.7m-4.86 1.46c-.55-1.89-1.52-3.7-2.71-5.39m-11.51 13.3c-4.09.96-8.4 1.6-12.4 1.86c2.02-1.93 4.54-7.33 6.63-13m9.26 10.2c2.04-.61 3.98-1.3 5.73-2.07c.72-.32.24 2.24 2.2 2.03c.99-.1 1.52-.79 1.66-2.66c.11-1.46 1.79-2.69 2.34-3.2'/%3E%3Ccircle cx='26.362' cy='18.615' r='.75' fill='white'/%3E%3Ccircle cx='25.862' cy='29.308' r='.75' fill='white'/%3E%3Ccircle cx='19.681' cy='36.244' r='.75' fill='white'/%3E%3Ccircle cx='35.638' cy='30.71' r='.75' fill='white'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m16.26 35.27l-3.2.9c-1.04.29-2.12-.32-2.41-1.36L5.07 14.92a1.96 1.96 0 0 1 1.35-2.41l11.64-3.27c1.04-.29 2.11.32 2.41 1.36l2.23 7.93'/%3E%3Cpath fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round' d='m19.88 20.644l-9.25 2.59a.525.525 0 0 1-.64-.36l-2.17-7.72c-.07-.27.09-.56.36-.63l9.42-2.65c.28-.07.56.09.64.36l2.16 7.72c.03.11.03.22-.02.31m-7.603 6.059l.931 3.319m1.194-2.125l-3.319.931'/%3E%3Ccircle cx='19.175' cy='26.722' r='.75' fill='white'/%3E%3C/svg%3E");
 }
-html body main .cards-container .cards-omega .card-bg .card .material-symbols-light--developer-mode-tv-outline-rounded {
+html body main .cards-container .cards-omega .card-bg .card-description .material-symbols-light--developer-mode-tv-outline-rounded {
   display: inline-block;
   width: 5vw;
   height: 5vw;
@@ -1361,18 +1393,18 @@ html body main .cards-container .cards-omega .card-bg .card .material-symbols-li
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='m4.415 11l2.247-2.246q.14-.14.15-.344t-.15-.364t-.354-.16q-.195 0-.354.16l-2.389 2.389q-.242.242-.242.565t.242.565l2.389 2.389q.14.14.344.15t.364-.15t.16-.354t-.16-.354zm15.17 0l-2.247 2.246q-.14.14-.15.344t.15.364t.354.16t.354-.16l2.389-2.389q.242-.242.242-.565t-.242-.565l-2.389-2.389q-.14-.14-.344-.15t-.364.15t-.16.354t.16.354zM3 6.77V5.614q0-.69.463-1.152T4.615 4h14.77q.69 0 1.152.463T21 5.615V6.77q0 .214-.143.357t-.357.143t-.357-.143T20 6.769V5.615q0-.269-.173-.442T19.385 5H4.615q-.269 0-.442.173T4 5.615V6.77q0 .214-.143.357T3.5 7.27t-.357-.143T3 6.769M9.808 20q-.348 0-.578-.23T9 19.192V18H4.615q-.69 0-1.152-.462T3 16.385v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .269.173.442t.442.173h14.77q.269 0 .442-.173t.173-.442v-1.148q0-.214.143-.354t.357-.14t.357.143t.143.356v1.143q0 .69-.462 1.152T19.385 18H15v1.192q0 .348-.23.578t-.578.23zM12 11'/%3E%3C/svg%3E");
 }
 @media screen and (max-width: 992px) {
-  html body main .cards-container .cards-omega .card-bg .card .arcticons--music-you, html body main .cards-container .cards-omega .card-bg .card .arcticons--pizza-boy-gbc, html body main .cards-container .cards-omega .card-bg .card .material-symbols-light--developer-mode-tv-outline-rounded {
+  html body main .cards-container .cards-omega .card-bg .card-description .arcticons--music-you, html body main .cards-container .cards-omega .card-bg .card-description .arcticons--pizza-boy-gbc, html body main .cards-container .cards-omega .card-bg .card-description .material-symbols-light--developer-mode-tv-outline-rounded {
     width: 100px;
     height: 100px;
   }
 }
 @media screen and (max-width: 768px) {
-  html body main .cards-container .cards-omega .card-bg .card .arcticons--music-you, html body main .cards-container .cards-omega .card-bg .card .arcticons--pizza-boy-gbc, html body main .cards-container .cards-omega .card-bg .card .material-symbols-light--developer-mode-tv-outline-rounded {
+  html body main .cards-container .cards-omega .card-bg .card-description .arcticons--music-you, html body main .cards-container .cards-omega .card-bg .card-description .arcticons--pizza-boy-gbc, html body main .cards-container .cards-omega .card-bg .card-description .material-symbols-light--developer-mode-tv-outline-rounded {
     width: 70px;
     height: 70px;
   }
 }
-html body main .cards-container .cards-omega .card-bg .card h1 {
+html body main .cards-container .cards-omega .card-bg .card-description h1 {
   text-align: center;
   margin: 1vw 0 0 0;
   font-size: 1.2vw;
@@ -1380,20 +1412,20 @@ html body main .cards-container .cards-omega .card-bg .card h1 {
   font-family: "cosi azure";
   color: rgba(255, 255, 255, 0.9960784314);
 }
-html body main .cards-container .cards-omega .card-bg .card h1 i {
+html body main .cards-container .cards-omega .card-bg .card-description h1 i {
   font-size: 1.4vw;
 }
 @media screen and (max-width: 768px) {
-  html body main .cards-container .cards-omega .card-bg .card h1 i {
+  html body main .cards-container .cards-omega .card-bg .card-description h1 i {
     font-size: 18px;
   }
 }
 @media screen and (max-width: 768px) {
-  html body main .cards-container .cards-omega .card-bg .card h1 {
+  html body main .cards-container .cards-omega .card-bg .card-description h1 {
     font-size: 18px;
   }
 }
-html body main .cards-container .cards-omega .card-bg .card p {
+html body main .cards-container .cards-omega .card-bg .card-description p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -1403,17 +1435,18 @@ html body main .cards-container .cards-omega .card-bg .card p {
   color: rgba(255, 255, 255, 0.9960784314);
   font-size: 1vw;
   padding: 1vw;
+  font-weight: 600;
   transform: translateY(35vw);
   transition: 0.5s all ease;
   font-family: "grand slang", sans-serif;
 }
 @media screen and (max-width: 768px) {
-  html body main .cards-container .cards-omega .card-bg .card p {
+  html body main .cards-container .cards-omega .card-bg .card-description p {
     font-size: 12px;
     padding: 10px;
   }
 }
-html body main .cards-container .cards-omega .card-bg .card:hover p {
+html body main .cards-container .cards-omega .card-bg:hover p {
   transform: translateY(0);
   margin: 0 0 1vw 0;
 }
@@ -1447,7 +1480,7 @@ html body main .tecnology-container {
 }
 html body main .tecnology-container .tecnology-text-bg {
   position: absolute;
-  top: 9vw;
+  top: 15vh;
   left: 3vw;
   right: 0;
   font-size: 10vw;
@@ -1587,6 +1620,7 @@ html body main .tecnology-container .tecnology .html .descripton-tecnology, html
   z-index: 1;
   opacity: 0;
   transition: 0.5s all ease;
+  pointer-events: none;
 }
 html body main .tecnology-container .tecnology .html .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .css .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .sass .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .react .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .javascript .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .typescript .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .php .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .java .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .railway .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .figma .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .sql .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .git .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .boostrap .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .materialize .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .tailwind .descripton-tecnology .solar--multiple-forward-right-linear, html body main .tecnology-container .tecnology .bulma .descripton-tecnology .solar--multiple-forward-right-linear {
   display: inline-block;
@@ -1753,6 +1787,40 @@ html body main .tecnology-container .tecnology .bulma:hover h2 {
 html body main .tecnology-container .tecnology .bulma:hover .descripton-tecnology {
   background: #00d2b4;
   color: #000;
+}
+html body main .tecnology-container .tecnology-animate {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html body main .tecnology-container .tecnology-animate .streamline-emojis--rocket {
+  display: inline-block;
+  width: 5em;
+  height: 5em;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23ff6242' d='m14.05 26.58l5.67-7a19.55 19.55 0 0 0-8.5-.24c-3.12.77-3.61 6.66-3.66 9.45a.87.87 0 0 0 1.31.77Z'/%3E%3Cpath fill='%23ff866e' d='M11.24 22a18.2 18.2 0 0 1 6.62-.13l1.86-2.28a19.55 19.55 0 0 0-8.5-.24c-3.12.76-3.61 6.65-3.66 9.44a.85.85 0 0 0 .14.48c.3-2.94 1.09-6.66 3.54-7.27'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='m14.05 26.58l5.67-7a19.55 19.55 0 0 0-8.5-.24c-3.12.77-3.61 6.66-3.66 9.45a.87.87 0 0 0 1.31.77Z'/%3E%3Cpath fill='%23ff6242' d='m20.86 33.4l7-5.67a19.5 19.5 0 0 1 .24 8.49c-.73 3.12-6.58 3.61-9.41 3.66a.87.87 0 0 1-.77-1.31Z'/%3E%3Cpath fill='%23ff866e' d='M25.41 36.21a18 18 0 0 0 .13-6.63l2.28-1.85a19.5 19.5 0 0 1 .24 8.49c-.73 3.12-6.58 3.61-9.41 3.66a.87.87 0 0 1-.48-.14c2.94-.26 6.66-1.09 7.24-3.53'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='m20.86 33.4l7-5.67a19.5 19.5 0 0 1 .24 8.49c-.73 3.12-6.58 3.61-9.41 3.66a.87.87 0 0 1-.77-1.31Z'/%3E%3Cpath fill='%23e8f4fa' d='M39.48 21.56c5.42-5.7 3.71-12.73 2.86-15.2a2 2 0 0 0-.48-.78a2.1 2.1 0 0 0-.77-.48c-2.47-.85-9.51-2.56-15.21 2.9C18.84 14.66 14 26.5 14 26.5l7 7s11.78-4.9 18.48-11.94'/%3E%3Cpath fill='%23fff' d='M28.05 11.87c5.53-5.27 12.31-3.8 15-2.94a17 17 0 0 0-.66-2.57a2 2 0 0 0-1.3-1.26c-2.47-.85-9.51-2.56-15.21 2.9C18.84 14.66 14 26.5 14 26.5l2.69 2.69c1.43-3.19 5.68-11.92 11.36-17.32'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M39.48 21.56c5.42-5.7 3.71-12.73 2.86-15.2a2 2 0 0 0-.48-.78a2.1 2.1 0 0 0-.77-.48c-2.47-.85-9.51-2.56-15.21 2.9C18.84 14.66 14 26.5 14 26.5l7 7s11.78-4.9 18.48-11.94'/%3E%3Cpath fill='%2345413c' d='M18.22 44.21a10 1.5 0 1 0 20 0a10 1.5 0 1 0-20 0' opacity='0.15'/%3E%3Cpath fill='%23ff6242' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M22.7 25.65a.68.68 0 0 0-.92-.93a22.1 22.1 0 0 0-5.31 3.8a17.8 17.8 0 0 0-3.87 5.86a.34.34 0 0 0 .44.45A17.8 17.8 0 0 0 18.9 31a21.9 21.9 0 0 0 3.8-5.35'/%3E%3Cpath fill='%23c0dceb' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M28.24 13.72a5.49 5.49 0 1 0 10.98 0a5.49 5.49 0 1 0-10.98 0'/%3E%3Cpath fill='%2300b8f0' d='M29.96 13.69a3.8 3.8 0 1 0 7.6 0a3.8 3.8 0 1 0-7.6 0'/%3E%3Cpath fill='%234acfff' d='M31.07 11a3.8 3.8 0 0 0 0 5.38a4 4 0 0 0 .85.62l3.55-6.69a3.77 3.77 0 0 0-4.4.69'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M29.96 13.69a3.8 3.8 0 1 0 7.6 0a3.8 3.8 0 1 0-7.6 0'/%3E%3Cpath fill='%23ff8a14' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M11.34 41.47c-.7.7-5.16 2.21-7.42 2.94c-.42.14-1-.47-.89-.89c.73-2.25 2.24-6.71 3-7.42c.95-1 3.43-1 4.91.46s1.35 3.96.4 4.91'/%3E%3Cpath fill='%23ffe500' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M10.13 39.79c-.5.49-2.57 1-3 .56s.07-2.54.57-3a1.57 1.57 0 0 1 2.13.34a1.56 1.56 0 0 1 .3 2.1'/%3E%3Cpath fill='%23ffe500' d='m43.32 23.69l.8 1.51a.42.42 0 0 0 .32.22l1.69.2a.42.42 0 0 1 .25.71l-1.19 1.22a.39.39 0 0 0-.11.37l.33 1.67a.42.42 0 0 1-.59.46l-1.53-.76a.44.44 0 0 0-.39 0l-1.49.84a.43.43 0 0 1-.62-.43L41 28a.41.41 0 0 0-.13-.36l-1.21-1.14a.42.42 0 0 1 .21-.72l1.68-.29a.41.41 0 0 0 .31-.23l.72-1.55a.41.41 0 0 1 .74-.02'/%3E%3Cpath fill='%23fff48c' d='m40.53 27.31l1.06-.19a.4.4 0 0 0 .31-.23l.72-1.55a.42.42 0 0 1 .75 0l.79 1.51a.42.42 0 0 0 .32.22l1.07.13l.83-.85a.42.42 0 0 0-.25-.71l-1.69-.2a.42.42 0 0 1-.32-.22l-.8-1.51a.41.41 0 0 0-.74 0l-.72 1.55a.41.41 0 0 1-.31.23l-1.68.29a.42.42 0 0 0-.21.72Z'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='m43.32 23.69l.8 1.51a.42.42 0 0 0 .32.22l1.69.2a.42.42 0 0 1 .25.71l-1.19 1.22a.39.39 0 0 0-.11.37l.33 1.67a.42.42 0 0 1-.59.46l-1.53-.76a.44.44 0 0 0-.39 0l-1.49.84a.43.43 0 0 1-.62-.43L41 28a.41.41 0 0 0-.13-.36l-1.21-1.14a.42.42 0 0 1 .21-.72l1.68-.29a.41.41 0 0 0 .31-.23l.72-1.55a.41.41 0 0 1 .74-.02'/%3E%3Cpath fill='%23ffe500' d='m31.74 40.59l.26 1.35a.35.35 0 0 0 .2.24l1.27.54a.34.34 0 0 1 0 .6l-1.2.68a.32.32 0 0 0-.17.26l-.1 1.37a.34.34 0 0 1-.57.22l-1-.93a.3.3 0 0 0-.3-.08l-1.34.3a.34.34 0 0 1-.38-.47l.59-1.25a.31.31 0 0 0 0-.31l-.7-1.18a.34.34 0 0 1 .33-.51l1.36.16a.38.38 0 0 0 .3-.11l.9-1a.34.34 0 0 1 .55.12'/%3E%3Cpath fill='%23fff48c' d='m28.76 42.75l.86.1a.35.35 0 0 0 .3-.11l.9-1a.34.34 0 0 1 .59.15l.27 1.35a.31.31 0 0 0 .19.24l.8.34l.84-.47a.34.34 0 0 0 0-.6l-1.27-.54a.35.35 0 0 1-.2-.24l-.27-1.35a.34.34 0 0 0-.58-.16l-.9 1a.38.38 0 0 1-.3.11l-1.36-.16a.34.34 0 0 0-.33.51Z'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='m31.74 40.59l.26 1.35a.35.35 0 0 0 .2.24l1.27.54a.34.34 0 0 1 0 .6l-1.2.68a.32.32 0 0 0-.17.26l-.1 1.37a.34.34 0 0 1-.57.22l-1-.93a.3.3 0 0 0-.3-.08l-1.34.3a.34.34 0 0 1-.38-.47l.59-1.25a.31.31 0 0 0 0-.31l-.7-1.18a.34.34 0 0 1 .33-.51l1.36.16a.38.38 0 0 0 .3-.11l.9-1a.34.34 0 0 1 .55.12'/%3E%3Cpath fill='%239ceb60' d='M11.86 7a3.06 3.06 0 1 1-2.59-3.44A3.06 3.06 0 0 1 11.86 7'/%3E%3Cpath fill='%23c8ffa1' d='M9.27 5.74a3.06 3.06 0 0 1 2.41 2a3 3 0 0 0 .18-.74a3.06 3.06 0 0 0-6.06-.85A3.2 3.2 0 0 0 6 7.67a3.08 3.08 0 0 1 3.27-1.93'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M11.86 7a3.06 3.06 0 1 1-2.59-3.44A3.06 3.06 0 0 1 11.86 7'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M5.86 7.3C5.1 7.82 3.57 9 4 9.86s10.49-5.15 10.14-6s-2.5.12-3.26.48'/%3E%3C/svg%3E");
+}
+html body main .tecnology-container .tecnology-animate div {
+  position: relative;
+  width: 3vmax;
+  height: 7vmax;
+  border: 1px solid orange;
+  background-color: transparent;
+  border-radius: 5vmax;
+}
+html body main .tecnology-container .tecnology-animate div span {
+  position: absolute;
+  content: "";
+  top: 20%;
+  left: 50%;
+  width: 2vmax;
+  height: 2vmax;
+  border-radius: 50%;
+  background-color: rebeccapurple;
+  transform: translate(-50%, -50%);
+  transition: 0.5s all ease;
 }
 html body main .tecnology-container .ferraments {
   position: relative;
@@ -2095,7 +2163,7 @@ html body .footer-container {
 }
 html body .footer-container .footer-text-bg {
   position: absolute;
-  top: 9vw;
+  top: 9vh;
   left: 3vw;
   right: 0;
   font-size: 10vw;
@@ -2272,23 +2340,6 @@ html body .footer-container .footer .footer-contact .contatc a .tabler--click {
   margin: 0 15px 0 0;
   transform: translateY(10px);
 }
-html body .footer-container .footer .footer-contact .contatc a .tabler--click {
-  display: inline-block;
-  width: 2em;
-  height: 2em;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-color: currentColor;
-  -webkit-mask-image: var(--svg);
-  mask-image: var(--svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  margin: 0 15px 0 0;
-  transform: translateY(10px);
-  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12h3m6-9v3M7.8 7.8L5.6 5.6m10.6 2.2l2.2-2.2M7.8 16.2l-2.2 2.2M12 12l9 3l-4 2l-2 4z'/%3E%3C/svg%3E");
-}
 html body .footer-container .footer .footer-contact .contatc a .solar--phone-broken {
   display: inline-block;
   width: 2em;
@@ -2422,7 +2473,7 @@ html body .footer-container .footer .social-midia .teenyicons--git-outline {
 }
 html body .footer-container .credits {
   position: relative;
-  width: 95%;
+  width: 97%;
   height: auto;
   padding: 2.5vh;
   border-top: 0.1px solid rgba(255, 255, 255, 0.9960784314);
@@ -2447,6 +2498,8 @@ html body .footer-container .credits p {
 
 .navbar_aux {
   height: 10dvh !important;
+  border-color: rgba(255, 255, 255, 0.9960784314) !important;
+  padding-top: 0 !important;
 }
 
 .header_aux {
@@ -2475,6 +2528,11 @@ html body .footer-container .credits p {
 
 .b-there {
   transform: rotate(35deg) !important;
+  transition: 0.5s all ease;
+}
+
+.roll-aux {
+  top: 75% !important;
   transition: 0.5s all ease;
 }
 

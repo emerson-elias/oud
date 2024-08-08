@@ -125,7 +125,7 @@ const ancora_tel = document.getElementById('tel')
 
 //====================================================================================//
 
-            /* DESENVOLVER UM EASTER EGGS AO CLICAR */
+            /* EASTER EGGS AO CLICAR */
             
 const easter_eggs = document.getElementsByClassName('click')[0];
 
@@ -152,3 +152,18 @@ const pauseElements = document.querySelectorAll('.ferraments-links')
             pauseElements.forEach(el => el.classList.remove('paused'))
         })
     })
+
+
+
+const tecnology_button = document.getElementById('tecnology-button')
+const roll = document.getElementById('roll')
+const rocket = document.getElementsByClassName('streamline-emojis--rocket')[0]
+
+tecnology_button.addEventListener('click', () => {
+  
+    roll.classList.toggle('roll-aux')
+
+    
+
+    
+})

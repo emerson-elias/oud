@@ -9,14 +9,14 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 ::-webkit-scrollbar {
-    width: 0 !important;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none !important;
-}
-
+    width: 0;  
+    display: none;
+    overflow: hidden; 
+    scroll-behavior: smooth; 
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+} 
 html{
     
     @include responsive.screen_not_suport(){
@@ -34,12 +34,12 @@ html{
 
         #cursor {
             position: fixed;
-            width: 20px;
-            height: 20px;
+            width: 1.5vw;
+            height: 1.5vw;
             border-radius: 50%;
             background-color: transparent;
             backdrop-filter: blur(2px);
-            border: 1px solid variables.$Color_White;
+            border: 2px solid variables.$Color_White;
             pointer-events: none; 
             transform: translate(-2em);
             z-index: 9999;
@@ -54,22 +54,24 @@ html{
             position: fixed;
             width: 100%;
             height: auto;
-            transition: variables.$Transition_ease; 
+            transition: variables.$Transition_ease;
+            box-sizing: border-box;
             z-index: 99;
 
             .navbar {
                 @include mixins.align(relative, flex, space-between, center);
-                width: 95%;
+                width: 97%;
                 height: 13dvh;
-                padding: 0;
+                padding-top: 3vmax;
                 margin: 0;
                 font-family: variables.$fonty_primary;
                 text-transform: uppercase;
-                transition: variables.$Transition_ease;
-                border-bottom: 1px solid variables.$Color_White;
+                border-bottom: 1px solid variables.$Smoker_there_0;
+                transition: variables.$Transition_ease;             
 
                 @include responsive.screen_small(){
                     height: 10vh;
+                    padding: 45px 10px 0 10px;
                 }
     
                 .active-bar {
@@ -169,10 +171,11 @@ html{
                             background-color: variables.$Secundary_Color;
                             border-radius: 5px;
                             transition: 0.3s all;
+                            pointer-events: none;
                         }
 
                         &:hover::after{
-                            width: 90%;
+                            width: 95%;
                             transition: 0.3s all;
                         }
                         
@@ -189,6 +192,7 @@ html{
                             color: variables.$Color_White;
                             text-decoration: none;
                             font-size: 1.1vw;
+                            font-weight: 600;
                             letter-spacing: 2px;
                             padding: 20px 0 20px 0;
                             cursor: pointer;
@@ -229,6 +233,7 @@ html{
     
         main {        
             overflow: hidden;
+
             .banner {
                 @include mixins.align(relative, flex, center, center);
                 background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$gray_primary), url(../img/herobg-hd.jpg);
@@ -236,38 +241,57 @@ html{
                 background-repeat: no-repeat;
                 background-size: cover;
                 width: 100%;
-                height: 120vh;
+                height: 100vh;
                 overflow: hidden;
 
                 @include responsive.screen_small{
                     height: 110vh;
                 }
-                        
+
+                &::after{
+                    position: absolute;
+                    content: '';
+                    top: 50%;
+                    left: 50%;
+                    width: 97%;
+                    height: 92%;
+                    transform: translate(-50%, -50%);
+                    background-color: transparent;
+                    border: 1px solid variables.$Color_White;
+                    pointer-events: none;
+
+                    @include responsive.screen_small(){
+                        top: 45%;
+                        width: 90%;
+                        height: 86%;
+                    }
+                }
+
                 .row{
-                    @include mixins.align(relative, flex, normal, normal);
+                    @include mixins.align(relative, flex, end, normal);
                     flex-direction: column;
-                    top: 11vh;
+                    padding: 0 0 3vmax 0;
                     width: 95%;
-                    height: auto;             
+                    height: 100%;             
                     color: variables.$Color_White;
                     transition: variables.$Transition_ease;
                  
                     @include responsive.screen_small(){
                         top: 60px; 
                         width: 90%;
+                        padding: 15px;
                         justify-content: center;
                     }
                    
                    .inspiration{
                         @include mixins.align(relative, flex, end, center);
-                        width: inherit;
-                        height: initial;
-                        margin: 0 0 2vh 0;
+                        width: 20%;
+                        height: auto;
+                        margin: 0 0 2vh 75%;
 
                         @include responsive.screen_laptop(){
                             width: 90%;
                         }
-
                         @include responsive.screen_small(){
                             width: 100%;                             
                         }
@@ -313,7 +337,7 @@ html{
                             flex-direction: column;                        
                         }
 
-                        .layres{
+                        .layers{
                             flex-direction: column;
                             width: 50vw;
                             text-transform: uppercase;
@@ -327,6 +351,7 @@ html{
                                 flex-direction: column;
                                 width: 10.5vw;    
                                 font-size: 2vw;
+                                font-weight: 600;
                                 border-bottom: 1px solid variables.$Color_White;
         
                                 @include responsive.screen_laptop(){ 
@@ -351,7 +376,7 @@ html{
                                     display: block;
                                     height: auto;
                                     margin: 1vw 0 4vw 0;
-                                    font-size: 5vw;                                 
+                                    font-size: 5vw;                                
                                     transform: scaleY(2.5);
                                     letter-spacing: 3px;
                                     word-spacing: 5px;
@@ -382,16 +407,19 @@ html{
         
                             @include responsive.screen_laptop(){ 
                                 width: initial;
-                                margin: 4vw 0 0 0;
+                                margin: 4vw 0 2vw 0;
                             }
-        
+                            @include responsive.screen_small(){
+                                margin: 2vw 0 15vw 0;
+                            }
+
                             p{
                                 text-align: end;
                                 font-size: 1.8vw;
                                 letter-spacing: 2px;
                                 font-family: variables.$fonty_primary;             
                                 text-transform: uppercase;
-                                font-weight: 300;
+                                font-weight: 600;
                                 color: variables.$Color_White;
         
                                 @include responsive.screen_laptop(){ 
@@ -448,7 +476,7 @@ html{
                 width: 100vw;
                 height: auto;
                 color: variables.$Color_White;
-                padding: 11vw 0 5vw 0;
+                padding: 20vw 0 5vw 0;
                 background-color: variables.$gray_primary;
 
                 @include responsive.screen_laptop(){
@@ -456,6 +484,20 @@ html{
                 }
                 @include responsive.screen_small(){
                     padding-top: 80px;
+                }
+
+                .hero-text-bg{
+                    @include mixins.text-bg(35vh);
+
+                    @include responsive.screen_laptop(){
+                        top: 7%;
+                        font-size: 110px;
+                    }
+                    @include responsive.screen_small(){
+                        top: 5%;
+                        left: 5px;
+                        font-size: 70px;
+                    }
                 }
 
                 .hero-titulo{
@@ -480,20 +522,6 @@ html{
                         span{
                             color: variables.$Secundary_Color;
                         }
-                    }
-                }
-
-                .hero-text-bg{
-                    @include mixins.text-bg();
-
-                    @include responsive.screen_laptop(){
-                        top: 7%;
-                        font-size: 110px;
-                    }
-                    @include responsive.screen_small(){
-                        top: 5%;
-                        left: 5px;
-                        font-size: 70px;
                     }
                 }
                  
@@ -816,7 +844,7 @@ html{
                 flex-direction: column;
                 width: 100%;
                 height: auto;
-                margin: 7vw 0 10vw 0;
+                margin: 10vw 0 10vw 0;
 
                 @include responsive.screen_laptop(){
                     margin: 100px 0 100px 0;
@@ -962,13 +990,11 @@ html{
                             height: 35vw;
                             margin: 0 0 100px 0;
                         }
-
                         @include responsive.screen_tablet(){
                             width: 40%;
                             height: 230px;
                             margin: 0 0 50px 0;
                         }
-
                         @include responsive.screen_small(){
                             width: 80%;
                             margin: 0 0 40px 0;
@@ -1023,7 +1049,7 @@ html{
                             
                         }
 
-                        .card{
+                        .card-description{
                             @include mixins.align(relative, flex, center, center);
                             flex-direction: column;
                             padding-top: 5vw;
@@ -1090,6 +1116,7 @@ html{
                                 color: variables.$Color_White;                    
                                 font-size: 1vw;
                                 padding: 1vw;
+                                font-weight: 600;
                                 transform: translateY(35vw);               
                                 transition: variables.$Transition_ease; 
                                 font-family: variables.$fonty_primary;
@@ -1100,13 +1127,11 @@ html{
                                 }
                             }
            
-                            &:hover p{ 
-                                transform: translateY(0);
-                                margin: 0 0 1vw 0;                              
-                            }
-           
                         }
-
+                        &:hover p{ 
+                            transform: translateY(0);
+                            margin: 0 0 1vw 0;                              
+                        }
                     }
                 }
 
@@ -1133,7 +1158,7 @@ html{
                 }
 
                 .tecnology-text-bg{
-                    @include mixins.text-bg();
+                    @include mixins.text-bg(15vh);
 
                     @include responsive.screen_laptop(){
                         top: 2%;
@@ -1422,6 +1447,41 @@ html{
                         &:hover .descripton-tecnology{
                             background: variables.$BULMA;
                             color: variables.$Color_Black;
+                        }
+                    }
+                }
+
+                .tecnology-animate{
+                    @include mixins.align(relative, flex, center, center);
+                    
+                    .streamline-emojis--rocket {
+                        display: inline-block;
+                        width: 5em;
+                        height: 5em;
+                        background-repeat: no-repeat;
+                        background-size: 100% 100%;
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%23ff6242' d='m14.05 26.58l5.67-7a19.55 19.55 0 0 0-8.5-.24c-3.12.77-3.61 6.66-3.66 9.45a.87.87 0 0 0 1.31.77Z'/%3E%3Cpath fill='%23ff866e' d='M11.24 22a18.2 18.2 0 0 1 6.62-.13l1.86-2.28a19.55 19.55 0 0 0-8.5-.24c-3.12.76-3.61 6.65-3.66 9.44a.85.85 0 0 0 .14.48c.3-2.94 1.09-6.66 3.54-7.27'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='m14.05 26.58l5.67-7a19.55 19.55 0 0 0-8.5-.24c-3.12.77-3.61 6.66-3.66 9.45a.87.87 0 0 0 1.31.77Z'/%3E%3Cpath fill='%23ff6242' d='m20.86 33.4l7-5.67a19.5 19.5 0 0 1 .24 8.49c-.73 3.12-6.58 3.61-9.41 3.66a.87.87 0 0 1-.77-1.31Z'/%3E%3Cpath fill='%23ff866e' d='M25.41 36.21a18 18 0 0 0 .13-6.63l2.28-1.85a19.5 19.5 0 0 1 .24 8.49c-.73 3.12-6.58 3.61-9.41 3.66a.87.87 0 0 1-.48-.14c2.94-.26 6.66-1.09 7.24-3.53'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='m20.86 33.4l7-5.67a19.5 19.5 0 0 1 .24 8.49c-.73 3.12-6.58 3.61-9.41 3.66a.87.87 0 0 1-.77-1.31Z'/%3E%3Cpath fill='%23e8f4fa' d='M39.48 21.56c5.42-5.7 3.71-12.73 2.86-15.2a2 2 0 0 0-.48-.78a2.1 2.1 0 0 0-.77-.48c-2.47-.85-9.51-2.56-15.21 2.9C18.84 14.66 14 26.5 14 26.5l7 7s11.78-4.9 18.48-11.94'/%3E%3Cpath fill='%23fff' d='M28.05 11.87c5.53-5.27 12.31-3.8 15-2.94a17 17 0 0 0-.66-2.57a2 2 0 0 0-1.3-1.26c-2.47-.85-9.51-2.56-15.21 2.9C18.84 14.66 14 26.5 14 26.5l2.69 2.69c1.43-3.19 5.68-11.92 11.36-17.32'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M39.48 21.56c5.42-5.7 3.71-12.73 2.86-15.2a2 2 0 0 0-.48-.78a2.1 2.1 0 0 0-.77-.48c-2.47-.85-9.51-2.56-15.21 2.9C18.84 14.66 14 26.5 14 26.5l7 7s11.78-4.9 18.48-11.94'/%3E%3Cpath fill='%2345413c' d='M18.22 44.21a10 1.5 0 1 0 20 0a10 1.5 0 1 0-20 0' opacity='0.15'/%3E%3Cpath fill='%23ff6242' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M22.7 25.65a.68.68 0 0 0-.92-.93a22.1 22.1 0 0 0-5.31 3.8a17.8 17.8 0 0 0-3.87 5.86a.34.34 0 0 0 .44.45A17.8 17.8 0 0 0 18.9 31a21.9 21.9 0 0 0 3.8-5.35'/%3E%3Cpath fill='%23c0dceb' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M28.24 13.72a5.49 5.49 0 1 0 10.98 0a5.49 5.49 0 1 0-10.98 0'/%3E%3Cpath fill='%2300b8f0' d='M29.96 13.69a3.8 3.8 0 1 0 7.6 0a3.8 3.8 0 1 0-7.6 0'/%3E%3Cpath fill='%234acfff' d='M31.07 11a3.8 3.8 0 0 0 0 5.38a4 4 0 0 0 .85.62l3.55-6.69a3.77 3.77 0 0 0-4.4.69'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M29.96 13.69a3.8 3.8 0 1 0 7.6 0a3.8 3.8 0 1 0-7.6 0'/%3E%3Cpath fill='%23ff8a14' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M11.34 41.47c-.7.7-5.16 2.21-7.42 2.94c-.42.14-1-.47-.89-.89c.73-2.25 2.24-6.71 3-7.42c.95-1 3.43-1 4.91.46s1.35 3.96.4 4.91'/%3E%3Cpath fill='%23ffe500' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M10.13 39.79c-.5.49-2.57 1-3 .56s.07-2.54.57-3a1.57 1.57 0 0 1 2.13.34a1.56 1.56 0 0 1 .3 2.1'/%3E%3Cpath fill='%23ffe500' d='m43.32 23.69l.8 1.51a.42.42 0 0 0 .32.22l1.69.2a.42.42 0 0 1 .25.71l-1.19 1.22a.39.39 0 0 0-.11.37l.33 1.67a.42.42 0 0 1-.59.46l-1.53-.76a.44.44 0 0 0-.39 0l-1.49.84a.43.43 0 0 1-.62-.43L41 28a.41.41 0 0 0-.13-.36l-1.21-1.14a.42.42 0 0 1 .21-.72l1.68-.29a.41.41 0 0 0 .31-.23l.72-1.55a.41.41 0 0 1 .74-.02'/%3E%3Cpath fill='%23fff48c' d='m40.53 27.31l1.06-.19a.4.4 0 0 0 .31-.23l.72-1.55a.42.42 0 0 1 .75 0l.79 1.51a.42.42 0 0 0 .32.22l1.07.13l.83-.85a.42.42 0 0 0-.25-.71l-1.69-.2a.42.42 0 0 1-.32-.22l-.8-1.51a.41.41 0 0 0-.74 0l-.72 1.55a.41.41 0 0 1-.31.23l-1.68.29a.42.42 0 0 0-.21.72Z'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='m43.32 23.69l.8 1.51a.42.42 0 0 0 .32.22l1.69.2a.42.42 0 0 1 .25.71l-1.19 1.22a.39.39 0 0 0-.11.37l.33 1.67a.42.42 0 0 1-.59.46l-1.53-.76a.44.44 0 0 0-.39 0l-1.49.84a.43.43 0 0 1-.62-.43L41 28a.41.41 0 0 0-.13-.36l-1.21-1.14a.42.42 0 0 1 .21-.72l1.68-.29a.41.41 0 0 0 .31-.23l.72-1.55a.41.41 0 0 1 .74-.02'/%3E%3Cpath fill='%23ffe500' d='m31.74 40.59l.26 1.35a.35.35 0 0 0 .2.24l1.27.54a.34.34 0 0 1 0 .6l-1.2.68a.32.32 0 0 0-.17.26l-.1 1.37a.34.34 0 0 1-.57.22l-1-.93a.3.3 0 0 0-.3-.08l-1.34.3a.34.34 0 0 1-.38-.47l.59-1.25a.31.31 0 0 0 0-.31l-.7-1.18a.34.34 0 0 1 .33-.51l1.36.16a.38.38 0 0 0 .3-.11l.9-1a.34.34 0 0 1 .55.12'/%3E%3Cpath fill='%23fff48c' d='m28.76 42.75l.86.1a.35.35 0 0 0 .3-.11l.9-1a.34.34 0 0 1 .59.15l.27 1.35a.31.31 0 0 0 .19.24l.8.34l.84-.47a.34.34 0 0 0 0-.6l-1.27-.54a.35.35 0 0 1-.2-.24l-.27-1.35a.34.34 0 0 0-.58-.16l-.9 1a.38.38 0 0 1-.3.11l-1.36-.16a.34.34 0 0 0-.33.51Z'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='m31.74 40.59l.26 1.35a.35.35 0 0 0 .2.24l1.27.54a.34.34 0 0 1 0 .6l-1.2.68a.32.32 0 0 0-.17.26l-.1 1.37a.34.34 0 0 1-.57.22l-1-.93a.3.3 0 0 0-.3-.08l-1.34.3a.34.34 0 0 1-.38-.47l.59-1.25a.31.31 0 0 0 0-.31l-.7-1.18a.34.34 0 0 1 .33-.51l1.36.16a.38.38 0 0 0 .3-.11l.9-1a.34.34 0 0 1 .55.12'/%3E%3Cpath fill='%239ceb60' d='M11.86 7a3.06 3.06 0 1 1-2.59-3.44A3.06 3.06 0 0 1 11.86 7'/%3E%3Cpath fill='%23c8ffa1' d='M9.27 5.74a3.06 3.06 0 0 1 2.41 2a3 3 0 0 0 .18-.74a3.06 3.06 0 0 0-6.06-.85A3.2 3.2 0 0 0 6 7.67a3.08 3.08 0 0 1 3.27-1.93'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M11.86 7a3.06 3.06 0 1 1-2.59-3.44A3.06 3.06 0 0 1 11.86 7'/%3E%3Cpath fill='none' stroke='%2345413c' stroke-linecap='round' stroke-linejoin='round' d='M5.86 7.3C5.1 7.82 3.57 9 4 9.86s10.49-5.15 10.14-6s-2.5.12-3.26.48'/%3E%3C/svg%3E");
+                    }
+
+                    div{
+                        position: relative;
+                        width: 3vmax;
+                        height: 7vmax;
+                        border: 1px solid orange;
+                        background-color: transparent;
+                        border-radius: 5vmax;
+
+                        span{
+                            position: absolute;
+                            content: '';
+                            top: 20%;
+                            left: 50%;
+                            width: 2vmax;
+                            height: 2vmax;
+                            border-radius: 50%;
+                            background-color: rebeccapurple;
+                            transform: translate(-50%, -50%);
+                            transition: variables.$Transition_ease;
                         }
                     }
                 }
@@ -1743,7 +1803,7 @@ html{
             
 
             .footer-text-bg{
-                @include mixins.text-bg();
+                @include mixins.text-bg(9vh);
                 top: 7vh;
 
                 @include responsive.screen_laptop(){
@@ -1881,13 +1941,6 @@ html{
                                 transform: translateY(10px);
                             }
 
-                            .tabler--click {
-                                @include mixins.formatting-icon(2em, 2em, currentColor);
-                                margin: 0 15px 0 0; 
-                                transform: translateY(10px);
-                                --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12h3m6-9v3M7.8 7.8L5.6 5.6m10.6 2.2l2.2-2.2M7.8 16.2l-2.2 2.2M12 12l9 3l-4 2l-2 4z'/%3E%3C/svg%3E");              
-                            }
-
                             .solar--phone-broken {
                                 @include mixins.formatting-icon(2em, 2em, currentColor);
                                 margin: 0 15px 0 0; 
@@ -1971,7 +2024,7 @@ html{
 
             .credits{
                 position: relative;
-                width: 95%;
+                width: 97%;
                 height: auto;
                 padding: 2.5vh;
                 border-top: 0.1px solid variables.$Color_White;
@@ -2001,6 +2054,8 @@ html{
 }
 .navbar_aux {
     height: 10dvh !important;
+    border-color: variables.$Color_White !important;
+    padding-top: 0 !important;
 }
 .header_aux {
     backdrop-filter: blur(10px) !important;  
@@ -2023,5 +2078,9 @@ html{
 }
 .b-there{
     transform: rotate(35deg) !important;
+    transition: variables.$Transition_ease;
+}
+.roll-aux{
+    top: 75% !important;
     transition: variables.$Transition_ease;
 }

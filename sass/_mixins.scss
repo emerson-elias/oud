@@ -16,9 +16,9 @@
     letter-spacing: $spacing;
 }
 
-@mixin text-bg(){
+@mixin text-bg($top){
     position: absolute;
-    top: 9vw;
+    top: $top;
     left: 3vw;
     right: 0;   
     font-size: 10vw;
@@ -45,7 +45,7 @@
     mask-size: 100% 100%;
 }
 
-@mixin description-liguagens (){
+@mixin description-liguagens(){
     position: absolute;
     left: 25%;
     width: 18vw;
@@ -62,4 +62,5 @@
     z-index: 1;
     opacity: 0;
     transition: variables.$Transition_ease;
+    pointer-events: none;
 }
