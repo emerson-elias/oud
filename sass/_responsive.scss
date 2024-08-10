@@ -1,6 +1,6 @@
 /* Responsivo para dispositivos large: */
 
-@mixin screen_large(){
+@mixin screen_large{
     @media screen and (max-width:1200px){
        @content;
     }
@@ -8,7 +8,7 @@
 
 /* Responsivo para dispositivos Laptops: */
 
-@mixin screen_laptop(){
+@mixin screen_laptop{
     @media screen and (max-width:992px){
        @content;
     }
@@ -16,22 +16,30 @@
 
 /* Responsivo para dispositivos Tablets: */
 
-@mixin screen_tablet(){
+@mixin screen_tablet{
     @media screen and (max-width:768px){
        @content;
     }
 }
 
+@mixin screen_tablet_rotate{
+    @media screen and (max-height:460px){
+        @content;
+    }  
+}
+
 /* Responsivo para dispositivos Móveis: */
 
-@mixin screen_small(){
+@mixin screen_small{
     @media screen and (max-width:600px){
        @content;
     }
 }
 
-@mixin screen_not_suport(){
-    @media screen and (max-width:300px), (max-height:250px){
+/* Telas muitos pequenas: */
+
+@mixin screen_not_suport{
+    @media screen and (max-width:300px), (max-height:300px){
         @content;
         &::before{
             content: 'screen não suportado... !';

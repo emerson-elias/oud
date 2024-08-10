@@ -10,22 +10,27 @@ window.onload = () => {
 
               /* SCRIPT PARA EXIBIR/OCUTAR A NAVBAR AO CLICAR */
 
-let li = [...document.querySelectorAll('li')]
+const elements = {
+    ancora: document.getElementById('ancora'),
+    b1: document.getElementById('b-one'),
+    b2: document.getElementById('b-dwo'),
+    b3: document.getElementById('b-there'),
+    burguer: document.getElementsByClassName('burguer')[0],
+    liItems: [...document.querySelectorAll('li')],
+}
 
-li.map((elementos) => {
-    const ancora = document.getElementById('ancora')
-    const b1 = document.getElementById('b-one')
-    const b2 = document.getElementById('b-dwo')
-    const b3 = document.getElementById('b-there')
-    const burguer = document.getElementsByClassName('burguer')[0]
+function toggleClasses() {
+    const { ancora, b1, b2, b3, burguer } = elements
 
-    elementos.addEventListener("click", () => {
-        ancora.classList.toggle('collapse-true') 
-        b1.classList.toggle('b-one')
-        b2.classList.toggle('b-dwo')
-        b3.classList.toggle('b-there')
-        burguer.classList.toggle('burguer-aux')
-    })
+    ancora.classList.toggle('collapse-true')
+    b1.classList.toggle('b-one')
+    b2.classList.toggle('b-dwo')
+    b3.classList.toggle('b-there')
+    burguer.classList.toggle('burguer-aux')
+}
+
+elements.liItems.forEach((item) => {
+    item.addEventListener("click", toggleClasses)
 })
 
 //====================================================================================//

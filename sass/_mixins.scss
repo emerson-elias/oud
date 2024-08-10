@@ -37,7 +37,6 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: $color-bg;
-    -webkit-mask-image: var(--svg);
     mask-image: var(--svg);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -55,7 +54,7 @@
     text-align: center;
     transform: translateY(10px);
     color: variables.$Color_White;
-    font-family: variables.$fonty_primary;
+    font-family: variables.$font_primary;
     font-size: 1vmax;
     font-weight: 900;
     letter-spacing: 2px;
