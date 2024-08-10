@@ -1,5 +1,3 @@
-console.log("======= HELLO CURIOUS DEVELOPER, WELCOME ;) =======")
-
 //==========  Quando a página for carregada, rola para o topo  =======================//
 
 window.onload = () => { 
@@ -15,17 +13,25 @@ const elements = {
     b1: document.getElementById('b-one'),
     b2: document.getElementById('b-dwo'),
     b3: document.getElementById('b-there'),
+    animate_one: document.getElementById('animate-one'),
+    animate_dwo: document.getElementById('animate-dwo'),
+    animate_there: document.getElementById('animate-there'),
+    animate_four: document.getElementById('animate-four'),
     burguer: document.getElementsByClassName('burguer')[0],
     liItems: [...document.querySelectorAll('li')],
 }
 
 function toggleClasses() {
-    const { ancora, b1, b2, b3, burguer } = elements
+    const { ancora, b1, b2, b3, animate_one, animate_dwo, animate_there, animate_four, burguer } = elements
 
     ancora.classList.toggle('collapse-true')
     b1.classList.toggle('b-one')
     b2.classList.toggle('b-dwo')
     b3.classList.toggle('b-there')
+    animate_one.classList.toggle('animate-link-bar')
+    animate_dwo.classList.toggle('animate-link-bar')
+    animate_there.classList.toggle('animate-link-bar')
+    animate_four.classList.toggle('animate-link-bar')
     burguer.classList.toggle('burguer-aux')
 }
 
@@ -158,7 +164,7 @@ const pauseElements = document.querySelectorAll('.ferraments-links')
         })
     })
 
-
+/*
 
 const tecnology_button = document.getElementById('tecnology-button')
 const roll = document.getElementById('roll')
@@ -166,9 +172,6 @@ const rocket = document.getElementsByClassName('streamline-emojis--rocket')[0]
 
 tecnology_button.addEventListener('click', () => {
   
-    roll.classList.toggle('roll-aux')
-
-    
-
-    
+    roll.classList.toggle('roll-aux')  
 })
+*/

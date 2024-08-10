@@ -39,7 +39,7 @@
 /* Telas muitos pequenas: */
 
 @mixin screen_not_suport{
-    @media screen and (max-width:300px), (max-height:300px){
+    @media screen and (max-width:300px), (max-height:220px){
         @content;
         &::before{
             content: 'screen não suportado... !';
