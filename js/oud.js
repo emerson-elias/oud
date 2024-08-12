@@ -152,7 +152,7 @@ const easter_eggs = document.getElementsByClassName('click')[0];
 
             /* PAUSE PARA ANIMAÇÃO */
 
-const pauseElements = document.querySelectorAll('.ferraments-links')
+const pauseElements = document.querySelectorAll('.tools-links')
 
     pauseElements.forEach(element => {
         element.addEventListener('mouseenter', () => {
@@ -164,14 +164,24 @@ const pauseElements = document.querySelectorAll('.ferraments-links')
         })
     })
 
-/*
+//====================================================================================//
 
-const tecnology_button = document.getElementById('tecnology-button')
-const roll = document.getElementById('roll')
-const rocket = document.getElementsByClassName('streamline-emojis--rocket')[0]
+            /* SCRIPT PARA EXIBIR O GIF */
 
-tecnology_button.addEventListener('click', () => {
-  
-    roll.classList.toggle('roll-aux')  
-})
-*/
+const tools = {
+    bodyAnimate: document.querySelector('.tecnology-animate'),   
+    tecnologyButton: document.getElementById('tecnology-button'),
+    roll: document.getElementById('roll'),
+    textTool: document.getElementById('tools-text'),
+    gif: document.getElementById('gif')
+}
+
+function Classes_ON() {
+    tools.roll.classList.toggle('roll-aux')
+    tools.tecnologyButton.classList.toggle('tecnology-button-aux')
+    tools.bodyAnimate.classList.toggle('tecnology-animate-aux')
+    tools.textTool.classList.toggle('tools-text-aux')
+    tools.gif.classList.toggle('gif-aux')
+}
+
+tools.tecnologyButton.addEventListener('click', Classes_ON)

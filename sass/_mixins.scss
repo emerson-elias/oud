@@ -24,10 +24,11 @@
     font-size: 10vw;
     font-family: 'grand slang italic';
     text-transform: uppercase;
-    font-style: italic;
-    word-break: break-all;
+    text-wrap: nowrap;
     font-weight: 500;
+    letter-spacing: 2px;
     color: variables.$Color_White_Smoker;
+    pointer-events: none;
 }
 
 @mixin formatting-icon($widht, $height, $color-bg){

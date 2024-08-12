@@ -79,7 +79,7 @@ html{
                     width: auto;
                     height: inherit;
                     margin: 0 0 0 12px;
-                    cursor: pointer;
+                    cursor: none;
                     z-index: 9999;
     
                     span {
@@ -165,7 +165,7 @@ html{
                         flex-wrap: wrap;  
                     }
                     @include responsive.screen_small{
-                        padding-top: 100px
+                        padding-top: 40px;
                     }
 
                     li{
@@ -1532,47 +1532,100 @@ html{
                 }
 
                 .tecnology-animate{
-                    @include mixins.align(relative, flex, center, center);
+                    @include mixins.align(relative, flex, space-around, center);
                     width: 100vw;
-                    height: 80vh;
-                    
+                    height: 15vh;
+                    margin: 15vh 0 0 0;
+                    transition: variables.$Transition_ease;
+                    overflow: hidden;
 
                     #tecnology-button{
-                        position: relative;
-                        width: 3vmax;
-                        height: 7vmax;
+                        position: absolute;
+                        top: 0;
+                        left: 50%;
+                        width: 2.5vmax;
+                        height: 6vmax;
                         border: 1px solid variables.$Color_White;
                         background-color: transparent;
-                        border-radius: 5vmax;
+                        border-radius: 2vmax;
+                        transition: variables.$Transition_ease;
+                        cursor: pointer;
 
-                        span{
+                        @include responsive.screen_tablet{
+                            width: 30px;
+                            height: 70px;
+                        }
+
+                        #roll{
                             position: absolute;
                             content: '';
                             top: 20%;
                             left: 50%;
-                            width: 2vmax;
-                            height: 2vmax;
+                            width: 1.5vmax;
+                            height: 1.5vmax;
                             border-radius: 50%;
                             background-color: variables.$Secundary_Color;
                             transform: translate(-50%, -50%);
                             transition: variables.$Transition_ease;
+                            z-index: 1;
+
+                            @include responsive.screen_tablet{
+                                width: 20px;
+                                height: 20px;
+                            }
                         }
                     }
-                    
+
+                    p{
+                        position: relative;
+                        top: 50vh;                    
+                        width: 40vw;
+                        height: auto;
+                        font-size: 2.3vmax;
+                        letter-spacing: 2px;
+                        transition: variables.$Transition_ease;
+                        color: variables.$Color_White_Smoker_dwo;
+                        font-family: 'grand slang', sans-serif;
+                        opacity: 0;
+
+                        @include responsive.screen_tablet{
+                            width: 80vw;
+                        }
+                    }
+
+                    img{
+                        position: relative;
+                        top: -50vh;
+                        width: 30vw;
+                        height: auto;
+                        border-radius: 2vmax;
+                        transition: variables.$Transition_ease;
+                        pointer-events: none;
+                        opacity: 0;
+
+                        @include responsive.screen_tablet{
+                            width: 50vw;
+                            margin: 20px;
+                        }
+                        @include responsive.screen_small{
+                            width: 60vw;
+                        }
+                    }
                 }
 
-                .ferraments{
+                .tools{
                     position: relative;
-                    margin: 130px 0 50px 0;
+                    margin: 100px 0 50px 0;
                     width: 100vw;
                     height: 20vh;
                     white-space: nowrap;
+                    overflow: hidden;
 
                     @include responsive.screen_small{
-                        margin: 20vh 0 5vh 0;
+                        margin: 15vh 0 5vh 0;
                     }
 
-                    .ferraments-links{
+                    .tools-links{
                         position: relative;
                         display: inline-block;
                         top: 10px;
@@ -2130,7 +2183,34 @@ html{
     transform: translateY(0) !important;
     transition: all 1s ease-out !important;
 }
+.tecnology-animate-aux{
+    justify-content: space-evenly !important;
+    padding: 0 5vmax 0 10vmax !important;
+    height: 70vh !important;
+
+    @include responsive.screen_tablet{
+        flex-direction: column;
+        padding: 0 !important;
+        height: 70vh !important;
+    }
+}
+.tecnology-button-aux{
+    transform: rotate(-90deg) !important;
+}
 .roll-aux{
-    top: 75% !important;
-    transition: variables.$Transition_ease;
+    top: 80% !important;
+}
+.tools-text-aux{
+    top: 0 !important;
+    opacity: 1 !important;
+
+    @include responsive.screen_tablet{
+        margin-top: 10vh;
+    }
+}
+.gif-aux{
+    top: 0 !important;
+    -webkit-animation: bounce-in-top 1.1s both !important;
+    animation: bounce-in-top 1.1s both !important;
+    opacity: 1 !important;
 }
