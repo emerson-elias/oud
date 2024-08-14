@@ -143,8 +143,8 @@ const easter_eggs = document.getElementsByClassName('click')[0];
     easter_eggs.addEventListener('click', () => {
         Swal.fire({
             imageUrl: 'img/cookie.jpg',
-            imageWidth: 500,
-            imageHeight: 500, 
+            imageWidth: 400,
+            imageHeight: 400, 
         })
     })
 
@@ -173,7 +173,8 @@ const tools = {
     tecnologyButton: document.getElementById('tecnology-button'),
     roll: document.getElementById('roll'),
     textTool: document.getElementById('tools-text'),
-    gif: document.getElementById('gif')
+    gif: document.getElementById('gif'),
+    svg: document.getElementsByClassName('animate-svg')[0]
 }
 
 function Classes_ON() {
@@ -182,6 +183,7 @@ function Classes_ON() {
     tools.bodyAnimate.classList.toggle('tecnology-animate-aux')
     tools.textTool.classList.toggle('tools-text-aux')
     tools.gif.classList.toggle('gif-aux')
+    tools.svg.classList.toggle('animate-svg-aux')
 }
 
 tools.tecnologyButton.addEventListener('click', Classes_ON)
