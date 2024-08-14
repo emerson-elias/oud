@@ -48,6 +48,9 @@ html{
             @include responsive.screen_tablet{
                 opacity: 0;
             }
+            @include responsive.screen_tablet_rotate{
+                opacity: 0;
+            }
         }
         
         header {
@@ -1191,7 +1194,7 @@ html{
                                 font-size: 1vmax;
                                 padding: 0 1vw 0 1vw;
                                 font-weight: 600;
-                                transform: translateY(30vw);               
+                                transform: translateY(40vw);               
                                 transition: variables.$Transition_ease; 
                                 font-family: variables.$font_primary;
                                 pointer-events: none;
@@ -2142,7 +2145,7 @@ html{
 
                 .click{
                     position: absolute;
-                    font-size: 3vh;
+                    font-size: 2.5vh;
                     text-transform: uppercase;
                     color: variables.$Color_White_Smoker_dwo;
                     font-family: variables.$font_primary;

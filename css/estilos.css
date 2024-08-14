@@ -324,6 +324,11 @@ html body #cursor {
     opacity: 0;
   }
 }
+@media screen and (max-height: 460px) {
+  html body #cursor {
+    opacity: 0;
+  }
+}
 html body header {
   position: fixed;
   display: flex;
@@ -1752,7 +1757,7 @@ html body main .cards-container .cards-omega .card-bg .card-description p {
   font-size: 1vmax;
   padding: 0 1vw 0 1vw;
   font-weight: 600;
-  transform: translateY(30vw);
+  transform: translateY(40vw);
   transition: 0.5s all ease;
   font-family: "grand slang", sans-serif;
   pointer-events: none;
@@ -2887,7 +2892,7 @@ html body .footer-container .credits {
 }
 html body .footer-container .credits .click {
   position: absolute;
-  font-size: 3vh;
+  font-size: 2.5vh;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.4274509804);
   font-family: "grand slang", sans-serif;
