@@ -17,6 +17,7 @@
     -ms-overflow-style: none;  
     scrollbar-width: none;  
 } 
+
 html{
     
     @include responsive.screen_not_suport{
@@ -27,7 +28,6 @@ html{
         background-color: variables.$gray_primary;
         -webkit-font-smoothing: antialiased;
         vertical-align: baseline;
-        cursor: none;
 
         @include responsive.screen_not_suport{
             display: none;
@@ -35,45 +35,45 @@ html{
 
         #cursor {
             position: fixed;
-            width: 1.5vw;
-            height: 1.5vw;
+            width: 4vw;
+            height: 4vw;
             border-radius: 50%;
-            background-color: transparent;
-            backdrop-filter: blur(2px);
-            border: 2px solid variables.$Color_White;
+            background-color: variables.$Secundary_Color;
             pointer-events: none; 
-            transform: translate(-2em);
+            transform: translate(-5em);
             z-index: 9999;
+            mix-blend-mode: difference;
 
             @include responsive.screen_tablet{
-                opacity: 0;
+                display: none;
             }
             @include responsive.screen_tablet_rotate{
-                opacity: 0;
+                display: none;
             }
         }
         
         header {
             @include mixins.align(fixed, flex, center, center);
             position: fixed;
-            width: 100%;
+            width: 100vw;
             height: auto;
             box-sizing: border-box;
             z-index: 99;
 
+            @include responsive.screen_tablet_rotate{
+                height: 20vh !important;
+            }
+
             .navbar {
                 @include mixins.align(relative, flex, space-between, center);
-                width: 97%;
-                height: 13dvh;
-                padding-top: 3vmax;
-                margin: 0;
-                text-transform: uppercase;
-                border-bottom: 1px solid variables.$Smoker_there_0;
-                transition: variables.$Transition_ease;             
+                width: inherit;
+                height: 13vh;
+                padding: 1.3vmax 1.1vmax 1.3vmax 1.1vmax;
+                text-transform: uppercase;            
 
                 @include responsive.screen_small{
-                    height: 10vh;
-                    padding: 45px 10px 0 10px;
+                    height: auto;
+                    padding: 15px 5px 15px 5px;
                 }
     
                 .active-bar {
@@ -82,16 +82,15 @@ html{
                     width: auto;
                     height: inherit;
                     margin: 0 0 0 12px;
-                    cursor: none;
                     z-index: 9999;
     
                     span {
                         position: relative;
                         display: block;
-                        font-size: 1.6vmax;
+                        font-size: 1.4vmax;
                         letter-spacing: 1px;
                         color: variables.$Color_White;
-                        font-family: variables.$font_primary;
+                        font-family: variables.$font_Primary;
 
                         @include responsive.screen_large{
                             font-size: 1.7vw;
@@ -101,14 +100,14 @@ html{
                         }
                         @include responsive.screen_small{
                             font-size: 20px;
-                            margin: 0 0 0 5px;
                         }
 
                         .game-icons--polar-star {
                             @include mixins.formatting-icon(1.5vw, 1.5vw, variables.$Color_White);
-                            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M255.9 19.77C241.5 109.6 229.4 163 196.2 196.2s-86.6 45.3-176.43 59.7C109.6 270.3 163 282.4 196.2 315.7c33.2 33.2 45.3 86.6 59.7 176.5c14.4-89.9 26.5-143.3 59.7-176.6c33.3-33.2 86.7-45.3 176.6-59.7c-89.9-14.4-143.3-26.5-176.5-59.7c-33.3-33.2-45.4-86.6-59.8-176.43M423 89c-45.8 33.1-81 56.9-112.4 70.2c5.1 9.4 11 17.4 17.8 24.2s14.8 12.7 24.3 17.9c13.4-31.4 37.2-66.6 70.3-112.3m-333.94.06C122.2 134.8 145.9 169.9 159.2 201.2c9.4-5.1 17.4-11 24.2-17.8s12.7-14.8 17.8-24.2c-31.3-13.3-66.4-37-112.14-70.14M352.7 310.5c-9.5 5.2-17.5 11.1-24.3 17.9s-12.7 14.8-17.9 24.3C342 366 377.2 389.8 423 423c-33.2-45.8-57-81-70.3-112.5m-193.5.1C145.9 342 122.1 377.2 89 423c45.7-33.1 80.9-56.9 112.3-70.3c-5.2-9.5-11.1-17.5-17.9-24.3s-14.8-12.7-24.2-17.8'/%3E%3C/svg%3E");
-                        
+                            animation: girar_left 12s linear infinite;
 
+                            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23000' d='M255.9 19.77C241.5 109.6 229.4 163 196.2 196.2s-86.6 45.3-176.43 59.7C109.6 270.3 163 282.4 196.2 315.7c33.2 33.2 45.3 86.6 59.7 176.5c14.4-89.9 26.5-143.3 59.7-176.6c33.3-33.2 86.7-45.3 176.6-59.7c-89.9-14.4-143.3-26.5-176.5-59.7c-33.3-33.2-45.4-86.6-59.8-176.43M423 89c-45.8 33.1-81 56.9-112.4 70.2c5.1 9.4 11 17.4 17.8 24.2s14.8 12.7 24.3 17.9c13.4-31.4 37.2-66.6 70.3-112.3m-333.94.06C122.2 134.8 145.9 169.9 159.2 201.2c9.4-5.1 17.4-11 24.2-17.8s12.7-14.8 17.8-24.2c-31.3-13.3-66.4-37-112.14-70.14M352.7 310.5c-9.5 5.2-17.5 11.1-24.3 17.9s-12.7 14.8-17.9 24.3C342 366 377.2 389.8 423 423c-33.2-45.8-57-81-70.3-112.5m-193.5.1C145.9 342 122.1 377.2 89 423c45.7-33.1 80.9-56.9 112.3-70.3c-5.2-9.5-11.1-17.5-17.9-24.3s-14.8-12.7-24.2-17.8'/%3E%3C/svg%3E");
+                            
                             @include responsive.screen_small{
                                 width: 20px;
                                 height: 20px;
@@ -122,14 +121,11 @@ html{
                     flex-direction: column;
                     width: auto;
                     height: auto;
+                    padding: 1.5vmax;
                     list-style: none;
                     margin: 0 1.8vmax 0 0;
                     transition: variables.$Transition_ease;
                     z-index: 9999;
-                    
-                    @include responsive.screen_laptop{
-                        margin: 0 20px 0 0;
-                    }
 
                     span{
                         position: relative;
@@ -142,8 +138,12 @@ html{
                         transition: variables.$Transition_ease;
 
                         @include responsive.screen_small{
-                            width: 32px;
-                            height: 3.5px;
+                            width: 40px;
+                            height: 3px;
+                        }
+                        
+                        &:nth-child(2){
+                            width: 2vmax;
                         }
                     }
                 }
@@ -174,12 +174,11 @@ html{
                     li{
                         @include mixins.align(relative, flex, center, center);
                         width: auto;
-                        margin-top: 150px;
+                        margin-top: 120px;
                         margin: 20px;
-                        padding: 2px;
-                        font-family: 'grand slang italic', sans-serif;
+                        padding: 1vmax;
+                        font-family: variables.$font_Primary;
                         z-index: 1;
-                        overflow: hidden;
 
                         @include responsive.screen_tablet_rotate{
                             margin: 0;
@@ -196,32 +195,29 @@ html{
                             content: '';
                             top: 50%;
                             left: 50%;   
-                            right: 0;
-                            bottom: 0;
-                            width: 0%;
-                            height: 3px;
+                            width: 100vw;
+                            height: 0%;
                             transform: translate(-50%, -50%);
                             background-color: variables.$Secundary_Color;
                             border-radius: 5px;
                             transition: 0.3s all;
-                            pointer-events: none;
-                        }
+                            pointer-events: none; 
+                            z-index: -1;                         
+                        }                       
                         &:hover::after{
-                            width: 100%;
+                            height: 100%;
                             transition: 0.3s all;
                             pointer-events: none;
                         }
                         
                         a{
-                            font-size: 10vh;
-                            font-style: italic;
-                            font-weight: 500;
+                            font-size: 15vh;
                             letter-spacing: 2px;           
                             text-decoration: none;
                             text-wrap: nowrap;
-                            transform: translateY(20vh);
+                            transform: translateY(-50vh);
                             color: variables.$Color_White_B9;
-                            transition: variables.$Transition_ease;
+                            transition: 1s ease-in;
 
                             @include responsive.screen_laptop{
                                 font-size: 50px;
@@ -234,19 +230,22 @@ html{
                                 font-size: 40px;
                             }
                         }
-                        &:hover {                                                   
-                            -webkit-animation: jello-horizontal 0.9s both;
-                            animation: jello-horizontal 0.9s both;                               
-                        } 
+                        &:hover a{
+                            color: variables.$gray_primary;
+                            transition: 0.5s ease !important;
+                        }
                     }
                     
                     .midia{
                         position: absolute;
                         top: 50%;
+                        padding-left: 0.5vmax;
                         left: 0;
                         right: 0;
                         width: 100vw;
                         height: auto;
+                        z-index: 1;
+                        pointer-events: none;
 
                         @include responsive.screen_tablet_rotate{
                             top: 40%;
@@ -264,39 +263,29 @@ html{
                             height: 8vh;
                             margin: 20px;
                             border-radius: 100%;
-                            border: 1px solid variables.$Color_White;                           
+                            text-decoration: none;
                             transition: variables.$Transition_ease;
-                            cursor: pointer;
+                            pointer-events: all;
 
                             @include responsive.screen_small{
                                 margin: 10px;
                                 width: 50px;
                                 height: 50px;
                                 padding: 10px;
-                            }
-    
+                            } 
+                            
                             &:hover{
-                                -webkit-animation: jello-horizontal 0.9s both;
-                                animation: jello-horizontal 0.9s both;  
-                                background-color: variables.$Secundary_Color; 
-                            }                     
-                        }
-    
-                        .uit--facebook-f {
-                            @include mixins.formatting-icon(5vh, 5vh, transparent);
-                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M17.99 1.596a27.982 27.982 0 0 0-3.037-.156C11.59 1.44 9.5 3.582 9.5 7.03v2.341H6.675a.5.5 0 0 0-.5.5v3.85a.5.5 0 0 0 .5.5H9.5v7.72a.5.5 0 0 0 .5.5h3.978a.5.5 0 0 0 .5-.5v-7.72h2.816a.5.5 0 0 0 .496-.435l.497-3.85a.5.5 0 0 0-.496-.565h-3.313V7.412c0-.97.195-1.375 1.408-1.375h2.039a.5.5 0 0 0 .5-.5V2.092a.5.5 0 0 0-.435-.496m-.565 3.44l-1.54.001c-2.157 0-2.407 1.356-2.407 2.375v2.46a.5.5 0 0 0 .499.5h3.246l-.369 2.85h-2.876a.5.5 0 0 0-.5.5v7.718H10.5v-7.718a.5.5 0 0 0-.5-.5H7.176v-2.85H10a.5.5 0 0 0 .5-.5V7.03c0-2.874 1.665-4.59 4.453-4.59c1.009 0 1.92.055 2.472.103z'/%3E%3C/svg%3E");
-                        }                  
-                        .ph--instagram-logo-light {
-                            @include mixins.formatting-icon(5vh, 5vh, transparent);
-                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46m0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34m48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54m42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10'/%3E%3C/svg%3E");
-                        }                  
-                        .uit--linkedin-alt {
-                            @include mixins.formatting-icon(5vh, 5vh, transparent);
-                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M7.5 9h-4a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5M7 21H4V10h3zM18 9c-1.085 0-2.14.358-3 1.019V9.5a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V16a1.5 1.5 0 1 1 3 0v5.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V14a5.006 5.006 0 0 0-5-5m4 12h-3v-5a2.5 2.5 0 1 0-5 0v5h-3V10h3v1.203a.5.5 0 0 0 .89.313A3.983 3.983 0 0 1 22 14zM5.868 2.002A2.73 2.73 0 0 0 5.515 2a2.74 2.74 0 0 0-2.926 2.729a2.71 2.71 0 0 0 2.869 2.728h.028a2.734 2.734 0 1 0 .382-5.455M5.833 6.46a1.75 1.75 0 0 1-.347-.003h-.028A1.736 1.736 0 1 1 5.515 3a1.737 1.737 0 0 1 .318 3.46'/%3E%3C/svg%3E");
-                        }
-                        .teenyicons--git-outline {
-                            @include mixins.formatting-icon(5vh, 5vh, transparent);
-                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='white' d='m6.793 1.207l.353.354zM1.207 6.793l-.353-.354zm0 1.414l.354-.353zm5.586 5.586l-.354.353zm1.414 0l-.353-.354zm5.586-5.586l.353.354zm0-1.414l-.354.353zM8.207 1.207l.354-.353zM6.44.854L.854 6.439l.707.707l5.585-5.585zM.854 8.56l5.585 5.585l.707-.707l-5.585-5.585zm7.707 5.585l5.585-5.585l-.707-.707l-5.585 5.585zm5.585-7.707L8.561.854l-.707.707l5.585 5.585zm0 2.122a1.5 1.5 0 0 0 0-2.122l-.707.707a.5.5 0 0 1 0 .708zM6.44 14.146a1.5 1.5 0 0 0 2.122 0l-.707-.707a.5.5 0 0 1-.708 0zM.854 6.44a1.5 1.5 0 0 0 0 2.122l.707-.707a.5.5 0 0 1 0-.708zm6.292-4.878a.5.5 0 0 1 .708 0L8.56.854a1.5 1.5 0 0 0-2.122 0zm-2 1.293l1 1l.708-.708l-1-1zM7.5 5a.5.5 0 0 1-.5-.5H6A1.5 1.5 0 0 0 7.5 6zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 9 4.5zM7.5 4a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 7.5 3zm0-1A1.5 1.5 0 0 0 6 4.5h1a.5.5 0 0 1 .5-.5zm.646 2.854l1.5 1.5l.707-.708l-1.5-1.5zM10.5 8a.5.5 0 0 1-.5-.5H9A1.5 1.5 0 0 0 10.5 9zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 12 7.5zm-.5-.5a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 10.5 6zm0-1A1.5 1.5 0 0 0 9 7.5h1a.5.5 0 0 1 .5-.5zM7 5.5v4h1v-4zm.5 5.5a.5.5 0 0 1-.5-.5H6A1.5 1.5 0 0 0 7.5 12zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 9 10.5zm-.5-.5a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 7.5 9zm0-1A1.5 1.5 0 0 0 6 10.5h1a.5.5 0 0 1 .5-.5z'/%3E%3C/svg%3E");
+                                transform: scale(1.7);
+                            }
+                            
+                            i{
+                                font-size: 5vh;
+                                color: variables.$Color_White_B9;
+                            }
+
+                            &:hover i{
+                                color: variables.$Secundary_Color;
+                            }
                         }                   
                     }
                 }
@@ -308,274 +297,213 @@ html{
 
             .banner {
                 @include mixins.align(relative, flex, center, center);
-                background-image: linear-gradient(to bottom, variables.$Smoker_one, variables.$gray_primary), url(../img/herobg-hd.jpg);
-                background-position: top center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                width: 100%;
+                width: 100vw;
                 height: 100vh;
-                overflow: hidden;
+                z-index: 1;
 
                 @include responsive.screen_small{
                     height: 110vh;
                 }
-                &::after{
-                    position: absolute;
-                    content: '';
-                    top: 50%;
-                    left: 50%;
-                    width: 97%;
-                    height: 92%;
-                    transform: translate(-50%, -50%);
-                    background-color: transparent;
-                    border: 1px solid variables.$Color_White;
-                    pointer-events: none;
 
-                    @include responsive.screen_small{
-                        top: 45%;
-                        width: 90%;
-                        height: 86%;
-                    }
+                .banner-text-linear{
+                    position: absolute;
+                    width: inherit;
+                    height: inherit;                 
+                    white-space: nowrap;
+                    box-sizing: border-box;
+                    overflow: hidden;
+
+                    h1{
+                        position: relative;
+                        top: 42vh;
+                        display: inline-block;
+                        font-size: 60vh;
+                        color: transparent;
+                        font-family: 'aquire bold', sans-serif;
+                        text-transform: uppercase;
+                        -webkit-text-stroke: 1px variables.$Secundary_Color;
+                        animation: text-linear-banner 60s linear infinite;
+
+                        @include responsive.screen_small{
+                            -webkit-text-stroke: 1px variables.$Secundary_Color;
+                        }
+                    }   
                 }
 
                 .row{
-                    @include mixins.align(relative, flex, end, normal);
-                    flex-direction: column;
-                    padding: 0 0 3vmax 0;
-                    width: 95%;
-                    height: 100%;             
-                    color: variables.$Color_White;
-                    transition: variables.$Transition_ease;
-
-                    @include responsive.screen_small{
-                        top: 60px; 
-                        width: 90%;
-                        padding: 15px;
-                        justify-content: center;
+                    @include mixins.align(relative, flex, space-between, center);
+                    width: 90vw;
+                    height: auto;
+                    
+                    @include responsive.screen_laptop{
+                        flex-direction: column;
+                        padding: 100px 0 0 0;
+                        
                     }
-                   
-                   .inspiration{
-                        @include mixins.align(relative, flex, end, center);
-                        width: initial;
-                        height: auto;
-                        padding: 0 5vw 0 0;
-                  
-                        @include responsive.screen_tablet_rotate{
-                            top: -3vh;
+
+                    .layer-1{
+                        position: relative;
+                        width: auto;
+                        height: 50vh;
+
+                        @include responsive.screen_laptop{
+                            width: inherit;
+                            height: 10vh;
                         }
-                        .arcticons--dailyart {
-                            @include mixins.formatting-icon(2.5vw, 2.5vw, variables.$Color_White);
-                            --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='13.557' height='19.545' x='14.99' y='9.468' fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' rx='6.779'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M28.547 22.235v20.336M21.09 29.013v3.728c-4.8 0-12.088 6.27-12.088 9.83'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M42.5 42.57s-2.937-8.981-7.642-8.981V16.21A10.78 10.78 0 0 0 24.077 5.43h0a10.78 10.78 0 0 0-10.782 10.781v17.378C9.737 34.888 6.008 39.972 5.5 42.57'/%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' d='M19.029 22.178c.263.874 2.523.933 2.895 0m-2.895-4.848c-.283-.874-2.712-.933-3.112 0m9.263 0c-.283-.874-2.712-.933-3.112 0m-3.915 7.136a3.16 3.16 0 0 0 2.324.763a3.18 3.18 0 0 0 2.407-.89'/%3E%3Ccircle cx='18.075' cy='17.68' r='.75' fill='%23000'/%3E%3Ccircle cx='24.43' cy='17.68' r='.75' fill='%23000'/%3E%3C/svg%3E");
+
+                        h1{
+                            font-size: 2vmax;
+                            color: variables.$Color_White;
+                            text-wrap: nowrap;
+                            font-weight: 600;
+                            font-family: variables.$font_Primary; 
                             
+                            @include responsive.screen_tablet{
+                                font-size: 20px;
+                            }
+                        }                                           
+                    }
+
+                    .layer-2{
+                        position: relative;
+                        width: 62%;
+                        height: auto;
+                        -webkit-font-smoothing: antialiased;
+
+                        @include responsive.screen_laptop{
+                            width: 70%;               
+                        }
+                        @include responsive.screen_tablet{
+                            top: -30px;
+                            width: 95%;
+                        }
+
+                        h1{
+                            font-size: 10vmax;
+                            color: #ffffffe3;
+                            text-wrap: nowrap;
+                            font-weight: 500;
+                            font-family: variables.$font_Primary; 
+                            
+                            @include responsive.screen_laptop{
+                                font-size: 100px;
+                            }
+                            @include responsive.screen_tablet_rotate{
+                                text-align: center;
+                                font-size: 50px;
+                            }
                             @include responsive.screen_small{
-                                width: 35px;
-                                height: 35px;
+                                font-size: 60px;             
+                            }
+
+                            &:nth-child(2){              
+                                margin-left: 5vmax;
+
+                                @include responsive.screen_small{
+                                    margin: 0;
+                                }
+
+                                span{
+                                    color: variables.$Secundary_Color;
+                                }
                             }
                         }
 
                         p{
-                            @include mixins.align(relative, flex, center, center);
-                            @include mixins.text_formatting(center, italic, 300, 1px);
-                            width: 15vw;
-                            height: inherit;
+                            margin-top: 1vmax;
+                            width: 70%;
+                            margin-left: 20%;
+                            font-size: 1.3vmax;
                             color: variables.$Color_White;
-                            font-size: 0.7vw;
-                            
+                            word-spacing: 0.01vmax;
+                            letter-spacing: 0.1vmax;
+                            line-height: 1.5vmax;
+                            font-family: variables.$font_Primary;
+
                             @include responsive.screen_laptop{
-                                width: 150px;
-                                font-size: 10px;
+                                margin-left: 0;
+                                width: 100%;
+                                font-size: 25px;
+                                word-spacing: 8px;
+                                letter-spacing: 1px;
+                                line-height: 25px;
+                            }
+                            @include responsive.screen_tablet_rotate{
+                                font-size: 15px;
                             }
                             @include responsive.screen_small{
-                                font-size: 9px;
-                                margin: 0 0 20px 0;
+                                font-size: 13px;
                             }
-                        }                  
+                        }
                     }
                     
-                    .row-itens{
-                        @include mixins.align(relative, flex, space-between, end);
-                        width: initial;
-                        height: auto;  
-                        font-family: variables.$font_primary;
-                        font-weight: 500;
+                    .layer-3{
+                        position: relative;
+                        top: 15vh;
+                        left: 4%;
+                        width: 20%;
+                        height: 50vh;
+                        transition: 0.1s all ease;                      
 
-                        @include responsive.screen_large{ 
-                            flex-direction: column;                        
+                        @include responsive.screen_laptop{
+                            top: 0;
+                            left: 50%;
+                            width: 50%;
+                            height: 25vh;
                         }
-                        @include responsive.screen_tablet_rotate{
-                            height: 60vh;      
-                            flex-direction: row;                     
+                        @include responsive.screen_small{
+                            width: 100%;
+                            top: 20px;
+                            left: 40%;
                         }
 
-                        .layers{
-                            flex-direction: column;
-                            width: 50vw;
-                            text-transform: uppercase;
+                        #magnect-1, #magnect-2 {
+                            @include mixins.align(absolute, flex, center, center);
+                            top: 0;
+                            left: 0;     
+                            width: 10vmax;
+                            height: 10vmax;
+                            border-radius: 100%;
+                            background-color: transparent;
+                            border: 2px solid variables.$Color_White;
+                            cursor: pointer;
                             
-                            @include responsive.screen_large{ 
-                                width: 100%;                       
-                            }
-                            @include responsive.screen_tablet_rotate{
-                                width: initial;
-                            }
-
-                            .item-creat{
+                            svg{
                                 position: relative;
-                                flex-direction: column;
-                                width: 10.5vw;    
-                                font-size: 2vw;
-                                font-weight: 600;
-                                border-bottom: 1px solid variables.$Color_White;
-        
-                                @include responsive.screen_laptop{ 
-                                    width: 130px;
-                                    font-size: 25px;
-                                }       
-                                @include responsive.screen_small{ 
-                                    width: 90px;     
-                                    font-size: 18px;
-                                    margin: 0 0 25px 0;
-                                }
-                            }
-
-                            .item-profession{
-                                position: relative;
-                                width: initial;
-                                height: auto;
-                                top: 2.5dvw;
-    
-                                span{
-                                    display: block;
-                                    height: auto;
-                                    margin: 1vw 0 4vw 0;
-                                    font-size: 5vw;                                
-                                    transform: scaleY(2.5);
-                                    letter-spacing: 3px;
-                                    word-spacing: 5px;
-                                  
-                                    @include responsive.screen_laptop{ 
-                                        font-size: 3em;
-                                    }       
-                                    @include responsive.screen_small{ 
-                                        transform: scaleY(4);
-                                        letter-spacing: 5px;
-                                        font-size: 1.7em;
-                                        margin: 0 0 60px 0;
-                                        font-weight: 600;
-                                    }                               
-                                }                               
+                                width: 5vmax;
+                                transform: rotate(180deg);
                             }
                         }
-
-                        .banner-descripiton{
-                            @include mixins.align(relative, flex, normal, end);
-                            flex-direction: column;            
-                            width: 50vw;
-                            height: auto;
-                            padding: 20px 0 0 0;
-        
-                            @include responsive.screen_laptop{ 
-                                width: initial;
-                                margin: 4vw 0 2vw 0;
-                            }
-                            @include responsive.screen_tablet_rotate{
-                                margin: 0;
-                            }
-                            @include responsive.screen_small{
-                                margin: 2vw 0 15vw 0;
-                                padding: 0;
-                            }
-
-                            p{
-                                text-align: end;
-                                font-size: 1.8vw;
-                                letter-spacing: 2px;
-                                font-family: variables.$font_primary;             
-                                text-transform: uppercase;
-                                font-weight: 600;
-                                color: variables.$Color_White;
-        
-                                @include responsive.screen_laptop{ 
-                                    width: 75%;
-                                    font-size: 20px
-                                }  
-                                @include responsive.screen_tablet{
-                                    width: 100%;
-                                    font-size: 3vh;
-                                }
-                                @include responsive.screen_tablet_rotate{
-                                    width: 95%;
-                                    font-size: 1.8vmax;
-                                }    
-                                @include responsive.screen_small{ 
-                                    width: 100%;
-                                    font-size: 12px;
-                                }
-                            }
-        
-                            .know{
-                                @include mixins.align(relative, flex, center, center);
-                                margin: 10px;
-                                width: auto;
-                                height: auto;
-                                padding: 10px 15px 10px 15px;
-                                border: 1px solid variables.$Color_White;
-                                transition: variables.$Transition_ease;
-                                border-radius: 2vw;
-      
-                                @include responsive.screen_small{ 
-                                    border-radius: 30px;
-                                }
-
-                                &:hover{
-                                    backdrop-filter: blur(5px);
-                                    transition: variables.$Transition_ease;
-                                }
-        
-                                a{
-                                    font-family: 'cosi azure' , sans-serif;
-                                    font-size: 1.5vmax;
-                                    color: variables.$Color_White;
-                                    text-decoration: none;
-                                    cursor: pointer;
-
-                                    @include responsive.screen_small{
-                                        font-size: 15px;
-                                    }
-                                }
-                            }
-                        }                   
-                    }                 
-                } 
+                    }                    
+                }
             }
     
             .hero-me{
                 @include mixins.align(relative, flex, center, center);
                 @include mixins.text_formatting(normal, normal, 300, 1px);
                 flex-direction: column;
-                margin-top: -1px;
                 width: 100vw;
                 height: auto;
                 color: variables.$Color_White;
-                padding: 20vw 0 5vw 0;
+                padding: 25vw 0 5vw 0;
                 background-color: variables.$gray_primary;
 
                 @include responsive.screen_laptop{
-                    padding: 110px 0 0 0;
+                    padding: 250px 0 0 0;
                 }
                 @include responsive.screen_small{
                     padding-top: 80px;
                 }
 
                 .hero-text-bg{
-                    @include mixins.text-bg(35vh);
+                    @include mixins.text-bg(50vh);
 
                     @include responsive.screen_laptop{
-                        top: 7%;
+                        top: 13%;
                         font-size: 110px;
                     }
                     @include responsive.screen_small{
-                        top: 5%;
+                        top: 6%;
                         left: 5px;
                         font-size: 70px;
                     }
@@ -587,14 +515,15 @@ html{
                     height: 6vw;
                     margin: 2vw;
 
-                    @include responsive.screen_small(){
-                        margin: 60px 0 30px 0;
+                    @include responsive.screen_small{
+                        margin: 100px 0 0 0;
                     }
 
                     h1{
-                        @include mixins.text_formatting(center, normal, 500, 10px);
+                        @include mixins.text_formatting(center, normal, 600, 10px);
                         font-size: 2.5vw;
                         text-transform: uppercase;
+                        font-family: variables.$font_Tertiary;
 
                         @include responsive.screen_small{
                             font-size: 25px;
@@ -641,13 +570,9 @@ html{
                             width: 20vw;
                             height: auto;
                             border-radius: 50px;
-                            filter: grayscale(0%);
                             transition: variables.$Transition_ease;
                             z-index: 2; 
 
-                            @include responsive.screen_large{
-                                width: 300px;
-                            }
                             @include responsive.screen_laptop{
                                 width: 280px;
                             }
@@ -657,12 +582,7 @@ html{
                             @include responsive.screen_small{
                                 width: 250px;
                                 height: auto;
-                            }
-
-                            &:hover{
-                                filter: grayscale(100%);
-                                transition: variables.$Transition_ease;
-                            }                             
+                            }                            
                         }
 
                         &::after{
@@ -672,10 +592,12 @@ html{
                             height: inherit;                        
                             transform: translate(-10%,-10%);
                             border: 0.8vw solid variables.$Secundary_Color;
-                            border-radius: 50px; 
+                            transition: variables.$Transition_ease;
+                            border-radius: 50px;
+                            pointer-events: none;
                             z-index: 1;
 
-                            @include responsive.screen_large{
+                            @include responsive.screen_laptop{
                                 width: 280px;
                                 height: 400px;
                                 transform: translate(-10%,-10%);
@@ -690,6 +612,10 @@ html{
                                 transform: translate(-8%,-12%);
                             }
                         }
+                        &:hover::after{
+                            transform: translate(0%, 0%);
+                            transition: variables.$Transition_ease;
+                        }
                     }
 
                     .sobre-diferenciais{
@@ -698,9 +624,6 @@ html{
                         width: 25vw;
                         height: inherit;
                         
-                        @include responsive.screen_large{
-                            width: 30vw;
-                        }
                         @include responsive.screen_laptop{
                             width: 50%;
                             height: 410px; 
@@ -721,7 +644,7 @@ html{
                             text-transform: uppercase;
                             font-size: 1.7vw;
                             letter-spacing: 3px;
-                            font-family: variables.$font_primary;
+                            font-family: variables.$font_Primary;
 
                             @include responsive.screen_laptop{
                                 font-size: 25px;
@@ -736,9 +659,9 @@ html{
                             position: relative;
                             width: 100%;
                             height: auto;
-                            font-size: 1.1vmax;
-                            padding: 0.7vw 0 0.5vw 0;
-                            font-family: variables.$font_primary;
+                            font-size: 1.15vmax;
+                            padding: 0.9vw 0 0.5vw 0;
+                            font-family: variables.$font_Primary;
 
                             @include responsive.screen_large{
                                 font-size: 18px;
@@ -797,7 +720,7 @@ html{
                             text-transform: uppercase;
                             font-size: 1.7vw;
                             letter-spacing: 3px;
-                            font-family: variables.$font_primary;
+                            font-family: variables.$font_Primary;
 
                             @include responsive.screen_laptop{
                                 position: relative;
@@ -810,9 +733,9 @@ html{
                                               
                         p{
                             @include mixins.text_formatting(normal, normal, 500, 1px);
-                            font-size: 1.19vmax;
+                            font-size: 1.18vmax;
                             line-height: 1.8;
-                            font-family: variables.$font_primary;
+                            font-family: variables.$font_Primary;
                             text-overflow: ellipsis;
                             overflow: hidden;
 
@@ -842,81 +765,57 @@ html{
                 }
 
                 .hero-cv{
-                    @include mixins.align(relative, flex, center, center);
-                    width: inherit;
+                    @include mixins.align(relative, flex, end, center);
+                    width: 80vw;
                     height: auto;
-                    margin: 3% 0 0 0;
-                    cursor: none;
+                    margin: 2vh 0 0 0;
                    
                     @include responsive.screen_laptop{
-                        margin: 70px 0 50px 0;
+                        justify-content: center;
+                        margin: 10vh 0 0 0;
                     }
                     @include responsive.screen_small{
-                        margin: 100px 0 0 0;
-                    }
-
-                    div{
-                        position: relative;
-                        width: 10vw;
-                        height: 1px;
-                        left: 25%;
-                        background-color: variables.$Color_White;
-
-                        @include responsive.screen_laptop{
-                            left: 0; 
-                            width: 15vw;                                        
-                        }
-                        @include responsive.screen_small{
-                            width: 20vw;
-                        }
+                        margin: 20vh 0 0 0;
                     }
 
                     .my-cv {
-                        @include mixins.align(relative, flex, center, center); 
-                        left: 25%;
-                        margin: 0 15px 0 15px;                                               
-                        width: auto;
+                        @include mixins.align(relative, flex, center, center);                                              
+                        max-width: 11vw;
                         height: auto;
                         padding: 0.9vmax 2vmax;                                             
-                        border-radius: 5vmax;
-                        text-decoration: none;
                         background-color: transparent;
-                        border: 1px solid variables.$Color_White;
                         transition: variables.$Transition_ease;
                         opacity: 1;
                         outline: none;
-                        cursor: pointer;
 
                         @include responsive.screen_laptop{
-                            left: 0;
-                            width: 150px;
-                            height: 50px;
+                            max-width: 150px;
                         }
 
-                        .btn-cv {
-                            font-family: variables.$font_primary;
-                            color: variables.$Color_White;
-                            font-size: 1.2vmax;
-                            letter-spacing: 2px;
+                        svg {
+                            width: 100%;
+                            height: 100%;
+                        }
+                
+                        text {
+                            font-size: 1.5vmax; 
+                            font-family: variables.$font_Primary;
 
-                            @include responsive.screen_laptop{
+                            @include responsive.screen_small{
                                 font-size: 20px;
                             }
                         }
 
                         &:hover {
                             animation: btn-rotate 0.7s ease-in-out both;
-                            background-color: variables.$Secundary_Color;
                         }
                           
-                        &:hover .btn-cv {
+                        &:hover svg {
                             animation: btn-storm 0.7s ease-in-out both;
                             animation-delay: 0.06s;
                         }
-
                     } 
                 }
-
             }
 
             .cards-container{
@@ -1009,8 +908,9 @@ html{
                     }
 
                     h1{
-                        @include mixins.text_formatting(center, normal, 500, 10px);
+                        @include mixins.text_formatting(center, normal, 600, 10px);
                         font-size: 2.5vw;
+                        font-family: variables.$font_Primary;
                         color: variables.$Color_White;
                         text-transform: uppercase;
                         word-break: break-all;
@@ -1030,9 +930,9 @@ html{
                         margin: 0 auto;
                         font-size: 1.2vw;
                         padding: 3vw 0 2vw 0;
-                        line-height: 1.3;
+                        line-height: 1.2;
                         color: variables.$Color_White;
-                        font-family: variables.$font_primary;
+                        font-family: variables.$font_Primary;
 
                         @include responsive.screen_laptop{
                             font-size: 15px;
@@ -1096,7 +996,7 @@ html{
                                 display: flex;
                                 flex-direction: column;
                                 font-size: 2.2vw;
-                                font-family: 'cosi azure', sans-serif;
+                                font-family: variables.$font_Tertiary;
                                 color: variables.$Secundary_Color;
                                 
                                 @include responsive.screen_tablet{
@@ -1167,7 +1067,7 @@ html{
                                 margin: 1vw 0 1vw 0;
                                 font-size: 1.2vw;
                                 letter-spacing: 3px;
-                                font-family: 'cosi azure';
+                                font-family: variables.$font_Tertiary;
                                 color: variables.$Color_White;
 
                                 @include responsive.screen_laptop{
@@ -1196,7 +1096,7 @@ html{
                                 font-weight: 600;
                                 transform: translateY(40vw);               
                                 transition: variables.$Transition_ease; 
-                                font-family: variables.$font_primary;
+                                font-family: variables.$font_Primary;
                                 pointer-events: none;
 
                                 @include responsive.screen_laptop{
@@ -1225,10 +1125,10 @@ html{
 
             .tecnology-container{
                 @include mixins.align(relative, flex, center, center);
+                flex-direction: column;
                 width: 100%;
                 height: auto;
-                margin: 20vw 0 10vw 0;
-                flex-direction: column;
+                padding: 10vw 0 10vw 0;
                 overflow: hidden;
 
                 @include responsive.screen_laptop{
@@ -1244,7 +1144,7 @@ html{
                 }
 
                 .tecnology-text-bg{
-                    @include mixins.text-bg(15vh);
+                    @include mixins.text-bg(35vh);
 
                     @include responsive.screen_laptop{
                         top: 2%;
@@ -1260,11 +1160,12 @@ html{
                 .tecnology-title{
                     position: relative;
                     width: inherit;
-                    margin: 14vw 0 5vw 0;
+                    margin: 14vw 0 2vh 0;
 
                     h1{
-                        @include mixins.text_formatting(center, normal, 500, 10px);
+                        @include mixins.text_formatting(center, normal, 600, 10px);
                         font-size: 2.7vw;
+                        font-family: variables.$font_Tertiary;
                         color: variables.$Secundary_Color;
                         text-transform: uppercase;
                         word-break: break-all;
@@ -1294,7 +1195,7 @@ html{
 
                         @include responsive.screen_laptop{
                             margin: 20px 0 20px 30px;
-                            width: 250px;                    
+                            width: 300px;                    
                         }
                         @include responsive.screen_small{
                             width: 90%;
@@ -1327,7 +1228,7 @@ html{
                         h2{
                             font-size: 1.8vw;
                             color: variables.$Color_White_Smoker_dwo;
-                            font-family: variables.$font_primary;
+                            font-family: variables.$font_Primary;
                             transition: variables.$Transition_ease;
                             text-wrap: nowrap;
                             text-transform: uppercase;
@@ -1520,6 +1421,7 @@ html{
                             transition: variables.$Transition_ease;
                         }
                         &:hover .descripton-tecnology{
+                            color: variables.$Color_Black;
                             background: variables.$TAILWIND;
                         }
                     }
@@ -1538,10 +1440,16 @@ html{
                 .tecnology-animate{
                     @include mixins.align(relative, flex, space-around, center);
                     width: 100vw;
-                    height: 15vh;
-                    margin: 15vh 0 0 0;
+                    height: 11vmax;
+                    margin: 7vmax 0 1vmax 0;
                     transition: variables.$Transition_ease;
                     overflow: hidden;
+
+                    @include responsive.screen_small{
+                        flex-direction: column;
+                        height: 100px;
+                        margin: 100px 0 0 0;
+                    }
 
                     #tecnology-button{
                         position: absolute;
@@ -1549,6 +1457,7 @@ html{
                         left: 50%;
                         width: 2.5vmax;
                         height: 6vmax;
+                        transform: translate(-50%, 0);
                         border: 1px solid variables.$Color_White;
                         background-color: transparent;
                         border-radius: 2vmax;
@@ -1612,11 +1521,14 @@ html{
                         letter-spacing: 2px;
                         transition: variables.$Transition_ease;
                         color: variables.$Color_White;
-                        font-family: 'grand slang', sans-serif;
+                        font-family: variables.$font_Primary;
                         opacity: 0;
 
                         @include responsive.screen_tablet{
                             width: 80vw;
+                        }
+                        @include responsive.screen_tablet{
+                            text-align: center;
                         }
                     }
 
@@ -1639,36 +1551,36 @@ html{
                     }
                 }
 
-                .tools{
-                    position: relative;
-                    margin: 100px 0 50px 0;
-                    width: 100vw;
+                .tools, .tools-dwo{
+                    @include mixins.align(relative, flex, space-around, center);
+                    width: 110vw;
                     height: 20vh;
                     white-space: nowrap;
+                    border-top: 1px solid variables.$Color_White_B9;
+                    border-bottom: 1px solid variables.$Color_White_B9;
                     transition: variables.$Transition_ease;
+                    background-color: variables.$gray_primary;
 
                     @include responsive.screen_small{
                         margin: 15vh 0 5vh 0;
+                        height: 15vh;
                     }
 
                     .tools-links{
                         position: relative;
                         display: inline-block;
-                        top: 10px;
-                        animation: text-linear 120s linear infinite;
 
                         a{
                             text-decoration: none;
+                            padding: 0 0 0 50px;
                             color: variables.$Color_White_Smoker_dwo;
-                            margin: 0 10px 0 30px;
                             font-size: 6vmax;
-                            font-family: variables.$font_primary;
+                            font-family: variables.$font_Primary;
                             transition: variables.$Transition_ease;
                             text-transform: capitalize;
-                            cursor: pointer;
 
                             @include responsive.screen_small{
-                                font-size: 70px;
+                                font-size: 50px;
                             }
 
                             &:hover{
@@ -1678,16 +1590,37 @@ html{
                         }     
                     }
                 }
+
+                .tools{
+                    margin-top: 15vh;
+                    transform: rotate(10deg);
+                    z-index: 1;
+
+                    .tools-links{
+                        will-change: transform;
+                        animation: text-linear-left 120s linear infinite;
+                    }              
+                }
+                .tools-dwo{
+                    margin-bottom: 10vh;
+                    transform: rotate(-10deg);
+                    
+                    .tools-links{
+                        will-change: transform;
+                        animation: text-linear-right 120s linear infinite;
+                    }
+                }
             }
 
             .project-container{
                 @include mixins.align(relative, flex, center, center);
-                background: url(../img/herobg-hd.jpg) no-repeat center center;
+                background: url(../assets/img/hero.jpg) no-repeat center center;
                 background-attachment: fixed;
                 background-size: cover;
                 flex-direction: column;
                 width: 100%;
-                height: 150vh;
+                height: 160vh;
+                box-sizing: border-box;
 
                 @include responsive.screen_laptop{
                     height: auto;
@@ -1695,6 +1628,7 @@ html{
                 }
                 @include responsive.screen_small{
                     background-attachment: local;
+                    background-position: calc(100%/5);
                 }
 
                 &::before {
@@ -1705,7 +1639,7 @@ html{
                     width: inherit;
                     height: 50%;
                     transform: translateY(-5px);
-                    background: linear-gradient(to bottom, variables.$gray_primary, variables.$Smoker_there_0);
+                    background: linear-gradient(to bottom, variables.$gray_primary, variables.$Color_Null);
                     pointer-events: none;
                 }
 
@@ -1717,20 +1651,18 @@ html{
                     width: inherit;
                     height: 20%;
                     transform: translateY(4px);
-                    background: linear-gradient(to top, variables.$Color_Black, variables.$Smoker_there_0);
+                    background: linear-gradient(to top, variables.$Color_Black, variables.$Color_Null);
                     pointer-events: none;
                 }
 
                 .projects-tittle{
-                    @include mixins.text_formatting(center, normal, 500, 10px);
+                    @include mixins.text_formatting(center, normal, 600, 10px);
                     position: relative;
                     width: inherit;
                     height: auto;
-                    top: -7vh;
+                    top: -2vh;
                     font-size: 2.7vw;
                     color: variables.$Color_White;
-                    text-transform: uppercase;
-                    overflow: hidden;
 
                     @include responsive.screen_laptop{
                         top: -70px;
@@ -1748,7 +1680,8 @@ html{
                 .project-hero{
                     @include mixins.align(relative, flex, space-between, center);
                     width: 95%;
-                    height: 70vh;
+                    height: auto;
+                    top: 7vh;
 
                     @include responsive.screen_laptop{
                         flex-direction: column;
@@ -1760,11 +1693,10 @@ html{
                     }
 
                     .projects-happy{
-                        @include mixins.align(relative, flex, center, center);
-                        top: -25px;
-                        width: 40vw;
+                        position: relative;
+                        width: 30vw;
                         height: auto;
-                        padding: 0 0 0 70px;
+                        padding: 0 0 0 40px;
 
                         @include responsive.screen_laptop{
                             width: inherit;
@@ -1775,9 +1707,9 @@ html{
                         }
     
                         p{
-                            font-weight: 700;
-                            font-size: 4.1vmax;
-                            font-family: variables.$font_primary;
+                            font-weight: 400;
+                            font-size: 4.2vmax;
+                            font-family: variables.$font_Primary;
                             color: variables.$Color_White;
                             letter-spacing: 3px;
                             transform: scaleY(1.5);
@@ -1797,7 +1729,7 @@ html{
                     .projects{
                         @include  mixins.align(relative, flex, space-between, normal);
                         flex-direction: column;
-                        width: 50vw;
+                        width: 60vw;
                         height: auto;
 
                         @include responsive.screen_laptop{
@@ -1810,10 +1742,11 @@ html{
                         .project-layers{
                             @include mixins.align(relative, flex, space-between, center);
                             width: initial;
-                            height: 10vh;
+                            height: 14vh;
                             margin: 0 0 25px 0;
                             padding: 0 25px 0 25px;                     
-                            border-bottom: 1px solid variables.$Color_White; 
+                            border-bottom: 1px solid variables.$Color_White;
+                            transition: variables.$Transition_ease;
                             
                             @include responsive.screen_laptop{
                                 font-size: 25px;
@@ -1822,22 +1755,41 @@ html{
                             @include responsive.screen_small{
                                 height: 12vh;
                             }
-    
-                            .clarity--beta-line {
-                                @include mixins.formatting-icon(4vw, 4vw, variables.$Color_White);                               
-                                --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23000' d='M7.21 14.07h3a1.61 1.61 0 0 1 1.81 1.5a1.44 1.44 0 0 1-.84 1.34a1.67 1.67 0 0 1 1.1 1.53a1.75 1.75 0 0 1-2 1.63H7.21Zm2.71 2.42c.48 0 .82-.28.82-.67s-.34-.65-.82-.65H8.49v1.32Zm.2 2.48a.75.75 0 1 0 0-1.47H8.49V19Z' class='clr-i-outline clr-i-outline-path-1'/%3E%3Cpath fill='%23000' d='M14.55 15.23v1.2h3v1.16h-3v1.32h3.33v1.16h-4.62v-6h4.62v1.16Z' class='clr-i-outline clr-i-outline-path-2'/%3E%3Cpath fill='%23000' d='M20.41 15.23h-1.87v-1.16h5v1.16H21.7v4.84h-1.29Z' class='clr-i-outline clr-i-outline-path-3'/%3E%3Cpath fill='%23000' d='M28 19.12h-2.68l-.38.95H23.5l2.44-6h1.44l2.45 6h-1.45ZM27.55 18l-.89-2.19l-.89 2.19Z' class='clr-i-outline clr-i-outline-path-4'/%3E%3Cpath fill='%23000' d='M8.06 30a.84.84 0 0 1-.38-.08a1 1 0 0 1-.62-.92v-4h-4a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h30a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H13.48l-4.71 4.71a1 1 0 0 1-.71.29m-4-7h4a1 1 0 0 1 1 1v2.59l3.3-3.3a1 1 0 0 1 .7-.29h19V11h-28Z' class='clr-i-outline clr-i-outline-path-5'/%3E%3Cpath fill='none' d='M0 0h36v36H0z'/%3E%3C/svg%3E");
-                                
-                                @include responsive.screen_laptop{
-                                    width: 50px;
-                                    height: 50px;
-                                }
+
+                            &::after{
+                                position: absolute;
+                                content: '';
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 0%;
+                                background-color: transparent;
+                                transition: variables.$Transition_ease;
+                                z-index: -1;
+                            }
+                            &:hover::after{
+                                height: 100%;
+                                backdrop-filter: blur(20px);                    
+                                transition: variables.$Transition_ease;
+                            }
+
+                            &:hover{
+                                padding: 0 5vmax 0 5vmax;                     
+                                transition: variables.$Transition_ease;
+                            }
+
+                            span{
+                                font-size: 4vmax;
+                                font-family: variables.$font_Primary;
+                                color: variables.$Color_White;
                             }
 
                             h1{
                                 text-align: center;
                                 font-size: 1.8vmax;
                                 color: variables.$Color_White;
-                                font-family: variables.$font_primary;
+                                letter-spacing: 3px;
+                                font-family: variables.$font_Primary;
 
                                 @include responsive.screen_laptop{
                                     font-size: 25px;
@@ -1847,14 +1799,34 @@ html{
                                 }
                             }
 
-                            i{
-                                color: variables.$Color_White;
-                                font-size: 2vmax;
-
+                            svg{
+                                position: relative;
+                                width: 7%;
+                                transform: rotate(90deg);
+                                
                                 @include responsive.screen_laptop{
                                     font-size: 25px;
                                 }
-                            }             
+                            }
+                            
+                            img{
+                                position: absolute;
+                                top: 5vmax;
+                                left: 60%;
+                                width: 20%;
+                                height: auto;
+                                border-radius: 10vmax;
+                                object-fit: cover;
+                                transition: variables.$Transition_ease;
+                                opacity: 0;
+                                pointer-events: none;
+                            }
+                            
+                            &:hover img{
+                                top: -7vmax;
+                                opacity: 1;
+                                transition: variables.$Transition_ease;                               
+                            }
                         }                       
                     }
                 }
@@ -1864,28 +1836,31 @@ html{
                     width: 12vw;
                     height: auto;
                     padding: 1vmax;
+                    margin-top: 20vh;
                     background-color: transparent;
                     transition: 0.5s all ease;
                     backdrop-filter: blur(10px);
                     border: 1px solid variables.$Color_White;
-                    border-radius: 20px;
+                    border-radius: 2vmax;
                     overflow: hidden;
-                    cursor: none;
 
                     @include responsive.screen_laptop{
                         width: 180px;
                         padding: 12px;
+                        margin-top: 10vh;
                     }
-                  
+                    @include responsive.screen_small{
+                        margin-top: 5vh;
+                    }
+
                     a {
                         color: variables.$Color_White;
                         font-size: 1.2vmax;
                         text-transform: uppercase;
                         font-weight: bold;
-                        letter-spacing: 2px;
+                        letter-spacing: 3px;
                         text-decoration: none;
-                        font-family: variables.$font_primary;
-                        cursor: pointer;
+                        font-family: variables.$font_Primary;
 
                         @include responsive.screen_laptop{
                             font-size: 18px;
@@ -1930,19 +1905,61 @@ html{
                     }              
                 }               
             }
+
+            .sound-container{
+                position: fixed;
+                width: 100%;
+                height: auto;
+                top: 85%;
+                pointer-events: none; 
+                z-index: 9;             
+    
+                .sound{
+                    position: relative;
+                    display: block;
+                    left: -2%;
+                    width: 10vmax;
+                    height: 2vmax;
+                    transform: rotate(-90deg);                   
+                    pointer-events: all;
+                    cursor: pointer;  
+
+                    @include responsive.screen_laptop{
+                        width: 135px;
+                        height: auto;
+                        left: -35px;
+                    }
+                    @include responsive.screen_small{
+                        left: -48px;
+                        margin-top: 12px;
+                    }
+
+                    span{
+                        font-size: 1.2vmax;
+                        font-family: variables.$font_Primary;
+                        letter-spacing: 2px;
+                        color: variables.$Color_White;
+                        text-transform: uppercase;
+
+                        @include responsive.screen_laptop{
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
         }
 
         .footer-container{
             @include mixins.align(relative, flex, center, center);
             width: 100%;
-            height: auto;  
+            height: auto;
+            padding-top: 5vh; 
             flex-direction: column;
             background-color: variables.$Color_Black;
             overflow: hidden; 
 
             .footer-text-bg{
-                @include mixins.text-bg(9vh);
-                top: 7vh;
+                @include mixins.text-bg(7vh);
 
                 @include responsive.screen_laptop{
                     top: 2%;
@@ -1992,7 +2009,7 @@ html{
                         span{
                             display: block;
                             font-size: 5vmax;
-                            font-family: variables.$font_primary;
+                            font-family: variables.$font_Primary;
                             color: variables.$Color_White_B9;
 
              
@@ -2023,7 +2040,7 @@ html{
                             font-size: 2vmax;
                             letter-spacing: 3.1px;
                             color: variables.$Color_White;
-                            font-family: variables.$font_primary;
+                            font-family: variables.$font_Primary;
                             
                             @include responsive.screen_laptop{
                                 font-size: 25px;
@@ -2036,8 +2053,7 @@ html{
                             font-size: 1vmax;
                             letter-spacing: 1px;
                             text-decoration: none;
-                            color: variables.$Color_White_B9;
-                            cursor: pointer;             
+                            color: variables.$Color_White_B9;            
 
                             @include responsive.screen_laptop{
                                 width: 290px;
@@ -2074,9 +2090,7 @@ html{
 
                     .footer-cicle-animate{ 
                         @include mixins.align(relative, flex, center, center);
-                        padding: 20px 0 10px 0;
                         width: 25%;
-                        animation: girar_right 10s linear infinite;
 
                         @include responsive.screen_laptop{
                             width: inherit;
@@ -2084,10 +2098,39 @@ html{
                         @include responsive.screen_small{
                             justify-content: center;
                         }
-                        textPath{
-                            letter-spacing: 2px;
-                            font-family: variables.$font_primary;
-                        }                                            
+                        
+                        svg{
+                            animation: girar_right 15s linear infinite;
+                            will-change: transform;
+
+                            textPath{
+                                letter-spacing: 2px;
+                                word-spacing: 7px;
+                                font-family: variables.$font_Primary;
+                            }
+                        }
+
+                        &:hover svg{
+                            animation-play-state: paused;
+                        }
+
+                        img{
+                            position: absolute;
+                            width: 10vw;
+                            height: auto;
+                            border-radius: 100%;
+                            transition: variables.$Transition_ease;
+                            opacity: 0;
+
+                            @include responsive.screen_laptop{
+                                width: 150px;
+                            }
+                        }
+
+                        &:hover img{
+                            opacity: 1;
+                            transition: variables.$Transition_ease;
+                        }
                     }
                 }
 
@@ -2105,34 +2148,27 @@ html{
                         @include mixins.align(relative, flex, center, center);
                         width: 7vh;
                         height: 7vh;
-                        margin: 0 10px 0 10px;
+                        margin: 0 12px 0 12px;
                         border-radius: 100%;
+                        text-decoration: none;
                         border: 1px solid variables.$Color_White;
-                        cursor: pointer;
                         transition: variables.$Transition_ease;
 
                         &:hover{
-                            transform: translateY(-20px);
-                            background-color: variables.$Secundary_Color;
-                        }                     
-                    }
+                            transform: scale(1.5);
+                            border: none;
+                            border: 1px solid variables.$Secundary_Color;
+                        }
+                        
+                        i{
+                            font-size: 4vh;
+                            color: variables.$Color_White_B9;
+                        }
 
-                    .uit--facebook-f {
-                        @include mixins.formatting-icon(5vh, 5vh, transparent);
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M17.99 1.596a27.982 27.982 0 0 0-3.037-.156C11.59 1.44 9.5 3.582 9.5 7.03v2.341H6.675a.5.5 0 0 0-.5.5v3.85a.5.5 0 0 0 .5.5H9.5v7.72a.5.5 0 0 0 .5.5h3.978a.5.5 0 0 0 .5-.5v-7.72h2.816a.5.5 0 0 0 .496-.435l.497-3.85a.5.5 0 0 0-.496-.565h-3.313V7.412c0-.97.195-1.375 1.408-1.375h2.039a.5.5 0 0 0 .5-.5V2.092a.5.5 0 0 0-.435-.496m-.565 3.44l-1.54.001c-2.157 0-2.407 1.356-2.407 2.375v2.46a.5.5 0 0 0 .499.5h3.246l-.369 2.85h-2.876a.5.5 0 0 0-.5.5v7.718H10.5v-7.718a.5.5 0 0 0-.5-.5H7.176v-2.85H10a.5.5 0 0 0 .5-.5V7.03c0-2.874 1.665-4.59 4.453-4.59c1.009 0 1.92.055 2.472.103z'/%3E%3C/svg%3E");
-                    }                  
-                    .ph--instagram-logo-light {
-                        @include mixins.formatting-icon(5vh, 5vh, transparent);
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M128 82a46 46 0 1 0 46 46a46.06 46.06 0 0 0-46-46m0 80a34 34 0 1 1 34-34a34 34 0 0 1-34 34m48-136H80a54.06 54.06 0 0 0-54 54v96a54.06 54.06 0 0 0 54 54h96a54.06 54.06 0 0 0 54-54V80a54.06 54.06 0 0 0-54-54m42 150a42 42 0 0 1-42 42H80a42 42 0 0 1-42-42V80a42 42 0 0 1 42-42h96a42 42 0 0 1 42 42ZM190 76a10 10 0 1 1-10-10a10 10 0 0 1 10 10'/%3E%3C/svg%3E");
-                    }                  
-                    .uit--linkedin-alt {
-                        @include mixins.formatting-icon(5vh, 5vh, transparent);
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M7.5 9h-4a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-12a.5.5 0 0 0-.5-.5M7 21H4V10h3zM18 9c-1.085 0-2.14.358-3 1.019V9.5a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.5v12a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V16a1.5 1.5 0 1 1 3 0v5.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V14a5.006 5.006 0 0 0-5-5m4 12h-3v-5a2.5 2.5 0 1 0-5 0v5h-3V10h3v1.203a.5.5 0 0 0 .89.313A3.983 3.983 0 0 1 22 14zM5.868 2.002A2.73 2.73 0 0 0 5.515 2a2.74 2.74 0 0 0-2.926 2.729a2.71 2.71 0 0 0 2.869 2.728h.028a2.734 2.734 0 1 0 .382-5.455M5.833 6.46a1.75 1.75 0 0 1-.347-.003h-.028A1.736 1.736 0 1 1 5.515 3a1.737 1.737 0 0 1 .318 3.46'/%3E%3C/svg%3E");
-                    }
-                    .teenyicons--git-outline {
-                        @include mixins.formatting-icon(5vh, 5vh, transparent);
-                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='white' d='m6.793 1.207l.353.354zM1.207 6.793l-.353-.354zm0 1.414l.354-.353zm5.586 5.586l-.354.353zm1.414 0l-.353-.354zm5.586-5.586l.353.354zm0-1.414l-.354.353zM8.207 1.207l.354-.353zM6.44.854L.854 6.439l.707.707l5.585-5.585zM.854 8.56l5.585 5.585l.707-.707l-5.585-5.585zm7.707 5.585l5.585-5.585l-.707-.707l-5.585 5.585zm5.585-7.707L8.561.854l-.707.707l5.585 5.585zm0 2.122a1.5 1.5 0 0 0 0-2.122l-.707.707a.5.5 0 0 1 0 .708zM6.44 14.146a1.5 1.5 0 0 0 2.122 0l-.707-.707a.5.5 0 0 1-.708 0zM.854 6.44a1.5 1.5 0 0 0 0 2.122l.707-.707a.5.5 0 0 1 0-.708zm6.292-4.878a.5.5 0 0 1 .708 0L8.56.854a1.5 1.5 0 0 0-2.122 0zm-2 1.293l1 1l.708-.708l-1-1zM7.5 5a.5.5 0 0 1-.5-.5H6A1.5 1.5 0 0 0 7.5 6zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 9 4.5zM7.5 4a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 7.5 3zm0-1A1.5 1.5 0 0 0 6 4.5h1a.5.5 0 0 1 .5-.5zm.646 2.854l1.5 1.5l.707-.708l-1.5-1.5zM10.5 8a.5.5 0 0 1-.5-.5H9A1.5 1.5 0 0 0 10.5 9zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 12 7.5zm-.5-.5a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 10.5 6zm0-1A1.5 1.5 0 0 0 9 7.5h1a.5.5 0 0 1 .5-.5zM7 5.5v4h1v-4zm.5 5.5a.5.5 0 0 1-.5-.5H6A1.5 1.5 0 0 0 7.5 12zm.5-.5a.5.5 0 0 1-.5.5v1A1.5 1.5 0 0 0 9 10.5zm-.5-.5a.5.5 0 0 1 .5.5h1A1.5 1.5 0 0 0 7.5 9zm0-1A1.5 1.5 0 0 0 6 10.5h1a.5.5 0 0 1 .5-.5z'/%3E%3C/svg%3E");
-                    }                   
+                        &:hover i{
+                            color: variables.$Secundary_Color;
+                        }
+                    }                
                 }
             }
 
@@ -2145,10 +2181,11 @@ html{
 
                 .click{
                     position: absolute;
+                    left: 3%;
                     font-size: 2.5vh;
                     text-transform: uppercase;
                     color: variables.$Color_White_Smoker_dwo;
-                    font-family: variables.$font_primary;
+                    font-family: variables.$font_Primary;
                     cursor: pointer;
 
                     @include responsive.screen_small{
@@ -2166,7 +2203,7 @@ html{
                
                 p{
                     text-align: center;
-                    font-family: variables.$font_primary;
+                    font-family: variables.$font_Primary;
                     color: variables.$Color_White;
                     font-size: 3vh;
                     word-spacing: 3px;
@@ -2176,7 +2213,7 @@ html{
                     }
                 }
             }        
-        } 
+        }
     }   
 }
 
@@ -2186,17 +2223,10 @@ html{
     transform: translate(0%) !important;
     opacity: 1 !important;
 }
-.navbar_aux {
-    height: 10vh !important;
-    border-color: variables.$Color_White !important;
-    padding-top: 0 !important;
-
-    @include responsive.screen_tablet_rotate{
-        padding: 25px 0 25px 0 !important;
-    }
-}
 .header_aux {
-    backdrop-filter: blur(10px) !important;  
+    @include responsive.screen_small{
+        backdrop-filter: blur(20px) !important;
+    }
 }
 .paused{
     animation-play-state: paused !important;
@@ -2222,27 +2252,30 @@ html{
     transform: rotate(30deg) !important;
     transition: variables.$Transition_ease;
 }
-.animate-link-bar{
+.animate-aux{
     transform: translateY(0) !important;
-    transition: all 1s ease-out !important;
+    transition: 1s ease-out !important;
 }
 .tecnology-animate-aux{
     justify-content: space-evenly !important;
-    padding: 0 5vmax 0 10vmax !important;
-    margin-top: 25vh !important;
     height: 70vh !important;
 
     @include responsive.screen_tablet{
         flex-direction: column;
+        padding-top: 15vh !important;
+        height: auto !important;
+    }
+    @include responsive.screen_small{
         padding: 0 !important;
-        height: 70vh !important;
     }
 }
 .tecnology-button-aux{
-    transform: rotate(-90deg) !important;
+    background-color: variables.$Secundary_Color !important;
+    transform: rotate(-180deg) !important;
 }
 .roll-aux{
     top: 80% !important;
+    background-color: variables.$gray_primary !important;
 }
 .tools-text-aux{
     top: 0 !important;
@@ -2250,6 +2283,10 @@ html{
 
     @include responsive.screen_tablet{
         margin-top: 10vh;
+    }
+    @include responsive.screen_small{
+        text-align: center;
+        padding: 20px 0 20px 0;
     }
 }
 .gif-aux{

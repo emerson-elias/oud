@@ -1,21 +1,18 @@
 @charset "UTF-8";
 
-/*  Fonte Montserrant  */
-@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One&display=swap");
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 @font-face {
-    font-family: 'cosi azure';
-    src: url(../fonts/CosiAzure-Black.ttf);
+    font-family: 'aquire light';
+    src: url(../assets/fonts/Aquire/Aquire-Light.otf);
 }
 
 @font-face {
-    font-family: 'grand slang';
-    src: url(../fonts/GrandSlang-Roman.ttf);
+    font-family: 'aquire regular';
+    src: url(../assets/fonts/Aquire/Aquire-Regular.otf);
 }
 
 @font-face {
-    font-family: 'grand slang italic';
-    src: url(../fonts/GrandSlang-Italic.ttf);
+    font-family: 'aquire bold';
+    src: url(../assets/fonts/Aquire/Aquire-Bold.otf);
 }

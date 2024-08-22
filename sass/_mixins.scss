@@ -10,7 +10,7 @@
 
 @mixin text_formatting($align, $style, $weight, $spacing){
     text-align: $align;
-    font-family: 'Montserrat', sans-serif;
+    font-family: variables.$font_Tertiary;
     font-style: $style;
     font-weight: $weight;
     letter-spacing: $spacing;
@@ -22,10 +22,10 @@
     left: 3vw;
     right: 0;   
     font-size: 10vw;
-    font-family: 'grand slang italic';
+    font-style: italic;
+    font-family: variables.$font_Tertiary;
     text-transform: uppercase;
     text-wrap: nowrap;
-    font-weight: 500;
     letter-spacing: 2px;
     color: variables.$Color_White_Smoker;
     pointer-events: none;
@@ -55,7 +55,7 @@
     text-align: center;
     transform: translateY(10px);
     color: variables.$Color_White;
-    font-family: variables.$font_primary;
+    font-family: variables.$font_Primary;
     font-size: 1vmax;
     font-weight: 900;
     letter-spacing: 2px;

@@ -13,25 +13,21 @@ const elements = {
     b1: document.getElementById('b-one'),
     b2: document.getElementById('b-dwo'),
     b3: document.getElementById('b-there'),
-    animate_one: document.getElementById('animate-one'),
-    animate_dwo: document.getElementById('animate-dwo'),
-    animate_there: document.getElementById('animate-there'),
-    animate_four: document.getElementById('animate-four'),
+    animate: [...document.querySelectorAll('#animate')],
     burguer: document.getElementsByClassName('burguer')[0],
     liItems: [...document.querySelectorAll('li')],
 }
 
 function toggleClasses() {
-    const { ancora, b1, b2, b3, animate_one, animate_dwo, animate_there, animate_four, burguer } = elements
+    const { ancora, b1, b2, b3, animate, burguer } = elements
 
     ancora.classList.toggle('collapse-true')
     b1.classList.toggle('b-one')
     b2.classList.toggle('b-dwo')
     b3.classList.toggle('b-there')
-    animate_one.classList.toggle('animate-link-bar')
-    animate_dwo.classList.toggle('animate-link-bar')
-    animate_there.classList.toggle('animate-link-bar')
-    animate_four.classList.toggle('animate-link-bar')
+    animate.map((el) =>{
+        el.classList.toggle('animate-aux')
+    })
     burguer.classList.toggle('burguer-aux')
 }
 
@@ -45,12 +41,10 @@ elements.liItems.forEach((item) => {
 
 window.addEventListener("scroll", () => {
     const scroll_Y = window.scrollY
-    const header = document.getElementById('header')
-    const navbar = document.getElementById('nav')
+    const header = document.getElementsByTagName('header')[0]
     const topo = document.getElementById('topo')
 
-    navbar.classList.toggle('navbar_aux', scroll_Y > 100)
-    header.classList.toggle('header_aux', scroll_Y > 150)
+    header.classList.toggle('header_aux', scroll_Y > 100)
 
     if (scroll_Y > 250){
         topo.style.opacity = '1'
@@ -59,11 +53,9 @@ window.addEventListener("scroll", () => {
             document.body.scrollTop = 0
             document.documentElement.scrollTop = 0
         })
-
     }else{
         topo.style.opacity = '0'
     }
-
 })
 
 //====================================================================================//
@@ -80,36 +72,53 @@ document.querySelectorAll('a[href^="#"]').forEach(ancora => {
     })
 })
 
-
 //====================================================================================//
 
      /* EFEITO DE CIRCULO QUE SEGUE O CURSOR DO MOUSE E OCULTA QUANDO SAI DA TELA */
 
 const cursor = document.getElementById('cursor')
 
-    document.addEventListener('mousemove', (e)=> {
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
-    })
+     document.addEventListener('mousemove', (e) => {
+         
+         gsap.to(cursor, {
+             duration: 0.3,
+             x: e.clientX - cursor.offsetWidth / 2,
+             y: e.clientY - cursor.offsetHeight / 2,
+             ease: "power2.out"
+         })
+     })
 
     document.addEventListener('mouseout', (e) => {
         if (!e.relatedTarget || e.relatedTarget.nodeName === "HTML") {
-            cursor.style.display = 'none'
+            cursor.style.opacity = '0'
+            cursor.style.transition = '0.1s ease'
+        }else{
+            cursor.style.opacity = '1'
+            cursor.style.transition = '0.1s ease'
         }
     })
 
     document.addEventListener('mouseenter', () => {
-        cursor.style.display = 'block'
+        cursor.style.opacity = '1'
     })
     
 //=== Esconde o cursor quando o mouse passa sobre um elemento <a> ====================//
     
     document.querySelectorAll('a').forEach(anchor => {
         anchor.addEventListener('mouseover', () => {
-             cursor.style.display = 'none'
+            gsap.to(cursor, {
+                duration: 0.5,
+                scale: '3',
+                ease: "power2.out"
+            })
         })
 
         anchor.addEventListener('mouseout', () => {
-            cursor.style.display = 'block'
+            gsap.to(cursor, {
+                duration: 0.5,
+                scale: '1',
+                ease: "power2.out"
+            })
         })
     })
 
@@ -142,7 +151,7 @@ const easter_eggs = document.getElementsByClassName('click')[0];
 
     easter_eggs.addEventListener('click', () => {
         Swal.fire({
-            imageUrl: 'img/cookie.jpg',
+            imageUrl: 'assets/img/cookie.jpg',
             imageWidth: 400,
             imageHeight: 400, 
         })
@@ -187,3 +196,92 @@ function Classes_ON() {
 }
 
 tools.tecnologyButton.addEventListener('click', Classes_ON)
+
+
+//====================================================================================//
+
+            /* SCRIPT PARA REPRODUZIR E CONTROLAR A MÚSICA   */
+
+const sound = document.getElementsByClassName('sound')[0]
+const audio = document.getElementById('audio')
+const controls = document.getElementById('sound-controls')
+
+    sound.addEventListener('click', () => {
+        if(audio.paused){
+            audio.play()
+            controls.innerHTML = 'ON'
+        }else{
+            audio.pause()
+            controls.innerHTML = 'OFF'
+        }
+    })
+
+//====================================================================================//
+
+             /* ANIMAÇÃO DOS ELEMENTOS CONFORME O CURSOR SE MOVIMENTA */
+
+function animix_follow_cursor(container, el_first, el_second) {
+    if (container && el_first && el_second) {
+    // Movimentação do cursor
+        container.addEventListener('mousemove', (e) => {
+            const rect = container.getBoundingClientRect()
+
+            const Width1 = el_first.offsetWidth / 2
+            const Height1 = el_first.offsetHeight / 2
+
+            const Width2 = el_second.offsetWidth / 2
+            const Height2 = el_second.offsetHeight / 2
+
+            const x = e.clientX - rect.left
+            const y = e.clientY - rect.top
+
+            // Primeira div segue o cursor imediatamente
+            gsap.to(el_first, {
+                duration: 0.3, 
+                x: x - Width1,
+                y: y - Height1,
+                ease: "power1.out"
+            })
+
+            // Segunda div segue o cursor com atraso
+            gsap.to(el_second, {
+                duration: 0.6, 
+                x: x - Width2,
+                y: y - Height2,
+                ease: "power1.out"
+            })
+        })
+
+        // Reset da posição das imagens ao sair do contêiner
+        container.addEventListener('mouseleave', () => {
+            // Garantindo que ambas as divs voltem para (0, 0)
+            gsap.to(el_first, {
+                duration: 0.3, 
+                x: 0,
+                y: 0,
+                ease: "power1.out"
+            })
+
+            // Adiciona um delay para o reset da segunda div, igual ao delay da animação de seguir
+            gsap.to(el_second, {
+                duration: 0.6, 
+                x: 0,
+                y: 0,
+                ease: "power1.out"
+            })
+        })
+    }
+}
+
+
+const layer_3 = document.getElementsByClassName('layer-3')[0]
+const element_first = document.getElementById('magnect-1')
+const element_second = document.getElementById('magnect-2')
+
+animix_follow_cursor(layer_3, element_first, element_second)
+
+/* USEI ESSE SCRIPT PORQUE O <a href="#contatos"></a> NÃO ESTAVA FUNCIONANDO POR CONTA DA ANIMAÇÃO DO BOTÃO */
+
+layer_3.addEventListener('click', () => {
+    document.getElementById('contatos').scrollIntoView({ behavior: 'smooth' })
+}) 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#161616">
     <title>&merson &lias ᯓ★</title>
-    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="shortcut icon" href="/assets/img/icon.png">
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
@@ -16,8 +16,8 @@
 <body>
     <div id="cursor"></div>
 
-    <header id="header">
-        <nav class="navbar" id="nav">
+    <header>
+        <nav class="navbar">
 
             <div class="active-bar">
                 <span>emerson</span>
@@ -30,28 +30,28 @@
                 <span id="b-there"></span>
             </li>
 
-            <ul id="ancora"> 
-                <li><a id="animate-one" href="#sobre-mim">Sobre mim</a></li>
-                <li><a id="animate-dwo" href=#tecnologias>Tecnologias</a></li>
-                <li><a id="animate-there" href="#projetos">Projetos</a></li>
-                <li><a id="animate-four" href="#contatos">Contato</a></li>
+            <ul id="ancora">
+                <li><a id="animate" href="#sobre-mim">Sobre mim</a></li>
+                <li><a id="animate" href=#tecnologias>Tecnologias</a></li>
+                <li><a id="animate" href="#projetos">Projetos</a></li>
+                <li><a id="animate" href="#contatos">Contato</a></li>
 
                 <div class="midia">
 
                     <a class="facebook" href="https://www.facebook.com/emerson.emersoneliassodremorais" target="_blank">
-                        <span class="uit--facebook-f"></span>
+                        <i class="fa-brands fa-facebook-f"></i>
                     </a>
     
                     <a class="instagram" href="https://www.instagram.com/emersoneliass_/" target="_blank">
-                        <span class="ph--instagram-logo-light"></span>
+                        <i class="fa-brands fa-instagram"></i>
                     </a>
     
                     <a class="linkedin" href="https://www.linkedin.com/in/emerson-elias-9b2894228/" target="_blank">
-                        <span class="uit--linkedin-alt"></span>
+                        <i class="fa-brands fa-linkedin-in"></i>
                     </a>
     
                     <a class="git-icon-footer" href="https://github.com/emerson-elias" target="_blank">
-                        <span class="teenyicons--git-outline"></span>
+                        <i class="fa-brands fa-github-alt"></i>
                     </a>
     
                 </div>
@@ -60,56 +60,55 @@
         </nav>
     </header>
     
-    <main>
+    <main>   
         <section class="banner">
-            <section class="row">
 
-                <div class="inspiration">
-                    <span class="arcticons--dailyart"></span>
-                    <p> Inspire-se na arte, aprecie os momentos e enxergue a beleza nas pequenas coisas</p>
+            <section class="banner-text-linear">
+                <h1> - criando - experiências</h1>
+                <h1> - criando - experiências</h1>
+            </section>
+            
+            <section class="row">
+                   
+                <div class="layer-1" data-aos="fade-right"  data-aos-duration="1000">
+                    <h1>creative ⟶</h1>
+                </div>
+                    
+    
+                <div class="layer-2" data-aos="fade-left" data-aos-duration="1000">
+                    <h1>front-end</h1>
+                    <h1><span>dev</span>eloper</h1>
+                    <p>Sou desenvolvedor naturalista de São Luís,
+                        amo programação, designs minimalistas e ornamentados, músicas, jogos, natureza e pizza.
+                    </p>                    
                 </div>
 
-                <div class="row-itens">
 
-                    <section class="layers">
-
-                        <div class="item-creat" data-aos="fade-right"  data-aos-duration="1000">
-                            creative
-                        </div>
-    
-                        <div class="item-profession" data-aos="fade-right"  data-aos-duration="1000">
-                            <span>developer</span>
-                            <span>front end</span>         
-                        </div>
-
-                    </section>
-                    
-                    <div class="banner-descripiton" data-aos="fade-left" data-aos-duration="1000">
-                        <p>Sou desenvolvedor naturalista de São Luís, utilizo as linguagens e ferramentas mais atuais do mercado,
-                            amo programação, designs minimalistas e ornamentados, músicas, jogos, natureza e pizza.
-                        </p>
-    
-                        <div class="know">
-                            <a href="#contatos">Contatos <i class="fa-solid fa-angles-down fa-bounce"></i></a>
-                        </div>
+                <div class="layer-3">               
+                    <div id="magnect-1">                    
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+                            <path d="M90.54,0H89.46C71.61,23.72,49,47,27.43,65.3l.87,1.08c22-14.14,39.61-31.56,60.72-52C88.8,69,86.41,139.09,84.23,180H95.77c-2.18-40.92-4.79-111-5-165.64,20.89,19.81,38.75,37.66,60.94,52l.87-1.08C130.81,47.67,108.39,23.72,90.54,0Z" fill="#fff"/>
+                        </svg>                      
                     </div>
 
+                    <div id="magnect-2"></div>               
                 </div>
-     
+                   
             </section>
         </section>
 
         <section class="hero-me">
 
-            <div class="hero-text-bg"  id="sobre-mim" data-aos="fade-right" data-aos-duration="1000">About</div>
+            <div class="hero-text-bg" data-aos="fade-right" data-aos-duration="1000">About</div>
 
-            <div class="hero-titulo">
+            <div class="hero-titulo" id="sobre-mim">
                 <h1>Sobre<span> mim</span></h1>
             </div>
             
             <div class="sobre-mim">
+
                 <div class="sobre-img" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="img/Me-hero.png" alt="Sobre-mim">
+                    <img src="/assets/img/Me-hero.png" alt="Sobre-mim">
                 </div>
 
                 <div class="sobre-diferenciais" data-aos="fade-up" data-aos-duration="1500">
@@ -122,7 +121,8 @@
                     <p><i class="fa-solid fa-database"></i> Análise de Dados</p>
                     <p><i class="fa-regular fa-comments"></i> Comunocação</p>
                     <p><i class="fa-solid fa-leaf"></i> Proatividade</p>
-                    <p><i class="fa-brands fa-leanpub"></i> Disposto a Sempre Aprender</p>
+                    <p><i class="fa-brands fa-leanpub"></i> Disposto ao novo</p>
+
                 </div>
 
                 <div class="sobre-descripion" data-aos="fade-up" data-aos-duration="2000">
@@ -133,21 +133,22 @@
                         sobre programação e desenvolvimento, sou um amante da tecnologia e desde jovem descobri meu interesse por T.I 
                         enquanto cursava o ensino médio. 
                         Cursei Desenvolvimento de Sistemas 
-                        onde aperfeiçoei meus conhecimentos e participei de vários projetos dentro da instituição, um deles é o <a href="https://sol.sbc.org.br/index.php/sbie/article/view/12799/12653" target="_blank">Potencializa 3D</a>,
-                        fico feliz em te ter por aqui...
+                        onde aperfeiçoei meus conhecimentos e participei de vários projetos dentro da instituição, um deles é o <a href="https://sol.sbc.org.br/index.php/sbie/article/view/12799/12653" target="_blank">Potencializa 3D</a>.
                     </p>
 
                 </div>                   
             </div>   
             
-            <div class="hero-cv">
-                <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000"></div>
-
-                <a class="my-cv" data-aos="flip-up" data-aos-duration="2000"  href="https://drive.google.com/file/d/15zY3xHj9nhE3uaiNlSTSQ8_slmKK5OPp/view" target="_blank">
-                    <span class="btn-cv">Meu cv</span>                      
+            <div class="hero-cv">             
+                <a class="my-cv" href="https://drive.google.com/file/d/15zY3xHj9nhE3uaiNlSTSQ8_slmKK5OPp/view" target="_blank">
+                    <svg viewBox="0 0 104 54" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.66 4.442C19.968 3.87 51.687 7.98 59.806 10.15c8.119 2.17 42.004 11.335 42.193 22.216.19 10.881-23.966 21.44-51.095 18.938C23.775 48.802 2.174 36.415 2.001 25.7 1.828 14.986 19.498 5.55 42.092 2.767c22.595-2.785 62.01 7.677 49.853 28.879" stroke="#caa986" stroke-width="3" fill="none" fill-rule="evenodd">
+                        </path>
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#fff">
+                            CV
+                        </text>
+                    </svg>                                    
                 </a>
-
-                <div data-aos="fade-down" data-aos-easing="linear"data-aos-duration="1000"></div>
             </div>
 
         </section>
@@ -161,7 +162,8 @@
             <div class="card-title">
                 <h1>hob<span>bies</span></h1>
                 <p>Desde colecionar itens, explorar trilhas na natureza, passar o dia jogando ou comendo pizza haha,
-                     cada hobby é uma porta para um mundo de interesses e paixões.</p>
+                    cada hobby é uma porta para um mundo de interesses e paixões.
+                </p>
             </div>  
 
             <div class="cards-omega">   
@@ -268,7 +270,7 @@
             <div class="tecnology">              
 
                 <div class="html" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/html.png" alt="HTML 5">
+                    <img src="/assets/img/html.png" alt="HTML 5">
                     <h2>html 5</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -277,7 +279,7 @@
                 </div>
 
                 <div class="css" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/css.png" alt="CSS 3">
+                    <img src="/assets/img/css.png" alt="CSS 3">
                     <h2>css 3</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -286,7 +288,7 @@
                 </div>
 
                 <div class="sass" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/sass.png" alt="SASS">
+                    <img src="/assets/img/sass.png" alt="SASS">
                     <h2>sass</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -295,7 +297,7 @@
                 </div>
 
                 <div class="react" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/react.png" alt="REACT">
+                    <img src="/assets/img/react.png" alt="REACT">
                     <h2>react</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -304,7 +306,7 @@
                 </div>
 
                 <div class="javascript" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/js.png" alt="JS">
+                    <img src="/assets/img/js.png" alt="JS">
                     <h2>javaScript</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -313,7 +315,7 @@
                 </div>
 
                 <div class="typescript" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/ts.png" alt="TYPESCRIPT">
+                    <img src="/assets/img/ts.png" alt="TYPESCRIPT">
                     <h2>typescript</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -322,7 +324,7 @@
                 </div>
                 
                 <div class="php" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/php.png" alt="PHP">
+                    <img src="/assets/img/php.png" alt="PHP">
                     <h2>php</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -331,7 +333,7 @@
                 </div>
 
                 <div class="java" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/java.png" alt="jAVA">
+                    <img src="/assets/img/java.png" alt="jAVA">
                     <h2>java</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -340,7 +342,7 @@
                 </div>    
 
                 <div class="railway" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/railway.png" alt="RAILWAY">
+                    <img src="/assets/img/railway.png" alt="RAILWAY">
                     <h2>railway</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -349,7 +351,7 @@
                 </div>
 
                 <div class="figma" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/Figma.png" alt="FIGMA">
+                    <img src="/assets/img/Figma.png" alt="FIGMA">
                     <h2>figma</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -358,7 +360,7 @@
                 </div>
 
                 <div class="sql" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/sql-server.png" alt="SQL">
+                    <img src="/assets/img/sql-server.png" alt="SQL">
                     <h2>sql server</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -367,7 +369,7 @@
                 </div>
 
                 <div class="git" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/github.png" alt="GITHUB">
+                    <img src="/assets/img/github.png" alt="GITHUB">
                     <h2>GIThub</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -376,7 +378,7 @@
                 </div>
 
                 <div class="boostrap" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/bootstrap.png" alt="BOOSTRAP">
+                    <img src="/assets/img/bootstrap.png" alt="BOOSTRAP">
                     <h2>boostrap</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -385,7 +387,7 @@
                 </div>
 
                 <div class="materialize" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/materialize.png" alt="MATERIALIZE">
+                    <img src="/assets/img/materialize.png" alt="MATERIALIZE">
                     <h2>materialize</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -394,7 +396,7 @@
                 </div>
 
                 <div class="tailwind" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/tailwind.png" alt="TAILWIND">
+                    <img src="/assets/img/tailwind.png" alt="TAILWIND">
                     <h2>tailwind</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -403,7 +405,7 @@
                 </div>
 
                 <div class="bulma" data-aos="flip-left" data-aos-duration="1000" data-aos-easing="linear">
-                    <img src="img/bulma.png" alt="BULMA">
+                    <img src="/assets/img/bulma.png" alt="BULMA">
                     <h2>bulma</h2>
                     <div class="descripton-tecnology">
                         <span class="solar--multiple-forward-right-linear"></span>
@@ -413,7 +415,7 @@
 
             </div>
 
-            <div class="tecnology-animate" data-aos="flip-up">
+            <div class="tecnology-animate" data-aos="fade-up">
 
                 <div class="animate-svg">
                     <span class="arcticons--google-webview-devtools" id="svg-tool-one"></span>
@@ -428,7 +430,7 @@
                     faça ter mais produtividade e agilidade, senão dá vontade de cada coisa haha!
                 </p>
 
-                <img src="img/prod.webp" alt="" id="gif">
+                <img src="/assets/img/prod.webp" alt="" id="gif">
                 
             </div>
 
@@ -454,10 +456,13 @@
                     <a href="https://gsap.com/" target="_blank">gsap /</a>
                     <a href="https://sweetalert2.github.io/" target="_blank">sweet alert2 /</a>
                 </span>
+            </div>
+
+            <div class="tools-dwo">               
                 <span class="tools-links">
                     <a href="https://www.canva.com/" target="_blank">canvas /</a>
                     <a href="https://www.imagine.art/dashboard?isSignUp=false" target="_blank">imagine art /</a>
-                    <a href="https://gamma.app/" target="_blank">gamma app  /</a>
+                    <a href="https://gamma.app/" target="_blank">gamma app /</a>
                     <a href="https://bennettfeely.com/clippy/" target="_blank">clippy css /</a>
                     <a href="https://neumorphism.io/#e0e0e0" target="_blank">neumorphism io /</a>
                     <a href="https://animista.net/" target="_blank">animista /</a>
@@ -474,46 +479,57 @@
                     <a href="https://www.softr.io/tools/svg-wave-generator" target="_blank">softr /</a>
                     <a href="https://gsap.com/" target="_blank">gsap /</a>
                     <a href="https://sweetalert2.github.io/" target="_blank">sweet alert2 /</a>
-                </span>
-                
+                </span> 
             </div>
 
         </section>
 
-        <section class="project-container" id="projetos">
-
-            <h1 class="projects-tittle">Pro<span>jet</span>os</h1>
-            
+        <section class="project-container">
+            <h1 class="projects-tittle" id="projetos">Pro<span>jet</span>os</h1>      
+              
             <div class="project-hero">
 
                 <div class="projects-happy" data-aos="fade-up" data-aos-duration="2000">
-                    <p>Fico feliz em desenvolver estes projetos</p>                                                 
+                    <p>Orgulho em desenvolver estes projetos</p>                                            
                 </div>
     
                 <div class="projects">
                     
                     <div class="project-layers" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="500" data-aos-easing="linear"> 
-                        <span class="clarity--beta-line"></span>
+                        <span>01</span>
                         <h1>Em breve</h1>
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">    
+                            <path d="M90.54,0H89.46C71.61,23.72,49,47,27.43,65.3l.87,1.08c22-14.14,39.61-31.56,60.72-52C88.8,69,86.41,139.09,84.23,180H95.77c-2.18-40.92-4.79-111-5-165.64,20.89,19.81,38.75,37.66,60.94,52l.87-1.08C130.81,47.67,108.39,23.72,90.54,0Z" fill="#fff"/>
+                        </svg>
+
+                        <img src="/assets/img/dev.png" alt="EM BREVE">
                     </div>      
        
                     <div class="project-layers" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1100" data-aos-easing="linear"> 
-                        <span class="clarity--beta-line"></span> 
+                        <span>02</span> 
                         <h1>Em breve</h1>
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">    
+                            <path d="M90.54,0H89.46C71.61,23.72,49,47,27.43,65.3l.87,1.08c22-14.14,39.61-31.56,60.72-52C88.8,69,86.41,139.09,84.23,180H95.77c-2.18-40.92-4.79-111-5-165.64,20.89,19.81,38.75,37.66,60.94,52l.87-1.08C130.81,47.67,108.39,23.72,90.54,0Z" fill="#fff"/>
+                        </svg>
+                        <img src="/assets/img/dev.png" alt="EM BREVE">
                     </div> 
 
                     <div class="project-layers" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500" data-aos-easing="linear"> 
-                        <span class="clarity--beta-line"></span>
+                        <span>03</span>
                         <h1>Em breve</h1>
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">    
+                            <path d="M90.54,0H89.46C71.61,23.72,49,47,27.43,65.3l.87,1.08c22-14.14,39.61-31.56,60.72-52C88.8,69,86.41,139.09,84.23,180H95.77c-2.18-40.92-4.79-111-5-165.64,20.89,19.81,38.75,37.66,60.94,52l.87-1.08C130.81,47.67,108.39,23.72,90.54,0Z" fill="#fff"/>
+                        </svg>
+                        <img src="/assets/img/dev.png" alt="EM BREVE">
                     </div> 
 
                     <div class="project-layers" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="2000" data-aos-easing="linear"> 
-                        <span class="clarity--beta-line"></span>
+                        <span>04</span>
                         <h1>Em breve</h1>
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">    
+                            <path d="M90.54,0H89.46C71.61,23.72,49,47,27.43,65.3l.87,1.08c22-14.14,39.61-31.56,60.72-52C88.8,69,86.41,139.09,84.23,180H95.77c-2.18-40.92-4.79-111-5-165.64,20.89,19.81,38.75,37.66,60.94,52l.87-1.08C130.81,47.67,108.39,23.72,90.54,0Z" fill="#fff"/>
+                        </svg>
+                        <img src="/assets/img/dev.png" alt="EM BREVE">
                     </div> 
                 </div>
             </div>
@@ -531,7 +547,16 @@
             <a class="cicle">
                 <i class="fa-solid fa-arrow-up-from-bracket"></i>
             </a>       
-        </section>       
+        </section> 
+        
+        <section class="sound-container">
+            <a class="sound">
+                <span>sound : </span><span id="sound-controls">?</span>
+                <audio id="audio" loop>
+                    <source src="/assets/music/massobeats - honey jam (freetouse.com).mp3" type="audio/mp3">    
+                </audio>
+            </a>
+        </section>
     </main>
 
     <footer class="footer-container" id="contatos">
@@ -560,17 +585,19 @@
                 </div>
                 
                 <div class="footer-cicle-animate">
-                    <svg width="220" height="220" viewBox="0 0 300 300">
-                        <circle cx="150" cy="150" r="120" fill="none" stroke="white" />
+                    <svg width="240" height="240" viewBox="0 0 320 320">
+                        <circle cx="160" cy="160" r="107" fill="none" stroke="white" />
+                        <circle cx="160" cy="160" r="159" fill="none" stroke="white" />
                         <defs>
-                            <path id="circlePath" d="M 150, 150 m -150, 0 a 150,150 0 1,0 300,0 a 150,150 0 1,0 -300,0" />
+                            <path id="circlePath" d="M 160, 160 m -140, 0 a 140,140 0 1,0 280,0 a 140,140 0 1,0 -280,0" />
                         </defs>    
                         <text font-size="25" fill="white">
                             <textPath href="#circlePath" startOffset="0">
-                                Original °Desing ° Original ° Desing ° Original ° Desing °Original° Desing°
+                                ㅤ✈︎ Contate-Me ✈︎ Contate-Me ✈︎ Contate-Me ✈︎ Contate-Me
                             </textPath>
                         </text>
-                    </svg>                       
+                    </svg>
+                     <img src="/assets/img/plane.gif" alt="PLANE">                        
                 </div>
 
             </div>
@@ -579,19 +606,19 @@
             <div class="social-midia">
 
                 <a class="facebook" href="https://www.facebook.com/emerson.emersoneliassodremorais" target="_blank">
-                    <span class="uit--facebook-f"></span>
+                    <i class="fa-brands fa-facebook-f"></i>
                 </a>
 
                 <a class="instagram" href="https://www.instagram.com/emersoneliass_/" target="_blank">
-                    <span class="ph--instagram-logo-light"></span>
+                    <i class="fa-brands fa-instagram"></i>
                 </a>
 
                 <a class="linkedin" href="https://www.linkedin.com/in/emerson-elias-9b2894228/" target="_blank">
-                    <span class="uit--linkedin-alt"></span>
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
                 <a class="git-icon-footer" href="https://github.com/emerson-elias" target="_blank">
-                    <span class="teenyicons--git-outline"></span>
+                    <i class="fa-brands fa-github-alt"></i>
                 </a>
 
             </div>
@@ -621,6 +648,7 @@
   \_____/   
 
 --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/091f30ca3a.js" crossorigin="anonymous"></script>
     <script src="js/oud.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

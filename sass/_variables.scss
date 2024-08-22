@@ -4,7 +4,7 @@ $gray_primary:#161616;
 
 $Secundary_Color: #caa986;
 
-$Color_White:#fffffffe;
+$Color_White:#ffffff;
 
 $Color_White_B9: #ffffffb9;
 
@@ -16,13 +16,7 @@ $Icon_color_Smoker: #ffffff07;
 
 $Color_Black: #000;
 
-$Smoker:rgba(0, 0, 0, 0.961); /* Cor de fundo escura com transparência */
-
-$Smoker_one: #00000018;
-
-$Smoker_dwo: #000000b7;
-
-$Smoker_there_0: #00000000;
+$Color_Null: #00000000;
 
 $Transition_ease: 0.5s all ease;
 
@@ -58,4 +52,8 @@ $MATERIALIZE: #ec7178;
 
 $RAILWAY: #ffffff;
 
-$font_primary: 'grand slang', sans-serif;
+$font_Primary: 'aquire light', sans-serif;
+
+$font_Secondary: 'aquire regular', sans-serif;
+
+$font_Tertiary: 'aquire bold', sans-serif;

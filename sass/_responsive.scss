@@ -9,7 +9,7 @@
 /* Responsivo para dispositivos Laptops: */
 
 @mixin screen_laptop{
-    @media screen and (max-width:992px){
+    @media screen and (max-width:1100px){
        @content;
     }
 }
