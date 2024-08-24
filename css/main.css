@@ -3,15 +3,15 @@
 /*===========================================================================*/
 @font-face {
   font-family: "aquire light";
-  src: url(../assets/fonts/Aquire/Aquire-Light.otf);
+  src: url(/assets/fonts/Aquire/Aquire-Light.otf);
 }
 @font-face {
   font-family: "aquire regular";
-  src: url(../assets/fonts/Aquire/Aquire-Regular.otf);
+  src: url(/assets/fonts/Aquire/Aquire-Regular.otf);
 }
 @font-face {
   font-family: "aquire bold";
-  src: url(../assets/fonts/Aquire/Aquire-Bold.otf);
+  src: url(/assets/fonts/Aquire/Aquire-Bold.otf);
 }
 /* Responsivo para dispositivos large: */
 /* Responsivo para dispositivos Laptops: */
@@ -832,22 +832,25 @@ html body main .hero-me .hero-titulo {
     margin: 100px 0 0 0;
   }
 }
-html body main .hero-me .hero-titulo h1 {
+html body main .hero-me .hero-titulo a {
   text-align: center;
   font-family: "aquire bold", sans-serif;
   font-style: normal;
   font-weight: 600;
   letter-spacing: 10px;
-  font-size: 2.5vw;
+  font-size: 2vw;
   text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
   font-family: "aquire bold", sans-serif;
+  cursor: pointer;
 }
 @media screen and (max-width: 600px) {
-  html body main .hero-me .hero-titulo h1 {
+  html body main .hero-me .hero-titulo a {
     font-size: 25px;
   }
 }
-html body main .hero-me .hero-titulo h1 span {
+html body main .hero-me .hero-titulo a span {
   color: #caa986;
 }
 html body main .hero-me .sobre-mim {
@@ -2895,4 +2898,4 @@ html body .footer-container .credits p {
   opacity: 1 !important;
 }
 
-/*# sourceMappingURL=estilos.css.map */
+/*# sourceMappingURL=main.css.map */

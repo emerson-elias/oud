@@ -1,0 +1,228 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+/*===========================================================================*/
+@font-face {
+  font-family: "aquire light";
+  src: url(/assets/fonts/Aquire/Aquire-Light.otf);
+}
+@font-face {
+  font-family: "aquire regular";
+  src: url(/assets/fonts/Aquire/Aquire-Regular.otf);
+}
+@font-face {
+  font-family: "aquire bold";
+  src: url(/assets/fonts/Aquire/Aquire-Bold.otf);
+}
+/* Responsivo para dispositivos large: */
+/* Responsivo para dispositivos Laptops: */
+/* Responsivo para dispositivos Tablets: */
+/* Responsivo para dispositivos Móveis: */
+/* Telas muitos pequenas: */
+/*==============================================================================================*/
+@keyframes girar_left {
+  from {
+    transform: rotate(0deg); /* rotação inicial */
+  }
+  to {
+    transform: rotate(360deg); /* rotação final */
+  }
+}
+/*==============================================================================================*/
+@keyframes girar_right {
+  from {
+    transform: rotate(0deg); /* rotação inicial */
+  }
+  to {
+    transform: rotate(-360deg); /* rotação final */
+  }
+}
+/*==============================================================================================*/
+@keyframes btn-rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(6deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-6deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(4deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+/*==============================================================================================*/
+@keyframes btn-storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(7px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-6px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(5px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+/*==============================================================================================*/
+@keyframes text-linear-left {
+  0% {
+    transform: translateX(1%);
+  }
+  100% {
+    transform: translateX(-82%);
+  }
+}
+@keyframes text-linear-right {
+  0% {
+    transform: translateX(-82%);
+  }
+  100% {
+    transform: translateX(1%);
+  }
+}
+@keyframes text-linear-banner {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/*==============================================================================================*/
+@-webkit-keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+    transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+    transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #161616;
+  overflow: hidden;
+}
+body h1 {
+  font-size: 100px;
+  word-break: break-all;
+  color: rgba(255, 255, 255, 0.7254901961);
+  font-family: "aquire light", sans-serif;
+}
+
+/*# sourceMappingURL=estilos.css.map */

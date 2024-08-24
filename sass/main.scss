@@ -1,8 +1,7 @@
-@use 'variables';
-@use 'components';
-@use 'mixins';
-@use 'responsive';
-@use 'key-Frames';
+@use '../sass/global/variables';
+@use '../sass/global/mixins';
+@use '../sass/global/responsive';
+@use '../sass/global/key-Frames';
 
 * {
     padding: 0;
@@ -522,11 +521,14 @@ html{
                         margin: 100px 0 0 0;
                     }
 
-                    h1{
+                    a{
                         @include mixins.text_formatting(center, normal, 600, 10px);
-                        font-size: 2.5vw;
+                        font-size: 2vw;
                         text-transform: uppercase;
+                        text-decoration: none;
+                        color: variables.$Color_White;
                         font-family: variables.$font_Tertiary;
+                        cursor: pointer;
 
                         @include responsive.screen_small{
                             font-size: 25px;

@@ -1,0 +1,25 @@
+@use '../global/variables' as var;
+@use '../global/mixins';
+@use '../global/responsive';
+@use '../global/key-Frames';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    @include mixins.align(relative, flex, center, center);
+    width: 100vw;
+    height: 100vh;
+    background-color: var.$gray_primary;
+    overflow: hidden;
+
+    h1{
+        font-size: 100px;
+        word-break: break-all;
+        color: var.$Color_White_B9;
+        font-family: var.$font_Primary;
+    }
+}
