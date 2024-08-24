@@ -160,6 +160,9 @@ const easter_eggs = document.getElementsByClassName('click')[0];
 //====================================================================================//
 
             /* PAUSE PARA ANIMAÇÃO */
+/*
+
+            CÓDIGO AINDA EM TESTE, ESTÁ TENDO UNS TRAVAMENTOS NOS EVENTOS DE MOUSELEAVER COM O DOR CURSOR
 
 const pauseElements = document.querySelectorAll('.tools-links')
 
@@ -172,7 +175,7 @@ const pauseElements = document.querySelectorAll('.tools-links')
             pauseElements.forEach(el => el.classList.remove('paused'))
         })
     })
-
+*/
 //====================================================================================//
 
             /* SCRIPT PARA EXIBIR O GIF */

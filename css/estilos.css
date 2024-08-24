@@ -98,67 +98,6 @@
   }
 }
 /*==============================================================================================*/
-@-webkit-keyframes jello-horizontal {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-@keyframes jello-horizontal {
-  0% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-  30% {
-    -webkit-transform: scale3d(1.25, 0.75, 1);
-    transform: scale3d(1.25, 0.75, 1);
-  }
-  40% {
-    -webkit-transform: scale3d(0.75, 1.25, 1);
-    transform: scale3d(0.75, 1.25, 1);
-  }
-  50% {
-    -webkit-transform: scale3d(1.15, 0.85, 1);
-    transform: scale3d(1.15, 0.85, 1);
-  }
-  65% {
-    -webkit-transform: scale3d(0.95, 1.05, 1);
-    transform: scale3d(0.95, 1.05, 1);
-  }
-  75% {
-    -webkit-transform: scale3d(1.05, 0.95, 1);
-    transform: scale3d(1.05, 0.95, 1);
-  }
-  100% {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-  }
-}
-/*==============================================================================================*/
 @-webkit-keyframes bounce-in-top {
   0% {
     -webkit-transform: translateY(-500px);
@@ -278,6 +217,11 @@
   scrollbar-width: none;
 }
 
+html {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 @media screen and (max-width: 300px), (max-height: 220px) {
   html {
     background-color: #161616;
@@ -437,9 +381,9 @@ html body header .navbar .burguer {
   height: auto;
   padding: 1.5vmax;
   list-style: none;
-  margin: 0 1.8vmax 0 0;
   transition: 0.5s all ease;
   z-index: 9999;
+  cursor: pointer;
 }
 html body header .navbar .burguer span {
   position: relative;
@@ -854,7 +798,7 @@ html body main .hero-me .hero-text-bg {
   right: 0;
   font-size: 10vw;
   font-style: italic;
-  font-family: "aquire bold", sans-serif;
+  font-family: "aquire light", sans-serif;
   text-transform: uppercase;
   text-wrap: nowrap;
   letter-spacing: 2px;
@@ -1648,7 +1592,7 @@ html body main .tecnology-container .tecnology-text-bg {
   right: 0;
   font-size: 10vw;
   font-style: italic;
-  font-family: "aquire bold", sans-serif;
+  font-family: "aquire light", sans-serif;
   text-transform: uppercase;
   text-wrap: nowrap;
   letter-spacing: 2px;
@@ -2116,7 +2060,7 @@ html body main .tecnology-container .tools .tools-links, html body main .tecnolo
 }
 html body main .tecnology-container .tools .tools-links a, html body main .tecnology-container .tools-dwo .tools-links a {
   text-decoration: none;
-  padding: 0 0 0 50px;
+  margin: 0 0 0 50px;
   color: rgba(255, 255, 255, 0.4274509804);
   font-size: 6vmax;
   font-family: "aquire light", sans-serif;
@@ -2278,6 +2222,7 @@ html body main .project-container .project-hero .projects-happy p {
 @media screen and (max-width: 600px) {
   html body main .project-container .project-hero .projects-happy p {
     width: inherit;
+    font-size: 45px;
   }
 }
 html body main .project-container .project-hero .projects {
@@ -2325,10 +2270,11 @@ html body main .project-container .project-hero .projects .project-layers {
 html body main .project-container .project-hero .projects .project-layers::after {
   position: absolute;
   content: "";
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 0%;
+  transform: translate(-50%, -50%);
   background-color: transparent;
   transition: 0.5s all ease;
   z-index: -1;
@@ -2431,8 +2377,12 @@ html body main .project-container .project-button-plus a {
   }
 }
 html body main .project-container .project-button-plus:hover {
-  background-color: #caa986;
+  background-color: #161616;
   transition: 0.5s all ease;
+  border: transparent;
+}
+html body main .project-container .project-button-plus:hover a {
+  color: #caa986;
 }
 html body main .button-top {
   position: fixed;
@@ -2463,9 +2413,16 @@ html body main .button-top .cicle {
   border: 1px solid #ffffff;
   cursor: pointer;
 }
+html body main .button-top .cicle:hover {
+  background-color: #caa986;
+  border: transparent;
+}
 html body main .button-top .cicle .fa-arrow-up-from-bracket {
   color: #ffffff;
   font-size: 15px;
+}
+html body main .button-top .cicle:hover .fa-arrow-up-from-bracket {
+  color: #161616;
 }
 html body main .sound-container {
   position: fixed;
@@ -2478,7 +2435,7 @@ html body main .sound-container {
 html body main .sound-container .sound {
   position: relative;
   display: block;
-  left: -2%;
+  left: -2.5%;
   width: 10vmax;
   height: 2vmax;
   transform: rotate(-90deg);
@@ -2494,8 +2451,8 @@ html body main .sound-container .sound {
 }
 @media screen and (max-width: 600px) {
   html body main .sound-container .sound {
+    top: -30px;
     left: -48px;
-    margin-top: 12px;
   }
 }
 html body main .sound-container .sound span {
@@ -2529,7 +2486,7 @@ html body .footer-container .footer-text-bg {
   right: 0;
   font-size: 10vw;
   font-style: italic;
-  font-family: "aquire bold", sans-serif;
+  font-family: "aquire light", sans-serif;
   text-transform: uppercase;
   text-wrap: nowrap;
   letter-spacing: 2px;
@@ -2625,7 +2582,7 @@ html body .footer-container .footer .footer-contact .contatc {
 }
 html body .footer-container .footer .footer-contact .contatc h1 {
   border-bottom: 1px solid #ffffff;
-  width: 150px;
+  width: 170px;
   padding: 0 0 2px 0;
   font-size: 2vmax;
   letter-spacing: 3.1px;
@@ -2644,6 +2601,7 @@ html body .footer-container .footer .footer-contact .contatc a {
   letter-spacing: 1px;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7254901961);
+  cursor: pointer;
 }
 @media screen and (max-width: 1100px) {
   html body .footer-container .footer .footer-contact .contatc a {
@@ -2719,6 +2677,7 @@ html body .footer-container .footer .footer-contact .footer-cicle-animate {
 @media screen and (max-width: 600px) {
   html body .footer-container .footer .footer-contact .footer-cicle-animate {
     justify-content: center;
+    width: 60%;
   }
 }
 html body .footer-container .footer .footer-contact .footer-cicle-animate svg {
@@ -2759,11 +2718,6 @@ html body .footer-container .footer .social-midia {
   width: 100%;
   height: auto;
 }
-@media screen and (max-width: 600px) {
-  html body .footer-container .footer .social-midia {
-    margin: 5vh 0 0 0;
-  }
-}
 html body .footer-container .footer .social-midia .facebook, html body .footer-container .footer .social-midia .instagram, html body .footer-container .footer .social-midia .linkedin, html body .footer-container .footer .social-midia .git-icon-footer {
   position: relative;
   display: flex;
@@ -2777,6 +2731,12 @@ html body .footer-container .footer .social-midia .facebook, html body .footer-c
   border: 1px solid #ffffff;
   transition: 0.5s all ease;
 }
+@media screen and (max-width: 600px) {
+  html body .footer-container .footer .social-midia .facebook, html body .footer-container .footer .social-midia .instagram, html body .footer-container .footer .social-midia .linkedin, html body .footer-container .footer .social-midia .git-icon-footer {
+    width: 6vh;
+    height: 6vh;
+  }
+}
 html body .footer-container .footer .social-midia .facebook:hover, html body .footer-container .footer .social-midia .instagram:hover, html body .footer-container .footer .social-midia .linkedin:hover, html body .footer-container .footer .social-midia .git-icon-footer:hover {
   transform: scale(1.5);
   border: none;
@@ -2785,6 +2745,11 @@ html body .footer-container .footer .social-midia .facebook:hover, html body .fo
 html body .footer-container .footer .social-midia .facebook i, html body .footer-container .footer .social-midia .instagram i, html body .footer-container .footer .social-midia .linkedin i, html body .footer-container .footer .social-midia .git-icon-footer i {
   font-size: 4vh;
   color: rgba(255, 255, 255, 0.7254901961);
+}
+@media screen and (max-width: 600px) {
+  html body .footer-container .footer .social-midia .facebook i, html body .footer-container .footer .social-midia .instagram i, html body .footer-container .footer .social-midia .linkedin i, html body .footer-container .footer .social-midia .git-icon-footer i {
+    font-size: 3vh;
+  }
 }
 html body .footer-container .footer .social-midia .facebook:hover i, html body .footer-container .footer .social-midia .instagram:hover i, html body .footer-container .footer .social-midia .linkedin:hover i, html body .footer-container .footer .social-midia .git-icon-footer:hover i {
   color: #caa986;
@@ -2842,10 +2807,10 @@ html body .footer-container .credits p {
   }
 }
 
-.paused {
-  animation-play-state: paused !important;
-}
-
+/*
+.paused{
+    animation-play-state: paused !important;
+}*/
 .burguer-aux {
   transform: rotate(360deg) !important;
   transition: 0.5s all ease;
