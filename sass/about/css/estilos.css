@@ -1,6 +1,18 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 /*===========================================================================*/
+@font-face {
+  font-family: "aquire light";
+  src: url(../assets/fonts/Aquire/Aquire-Light.otf);
+}
+@font-face {
+  font-family: "aquire regular";
+  src: url(../assets/fonts/Aquire/Aquire-Regular.otf);
+}
+@font-face {
+  font-family: "aquire bold";
+  src: url(../assets/fonts/Aquire/Aquire-Bold.otf);
+}
 /* Responsivo para dispositivos large: */
 /* Responsivo para dispositivos Laptops: */
 /* Responsivo para dispositivos Tablets: */
@@ -189,10 +201,6 @@
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
-}
-@font-face {
-  font-family: "aquire light";
-  src: url(/assets/fonts/Aquire/Aquire-Light.otf);
 }
 * {
   margin: 0;

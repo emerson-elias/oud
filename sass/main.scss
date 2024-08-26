@@ -314,7 +314,6 @@ html{
                     height: inherit;                 
                     white-space: nowrap;
                     box-sizing: border-box;
-                    overflow: hidden;
 
                     h1{
                         position: relative;
@@ -322,8 +321,7 @@ html{
                         display: inline-block;
                         font-size: 60vh;
                         color: transparent;
-                        font-family: 'aquire bold', sans-serif;
-                        text-transform: uppercase;
+                        font-family: variables.$font_Tertiary;
                         -webkit-text-stroke: 1px variables.$Secundary_Color;
                         animation: text-linear-banner 60s linear infinite;
 
@@ -435,7 +433,8 @@ html{
                                 font-size: 15px;
                             }
                             @include responsive.screen_small{
-                                font-size: 13px;
+                                margin-top: 25px;
+                                font-size: 16px;
                             }
                         }
                     }
@@ -488,9 +487,6 @@ html{
                 height: auto;
                 padding: 50vh 0;
 
-
-                background-color: rgba(238, 232, 170, 0);
-
                 @include responsive.screen_small{
                     padding: 150px 0;
                 }
@@ -500,8 +496,6 @@ html{
                     width: 80vw;
                     height: auto;
                     margin-bottom: 5vh;
-
-                    background-color: rgba(51, 153, 58, 0);
 
                     h1{
                         color: variables.$Color_White_B9;
@@ -515,15 +509,21 @@ html{
                     position: relative;
                     width: 80vw;
 
-                    background-color: rgba(102, 51, 153, 0);
-                    
+                    @include responsive.screen_small{
+                        width: 85%;
+                    }
+
                     span{
                         margin: 0 5px;
                         color: variables.$Color_White_B9;
                         font-family: variables.$font_Primary;
                         font-size: 2vmax;
                         letter-spacing: 1px;
-                        line-height: 1.5;                  
+                        line-height: 1.5;  
+                        
+                        @include responsive.screen_small{
+                            font-size: 15px;
+                        }
 
                         svg{
                             position: relative;
@@ -532,46 +532,42 @@ html{
                             animation: girar_left 10s linear infinite;
 
                             @include responsive.screen_small{
-                                width: 20px;
+                                top: 7px;
+                                width: 8%;
                             }
                         }
 
                         i{
                             font-size: 1.5vmax;
+
+                            @include responsive.screen_small{
+                                font-size: 15px;
+                            }
                         }
                         
                         &:nth-child(1){
-                            margin-left: 7vmax;
-                            
+                            margin-left: 7vmax;                           
                         }
                         &:nth-child(3){
-                            color: variables.$Secundary_Color;
-                            
+                            color: variables.$Secundary_Color;                           
                         }
                         &:nth-child(7){
-                            margin-left: 15vmax;
-                            
+                            margin-left: 15vmax;                           
                         }
                         &:nth-child(11){
-                            //margin-left: 7vmax;
-                            color: variables.$Secundary_Color;
-                            
+                            color: variables.$Secundary_Color;                          
                         }
                         &:nth-child(17){
                             color: variables.$Secundary_Color;
-                            margin: 0 50px;
-                            
+                            margin: 0 50px;                            
                         }
                         &:nth-child(20){
                             color: variables.$Secundary_Color;
-                            margin-left: 10vmax;
-                            
+                            margin-left: 10vmax;                           
                         }
                         &:nth-child(23){
-                            color: variables.$Secundary_Color;
-                            
-                        }
-                      
+                            color: variables.$Secundary_Color;                           
+                        }                     
                     }
                 }
 
@@ -582,7 +578,7 @@ html{
 
                     @include responsive.screen_small{
                         top: 30px;
-                        left: 10%;
+                        left: 0;
                     }
                     
                     a{
@@ -601,9 +597,9 @@ html{
                         font-size: 1.5vmax;
 
                         @include responsive.screen_small{
-                            width: 120px;
-                            height: 30px;
-                            font-size: 13px;
+                            width: 150px;
+                            height: 35px;
+                            font-size: 17px;
                         }
 
                         &:nth-child(2){
@@ -618,6 +614,7 @@ html{
                     }
                 }
             }
+
             .cards-container{
                 display: none !important;
                 @include mixins.align(relative, flex, center, center);

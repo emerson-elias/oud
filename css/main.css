@@ -585,7 +585,6 @@ html body main .banner .banner-text-linear {
   height: inherit;
   white-space: nowrap;
   box-sizing: border-box;
-  overflow: hidden;
 }
 html body main .banner .banner-text-linear h1 {
   position: relative;
@@ -594,7 +593,6 @@ html body main .banner .banner-text-linear h1 {
   font-size: 60vh;
   color: transparent;
   font-family: "aquire bold", sans-serif;
-  text-transform: uppercase;
   -webkit-text-stroke: 1px #caa986;
   animation: text-linear-banner 60s linear infinite;
 }
@@ -719,7 +717,8 @@ html body main .banner .row .layer-2 p {
 }
 @media screen and (max-width: 600px) {
   html body main .banner .row .layer-2 p {
-    font-size: 13px;
+    margin-top: 25px;
+    font-size: 16px;
   }
 }
 html body main .banner .row .layer-3 {
@@ -773,7 +772,6 @@ html body main .about-container {
   width: 100vw;
   height: auto;
   padding: 50vh 0;
-  background-color: rgba(238, 232, 170, 0);
 }
 @media screen and (max-width: 600px) {
   html body main .about-container {
@@ -785,7 +783,6 @@ html body main .about-container .about-titlle {
   width: 80vw;
   height: auto;
   margin-bottom: 5vh;
-  background-color: rgba(51, 153, 58, 0);
 }
 html body main .about-container .about-titlle h1 {
   color: rgba(255, 255, 255, 0.7254901961);
@@ -796,7 +793,11 @@ html body main .about-container .about-titlle h1 {
 html body main .about-container .about-bio {
   position: relative;
   width: 80vw;
-  background-color: rgba(102, 51, 153, 0);
+}
+@media screen and (max-width: 600px) {
+  html body main .about-container .about-bio {
+    width: 85%;
+  }
 }
 html body main .about-container .about-bio span {
   margin: 0 5px;
@@ -806,6 +807,11 @@ html body main .about-container .about-bio span {
   letter-spacing: 1px;
   line-height: 1.5;
 }
+@media screen and (max-width: 600px) {
+  html body main .about-container .about-bio span {
+    font-size: 15px;
+  }
+}
 html body main .about-container .about-bio span svg {
   position: relative;
   top: 0.5vmax;
@@ -814,11 +820,17 @@ html body main .about-container .about-bio span svg {
 }
 @media screen and (max-width: 600px) {
   html body main .about-container .about-bio span svg {
-    width: 20px;
+    top: 7px;
+    width: 8%;
   }
 }
 html body main .about-container .about-bio span i {
   font-size: 1.5vmax;
+}
+@media screen and (max-width: 600px) {
+  html body main .about-container .about-bio span i {
+    font-size: 15px;
+  }
 }
 html body main .about-container .about-bio span:nth-child(1) {
   margin-left: 7vmax;
@@ -851,7 +863,7 @@ html body main .about-container .btn-sobre-mim {
 @media screen and (max-width: 600px) {
   html body main .about-container .btn-sobre-mim {
     top: 30px;
-    left: 10%;
+    left: 0;
   }
 }
 html body main .about-container .btn-sobre-mim a {
@@ -871,9 +883,9 @@ html body main .about-container .btn-sobre-mim a {
 }
 @media screen and (max-width: 600px) {
   html body main .about-container .btn-sobre-mim a {
-    width: 120px;
-    height: 30px;
-    font-size: 13px;
+    width: 150px;
+    height: 35px;
+    font-size: 17px;
   }
 }
 html body main .about-container .btn-sobre-mim a:nth-child(2) {
