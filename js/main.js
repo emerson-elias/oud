@@ -1,8 +1,8 @@
 //==========  Quando a página for carregada, rola para o topo  =======================//
-
+/*
 window.onload = () => { 
     window.scrollTo(0, 0)
-}
+}*/
 
 //====================================================================================//
 
@@ -108,7 +108,7 @@ const cursor = document.getElementById('cursor')
         anchor.addEventListener('mouseover', () => {
             gsap.to(cursor, {
                 duration: 0.5,
-                scale: '3',
+                scale: '4',
                 ease: "power2.out"
             })
         })
@@ -283,6 +283,13 @@ const element_second = document.getElementById('magnect-2')
 
 animix_follow_cursor(layer_3, element_first, element_second)
 
+
+const about_container = document.getElementsByClassName('btn-sobre-mim')[0]
+const btn_one = document.getElementById('a_one')
+const btn_dwo = document.getElementById('a_dwo')
+
+
+animix_follow_cursor(about_container, btn_one, btn_dwo)
 /* USEI ESSE SCRIPT PORQUE O <a href="#contatos"></a> NÃO ESTAVA FUNCIONANDO POR CONTA DA ANIMAÇÃO DO BOTÃO */
 
 layer_3.addEventListener('click', () => {

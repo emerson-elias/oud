@@ -415,7 +415,7 @@ html body header .navbar ul {
   width: 100vw;
   height: 100vh;
   flex-direction: column;
-  transform: translateY(-100%);
+  transform: translateY(-120%);
   transition: 1s all ease;
   background-color: #161616;
   z-index: 999;
@@ -531,7 +531,7 @@ html body header .navbar ul .midia {
     margin: 20px 0 0 0;
   }
 }
-html body header .navbar ul .midia .facebook, html body header .navbar ul .midia .instagram, html body header .navbar ul .midia .linkedin, html body header .navbar ul .midia .git-icon-footer {
+html body header .navbar ul .midia .linkedin, html body header .navbar ul .midia .git-icon-footer, html body header .navbar ul .midia .instagram, html body header .navbar ul .midia .cv {
   position: relative;
   display: flex;
   justify-content: center;
@@ -545,21 +545,21 @@ html body header .navbar ul .midia .facebook, html body header .navbar ul .midia
   pointer-events: all;
 }
 @media screen and (max-width: 600px) {
-  html body header .navbar ul .midia .facebook, html body header .navbar ul .midia .instagram, html body header .navbar ul .midia .linkedin, html body header .navbar ul .midia .git-icon-footer {
+  html body header .navbar ul .midia .linkedin, html body header .navbar ul .midia .git-icon-footer, html body header .navbar ul .midia .instagram, html body header .navbar ul .midia .cv {
     margin: 10px;
     width: 50px;
     height: 50px;
     padding: 10px;
   }
 }
-html body header .navbar ul .midia .facebook:hover, html body header .navbar ul .midia .instagram:hover, html body header .navbar ul .midia .linkedin:hover, html body header .navbar ul .midia .git-icon-footer:hover {
+html body header .navbar ul .midia .linkedin:hover, html body header .navbar ul .midia .git-icon-footer:hover, html body header .navbar ul .midia .instagram:hover, html body header .navbar ul .midia .cv:hover {
   transform: scale(1.7);
 }
-html body header .navbar ul .midia .facebook i, html body header .navbar ul .midia .instagram i, html body header .navbar ul .midia .linkedin i, html body header .navbar ul .midia .git-icon-footer i {
+html body header .navbar ul .midia .linkedin i, html body header .navbar ul .midia .git-icon-footer i, html body header .navbar ul .midia .instagram i, html body header .navbar ul .midia .cv i {
   font-size: 5vh;
   color: rgba(255, 255, 255, 0.7254901961);
 }
-html body header .navbar ul .midia .facebook:hover i, html body header .navbar ul .midia .instagram:hover i, html body header .navbar ul .midia .linkedin:hover i, html body header .navbar ul .midia .git-icon-footer:hover i {
+html body header .navbar ul .midia .linkedin:hover i, html body header .navbar ul .midia .git-icon-footer:hover i, html body header .navbar ul .midia .instagram:hover i, html body header .navbar ul .midia .cv:hover i {
   color: #caa986;
 }
 html body main {
@@ -764,429 +764,128 @@ html body main .banner .row .layer-3 #magnect-1 svg, html body main .banner .row
   width: 5vmax;
   transform: rotate(180deg);
 }
-html body main .hero-me {
+html body main .about-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: normal;
-  font-family: "aquire bold", sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  letter-spacing: 1px;
   flex-direction: column;
   width: 100vw;
   height: auto;
-  color: #ffffff;
-  padding: 25vw 0 5vw 0;
-  background-color: #161616;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me {
-    padding: 250px 0 0 0;
-  }
+  padding: 50vh 0;
+  background-color: rgba(238, 232, 170, 0);
 }
 @media screen and (max-width: 600px) {
-  html body main .hero-me {
-    padding-top: 80px;
+  html body main .about-container {
+    padding: 150px 0;
   }
 }
-html body main .hero-me .hero-text-bg {
-  position: absolute;
-  top: 50vh;
-  left: 3vw;
-  right: 0;
-  font-size: 10vw;
-  font-style: italic;
-  font-family: "aquire light", sans-serif;
-  text-transform: uppercase;
-  text-wrap: nowrap;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.1607843137);
-  pointer-events: none;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .hero-text-bg {
-    top: 13%;
-    font-size: 110px;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .hero-text-bg {
-    top: 6%;
-    left: 5px;
-    font-size: 70px;
-  }
-}
-html body main .hero-me .hero-titulo {
+html body main .about-container .about-titlle {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: inherit;
-  height: 6vw;
-  margin: 2vw;
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .hero-titulo {
-    margin: 100px 0 0 0;
-  }
-}
-html body main .hero-me .hero-titulo a {
-  text-align: center;
-  font-family: "aquire bold", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 10px;
-  font-size: 2vw;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #ffffff;
-  font-family: "aquire bold", sans-serif;
-  cursor: pointer;
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .hero-titulo a {
-    font-size: 25px;
-  }
-}
-html body main .hero-me .hero-titulo a span {
-  color: #caa986;
-}
-html body main .hero-me .sobre-mim {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 4vh;
-  width: 85%;
-  height: 60vh;
-}
-@media screen and (max-width: 1200px) {
-  html body main .hero-me .sobre-mim {
-    width: 95%;
-    flex-wrap: wrap;
-  }
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim {
-    height: auto;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim {
-    top: 80px;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-img {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30vw;
-  height: 28vw;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-img {
-    width: 50%;
-    height: auto;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-img {
-    width: 100%;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-img img {
-  position: relative;
-  width: 20vw;
-  height: auto;
-  border-radius: 50px;
-  transition: 0.5s all ease;
-  z-index: 2;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-img img {
-    width: 280px;
-  }
-}
-@media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-img img {
-    width: 270px;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-img img {
-    width: 250px;
-    height: auto;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-img::after {
-  position: absolute;
-  content: "";
-  width: 20vw;
-  height: inherit;
-  transform: translate(-10%, -10%);
-  border: 0.8vw solid #caa986;
-  transition: 0.5s all ease;
-  border-radius: 50px;
-  pointer-events: none;
-  z-index: 1;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-img::after {
-    width: 280px;
-    height: 400px;
-    transform: translate(-10%, -10%);
-  }
-}
-@media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-img::after {
-    width: 250px;
-    transform: translate(-10%, -8%);
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-img::after {
-    border: 10px solid #caa986;
-    height: 330px;
-    transform: translate(-8%, -12%);
-  }
-}
-html body main .hero-me .sobre-mim .sobre-img:hover::after {
-  transform: translate(0%, 0%);
-  transition: 0.5s all ease;
-}
-html body main .hero-me .sobre-mim .sobre-diferenciais {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 25vw;
-  height: inherit;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais {
-    width: 50%;
-    height: 410px;
-  }
-}
-@media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais {
-    padding: 0 0 0 15px;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais {
-    width: inherit;
-    margin: 50px auto;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-diferenciais h1 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin: 0 0 1.5vmax 0;
-  text-transform: uppercase;
-  font-size: 1.7vw;
-  letter-spacing: 3px;
-  font-family: "aquire light", sans-serif;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais h1 {
-    font-size: 25px;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais h1 {
-    position: relative;
-    margin: 0 0 35px 0;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-diferenciais p {
-  position: relative;
-  width: 100%;
-  height: auto;
-  font-size: 1.15vmax;
-  padding: 0.9vw 0 0.5vw 0;
-  font-family: "aquire light", sans-serif;
-}
-@media screen and (max-width: 1200px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais p {
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais p {
-    font-size: 17px;
-    padding: 1.3vw 0 0.5vw 0;
-  }
-}
-@media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais p {
-    font-size: 17px;
-    line-height: 35px;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-diferenciais p i {
-  padding-right: 5px;
-  font-size: 1.5vw;
-  color: #caa986;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais p i {
-    font-size: 25px;
-  }
-}
-@media screen and (max-width: 768px) {
-  html body main .hero-me .sobre-mim .sobre-diferenciais p i {
-    font-size: 20px;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-descripion {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: normal;
-  flex-direction: column;
-  width: 35vw;
-  height: inherit;
-}
-@media screen and (max-width: 1200px) {
-  html body main .hero-me .sobre-mim .sobre-descripion {
-    width: 35%;
-  }
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-descripion {
-    width: 80%;
-    height: auto;
-    top: 25px;
-    margin: 50px auto;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-descripion {
-    top: 0;
-    width: 90%;
-    height: auto;
-    align-items: center;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-descripion h1 {
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin: 0 0 1.5vmax 0;
-  text-transform: uppercase;
-  font-size: 1.7vw;
-  letter-spacing: 3px;
-  font-family: "aquire light", sans-serif;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-descripion h1 {
-    position: relative;
-    font-size: 25px;
-    text-align: center;
-    margin: 0 0 1.5vw 0;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-descripion p {
-  text-align: normal;
-  font-family: "aquire bold", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  letter-spacing: 1px;
-  font-size: 1.18vmax;
-  line-height: 1.8;
-  font-family: "aquire light", sans-serif;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-@media screen and (max-width: 1200px) {
-  html body main .hero-me .sobre-mim .sobre-descripion p {
-    font-size: 15px;
-  }
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .sobre-mim .sobre-descripion p {
-    text-align: center;
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .sobre-mim .sobre-descripion p {
-    font-size: 17px;
-    line-height: 1.7;
-    margin-top: 20px;
-  }
-}
-html body main .hero-me .sobre-mim .sobre-descripion p a {
-  color: #caa986;
-  font-weight: bolder;
-  text-decoration: none;
-  font-style: italic;
-}
-html body main .hero-me .hero-cv {
-  position: relative;
-  display: flex;
-  justify-content: end;
-  align-items: center;
   width: 80vw;
   height: auto;
-  margin: 2vh 0 0 0;
+  margin-bottom: 5vh;
+  background-color: rgba(51, 153, 58, 0);
 }
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .hero-cv {
-    justify-content: center;
-    margin: 10vh 0 0 0;
-  }
-}
-@media screen and (max-width: 600px) {
-  html body main .hero-me .hero-cv {
-    margin: 20vh 0 0 0;
-  }
-}
-html body main .hero-me .hero-cv .my-cv {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 11vw;
-  height: auto;
-  padding: 0.9vmax 2vmax;
-  background-color: transparent;
-  transition: 0.5s all ease;
-  opacity: 1;
-  outline: none;
-}
-@media screen and (max-width: 1100px) {
-  html body main .hero-me .hero-cv .my-cv {
-    max-width: 150px;
-  }
-}
-html body main .hero-me .hero-cv .my-cv svg {
-  width: 100%;
-  height: 100%;
-}
-html body main .hero-me .hero-cv .my-cv text {
+html body main .about-container .about-titlle h1 {
+  color: rgba(255, 255, 255, 0.7254901961);
+  font-family: "aquire bold", sans-serif;
   font-size: 1.5vmax;
+  letter-spacing: 2px;
+}
+html body main .about-container .about-bio {
+  position: relative;
+  width: 80vw;
+  background-color: rgba(102, 51, 153, 0);
+}
+html body main .about-container .about-bio span {
+  margin: 0 5px;
+  color: rgba(255, 255, 255, 0.7254901961);
   font-family: "aquire light", sans-serif;
+  font-size: 2vmax;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+html body main .about-container .about-bio span svg {
+  position: relative;
+  top: 0.5vmax;
+  width: 3%;
+  animation: girar_left 10s linear infinite;
 }
 @media screen and (max-width: 600px) {
-  html body main .hero-me .hero-cv .my-cv text {
-    font-size: 20px;
+  html body main .about-container .about-bio span svg {
+    width: 20px;
   }
 }
-html body main .hero-me .hero-cv .my-cv:hover {
-  animation: btn-rotate 0.7s ease-in-out both;
+html body main .about-container .about-bio span i {
+  font-size: 1.5vmax;
 }
-html body main .hero-me .hero-cv .my-cv:hover svg {
-  animation: btn-storm 0.7s ease-in-out both;
-  animation-delay: 0.06s;
+html body main .about-container .about-bio span:nth-child(1) {
+  margin-left: 7vmax;
+}
+html body main .about-container .about-bio span:nth-child(3) {
+  color: #caa986;
+}
+html body main .about-container .about-bio span:nth-child(7) {
+  margin-left: 15vmax;
+}
+html body main .about-container .about-bio span:nth-child(11) {
+  color: #caa986;
+}
+html body main .about-container .about-bio span:nth-child(17) {
+  color: #caa986;
+  margin: 0 50px;
+}
+html body main .about-container .about-bio span:nth-child(20) {
+  color: #caa986;
+  margin-left: 10vmax;
+}
+html body main .about-container .about-bio span:nth-child(23) {
+  color: #caa986;
+}
+html body main .about-container .btn-sobre-mim {
+  position: relative;
+  left: 25%;
+  top: 2vh;
+}
+@media screen and (max-width: 600px) {
+  html body main .about-container .btn-sobre-mim {
+    top: 30px;
+    left: 10%;
+  }
+}
+html body main .about-container .btn-sobre-mim a {
+  position: absolute;
+  display: grid;
+  place-content: center;
+  width: 15vmax;
+  height: 3vmax;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7254901961);
+  font-family: "aquire light", sans-serif;
+  font-size: 1.5vmax;
+}
+@media screen and (max-width: 600px) {
+  html body main .about-container .btn-sobre-mim a {
+    width: 120px;
+    height: 30px;
+    font-size: 13px;
+  }
+}
+html body main .about-container .btn-sobre-mim a:nth-child(2) {
+  z-index: -1;
+  pointer-events: none;
+}
+html body main .about-container .btn-sobre-mim:hover a {
+  color: #caa986;
+  border: 2px solid #caa986;
 }
 html body main .cards-container {
+  display: none !important;
   position: relative;
   display: flex;
   justify-content: center;
@@ -2721,7 +2420,7 @@ html body .footer-container .footer .social-midia {
   width: 100%;
   height: auto;
 }
-html body .footer-container .footer .social-midia .facebook, html body .footer-container .footer .social-midia .instagram, html body .footer-container .footer .social-midia .linkedin, html body .footer-container .footer .social-midia .git-icon-footer {
+html body .footer-container .footer .social-midia .cv, html body .footer-container .footer .social-midia .instagram, html body .footer-container .footer .social-midia .linkedin, html body .footer-container .footer .social-midia .git-icon-footer {
   position: relative;
   display: flex;
   justify-content: center;
@@ -2735,26 +2434,26 @@ html body .footer-container .footer .social-midia .facebook, html body .footer-c
   transition: 0.5s all ease;
 }
 @media screen and (max-width: 600px) {
-  html body .footer-container .footer .social-midia .facebook, html body .footer-container .footer .social-midia .instagram, html body .footer-container .footer .social-midia .linkedin, html body .footer-container .footer .social-midia .git-icon-footer {
+  html body .footer-container .footer .social-midia .cv, html body .footer-container .footer .social-midia .instagram, html body .footer-container .footer .social-midia .linkedin, html body .footer-container .footer .social-midia .git-icon-footer {
     width: 6vh;
     height: 6vh;
   }
 }
-html body .footer-container .footer .social-midia .facebook:hover, html body .footer-container .footer .social-midia .instagram:hover, html body .footer-container .footer .social-midia .linkedin:hover, html body .footer-container .footer .social-midia .git-icon-footer:hover {
+html body .footer-container .footer .social-midia .cv:hover, html body .footer-container .footer .social-midia .instagram:hover, html body .footer-container .footer .social-midia .linkedin:hover, html body .footer-container .footer .social-midia .git-icon-footer:hover {
   transform: scale(1.5);
   border: none;
   border: 1px solid #caa986;
 }
-html body .footer-container .footer .social-midia .facebook i, html body .footer-container .footer .social-midia .instagram i, html body .footer-container .footer .social-midia .linkedin i, html body .footer-container .footer .social-midia .git-icon-footer i {
+html body .footer-container .footer .social-midia .cv i, html body .footer-container .footer .social-midia .instagram i, html body .footer-container .footer .social-midia .linkedin i, html body .footer-container .footer .social-midia .git-icon-footer i {
   font-size: 4vh;
   color: rgba(255, 255, 255, 0.7254901961);
 }
 @media screen and (max-width: 600px) {
-  html body .footer-container .footer .social-midia .facebook i, html body .footer-container .footer .social-midia .instagram i, html body .footer-container .footer .social-midia .linkedin i, html body .footer-container .footer .social-midia .git-icon-footer i {
+  html body .footer-container .footer .social-midia .cv i, html body .footer-container .footer .social-midia .instagram i, html body .footer-container .footer .social-midia .linkedin i, html body .footer-container .footer .social-midia .git-icon-footer i {
     font-size: 3vh;
   }
 }
-html body .footer-container .footer .social-midia .facebook:hover i, html body .footer-container .footer .social-midia .instagram:hover i, html body .footer-container .footer .social-midia .linkedin:hover i, html body .footer-container .footer .social-midia .git-icon-footer:hover i {
+html body .footer-container .footer .social-midia .cv:hover i, html body .footer-container .footer .social-midia .instagram:hover i, html body .footer-container .footer .social-midia .linkedin:hover i, html body .footer-container .footer .social-midia .git-icon-footer:hover i {
   color: #caa986;
 }
 html body .footer-container .credits {
@@ -2816,7 +2515,7 @@ html body .footer-container .credits p {
 }*/
 .burguer-aux {
   transform: rotate(360deg) !important;
-  transition: 0.5s all ease;
+  margin-right: 15px !important;
 }
 
 .b-one {

@@ -1,8 +1,12 @@
 @use '../global/variables' as var;
-@use '../global/components';
 @use '../global/mixins';
 @use '../global/responsive';
 @use '../global/key-Frames';
+
+@font-face {
+    font-family: 'aquire light';
+    src: url(/assets/fonts/Aquire/Aquire-Light.otf);
+}
 
 *{
     margin: 0;
@@ -15,12 +19,347 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: var.$gray_primary;
-    overflow: hidden;
 
-    h1{
-        font-size: 100px;
-        word-break: break-all;
-        color: var.$Color_White_B9;
-        font-family: var.$font_Primary;
+    .hero-me{
+        @include mixins.align(relative, flex, center, center);
+        @include mixins.text_formatting(normal, normal, 300, 1px);
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        color: var.$Color_White;
+        padding: 25vw 0 5vw 0;
+        background-color: var.$gray_primary;
+
+        @include responsive.screen_laptop{
+            padding: 250px 0 0 0;
+        }
+        @include responsive.screen_small{
+            padding-top: 80px;
+        }
+
+        .hero-text-bg{
+            @include mixins.text-bg(50vh);
+
+            @include responsive.screen_laptop{
+                top: 13%;
+                font-size: 110px;
+            }
+            @include responsive.screen_small{
+                top: 6%;
+                left: 5px;
+                font-size: 70px;
+            }
+        }
+
+        .hero-titulo{
+            @include mixins.align(relative, flex, center, center);
+            width: inherit;
+            height: 6vw;
+            margin: 2vw;
+
+            @include responsive.screen_small{
+                margin: 100px 0 0 0;
+            }
+
+            a{
+                @include mixins.text_formatting(center, normal, 600, 10px);
+                font-size: 2vw;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: var.$Color_White;
+                font-family: var.$font_Tertiary;
+                cursor: pointer;
+
+                @include responsive.screen_small{
+                    font-size: 25px;
+                }
+
+                span{
+                    color: var.$Secundary_Color;
+                }
+            }
+        }
+         
+        .sobre-mim{
+            @include mixins.align(relative, flex, space-between, center);
+            top: 4vh;
+            width: 85%;
+            height: 60vh;
+
+            @include responsive.screen_large{
+                width: 95%;
+                flex-wrap: wrap
+            }
+            @include responsive.screen_laptop{
+                height: auto;
+            }
+            @include responsive.screen_small{
+                top: 80px;
+            }
+
+            .sobre-img{
+                @include mixins.align(relative, flex, center, center);
+                width: 30vw;
+                height: 28vw;
+
+                @include responsive.screen_laptop{
+                    width: 50%;
+                    height: auto;                 
+                }                       
+                @include responsive.screen_small{
+                    width: 100%;
+                }
+
+                img{
+                    position: relative;
+                    width: 20vw;
+                    height: auto;
+                    border-radius: 50px;
+                    transition: var.$Transition_ease;
+                    z-index: 2; 
+
+                    @include responsive.screen_laptop{
+                        width: 280px;
+                    }
+                    @include responsive.screen_tablet{
+                        width: 270px;
+                    }
+                    @include responsive.screen_small{
+                        width: 250px;
+                        height: auto;
+                    }                            
+                }
+
+                &::after{
+                    position: absolute;
+                    content: '';
+                    width: 20vw;
+                    height: inherit;                        
+                    transform: translate(-10%,-10%);
+                    border: 0.8vw solid var.$Secundary_Color;
+                    transition: var.$Transition_ease;
+                    border-radius: 50px;
+                    pointer-events: none;
+                    z-index: 1;
+
+                    @include responsive.screen_laptop{
+                        width: 280px;
+                        height: 400px;
+                        transform: translate(-10%,-10%);
+                    }
+                    @include responsive.screen_tablet{
+                        width: 250px;
+                        transform: translate(-10%,-8%);
+                    }
+                    @include responsive.screen_small{
+                        border: 10px solid var.$Secundary_Color;
+                        height: 330px;
+                        transform: translate(-8%,-12%);
+                    }
+                }
+                &:hover::after{
+                    transform: translate(0%, 0%);
+                    transition: var.$Transition_ease;
+                }
+            }
+
+            .sobre-diferenciais{
+                @include mixins.align(relative, flex, center, center);
+                flex-direction: column;
+                width: 25vw;
+                height: inherit;
+                
+                @include responsive.screen_laptop{
+                    width: 50%;
+                    height: 410px; 
+                }
+                @include responsive.screen_tablet{
+                    padding: 0 0 0 15px;
+                }                       
+                @include responsive.screen_small{
+                    width: inherit;
+                    margin: 50px auto;   
+                }
+
+                h1{
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    margin: 0 0 1.5vmax 0;
+                    text-transform: uppercase;
+                    font-size: 1.7vw;
+                    letter-spacing: 3px;
+                    font-family: var.$font_Primary;
+
+                    @include responsive.screen_laptop{
+                        font-size: 25px;
+                    }
+                    @include responsive.screen_small{
+                        position: relative;
+                        margin: 0 0 35px 0;
+                    }                 
+                }
+
+                p{
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    font-size: 1.15vmax;
+                    padding: 0.9vw 0 0.5vw 0;
+                    font-family: var.$font_Primary;
+
+                    @include responsive.screen_large{
+                        font-size: 18px;
+                    }
+                    @include responsive.screen_laptop{
+                        font-size: 17px;
+                        padding: 1.3vw 0 0.5vw 0;                 
+                    }
+                    @include responsive.screen_tablet{
+                        font-size: 17px;
+                        line-height: 35px;
+                    }
+
+                    i{
+                        padding-right: 5px;
+                        font-size: 1.5vw;
+                        color: var.$Secundary_Color;
+
+                        @include responsive.screen_laptop(){
+                            font-size: 25px;              
+                        }
+                        @include responsive.screen_tablet(){
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+
+            .sobre-descripion{
+                @include mixins.align(relative, flex, center, normal);
+                flex-direction: column;
+                width: 35vw;
+                height: inherit;                       
+
+                @include responsive.screen_large{
+                    width: 35%;                       
+                }
+                @include responsive.screen_laptop{
+                    width: 80%;
+                    height: auto;
+                    top: 25px;
+                    margin: 50px auto;
+                }
+                @include responsive.screen_small{
+                    top: 0;
+                    width: 90%;
+                    height: auto;
+                    align-items: center;
+                }              
+
+                h1{
+                    position: relative;
+                    width: 100%;
+                    height: auto;
+                    margin: 0 0 1.5vmax 0;
+                    text-transform: uppercase;
+                    font-size: 1.7vw;
+                    letter-spacing: 3px;
+                    font-family: var.$font_Primary;
+
+                    @include responsive.screen_laptop{
+                        position: relative;
+                        font-size: 25px;
+                        text-align: center;
+                        margin: 0 0 1.5vw 0;
+                    }
+                }
+                
+                                      
+                p{
+                    @include mixins.text_formatting(normal, normal, 500, 1px);
+                    font-size: 1.18vmax;
+                    line-height: 1.8;
+                    font-family: var.$font_Primary;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+
+                    @include responsive.screen_large{
+                        font-size: 15px;          
+                    }
+
+                    @include responsive.screen_laptop{                             
+                        text-align: center;
+                        font-size: 16px;                
+                    }
+
+                    @include responsive.screen_small{
+                        font-size: 17px;
+                        line-height: 1.7;
+                        margin-top: 20px;
+                    }
+
+                    a{
+                        color: var.$Secundary_Color;
+                        font-weight: bolder;
+                        text-decoration: none;
+                        font-style: italic;
+                    }
+                }
+            }
+        }
+
+        .hero-cv{
+            @include mixins.align(relative, flex, end, center);
+            width: 80vw;
+            height: auto;
+            margin: 2vh 0 0 0;
+           
+            @include responsive.screen_laptop{
+                justify-content: center;
+                margin: 10vh 0 0 0;
+            }
+            @include responsive.screen_small{
+                margin: 20vh 0 0 0;
+            }
+
+            .my-cv {
+                @include mixins.align(relative, flex, center, center);                                              
+                max-width: 11vw;
+                height: auto;
+                padding: 0.9vmax 2vmax;                                             
+                background-color: transparent;
+                transition: var.$Transition_ease;
+                opacity: 1;
+                outline: none;
+
+                @include responsive.screen_laptop{
+                    max-width: 150px;
+                }
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+        
+                text {
+                    font-size: 1.5vmax; 
+                    font-family: var.$font_Primary;
+
+                    @include responsive.screen_small{
+                        font-size: 20px;
+                    }
+                }
+
+                &:hover {
+                    animation: btn-rotate 0.7s ease-in-out both;
+                }
+                  
+                &:hover svg {
+                    animation: btn-storm 0.7s ease-in-out both;
+                    animation-delay: 0.06s;
+                }
+            } 
+        }
     }
 }
