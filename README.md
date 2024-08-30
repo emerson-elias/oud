@@ -1,5 +1,5 @@
-# Portifolio 🚀
-<p>Bem-vindo ao meu portfólio! Aqui, você encontrará uma amostra dos meus conhecimentos como desenvolvedor front-end. Fique à vontade para explorar e conhecer um pouco mais sobre o que faço. Espero que gostem!</p>
+# Oud 🚀
+<p>Esse foi meu primeiro portifólio que foi descontinuado, nele usei apenas HTML, CSS e JAVASCRIPT, com o tempo surgiu novas necessidades e tive que usar mais framework e biblioteca</p>
 
 ## Linguagens utilizadas
 
