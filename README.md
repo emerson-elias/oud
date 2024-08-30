@@ -1,5 +1,5 @@
 # Oud 🚀
-<p>Esse foi meu primeiro portifólio que foi descontinuado, nele usei apenas HTML, CSS e JAVASCRIPT, com o tempo surgiu novas necessidades e tive que usar mais framework e biblioteca</p>
+<p>Esse foi meu primeiro portfólio que foi descontinuado, nele usei apenas HTML, CSS e JAVASCRIPT, com o tempo surgiu novas necessidades e tive que usar mais framework e biblioteca</p>
 
 ## Linguagens utilizadas
 
